@@ -40,30 +40,27 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -176,29 +173,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 79);
             this.panel1.TabIndex = 3;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Location = new System.Drawing.Point(462, 7);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(105, 46);
-            this.panel10.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(21, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 35);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sign Up";
             // 
             // label1
             // 
@@ -231,6 +210,32 @@
             this.panel6.Size = new System.Drawing.Size(186, 218);
             this.panel6.TabIndex = 1;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel12.Controls.Add(this.label14);
+            this.panel12.Location = new System.Drawing.Point(33, 155);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(126, 48);
+            this.panel12.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(-6, 3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(139, 42);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Sign Up Now ";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel9.Location = new System.Drawing.Point(46, 108);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(101, 41);
+            this.panel9.TabIndex = 2;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -239,6 +244,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(151, 82);
             this.panel8.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(6, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 42);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Why you should join";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -267,23 +281,6 @@
             this.panel4.Size = new System.Drawing.Size(151, 82);
             this.panel4.TabIndex = 0;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Location = new System.Drawing.Point(46, 108);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(101, 41);
-            this.panel9.TabIndex = 2;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel12.Controls.Add(this.label14);
-            this.panel12.Location = new System.Drawing.Point(33, 155);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(126, 48);
-            this.panel12.TabIndex = 3;
-            // 
             // label13
             // 
             this.label13.Location = new System.Drawing.Point(6, 20);
@@ -293,29 +290,11 @@
             this.label13.Text = "Benefits";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(6, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 42);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Why you should join";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(-6, 3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(139, 42);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Sign Up Now ";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -326,13 +305,12 @@
             this.panel2.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,8 +329,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
