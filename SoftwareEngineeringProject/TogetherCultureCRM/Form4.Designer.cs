@@ -56,6 +56,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,7 +70,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -158,7 +159,7 @@
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel11.BackColor = System.Drawing.Color.BurlyWood;
             this.panel11.Controls.Add(this.label3);
             this.panel11.Location = new System.Drawing.Point(16, 17);
             this.panel11.Name = "panel11";
@@ -176,7 +177,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
@@ -194,7 +196,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.ForeColor = System.Drawing.Color.Black;
@@ -205,7 +207,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.BackColor = System.Drawing.Color.BurlyWood;
             this.panel6.Controls.Add(this.panel16);
             this.panel6.Controls.Add(this.panel15);
             this.panel6.Controls.Add(this.panel14);
@@ -250,7 +252,7 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel9.BackColor = System.Drawing.Color.Bisque;
             this.panel9.Controls.Add(this.label14);
             this.panel9.Location = new System.Drawing.Point(58, 3);
             this.panel9.Name = "panel9";
@@ -259,6 +261,7 @@
             // 
             // label14
             // 
+            this.label14.BackColor = System.Drawing.Color.Bisque;
             this.label14.Location = new System.Drawing.Point(3, 4);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 42);
@@ -268,7 +271,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.BackColor = System.Drawing.Color.BurlyWood;
             this.panel5.Controls.Add(this.panel12);
             this.panel5.Controls.Add(this.panel13);
             this.panel5.Controls.Add(this.panel7);
@@ -296,7 +299,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel7.BackColor = System.Drawing.Color.Bisque;
             this.panel7.Controls.Add(this.label13);
             this.panel7.Location = new System.Drawing.Point(18, 118);
             this.panel7.Name = "panel7";
@@ -314,7 +317,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(18, 6);
             this.panel4.Name = "panel4";
@@ -329,6 +332,18 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "Your Membership ";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(463, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 49);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Together Culture";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form4
             // 
@@ -385,5 +400,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
     }
 }

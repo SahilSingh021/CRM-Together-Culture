@@ -53,6 +53,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label12);
@@ -81,6 +82,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(141, 414);
             this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -156,7 +158,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.BurlyWood;
             this.panel3.Controls.Add(this.label18);
             this.panel3.Location = new System.Drawing.Point(16, 17);
             this.panel3.Name = "panel3";
@@ -165,6 +167,7 @@
             // 
             // label18
             // 
+            this.label18.BackColor = System.Drawing.Color.BurlyWood;
             this.label18.Location = new System.Drawing.Point(3, 7);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 20);
@@ -174,7 +177,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(202, 12);
@@ -193,7 +197,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
             this.panel4.Controls.Add(this.panel13);
             this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.panel6);
@@ -206,7 +210,7 @@
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel13.BackColor = System.Drawing.Color.BurlyWood;
             this.panel13.Location = new System.Drawing.Point(465, 180);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(102, 57);
@@ -214,7 +218,7 @@
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel12.BackColor = System.Drawing.Color.BurlyWood;
             this.panel12.Controls.Add(this.label5);
             this.panel12.Location = new System.Drawing.Point(481, 120);
             this.panel12.Name = "panel12";
@@ -223,6 +227,7 @@
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(-1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 30);
@@ -232,7 +237,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.BackColor = System.Drawing.Color.BurlyWood;
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Location = new System.Drawing.Point(267, 37);
@@ -250,7 +255,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel8.BackColor = System.Drawing.Color.Bisque;
             this.panel8.Controls.Add(this.label7);
             this.panel8.Location = new System.Drawing.Point(21, 20);
             this.panel8.Name = "panel8";
@@ -268,7 +273,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.BackColor = System.Drawing.Color.BurlyWood;
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel11);
             this.panel5.Location = new System.Drawing.Point(34, 37);
@@ -286,7 +291,7 @@
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel11.BackColor = System.Drawing.Color.Bisque;
             this.panel11.Controls.Add(this.label6);
             this.panel11.Location = new System.Drawing.Point(18, 20);
             this.panel11.Name = "panel11";
@@ -301,6 +306,18 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Your Membership Benefits";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(461, -5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 49);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Together Culture";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form5
             // 
@@ -356,5 +373,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
     }
 }
