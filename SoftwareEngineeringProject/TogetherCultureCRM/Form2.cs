@@ -21,5 +21,10 @@ namespace TogetherCultureCRM
         {
 
         }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

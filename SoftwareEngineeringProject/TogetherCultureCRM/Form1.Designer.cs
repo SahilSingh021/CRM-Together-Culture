@@ -47,16 +47,20 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,7 +85,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(21, 15);
+            this.label2.Location = new System.Drawing.Point(19, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 35);
             this.label2.TabIndex = 3;
@@ -234,7 +238,7 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel9.Location = new System.Drawing.Point(21, 118);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(151, 82);
@@ -243,11 +247,21 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel8.Controls.Add(this.label12);
             this.panel8.Location = new System.Drawing.Point(21, 20);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(151, 82);
             this.panel8.TabIndex = 1;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(6, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 42);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Workplace";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -261,7 +275,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel7.Location = new System.Drawing.Point(18, 118);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(151, 82);
@@ -270,10 +284,20 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel4.Controls.Add(this.label13);
             this.panel4.Location = new System.Drawing.Point(18, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(151, 82);
             this.panel4.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(6, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(139, 42);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Community";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -294,7 +318,9 @@
             this.panel11.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -323,6 +349,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 
