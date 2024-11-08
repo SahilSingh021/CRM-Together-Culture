@@ -61,11 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Benefits Member.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Benefits Member.Designer.cs">
+      <DependentUpon>Benefits Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Benefits Non-Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Benefits Non-Member.Designer.cs">
+      <DependentUpon>Benefits Non-Member.cs</DependentUpon>
     </Compile>
     <Compile Include="Membership.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="CommunityMembership.Designer.cs">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Place Hire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Place Hire.Designer.cs">
+      <DependentUpon>Place Hire.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkplaceMembership.cs">
       <SubType>Form</SubType>
@@ -99,11 +111,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Benefits Member.resx">
+      <DependentUpon>Benefits Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Benefits Non-Member.resx">
+      <DependentUpon>Benefits Non-Member.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Membership.resx">
       <DependentUpon>Membership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommunityMembership.resx">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Place Hire.resx">
+      <DependentUpon>Place Hire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkplaceMembership.resx">
       <DependentUpon>WorkplaceMembership.cs</DependentUpon>
@@ -135,15 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CRM.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CRM_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>CRM.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
