@@ -30,6 +30,7 @@ namespace TogetherCultureCRM
         private void label14_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Helloww!");
+            MessageBox.Show("coneeshowa");
         }
     }
 }
