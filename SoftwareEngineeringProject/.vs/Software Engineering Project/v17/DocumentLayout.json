@@ -22,24 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CommunityMembership.cs",
               "DocumentMoniker": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\CommunityMembership.cs",
-              "ToolTip": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs*",
-              "RelativeToolTip": "TogetherCultureCRM\\CommunityMembership.cs*",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAiwCAAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs",
+              "RelativeToolTip": "TogetherCultureCRM\\CommunityMembership.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T16:41:46.921Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -47,8 +47,8 @@
               "Title": "CommunityMembership.cs [Design]",
               "DocumentMoniker": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\CommunityMembership.cs",
-              "ToolTip": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs [Design]*",
-              "RelativeToolTip": "TogetherCultureCRM\\CommunityMembership.cs [Design]*",
+              "ToolTip": "C:\\Users\\SH\\Documents\\Uni\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs [Design]",
+              "RelativeToolTip": "TogetherCultureCRM\\CommunityMembership.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T16:41:53.397Z",
               "EditorCaption": " [Design]"
