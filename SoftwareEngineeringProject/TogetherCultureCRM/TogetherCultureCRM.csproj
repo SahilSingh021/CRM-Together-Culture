@@ -73,6 +73,18 @@
     <Compile Include="Benefits Non-Member.Designer.cs">
       <DependentUpon>Benefits Non-Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events_MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events_MainPage.Designer.cs">
+      <DependentUpon>Events_MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event_BookingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event_BookingPage.Designer.cs">
+      <DependentUpon>Event_BookingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Membership.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Benefits Non-Member.resx">
       <DependentUpon>Benefits Non-Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Events_MainPage.resx">
+      <DependentUpon>Events_MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event_BookingPage.resx">
+      <DependentUpon>Event_BookingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Membership.resx">
       <DependentUpon>Membership.cs</DependentUpon>
