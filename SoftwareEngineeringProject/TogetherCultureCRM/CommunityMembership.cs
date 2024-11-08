@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TogetherCultureCRM
 {
-    public partial class Form2 : Form
+    public partial class CommunityMembership : Form
     {
-        public Form2()
+        public CommunityMembership()
         {
             InitializeComponent();
         }

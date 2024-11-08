@@ -74,3 +74,19 @@ C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CR
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.CoreCompileInputs.cache
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.exe
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.pdb
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\CRM.mdf
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\CRM_log.ldf
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\TogetherCultureCRM.exe.config
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\TogetherCultureCRM.exe
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\TogetherCultureCRM.pdb
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.AssemblyReference.cache
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Membership.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.CommunityMembership.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.WorkplaceMembership.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MyMembership.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.UpgradeMembership.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Properties.Resources.resources
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.GenerateResource.cache
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.CoreCompileInputs.cache
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.exe
+C:\Users\SH\Documents\Uni\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.pdb

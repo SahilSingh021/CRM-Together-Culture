@@ -1,6 +1,6 @@
 ﻿namespace TogetherCultureCRM
 {
-    partial class Form2
+    partial class CommunityMembership
     {
         /// <summary>
         /// Required designer variable.
