@@ -114,3 +114,4 @@ C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCul
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.CoreCompileInputs.cache
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.exe
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.pdb
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Homepage.resources

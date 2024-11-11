@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\taria zubair\\documents\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -15,20 +11,24 @@
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\taria zubair\\documents\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\taria zubair\\documents\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\taria zubair\\documents\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\communitymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\event_bookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,30 +74,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Program.cs",
               "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs*",
               "RelativeToolTip": "TogetherCultureCRM\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T16:00:06.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Signup.cs",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Signup.cs",
-              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs",
-              "RelativeToolTip": "TogetherCultureCRM\\Signup.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAnwA0AAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs*",
+              "RelativeToolTip": "TogetherCultureCRM\\Signup.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAewCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T20:01:05.243Z",
               "EditorCaption": ""
@@ -108,40 +108,40 @@
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Login.cs",
-              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs",
-              "RelativeToolTip": "TogetherCultureCRM\\Login.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAWwBoAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs*",
+              "RelativeToolTip": "TogetherCultureCRM\\Login.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAewCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T19:57:19.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Signup.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Signup.cs",
-              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs [Design]",
-              "RelativeToolTip": "TogetherCultureCRM\\Signup.cs [Design]",
+              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Signup.cs [Design]*",
+              "RelativeToolTip": "TogetherCultureCRM\\Signup.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T19:02:09.92Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Login.cs",
-              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs [Design]",
-              "RelativeToolTip": "TogetherCultureCRM\\Login.cs [Design]",
+              "ToolTip": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Login.cs [Design]*",
+              "RelativeToolTip": "TogetherCultureCRM\\Login.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T18:55:21.811Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CommunityMembership.cs",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\CommunityMembership.cs",
@@ -154,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CommunityMembership.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Taria Zubair\\Documents\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\CommunityMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\CommunityMembership.cs",
