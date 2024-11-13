@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.online_members_area_btn = new System.Windows.Forms.Label();
+            this.digital_connection_board_btn = new System.Windows.Forms.Label();
+            this.place_hire_btn = new System.Windows.Forms.Label();
+            this.events_btn = new System.Windows.Forms.Label();
+            this.benefits_btn = new System.Windows.Forms.Label();
+            this.membership_btn = new System.Windows.Forms.Label();
+            this.profile_btn = new System.Windows.Forms.Label();
+            this.home_btn = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.workplace_btn = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.community_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -72,6 +72,18 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(466, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 49);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Together Culture";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,14 +97,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Bisque;
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.online_members_area_btn);
+            this.panel2.Controls.Add(this.digital_connection_board_btn);
+            this.panel2.Controls.Add(this.place_hire_btn);
+            this.panel2.Controls.Add(this.events_btn);
+            this.panel2.Controls.Add(this.benefits_btn);
+            this.panel2.Controls.Add(this.membership_btn);
+            this.panel2.Controls.Add(this.profile_btn);
+            this.panel2.Controls.Add(this.home_btn);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
@@ -100,82 +112,83 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label11
+            // online_members_area_btn
             // 
-            this.label11.Location = new System.Drawing.Point(4, 234);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 42);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Online Members Area";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.online_members_area_btn.Location = new System.Drawing.Point(4, 234);
+            this.online_members_area_btn.Name = "online_members_area_btn";
+            this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
+            this.online_members_area_btn.TabIndex = 11;
+            this.online_members_area_btn.Text = "Online Members Area";
+            this.online_members_area_btn.Click += new System.EventHandler(this.label11_Click);
             // 
-            // label10
+            // digital_connection_board_btn
             // 
-            this.label10.Location = new System.Drawing.Point(3, 196);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 49);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Digital Connection Board";
+            this.digital_connection_board_btn.Location = new System.Drawing.Point(3, 196);
+            this.digital_connection_board_btn.Name = "digital_connection_board_btn";
+            this.digital_connection_board_btn.Size = new System.Drawing.Size(144, 46);
+            this.digital_connection_board_btn.TabIndex = 10;
+            this.digital_connection_board_btn.Text = "Digital Connection Board";
             // 
-            // label9
+            // place_hire_btn
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 20);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Place Hire";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.place_hire_btn.AutoSize = true;
+            this.place_hire_btn.Location = new System.Drawing.Point(3, 176);
+            this.place_hire_btn.Name = "place_hire_btn";
+            this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
+            this.place_hire_btn.TabIndex = 9;
+            this.place_hire_btn.Text = "Place Hire";
+            this.place_hire_btn.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label8
+            // events_btn
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 156);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Events";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.events_btn.AutoSize = true;
+            this.events_btn.Location = new System.Drawing.Point(4, 156);
+            this.events_btn.Name = "events_btn";
+            this.events_btn.Size = new System.Drawing.Size(58, 20);
+            this.events_btn.TabIndex = 8;
+            this.events_btn.Text = "Events";
+            this.events_btn.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label7
+            // benefits_btn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Benefits";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.benefits_btn.AutoSize = true;
+            this.benefits_btn.Location = new System.Drawing.Point(4, 136);
+            this.benefits_btn.Name = "benefits_btn";
+            this.benefits_btn.Size = new System.Drawing.Size(68, 20);
+            this.benefits_btn.TabIndex = 7;
+            this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label6
+            // membership_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(4, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Membership";
+            this.membership_btn.AutoSize = true;
+            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membership_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.membership_btn.Location = new System.Drawing.Point(4, 114);
+            this.membership_btn.Name = "membership_btn";
+            this.membership_btn.Size = new System.Drawing.Size(96, 20);
+            this.membership_btn.TabIndex = 6;
+            this.membership_btn.Text = "Membership";
             // 
-            // label5
+            // profile_btn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Profile";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.profile_btn.AutoSize = true;
+            this.profile_btn.Location = new System.Drawing.Point(7, 94);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(53, 20);
+            this.profile_btn.TabIndex = 5;
+            this.profile_btn.Text = "Profile";
+            this.profile_btn.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label4
+            // home_btn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Home";
+            this.home_btn.AutoSize = true;
+            this.home_btn.Location = new System.Drawing.Point(7, 74);
+            this.home_btn.Name = "home_btn";
+            this.home_btn.Size = new System.Drawing.Size(52, 20);
+            this.home_btn.TabIndex = 4;
+            this.home_btn.Text = "Home";
+            this.home_btn.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel11
             // 
@@ -227,21 +240,21 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Bisque;
-            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.workplace_btn);
             this.panel8.Location = new System.Drawing.Point(21, 20);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(151, 82);
             this.panel8.TabIndex = 1;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // label12
+            // workplace_btn
             // 
-            this.label12.Location = new System.Drawing.Point(6, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 42);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Workplace";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.workplace_btn.Location = new System.Drawing.Point(6, 20);
+            this.workplace_btn.Name = "workplace_btn";
+            this.workplace_btn.Size = new System.Drawing.Size(139, 42);
+            this.workplace_btn.TabIndex = 12;
+            this.workplace_btn.Text = "Workplace";
+            this.workplace_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -264,34 +277,22 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.community_btn);
             this.panel4.Location = new System.Drawing.Point(18, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(151, 82);
             this.panel4.TabIndex = 0;
             // 
-            // label13
+            // community_btn
             // 
-            this.label13.Location = new System.Drawing.Point(6, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(139, 42);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Community";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.community_btn.Location = new System.Drawing.Point(6, 20);
+            this.community_btn.Name = "community_btn";
+            this.community_btn.Size = new System.Drawing.Size(139, 42);
+            this.community_btn.TabIndex = 12;
+            this.community_btn.Text = "Community";
+            this.community_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(466, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 49);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Together Culture";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Form1
+            // Membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -301,7 +302,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "Form1";
+            this.Name = "Membership";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -330,16 +331,16 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label home_btn;
+        private System.Windows.Forms.Label profile_btn;
+        private System.Windows.Forms.Label place_hire_btn;
+        private System.Windows.Forms.Label events_btn;
+        private System.Windows.Forms.Label benefits_btn;
+        private System.Windows.Forms.Label membership_btn;
+        private System.Windows.Forms.Label online_members_area_btn;
+        private System.Windows.Forms.Label digital_connection_board_btn;
+        private System.Windows.Forms.Label workplace_btn;
+        private System.Windows.Forms.Label community_btn;
         private System.Windows.Forms.Label label2;
     }
 }
