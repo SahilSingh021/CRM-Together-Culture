@@ -10,11 +10,62 @@ using System.Windows.Forms;
 
 namespace TogetherCultureCRM
 {
-    public partial class Benefits_Non_Member : Form
+    public partial class BenefitsNonMember : Form
     {
-        public Benefits_Non_Member()
+        public BenefitsNonMember()
         {
             InitializeComponent();
+        }
+
+
+        private void homepage_btn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void profile_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void benefits_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void membership_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void events_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void placehire_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void digitalconnectionboard_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void onlinemembersarea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void joinus_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void togetherculture_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

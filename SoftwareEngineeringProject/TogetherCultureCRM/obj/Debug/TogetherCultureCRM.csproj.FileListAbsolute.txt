@@ -109,12 +109,12 @@ C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCulture
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.CommunityMembership.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Place_Hire.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Signup.resources
-C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Benefits_Member.resources
-C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Benefits_Non_Member.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Events_MainPage.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Event_BookingPage.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Homepage.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Login.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.CommunityMembership.resources
-C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Place_Hire.resources
 C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Signup.resources
+C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BenefitsMember.resources
+C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BenefitsNonMember.resources
+C:\Users\Sam Moxon-Groves\OneDrive\Documents\Software Engineering Project Sam\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.PlaceHire.resources

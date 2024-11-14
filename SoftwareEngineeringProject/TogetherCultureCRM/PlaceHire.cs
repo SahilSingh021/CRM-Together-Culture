@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TogetherCultureCRM
 {
-    public partial class Place_Hire : Form
+    public partial class PlaceHire : Form
     {
-        public Place_Hire()
+        public PlaceHire()
         {
             InitializeComponent();
         }
@@ -35,6 +35,56 @@ namespace TogetherCultureCRM
         }
 
         private void benefits_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void events_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void placehire_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void togetherculture_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void onlinemembersarea_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void digitalconnectionboard_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pricing_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void venueoptions_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addedfeatures_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void makeabooking_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }
