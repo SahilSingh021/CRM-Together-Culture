@@ -24,8 +24,6 @@ namespace TogetherCultureCRM
 
         }
 
-      
-
         private void place_hire_btn_Click(object sender, EventArgs e)
         {
             Place_Hire newForm = new Place_Hire();
@@ -42,8 +40,6 @@ namespace TogetherCultureCRM
 
         }
 
-        
-
         private void community_membership_title_Click(object sender, EventArgs e)
         {
 
@@ -51,7 +47,8 @@ namespace TogetherCultureCRM
 
         private void home_btn_Click(object sender, EventArgs e)
         {
-
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
         }
 
         private void profile_btn_Click(object sender, EventArgs e)
@@ -61,17 +58,20 @@ namespace TogetherCultureCRM
 
         private void membership_btn_Click(object sender, EventArgs e)
         {
-
+            Membership newForm = new Membership();
+            newForm.ShowDialog();
         }
 
         private void benefits_btn_Click(object sender, EventArgs e)
         {
-
+            Benefits_Non_Member newForm = new Benefits_Non_Member();
+            newForm.ShowDialog();
         }
 
         private void events_btn_Click(object sender, EventArgs e)
         {
-
+            Events_MainPage newForm = new Events_MainPage();
+            newForm.ShowDialog();
         }
 
         private void digital_connection_board_btn_Click(object sender, EventArgs e)
@@ -86,7 +86,8 @@ namespace TogetherCultureCRM
 
         private void community_benefits_btn_Click(object sender, EventArgs e)
         {
-
+            Benefits_Non_Member newForm = new Benefits_Non_Member();
+            newForm.ShowDialog();
         }
 
         private void why_you_should_join_btn_Click(object sender, EventArgs e)
