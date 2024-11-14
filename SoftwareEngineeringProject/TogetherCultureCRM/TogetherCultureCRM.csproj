@@ -109,11 +109,11 @@
     <Compile Include="CommunityMembership.Designer.cs">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
     </Compile>
-    <Compile Include="Place Hire.cs">
+    <Compile Include="PlaceHire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Place Hire.Designer.cs">
-      <DependentUpon>Place Hire.cs</DependentUpon>
+    <Compile Include="PlaceHire.Designer.cs">
+      <DependentUpon>PlaceHire.cs</DependentUpon>
     </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="CommunityMembership.resx">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Place Hire.resx">
-      <DependentUpon>Place Hire.cs</DependentUpon>
+    <EmbeddedResource Include="PlaceHire.resx">
+      <DependentUpon>PlaceHire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
