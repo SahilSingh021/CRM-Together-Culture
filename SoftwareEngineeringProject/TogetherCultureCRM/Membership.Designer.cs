@@ -255,6 +255,7 @@
             this.workplace_btn.TabIndex = 12;
             this.workplace_btn.Text = "Workplace";
             this.workplace_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.workplace_btn.Click += new System.EventHandler(this.workplace_btn_Click);
             // 
             // panel5
             // 
@@ -291,6 +292,7 @@
             this.community_btn.TabIndex = 12;
             this.community_btn.Text = "Community";
             this.community_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.community_btn.Click += new System.EventHandler(this.community_btn_Click);
             // 
             // Membership
             // 

@@ -71,5 +71,17 @@ namespace TogetherCultureCRM
         {
 
         }
+
+        private void community_btn_Click(object sender, EventArgs e)
+        {
+            CommunityMembership newForm = new CommunityMembership();
+            newForm.ShowDialog();
+        }
+
+        private void workplace_btn_Click(object sender, EventArgs e)
+        {
+            WorkplaceMembership newForm = new WorkplaceMembership();
+            newForm.ShowDialog();
+        }
     }
 }

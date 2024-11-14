@@ -34,7 +34,8 @@ namespace TogetherCultureCRM
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Signup newForm = new Signup();
+            newForm.ShowDialog();
         }
 
         private void label5_Click(object sender, EventArgs e)
