@@ -16,5 +16,26 @@ namespace TogetherCultureCRM
         {
             InitializeComponent();
         }
+
+
+        private void homepage_btn_Click(object sender, EventArgs e)
+        {
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+        }
+
+        private void profile_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void membership_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void benefits_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}

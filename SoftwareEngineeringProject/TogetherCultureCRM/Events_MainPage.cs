@@ -16,5 +16,11 @@ namespace TogetherCultureCRM
         {
             InitializeComponent();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+        }
     }
 }

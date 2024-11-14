@@ -32,11 +32,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.events_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,6 +48,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.homepage_btn = new System.Windows.Forms.Label();
+            this.profile_btn = new System.Windows.Forms.Label();
+            this.membership_btn = new System.Windows.Forms.Label();
+            this.benefits_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,14 +64,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.benefits_btn);
+            this.panel1.Controls.Add(this.membership_btn);
+            this.panel1.Controls.Add(this.profile_btn);
+            this.panel1.Controls.Add(this.homepage_btn);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.events_btn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,65 +115,17 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Place Hire";
             // 
-            // label6
+            // events_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(19, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Events";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(19, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Benefits";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(19, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Membership";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(19, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Profile";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(19, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Home";
+            this.events_btn.AutoSize = true;
+            this.events_btn.BackColor = System.Drawing.Color.Transparent;
+            this.events_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.events_btn.ForeColor = System.Drawing.Color.Black;
+            this.events_btn.Location = new System.Drawing.Point(19, 131);
+            this.events_btn.Name = "events_btn";
+            this.events_btn.Size = new System.Drawing.Size(51, 17);
+            this.events_btn.TabIndex = 6;
+            this.events_btn.Text = "Events";
             // 
             // panel3
             // 
@@ -328,6 +280,60 @@
             this.panel5.Size = new System.Drawing.Size(256, 134);
             this.panel5.TabIndex = 0;
             // 
+            // homepage_btn
+            // 
+            this.homepage_btn.AutoSize = true;
+            this.homepage_btn.BackColor = System.Drawing.Color.Transparent;
+            this.homepage_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homepage_btn.ForeColor = System.Drawing.Color.Black;
+            this.homepage_btn.Location = new System.Drawing.Point(19, 67);
+            this.homepage_btn.Name = "homepage_btn";
+            this.homepage_btn.Size = new System.Drawing.Size(45, 17);
+            this.homepage_btn.TabIndex = 9;
+            this.homepage_btn.Tag = "homepage_btn";
+            this.homepage_btn.Text = "Home";
+            this.homepage_btn.Click += new System.EventHandler(this.homepage_btn_Click);
+            // 
+            // profile_btn
+            // 
+            this.profile_btn.AutoSize = true;
+            this.profile_btn.BackColor = System.Drawing.Color.Transparent;
+            this.profile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profile_btn.ForeColor = System.Drawing.Color.Black;
+            this.profile_btn.Location = new System.Drawing.Point(19, 84);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(48, 17);
+            this.profile_btn.TabIndex = 10;
+            this.profile_btn.Tag = "profile_btn";
+            this.profile_btn.Text = "Profile";
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
+            // 
+            // membership_btn
+            // 
+            this.membership_btn.AutoSize = true;
+            this.membership_btn.BackColor = System.Drawing.Color.Transparent;
+            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membership_btn.ForeColor = System.Drawing.Color.Black;
+            this.membership_btn.Location = new System.Drawing.Point(19, 101);
+            this.membership_btn.Name = "membership_btn";
+            this.membership_btn.Size = new System.Drawing.Size(85, 17);
+            this.membership_btn.TabIndex = 11;
+            this.membership_btn.Text = "Membership";
+            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
+            // 
+            // benefits_btn
+            // 
+            this.benefits_btn.AutoSize = true;
+            this.benefits_btn.BackColor = System.Drawing.Color.Transparent;
+            this.benefits_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.benefits_btn.ForeColor = System.Drawing.Color.Black;
+            this.benefits_btn.Location = new System.Drawing.Point(19, 118);
+            this.benefits_btn.Name = "benefits_btn";
+            this.benefits_btn.Size = new System.Drawing.Size(59, 17);
+            this.benefits_btn.TabIndex = 12;
+            this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
+            // 
             // Place_Hire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,11 +369,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label events_btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -383,5 +385,9 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label homepage_btn;
+        private System.Windows.Forms.Label profile_btn;
+        private System.Windows.Forms.Label membership_btn;
+        private System.Windows.Forms.Label benefits_btn;
     }
 }
