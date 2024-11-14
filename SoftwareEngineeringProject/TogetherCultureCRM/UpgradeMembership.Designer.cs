@@ -86,6 +86,7 @@
             // 
             // online_members_area_btn
             // 
+            this.online_members_area_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.online_members_area_btn.Location = new System.Drawing.Point(4, 234);
             this.online_members_area_btn.Name = "online_members_area_btn";
             this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
@@ -95,6 +96,7 @@
             // 
             // digital_connection_board_btn
             // 
+            this.digital_connection_board_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.digital_connection_board_btn.Location = new System.Drawing.Point(3, 196);
             this.digital_connection_board_btn.Name = "digital_connection_board_btn";
             this.digital_connection_board_btn.Size = new System.Drawing.Size(144, 46);
@@ -105,6 +107,7 @@
             // place_hire_btn
             // 
             this.place_hire_btn.AutoSize = true;
+            this.place_hire_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.place_hire_btn.Location = new System.Drawing.Point(3, 176);
             this.place_hire_btn.Name = "place_hire_btn";
             this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
@@ -115,6 +118,7 @@
             // events_btn
             // 
             this.events_btn.AutoSize = true;
+            this.events_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.events_btn.Location = new System.Drawing.Point(4, 156);
             this.events_btn.Name = "events_btn";
             this.events_btn.Size = new System.Drawing.Size(58, 20);
@@ -125,6 +129,7 @@
             // benefits_btn
             // 
             this.benefits_btn.AutoSize = true;
+            this.benefits_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benefits_btn.Location = new System.Drawing.Point(4, 136);
             this.benefits_btn.Name = "benefits_btn";
             this.benefits_btn.Size = new System.Drawing.Size(68, 20);
@@ -135,6 +140,7 @@
             // membership_btn
             // 
             this.membership_btn.AutoSize = true;
+            this.membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.membership_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.membership_btn.Location = new System.Drawing.Point(4, 114);
@@ -147,6 +153,7 @@
             // profile_btn
             // 
             this.profile_btn.AutoSize = true;
+            this.profile_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.profile_btn.Location = new System.Drawing.Point(7, 94);
             this.profile_btn.Name = "profile_btn";
             this.profile_btn.Size = new System.Drawing.Size(53, 20);
@@ -157,6 +164,7 @@
             // home_btn
             // 
             this.home_btn.AutoSize = true;
+            this.home_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.home_btn.Location = new System.Drawing.Point(7, 74);
             this.home_btn.Name = "home_btn";
             this.home_btn.Size = new System.Drawing.Size(52, 20);
@@ -251,6 +259,7 @@
             // upgrade_btn
             // 
             this.upgrade_btn.BackColor = System.Drawing.Color.Transparent;
+            this.upgrade_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.upgrade_btn.Location = new System.Drawing.Point(-1, 0);
             this.upgrade_btn.Name = "upgrade_btn";
             this.upgrade_btn.Size = new System.Drawing.Size(86, 30);
@@ -288,6 +297,7 @@
             // 
             // upgraded_membership_benefits_btn
             // 
+            this.upgraded_membership_benefits_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.upgraded_membership_benefits_btn.Location = new System.Drawing.Point(-4, 24);
             this.upgraded_membership_benefits_btn.Name = "upgraded_membership_benefits_btn";
             this.upgraded_membership_benefits_btn.Size = new System.Drawing.Size(162, 49);
@@ -325,6 +335,7 @@
             // 
             // your_membership_benefits_btn
             // 
+            this.your_membership_benefits_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.your_membership_benefits_btn.Location = new System.Drawing.Point(3, 25);
             this.your_membership_benefits_btn.Name = "your_membership_benefits_btn";
             this.your_membership_benefits_btn.Size = new System.Drawing.Size(139, 46);

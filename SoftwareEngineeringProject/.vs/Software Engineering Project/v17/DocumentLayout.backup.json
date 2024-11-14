@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -19,8 +11,28 @@
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\workplacemembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\mymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\mymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\mymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\mymembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|c:\\users\\kaiow\\source\\repos\\year2\\crm\\softwareengineeringproject\\togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|solutionrelative:togetherculturecrm\\upgrademembership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F404BC47-6BDA-4A14-B8C6-30E8A8164D35}|TogetherCultureCRM\\TogetherCultureCRM.csproj|C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\togetherculturecrm\\placehire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -58,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,12 +78,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "UpgradeMembership.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\UpgradeMembership.cs",
-              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs*",
-              "RelativeToolTip": "TogetherCultureCRM\\UpgradeMembership.cs*",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs",
+              "RelativeToolTip": "TogetherCultureCRM\\UpgradeMembership.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAgwGIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T15:26:49.035Z",
@@ -80,18 +92,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UpgradeMembership.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs",
-              "RelativeDocumentMoniker": "TogetherCultureCRM\\UpgradeMembership.cs",
-              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs [Design]*",
-              "RelativeToolTip": "TogetherCultureCRM\\UpgradeMembership.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:23:34.136Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "WorkplaceMembership.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\WorkplaceMembership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\WorkplaceMembership.cs",
@@ -104,19 +104,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Membership.cs [Design]",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Membership.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Membership.cs",
-              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Membership.cs [Design]",
-              "RelativeToolTip": "TogetherCultureCRM\\Membership.cs [Design]",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Membership.cs [Design]*",
+              "RelativeToolTip": "TogetherCultureCRM\\Membership.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T14:29:35.788Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Membership.cs",
+              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Membership.cs",
+              "RelativeDocumentMoniker": "TogetherCultureCRM\\Membership.cs",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Membership.cs*",
+              "RelativeToolTip": "TogetherCultureCRM\\Membership.cs*",
+              "ViewState": "AgIAACwAAAAAAAAAAADwvzYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T15:41:57.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs",
+              "RelativeDocumentMoniker": "TogetherCultureCRM\\Program.cs",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs",
+              "RelativeToolTip": "TogetherCultureCRM\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T13:35:48.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyMembership.cs",
+              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\MyMembership.cs",
+              "RelativeDocumentMoniker": "TogetherCultureCRM\\MyMembership.cs",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\MyMembership.cs",
+              "RelativeToolTip": "TogetherCultureCRM\\MyMembership.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T15:35:05.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyMembership.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\MyMembership.cs",
+              "RelativeDocumentMoniker": "TogetherCultureCRM\\MyMembership.cs",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\MyMembership.cs [Design]",
+              "RelativeToolTip": "TogetherCultureCRM\\MyMembership.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T15:32:26.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "UpgradeMembership.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs",
+              "RelativeDocumentMoniker": "TogetherCultureCRM\\UpgradeMembership.cs",
+              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\UpgradeMembership.cs [Design]",
+              "RelativeToolTip": "TogetherCultureCRM\\UpgradeMembership.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T15:23:34.136Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Place Hire.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Place Hire.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\Place Hire.cs",
@@ -128,20 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs",
-              "RelativeDocumentMoniker": "TogetherCultureCRM\\Program.cs",
-              "ToolTip": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\Program.cs",
-              "RelativeToolTip": "TogetherCultureCRM\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T13:35:48.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "BenefitsMember.cs [Design]",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\BenefitsMember.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\BenefitsMember.cs",
@@ -152,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PlaceHire.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\PlaceHire.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\PlaceHire.cs",
@@ -164,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "PlaceHire.cs [Design]",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\PlaceHire.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\PlaceHire.cs",
@@ -175,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "BenefitsNon-Member.cs [Design]",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\BenefitsNon-Member.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\BenefitsNon-Member.cs",
@@ -186,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "BenefitsMember.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\BenefitsMember.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\BenefitsMember.cs",
@@ -198,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "BenefitsNon-Member.cs",
               "DocumentMoniker": "C:\\Users\\kaiow\\source\\repos\\year2\\CRM\\SoftwareEngineeringProject\\TogetherCultureCRM\\BenefitsNon-Member.cs",
               "RelativeDocumentMoniker": "TogetherCultureCRM\\BenefitsNon-Member.cs",

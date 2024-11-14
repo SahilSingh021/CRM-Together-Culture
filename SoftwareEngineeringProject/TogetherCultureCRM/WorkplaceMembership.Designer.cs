@@ -44,6 +44,7 @@
             this.workplace_membership_title = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.sign_up_btn = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.why_you_should_join_btn = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.workplace_benefits_btn = new System.Windows.Forms.Label();
-            this.sign_up_btn = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +81,7 @@
             // 
             // online_members_area_btn
             // 
+            this.online_members_area_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.online_members_area_btn.Location = new System.Drawing.Point(4, 234);
             this.online_members_area_btn.Name = "online_members_area_btn";
             this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
@@ -90,6 +91,7 @@
             // 
             // digital_connection_board_btn
             // 
+            this.digital_connection_board_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.digital_connection_board_btn.Location = new System.Drawing.Point(3, 196);
             this.digital_connection_board_btn.Name = "digital_connection_board_btn";
             this.digital_connection_board_btn.Size = new System.Drawing.Size(144, 42);
@@ -100,6 +102,7 @@
             // place_hire_btn
             // 
             this.place_hire_btn.AutoSize = true;
+            this.place_hire_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.place_hire_btn.Location = new System.Drawing.Point(3, 176);
             this.place_hire_btn.Name = "place_hire_btn";
             this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
@@ -110,6 +113,7 @@
             // events_btn
             // 
             this.events_btn.AutoSize = true;
+            this.events_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.events_btn.Location = new System.Drawing.Point(4, 156);
             this.events_btn.Name = "events_btn";
             this.events_btn.Size = new System.Drawing.Size(58, 20);
@@ -120,6 +124,7 @@
             // benefits_btn
             // 
             this.benefits_btn.AutoSize = true;
+            this.benefits_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benefits_btn.Location = new System.Drawing.Point(4, 136);
             this.benefits_btn.Name = "benefits_btn";
             this.benefits_btn.Size = new System.Drawing.Size(68, 20);
@@ -130,6 +135,7 @@
             // membership_btn
             // 
             this.membership_btn.AutoSize = true;
+            this.membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.membership_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.membership_btn.Location = new System.Drawing.Point(4, 114);
@@ -142,6 +148,7 @@
             // profile_btn
             // 
             this.profile_btn.AutoSize = true;
+            this.profile_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.profile_btn.Location = new System.Drawing.Point(7, 94);
             this.profile_btn.Name = "profile_btn";
             this.profile_btn.Size = new System.Drawing.Size(53, 20);
@@ -152,6 +159,7 @@
             // home_btn
             // 
             this.home_btn.AutoSize = true;
+            this.home_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.home_btn.Location = new System.Drawing.Point(7, 74);
             this.home_btn.Name = "home_btn";
             this.home_btn.Size = new System.Drawing.Size(52, 20);
@@ -232,6 +240,18 @@
             this.panel6.Size = new System.Drawing.Size(186, 218);
             this.panel6.TabIndex = 1;
             // 
+            // sign_up_btn
+            // 
+            this.sign_up_btn.BackColor = System.Drawing.Color.Bisque;
+            this.sign_up_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sign_up_btn.Location = new System.Drawing.Point(27, 158);
+            this.sign_up_btn.Name = "sign_up_btn";
+            this.sign_up_btn.Size = new System.Drawing.Size(139, 42);
+            this.sign_up_btn.TabIndex = 9;
+            this.sign_up_btn.Text = "Sign Up Now ";
+            this.sign_up_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sign_up_btn.Click += new System.EventHandler(this.sign_up_btn_Click);
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -251,6 +271,7 @@
             // 
             // why_you_should_join_btn
             // 
+            this.why_you_should_join_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.why_you_should_join_btn.Location = new System.Drawing.Point(6, 20);
             this.why_you_should_join_btn.Name = "why_you_should_join_btn";
             this.why_you_should_join_btn.Size = new System.Drawing.Size(139, 42);
@@ -288,6 +309,7 @@
             // 
             // workplace_benefits_btn
             // 
+            this.workplace_benefits_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.workplace_benefits_btn.Location = new System.Drawing.Point(6, 20);
             this.workplace_benefits_btn.Name = "workplace_benefits_btn";
             this.workplace_benefits_btn.Size = new System.Drawing.Size(139, 42);
@@ -295,17 +317,6 @@
             this.workplace_benefits_btn.Text = "Benefits";
             this.workplace_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.workplace_benefits_btn.Click += new System.EventHandler(this.workplace_benefits_btn_Click);
-            // 
-            // sign_up_btn
-            // 
-            this.sign_up_btn.BackColor = System.Drawing.Color.Bisque;
-            this.sign_up_btn.Location = new System.Drawing.Point(27, 158);
-            this.sign_up_btn.Name = "sign_up_btn";
-            this.sign_up_btn.Size = new System.Drawing.Size(139, 42);
-            this.sign_up_btn.TabIndex = 9;
-            this.sign_up_btn.Text = "Sign Up Now ";
-            this.sign_up_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.sign_up_btn.Click += new System.EventHandler(this.sign_up_btn_Click);
             // 
             // WorkplaceMembership
             // 

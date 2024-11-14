@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,6 +52,7 @@ namespace TogetherCultureCRM
         {
             Homepage newForm = new Homepage();
             newForm.ShowDialog();
+            home_btn.Cursor = Cursors.Hand;
         }
 
         
