@@ -41,11 +41,8 @@
             this.quick_menu_btn = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.together_culture_btn = new System.Windows.Forms.Label();
-            this.community_membership_title = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.sign_up_btn = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.why_you_should_join_btn = new System.Windows.Forms.Label();
@@ -53,12 +50,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.community_benefits_btn = new System.Windows.Forms.Label();
+            this.community_membership_title = new System.Windows.Forms.Label();
+            this.sign_up_btn = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -88,6 +86,7 @@
             this.online_members_area_btn.Size = new System.Drawing.Size(136, 42);
             this.online_members_area_btn.TabIndex = 11;
             this.online_members_area_btn.Text = "Online Members Area";
+            this.online_members_area_btn.Click += new System.EventHandler(this.online_members_area_btn_Click);
             // 
             // digital_connection_board_btn
             // 
@@ -96,6 +95,7 @@
             this.digital_connection_board_btn.Size = new System.Drawing.Size(144, 49);
             this.digital_connection_board_btn.TabIndex = 10;
             this.digital_connection_board_btn.Text = "Digital Connection Board";
+            this.digital_connection_board_btn.Click += new System.EventHandler(this.digital_connection_board_btn_Click);
             // 
             // place_hire_btn
             // 
@@ -105,6 +105,7 @@
             this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
             this.place_hire_btn.TabIndex = 9;
             this.place_hire_btn.Text = "Place Hire";
+            this.place_hire_btn.Click += new System.EventHandler(this.place_hire_btn_Click);
             // 
             // events_btn
             // 
@@ -114,6 +115,7 @@
             this.events_btn.Size = new System.Drawing.Size(58, 20);
             this.events_btn.TabIndex = 8;
             this.events_btn.Text = "Events";
+            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
             // 
             // benefits_btn
             // 
@@ -123,6 +125,7 @@
             this.benefits_btn.Size = new System.Drawing.Size(68, 20);
             this.benefits_btn.TabIndex = 7;
             this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
             // 
             // membership_btn
             // 
@@ -134,6 +137,7 @@
             this.membership_btn.Size = new System.Drawing.Size(96, 20);
             this.membership_btn.TabIndex = 6;
             this.membership_btn.Text = "Membership";
+            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
             // 
             // profile_btn
             // 
@@ -143,6 +147,7 @@
             this.profile_btn.Size = new System.Drawing.Size(53, 20);
             this.profile_btn.TabIndex = 5;
             this.profile_btn.Text = "Profile";
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
             // 
             // home_btn
             // 
@@ -152,6 +157,7 @@
             this.home_btn.Size = new System.Drawing.Size(52, 20);
             this.home_btn.TabIndex = 4;
             this.home_btn.Text = "Home";
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
             // panel11
             // 
@@ -170,12 +176,13 @@
             this.quick_menu_btn.TabIndex = 4;
             this.quick_menu_btn.Text = "Quick Menu";
             this.quick_menu_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.quick_menu_btn.Click += new System.EventHandler(this.quick_menu_btn_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Controls.Add(this.together_culture_btn);
             this.panel1.Controls.Add(this.community_membership_title);
+            this.panel1.Controls.Add(this.together_culture_btn);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 78);
@@ -192,16 +199,7 @@
             this.together_culture_btn.TabIndex = 9;
             this.together_culture_btn.Text = "Together Culture";
             this.together_culture_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // community_membership_title
-            // 
-            this.community_membership_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.community_membership_title.Location = new System.Drawing.Point(68, 31);
-            this.community_membership_title.Name = "community_membership_title";
-            this.community_membership_title.Size = new System.Drawing.Size(429, 48);
-            this.community_membership_title.TabIndex = 2;
-            this.community_membership_title.Text = "Community Membership";
-            this.community_membership_title.Click += new System.EventHandler(this.label1_Click);
+            this.together_culture_btn.Click += new System.EventHandler(this.together_culture_btn_Click);
             // 
             // panel3
             // 
@@ -217,34 +215,13 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel6.Controls.Add(this.panel12);
+            this.panel6.Controls.Add(this.sign_up_btn);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Location = new System.Drawing.Point(360, 37);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(186, 218);
             this.panel6.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel12.Controls.Add(this.sign_up_btn);
-            this.panel12.Location = new System.Drawing.Point(34, 155);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(126, 48);
-            this.panel12.TabIndex = 2;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
-            // 
-            // sign_up_btn
-            // 
-            this.sign_up_btn.BackColor = System.Drawing.Color.Bisque;
-            this.sign_up_btn.Location = new System.Drawing.Point(-6, 3);
-            this.sign_up_btn.Name = "sign_up_btn";
-            this.sign_up_btn.Size = new System.Drawing.Size(140, 42);
-            this.sign_up_btn.TabIndex = 9;
-            this.sign_up_btn.Text = "Sign Up Now ";
-            this.sign_up_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.sign_up_btn.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel9
             // 
@@ -271,6 +248,7 @@
             this.why_you_should_join_btn.TabIndex = 10;
             this.why_you_should_join_btn.Text = "Why you should join";
             this.why_you_should_join_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.why_you_should_join_btn.Click += new System.EventHandler(this.why_you_should_join_btn_Click);
             // 
             // panel5
             // 
@@ -307,6 +285,28 @@
             this.community_benefits_btn.TabIndex = 11;
             this.community_benefits_btn.Text = "Benefits";
             this.community_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.community_benefits_btn.Click += new System.EventHandler(this.community_benefits_btn_Click);
+            // 
+            // community_membership_title
+            // 
+            this.community_membership_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.community_membership_title.Location = new System.Drawing.Point(27, 25);
+            this.community_membership_title.Name = "community_membership_title";
+            this.community_membership_title.Size = new System.Drawing.Size(429, 48);
+            this.community_membership_title.TabIndex = 10;
+            this.community_membership_title.Text = "Community Membership";
+            this.community_membership_title.Click += new System.EventHandler(this.community_membership_title_Click);
+            // 
+            // sign_up_btn
+            // 
+            this.sign_up_btn.BackColor = System.Drawing.Color.Bisque;
+            this.sign_up_btn.Location = new System.Drawing.Point(24, 158);
+            this.sign_up_btn.Name = "sign_up_btn";
+            this.sign_up_btn.Size = new System.Drawing.Size(140, 42);
+            this.sign_up_btn.TabIndex = 10;
+            this.sign_up_btn.Text = "Sign Up Now ";
+            this.sign_up_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sign_up_btn.Click += new System.EventHandler(this.sign_up_btn_Click);
             // 
             // CommunityMembership
             // 
@@ -325,7 +325,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -347,7 +346,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label quick_menu_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label community_membership_title;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel9;
@@ -355,10 +353,10 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label sign_up_btn;
         private System.Windows.Forms.Label why_you_should_join_btn;
         private System.Windows.Forms.Label community_benefits_btn;
         private System.Windows.Forms.Label together_culture_btn;
+        private System.Windows.Forms.Label community_membership_title;
+        private System.Windows.Forms.Label sign_up_btn;
     }
 }
