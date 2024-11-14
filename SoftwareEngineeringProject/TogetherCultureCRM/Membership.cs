@@ -32,45 +32,6 @@ namespace TogetherCultureCRM
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void community_btn_Click(object sender, EventArgs e)
         {
@@ -82,6 +43,67 @@ namespace TogetherCultureCRM
         {
             WorkplaceMembership newForm = new WorkplaceMembership();
             newForm.ShowDialog();
+        }
+
+        
+
+        private void home_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void profile_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        private void benefits_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void events_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void digital_connection_board_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void place_hire_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void online_members_area_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+ 
+
+        private void membership_title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void together_culture_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quick_menu_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

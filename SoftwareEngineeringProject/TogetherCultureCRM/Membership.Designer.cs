@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.online_members_area_btn = new System.Windows.Forms.Label();
             this.digital_connection_board_btn = new System.Windows.Forms.Label();
-            this.place_hire_btn = new System.Windows.Forms.Label();
-            this.events_btn = new System.Windows.Forms.Label();
-            this.benefits_btn = new System.Windows.Forms.Label();
             this.membership_btn = new System.Windows.Forms.Label();
-            this.profile_btn = new System.Windows.Forms.Label();
-            this.home_btn = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.quick_menu_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -51,6 +43,14 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.community_btn = new System.Windows.Forms.Label();
+            this.home_btn = new System.Windows.Forms.Label();
+            this.profile_btn = new System.Windows.Forms.Label();
+            this.benefits_btn = new System.Windows.Forms.Label();
+            this.events_btn = new System.Windows.Forms.Label();
+            this.place_hire_btn = new System.Windows.Forms.Label();
+            this.online_members_area_btn = new System.Windows.Forms.Label();
+            this.together_culture_btn = new System.Windows.Forms.Label();
+            this.membership_title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -64,62 +64,31 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.membership_title);
+            this.panel1.Controls.Add(this.together_culture_btn);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 79);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(466, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 49);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Together Culture";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 48);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Membership";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Bisque;
             this.panel2.Controls.Add(this.online_members_area_btn);
-            this.panel2.Controls.Add(this.digital_connection_board_btn);
             this.panel2.Controls.Add(this.place_hire_btn);
             this.panel2.Controls.Add(this.events_btn);
             this.panel2.Controls.Add(this.benefits_btn);
-            this.panel2.Controls.Add(this.membership_btn);
             this.panel2.Controls.Add(this.profile_btn);
             this.panel2.Controls.Add(this.home_btn);
+            this.panel2.Controls.Add(this.digital_connection_board_btn);
+            this.panel2.Controls.Add(this.membership_btn);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(141, 414);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // online_members_area_btn
-            // 
-            this.online_members_area_btn.Location = new System.Drawing.Point(4, 234);
-            this.online_members_area_btn.Name = "online_members_area_btn";
-            this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
-            this.online_members_area_btn.TabIndex = 11;
-            this.online_members_area_btn.Text = "Online Members Area";
-            this.online_members_area_btn.Click += new System.EventHandler(this.label11_Click);
             // 
             // digital_connection_board_btn
             // 
@@ -128,36 +97,7 @@
             this.digital_connection_board_btn.Size = new System.Drawing.Size(144, 46);
             this.digital_connection_board_btn.TabIndex = 10;
             this.digital_connection_board_btn.Text = "Digital Connection Board";
-            // 
-            // place_hire_btn
-            // 
-            this.place_hire_btn.AutoSize = true;
-            this.place_hire_btn.Location = new System.Drawing.Point(3, 176);
-            this.place_hire_btn.Name = "place_hire_btn";
-            this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
-            this.place_hire_btn.TabIndex = 9;
-            this.place_hire_btn.Text = "Place Hire";
-            this.place_hire_btn.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // events_btn
-            // 
-            this.events_btn.AutoSize = true;
-            this.events_btn.Location = new System.Drawing.Point(4, 156);
-            this.events_btn.Name = "events_btn";
-            this.events_btn.Size = new System.Drawing.Size(58, 20);
-            this.events_btn.TabIndex = 8;
-            this.events_btn.Text = "Events";
-            this.events_btn.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // benefits_btn
-            // 
-            this.benefits_btn.AutoSize = true;
-            this.benefits_btn.Location = new System.Drawing.Point(4, 136);
-            this.benefits_btn.Name = "benefits_btn";
-            this.benefits_btn.Size = new System.Drawing.Size(68, 20);
-            this.benefits_btn.TabIndex = 7;
-            this.benefits_btn.Text = "Benefits";
-            this.benefits_btn.Click += new System.EventHandler(this.label7_Click);
+            this.digital_connection_board_btn.Click += new System.EventHandler(this.digital_connection_board_btn_Click);
             // 
             // membership_btn
             // 
@@ -170,43 +110,24 @@
             this.membership_btn.TabIndex = 6;
             this.membership_btn.Text = "Membership";
             // 
-            // profile_btn
-            // 
-            this.profile_btn.AutoSize = true;
-            this.profile_btn.Location = new System.Drawing.Point(7, 94);
-            this.profile_btn.Name = "profile_btn";
-            this.profile_btn.Size = new System.Drawing.Size(53, 20);
-            this.profile_btn.TabIndex = 5;
-            this.profile_btn.Text = "Profile";
-            this.profile_btn.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // home_btn
-            // 
-            this.home_btn.AutoSize = true;
-            this.home_btn.Location = new System.Drawing.Point(7, 74);
-            this.home_btn.Name = "home_btn";
-            this.home_btn.Size = new System.Drawing.Size(52, 20);
-            this.home_btn.TabIndex = 4;
-            this.home_btn.Text = "Home";
-            this.home_btn.Click += new System.EventHandler(this.label4_Click);
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel11.Controls.Add(this.label3);
+            this.panel11.Controls.Add(this.quick_menu_btn);
             this.panel11.Location = new System.Drawing.Point(16, 17);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(112, 36);
             this.panel11.TabIndex = 3;
             // 
-            // label3
+            // quick_menu_btn
             // 
-            this.label3.Location = new System.Drawing.Point(3, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Quick Menu";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.quick_menu_btn.Location = new System.Drawing.Point(3, 7);
+            this.quick_menu_btn.Name = "quick_menu_btn";
+            this.quick_menu_btn.Size = new System.Drawing.Size(106, 20);
+            this.quick_menu_btn.TabIndex = 4;
+            this.quick_menu_btn.Text = "Quick Menu";
+            this.quick_menu_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.quick_menu_btn.Click += new System.EventHandler(this.quick_menu_btn_Click);
             // 
             // panel3
             // 
@@ -294,6 +215,88 @@
             this.community_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.community_btn.Click += new System.EventHandler(this.community_btn_Click);
             // 
+            // home_btn
+            // 
+            this.home_btn.AutoSize = true;
+            this.home_btn.Location = new System.Drawing.Point(3, 74);
+            this.home_btn.Name = "home_btn";
+            this.home_btn.Size = new System.Drawing.Size(52, 20);
+            this.home_btn.TabIndex = 12;
+            this.home_btn.Text = "Home";
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
+            // 
+            // profile_btn
+            // 
+            this.profile_btn.AutoSize = true;
+            this.profile_btn.Location = new System.Drawing.Point(3, 94);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(53, 20);
+            this.profile_btn.TabIndex = 13;
+            this.profile_btn.Text = "Profile";
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
+            // 
+            // benefits_btn
+            // 
+            this.benefits_btn.AutoSize = true;
+            this.benefits_btn.Location = new System.Drawing.Point(4, 136);
+            this.benefits_btn.Name = "benefits_btn";
+            this.benefits_btn.Size = new System.Drawing.Size(68, 20);
+            this.benefits_btn.TabIndex = 14;
+            this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
+            // 
+            // events_btn
+            // 
+            this.events_btn.AutoSize = true;
+            this.events_btn.Location = new System.Drawing.Point(4, 156);
+            this.events_btn.Name = "events_btn";
+            this.events_btn.Size = new System.Drawing.Size(58, 20);
+            this.events_btn.TabIndex = 15;
+            this.events_btn.Text = "Events";
+            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
+            // 
+            // place_hire_btn
+            // 
+            this.place_hire_btn.AutoSize = true;
+            this.place_hire_btn.Location = new System.Drawing.Point(4, 176);
+            this.place_hire_btn.Name = "place_hire_btn";
+            this.place_hire_btn.Size = new System.Drawing.Size(81, 20);
+            this.place_hire_btn.TabIndex = 16;
+            this.place_hire_btn.Text = "Place Hire";
+            this.place_hire_btn.Click += new System.EventHandler(this.place_hire_btn_Click);
+            // 
+            // online_members_area_btn
+            // 
+            this.online_members_area_btn.Location = new System.Drawing.Point(1, 242);
+            this.online_members_area_btn.Name = "online_members_area_btn";
+            this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
+            this.online_members_area_btn.TabIndex = 17;
+            this.online_members_area_btn.Text = "Online Members Area";
+            this.online_members_area_btn.Click += new System.EventHandler(this.online_members_area_btn_Click);
+            // 
+            // together_culture_btn
+            // 
+            this.together_culture_btn.BackColor = System.Drawing.Color.Transparent;
+            this.together_culture_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.together_culture_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.together_culture_btn.Location = new System.Drawing.Point(449, 0);
+            this.together_culture_btn.Name = "together_culture_btn";
+            this.together_culture_btn.Size = new System.Drawing.Size(137, 49);
+            this.together_culture_btn.TabIndex = 9;
+            this.together_culture_btn.Text = "Together Culture";
+            this.together_culture_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.together_culture_btn.Click += new System.EventHandler(this.together_culture_btn_Click);
+            // 
+            // membership_title
+            // 
+            this.membership_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membership_title.Location = new System.Drawing.Point(27, 24);
+            this.membership_title.Name = "membership_title";
+            this.membership_title.Size = new System.Drawing.Size(312, 48);
+            this.membership_title.TabIndex = 10;
+            this.membership_title.Text = "Membership";
+            this.membership_title.Click += new System.EventHandler(this.membership_title_Click);
+            // 
             // Membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -331,19 +334,19 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label home_btn;
-        private System.Windows.Forms.Label profile_btn;
-        private System.Windows.Forms.Label place_hire_btn;
-        private System.Windows.Forms.Label events_btn;
-        private System.Windows.Forms.Label benefits_btn;
+        private System.Windows.Forms.Label quick_menu_btn;
         private System.Windows.Forms.Label membership_btn;
-        private System.Windows.Forms.Label online_members_area_btn;
         private System.Windows.Forms.Label digital_connection_board_btn;
         private System.Windows.Forms.Label workplace_btn;
         private System.Windows.Forms.Label community_btn;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label home_btn;
+        private System.Windows.Forms.Label profile_btn;
+        private System.Windows.Forms.Label benefits_btn;
+        private System.Windows.Forms.Label events_btn;
+        private System.Windows.Forms.Label place_hire_btn;
+        private System.Windows.Forms.Label online_members_area_btn;
+        private System.Windows.Forms.Label together_culture_btn;
+        private System.Windows.Forms.Label membership_title;
     }
 }
 
