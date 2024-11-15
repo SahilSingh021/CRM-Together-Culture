@@ -120,3 +120,5 @@ C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCulture
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MembershipPayment.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MembershipSignUp.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.PlaceHire.resources
+C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.IndividualMemberships.resources
+C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.OrganisationalMemberships.resources

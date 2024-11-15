@@ -33,21 +33,6 @@ namespace TogetherCultureCRM
 
         }
 
-
-        private void community_btn_Click(object sender, EventArgs e)
-        {
-            CommunityMembership newForm = new CommunityMembership();
-            newForm.ShowDialog();
-        }
-
-        private void workplace_btn_Click(object sender, EventArgs e)
-        {
-            WorkplaceMembership newForm = new WorkplaceMembership();
-            newForm.ShowDialog();
-        }
-
-        
-
         private void home_btn_Click(object sender, EventArgs e)
         {
             Homepage newForm = new Homepage();
@@ -109,6 +94,22 @@ namespace TogetherCultureCRM
         private void quick_menu_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+       
+
+        private void organisational_membership_btn_Click(object sender, EventArgs e)
+        {
+            OrganisationalMemberships newForm = new OrganisationalMemberships();
+            newForm.ShowDialog();
+        }
+
+        
+
+        private void individual_membership_btn_Click(object sender, EventArgs e)
+        {
+            IndividualMemberships newForm = new IndividualMemberships();
+            newForm.ShowDialog();
         }
     }
 }
