@@ -76,7 +76,8 @@ namespace TogetherCultureCRM
         
         private void online_members_area_btn_Click(object sender, EventArgs e)
         {
-
+            OnlineMembersArea newForm = new OnlineMembersArea();
+            newForm.ShowDialog();
         }
 
  

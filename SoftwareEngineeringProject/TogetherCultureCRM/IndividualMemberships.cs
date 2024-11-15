@@ -20,19 +20,19 @@ namespace TogetherCultureCRM
         private void community_membership_btn_Click(object sender, EventArgs e)
         {
             CommunityMembership newForm = new CommunityMembership();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void workplace_membership_btn_Click(object sender, EventArgs e)
         {
             WorkplaceMembership newForm = new WorkplaceMembership();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void home_btn_Click(object sender, EventArgs e)
         {
             Homepage newForm = new Homepage();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void profile_btn_Click(object sender, EventArgs e)
@@ -43,37 +43,37 @@ namespace TogetherCultureCRM
         private void membership_btn_Click(object sender, EventArgs e)
         {
             Membership newForm = new Membership();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void benefits_btn_Click(object sender, EventArgs e)
         {
             BenefitsNonMember newForm = new BenefitsNonMember();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void events_btn_Click(object sender, EventArgs e)
         {
-            Events_MainPage newForm = new Events_MainPage();    
-            ShowDialog(newForm);
+            Events_MainPage newForm = new Events_MainPage();
+            newForm.ShowDialog();
         }
 
         private void place_hire_btn_Click(object sender, EventArgs e)
         {
             PlaceHire newForm = new PlaceHire();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void digital_connection_board_btn_Click(object sender, EventArgs e)
         {
             DigitalConnectionBoard newForm = new DigitalConnectionBoard();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
 
         private void online_members_area_btn_Click(object sender, EventArgs e)
         {
             OnlineMembersArea newForm = new OnlineMembersArea();
-            ShowDialog(newForm);
+            newForm.ShowDialog();
         }
     }
 }
