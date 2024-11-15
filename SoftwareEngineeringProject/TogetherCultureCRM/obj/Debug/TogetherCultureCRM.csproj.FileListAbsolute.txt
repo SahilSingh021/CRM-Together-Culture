@@ -82,14 +82,11 @@ C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCul
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\TogetherCultureCRM.exe
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\bin\Debug\TogetherCultureCRM.pdb
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.csproj.AssemblyReference.cache
-C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Benefits_Member.resources
-C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Benefits_Non_Member.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Events_MainPage.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Event_BookingPage.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Login.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Membership.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.CommunityMembership.resources
-C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Place_Hire.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.Signup.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.WorkplaceMembership.resources
 C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MyMembership.resources
@@ -124,3 +121,12 @@ C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCulture
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.OrganisationalMemberships.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BusinessMembership.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.NotForProfitMembership.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BenefitsMember.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BenefitsNonMember.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BusinessMembership.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.IndividualMemberships.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MembershipPayment.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.MembershipSignUp.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.NotForProfitMembership.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.OrganisationalMemberships.resources
+C:\Users\Taria Zubair\Documents\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.PlaceHire.resources

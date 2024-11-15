@@ -36,7 +36,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.Memberships = new System.Windows.Forms.Label();
+            this.membership_btn = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -145,21 +145,22 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.Bisque;
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.Memberships);
+            this.panel13.Controls.Add(this.membership_btn);
             this.panel13.Location = new System.Drawing.Point(12, 116);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(212, 121);
             this.panel13.TabIndex = 16;
             // 
-            // Memberships
+            // membership_btn
             // 
-            this.Memberships.AutoSize = true;
-            this.Memberships.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Memberships.Location = new System.Drawing.Point(50, 55);
-            this.Memberships.Name = "Memberships";
-            this.Memberships.Size = new System.Drawing.Size(110, 20);
-            this.Memberships.TabIndex = 18;
-            this.Memberships.Text = "Memberships";
+            this.membership_btn.AutoSize = true;
+            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.membership_btn.Location = new System.Drawing.Point(50, 55);
+            this.membership_btn.Name = "membership_btn";
+            this.membership_btn.Size = new System.Drawing.Size(110, 20);
+            this.membership_btn.TabIndex = 18;
+            this.membership_btn.Text = "Memberships";
+            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
             // 
             // panel12
             // 
@@ -445,7 +446,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label Memberships;
+        private System.Windows.Forms.Label membership_btn;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel11;

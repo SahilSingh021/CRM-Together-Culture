@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TogetherCultureCRM
 {
@@ -24,7 +25,13 @@ namespace TogetherCultureCRM
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
 
+        private void membership_btn_Click(object sender, EventArgs e)
+        {
+            Membership newForm = new Membership();
+            newForm.ShowDialog();
         }
     }
 }
