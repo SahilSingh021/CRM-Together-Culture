@@ -26,7 +26,7 @@ namespace TogetherCultureCRM
 
         private void place_hire_btn_Click(object sender, EventArgs e)
         {
-            Place_Hire newForm = new Place_Hire();
+            PlaceHire newForm = new PlaceHire();
             newForm.ShowDialog();
         }
 
@@ -64,7 +64,7 @@ namespace TogetherCultureCRM
 
         private void benefits_btn_Click(object sender, EventArgs e)
         {
-            Benefits_Non_Member newForm = new Benefits_Non_Member();
+            BenefitsNonMember newForm = new BenefitsNonMember();
             newForm.ShowDialog();
         }
 
@@ -86,7 +86,7 @@ namespace TogetherCultureCRM
 
         private void community_benefits_btn_Click(object sender, EventArgs e)
         {
-            Benefits_Non_Member newForm = new Benefits_Non_Member();
+            BenefitsNonMember newForm = new BenefitsNonMember();
             newForm.ShowDialog();
         }
 
@@ -98,7 +98,8 @@ namespace TogetherCultureCRM
         
         private void sign_up_btn_Click(object sender, EventArgs e)
         {
-
+            MembershipSignUp newForm = new MembershipSignUp();
+            newForm.ShowDialog();
         }
     }
 }

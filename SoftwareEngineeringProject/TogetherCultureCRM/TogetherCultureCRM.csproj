@@ -115,6 +115,18 @@
     <Compile Include="CommunityMembership.Designer.cs">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="MembershipPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembershipPayment.Designer.cs">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembershipSignUp.Designer.cs">
+      <DependentUpon>MembershipSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnlineMembersArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommunityMembership.resx">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembershipPayment.resx">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembershipSignUp.resx">
+      <DependentUpon>MembershipSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlaceHire.resx">
       <DependentUpon>PlaceHire.cs</DependentUpon>
