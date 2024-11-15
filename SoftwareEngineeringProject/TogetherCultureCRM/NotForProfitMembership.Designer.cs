@@ -334,6 +334,7 @@
             this.community_benefits_btn.TabIndex = 11;
             this.community_benefits_btn.Text = "Benefits";
             this.community_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.community_benefits_btn.Click += new System.EventHandler(this.community_benefits_btn_Click);
             // 
             // NotForProfitMembership
             // 

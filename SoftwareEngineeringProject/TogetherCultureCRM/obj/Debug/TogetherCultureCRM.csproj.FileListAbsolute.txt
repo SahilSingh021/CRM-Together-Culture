@@ -122,3 +122,5 @@ C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCulture
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.PlaceHire.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.IndividualMemberships.resources
 C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.OrganisationalMemberships.resources
+C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.BusinessMembership.resources
+C:\Users\kaiow\source\repos\year2\CRM\SoftwareEngineeringProject\TogetherCultureCRM\obj\Debug\TogetherCultureCRM.NotForProfitMembership.resources

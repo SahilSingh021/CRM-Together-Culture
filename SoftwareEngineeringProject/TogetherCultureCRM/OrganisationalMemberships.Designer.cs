@@ -43,26 +43,26 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.quick_menu_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.business_membership_btn = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.non_profit_find_out_more_btn = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.not_for_profit_membership_btn = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.business_find_out_more_btn = new System.Windows.Forms.Button();
-            this.non_profit_find_out_more_btn = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.business_membership_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -228,44 +228,6 @@
             this.panel3.Size = new System.Drawing.Size(586, 300);
             this.panel3.TabIndex = 3;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Location = new System.Drawing.Point(34, 37);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 218);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Controls.Add(this.business_find_out_more_btn);
-            this.panel7.Location = new System.Drawing.Point(18, 118);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(151, 82);
-            this.panel7.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Controls.Add(this.business_membership_btn);
-            this.panel4.Location = new System.Drawing.Point(18, 20);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(151, 82);
-            this.panel4.TabIndex = 0;
-            // 
-            // business_membership_btn
-            // 
-            this.business_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.business_membership_btn.Location = new System.Drawing.Point(6, 20);
-            this.business_membership_btn.Name = "business_membership_btn";
-            this.business_membership_btn.Size = new System.Drawing.Size(139, 42);
-            this.business_membership_btn.TabIndex = 13;
-            this.business_membership_btn.Text = "Business Memberships";
-            this.business_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.BurlyWood;
@@ -285,6 +247,20 @@
             this.panel9.Size = new System.Drawing.Size(151, 82);
             this.panel9.TabIndex = 1;
             // 
+            // non_profit_find_out_more_btn
+            // 
+            this.non_profit_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.non_profit_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.non_profit_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.non_profit_find_out_more_btn.ForeColor = System.Drawing.Color.White;
+            this.non_profit_find_out_more_btn.Location = new System.Drawing.Point(0, 20);
+            this.non_profit_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.non_profit_find_out_more_btn.Name = "non_profit_find_out_more_btn";
+            this.non_profit_find_out_more_btn.Size = new System.Drawing.Size(151, 58);
+            this.non_profit_find_out_more_btn.TabIndex = 20;
+            this.non_profit_find_out_more_btn.Text = "Find Out More";
+            this.non_profit_find_out_more_btn.UseVisualStyleBackColor = false;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Bisque;
@@ -303,6 +279,26 @@
             this.not_for_profit_membership_btn.TabIndex = 13;
             this.not_for_profit_membership_btn.Text = "Not For Profit";
             this.not_for_profit_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.not_for_profit_membership_btn.Click += new System.EventHandler(this.not_for_profit_membership_btn_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Location = new System.Drawing.Point(34, 37);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(186, 218);
+            this.panel5.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel7.Controls.Add(this.business_find_out_more_btn);
+            this.panel7.Location = new System.Drawing.Point(18, 118);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(151, 82);
+            this.panel7.TabIndex = 1;
             // 
             // business_find_out_more_btn
             // 
@@ -318,19 +314,25 @@
             this.business_find_out_more_btn.Text = "Find Out More";
             this.business_find_out_more_btn.UseVisualStyleBackColor = false;
             // 
-            // non_profit_find_out_more_btn
+            // panel4
             // 
-            this.non_profit_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.non_profit_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.non_profit_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.non_profit_find_out_more_btn.ForeColor = System.Drawing.Color.White;
-            this.non_profit_find_out_more_btn.Location = new System.Drawing.Point(0, 20);
-            this.non_profit_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.non_profit_find_out_more_btn.Name = "non_profit_find_out_more_btn";
-            this.non_profit_find_out_more_btn.Size = new System.Drawing.Size(151, 58);
-            this.non_profit_find_out_more_btn.TabIndex = 20;
-            this.non_profit_find_out_more_btn.Text = "Find Out More";
-            this.non_profit_find_out_more_btn.UseVisualStyleBackColor = false;
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
+            this.panel4.Controls.Add(this.business_membership_btn);
+            this.panel4.Location = new System.Drawing.Point(18, 20);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(151, 82);
+            this.panel4.TabIndex = 0;
+            // 
+            // business_membership_btn
+            // 
+            this.business_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.business_membership_btn.Location = new System.Drawing.Point(6, 20);
+            this.business_membership_btn.Name = "business_membership_btn";
+            this.business_membership_btn.Size = new System.Drawing.Size(139, 42);
+            this.business_membership_btn.TabIndex = 13;
+            this.business_membership_btn.Text = "Business Memberships";
+            this.business_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.business_membership_btn.Click += new System.EventHandler(this.business_membership_btn_Click);
             // 
             // OrganisationalMemberships
             // 
@@ -348,12 +350,12 @@
             this.panel2.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

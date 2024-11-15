@@ -58,5 +58,17 @@ namespace TogetherCultureCRM
             OnlineMembersArea newForm = new OnlineMembersArea();
             newForm.ShowDialog();
         }
+
+        private void business_membership_btn_Click(object sender, EventArgs e)
+        {
+            BusinessMembership newForm = new BusinessMembership();
+            newForm.ShowDialog();
+        }
+
+        private void not_for_profit_membership_btn_Click(object sender, EventArgs e)
+        {
+            NotForProfitMembership newForm = new NotForProfitMembership();
+            newForm.ShowDialog();
+        }
     }
 }
