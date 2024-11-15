@@ -73,6 +73,12 @@
     <Compile Include="BenefitsNonMember.Designer.cs">
       <DependentUpon>BenefitsNonMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessMembership.Designer.cs">
+      <DependentUpon>BusinessMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="DigitalConnectionBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="MembershipSignUp.Designer.cs">
       <DependentUpon>MembershipSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotForProfitMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotForProfitMembership.Designer.cs">
+      <DependentUpon>NotForProfitMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnlineMembersArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,9 @@
     <EmbeddedResource Include="BenefitsNonMember.resx">
       <DependentUpon>BenefitsNonMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BusinessMembership.resx">
+      <DependentUpon>BusinessMembership.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Events_MainPage.resx">
       <DependentUpon>Events_MainPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MembershipSignUp.resx">
       <DependentUpon>MembershipSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotForProfitMembership.resx">
+      <DependentUpon>NotForProfitMembership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrganisationalMemberships.resx">
       <DependentUpon>OrganisationalMemberships.cs</DependentUpon>

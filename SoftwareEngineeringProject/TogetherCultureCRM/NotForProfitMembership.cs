@@ -4,33 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TogetherCultureCRM
 {
-    public partial class MyMembership : Form
+    public partial class NotForProfitMembership : Form
     {
-        public MyMembership()
+        public NotForProfitMembership()
         {
             InitializeComponent();
         }
 
-        private void together_culture_logo_Click(object sender, EventArgs e)
+        private void sign_up_btn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void my_membership_title_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quick_menu_Click(object sender, EventArgs e)
-        {
-
+            MembershipSignUp newForm = new MembershipSignUp();
+            newForm.ShowDialog();
         }
 
         private void home_btn_Click(object sender, EventArgs e)
@@ -41,7 +31,7 @@ namespace TogetherCultureCRM
 
         private void profile_btn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void membership_btn_Click(object sender, EventArgs e)
@@ -68,7 +58,7 @@ namespace TogetherCultureCRM
             newForm.ShowDialog();
         }
 
-        private void digital_connection_board_Click(object sender, EventArgs e)
+        private void digital_connection_board_btn_Click(object sender, EventArgs e)
         {
             DigitalConnectionBoard newForm = new DigitalConnectionBoard();
             newForm.ShowDialog();
@@ -78,23 +68,6 @@ namespace TogetherCultureCRM
         {
             OnlineMembersArea newForm = new OnlineMembersArea();
             newForm.ShowDialog();
-        }
-
-        private void your_membership_benefits_btn_Click(object sender, EventArgs e)
-        {
-            BenefitsMember newForm = new BenefitsMember();
-            newForm.ShowDialog();
-        }
-
-        private void upgrade_membership_btn_Click(object sender, EventArgs e)
-        {
-            UpgradeMembership newForm = new UpgradeMembership();
-            newForm.ShowDialog();
-        }
-
-        private void digital_content_module_btn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

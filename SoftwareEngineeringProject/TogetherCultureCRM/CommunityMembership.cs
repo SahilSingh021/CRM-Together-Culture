@@ -76,12 +76,14 @@ namespace TogetherCultureCRM
 
         private void digital_connection_board_btn_Click(object sender, EventArgs e)
         {
-
+            DigitalConnectionBoard newForm = new DigitalConnectionBoard();
+            newForm.ShowDialog();
         }
 
         private void online_members_area_btn_Click(object sender, EventArgs e)
         {
-
+            OnlineMembersArea newForm = new OnlineMembersArea();
+            newForm.ShowDialog();
         }
 
         private void community_benefits_btn_Click(object sender, EventArgs e)
