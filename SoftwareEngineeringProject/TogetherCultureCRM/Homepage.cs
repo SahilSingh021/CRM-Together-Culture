@@ -33,5 +33,22 @@ namespace TogetherCultureCRM
             Membership newForm = new Membership();
             newForm.ShowDialog();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void benefits_btn_Click(object sender, EventArgs e)
+        {
+            BenefitsMember newForm = new BenefitsMember();
+            newForm.ShowDialog();
+        }
+
+        private void events_btn_Click(object sender, EventArgs e)
+        {
+            Events_MainPage newForm = new Events_MainPage();
+            newForm.ShowDialog();
+        }
     }
 }

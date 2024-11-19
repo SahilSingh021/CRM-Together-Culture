@@ -42,7 +42,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.events_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Image = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +50,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -59,6 +58,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.benefits_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -205,24 +205,25 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.events_btn);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Location = new System.Drawing.Point(292, 77);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(485, 138);
             this.panel4.TabIndex = 19;
             // 
-            // label7
+            // events_btn
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Black;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label7.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label7.Location = new System.Drawing.Point(237, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Upcoming Events";
+            this.events_btn.AutoSize = true;
+            this.events_btn.BackColor = System.Drawing.Color.Black;
+            this.events_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.events_btn.ForeColor = System.Drawing.Color.Cornsilk;
+            this.events_btn.Location = new System.Drawing.Point(237, 67);
+            this.events_btn.Name = "events_btn";
+            this.events_btn.Size = new System.Drawing.Size(159, 24);
+            this.events_btn.TabIndex = 6;
+            this.events_btn.Text = "Upcoming Events";
+            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
             // 
             // panel3
             // 
@@ -283,21 +284,12 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Bisque;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.benefits_btn);
             this.panel6.Location = new System.Drawing.Point(345, 363);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(149, 97);
             this.panel6.TabIndex = 22;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(56, 42);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 16);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Benefits";
             // 
             // panel7
             // 
@@ -383,6 +375,16 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Alerts";
             // 
+            // benefits_btn
+            // 
+            this.benefits_btn.AutoSize = true;
+            this.benefits_btn.Location = new System.Drawing.Point(47, 41);
+            this.benefits_btn.Name = "benefits_btn";
+            this.benefits_btn.Size = new System.Drawing.Size(55, 16);
+            this.benefits_btn.TabIndex = 12;
+            this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,7 +454,7 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label events_btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label Image;
         private System.Windows.Forms.Panel panel2;
@@ -460,7 +462,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel9;
@@ -469,5 +470,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label benefits_btn;
     }
 }
