@@ -22,5 +22,46 @@ namespace TogetherCultureCRM
             Homepage newForm = new Homepage();
             newForm.ShowDialog();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Membership newForm = new Membership();
+            newForm.ShowDialog();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+        }
+
+        private void Place_hire_Click(object sender, EventArgs e)
+        {
+            PlaceHire newForm = new PlaceHire();
+            newForm.ShowDialog();
+        }
+
+        private void Book_Click(object sender, EventArgs e)
+        {
+            Event_BookingPage newF = new Event_BookingPage();
+            newF.ShowDialog();
+        }
+
+        private void Book_event1_Click(object sender, EventArgs e)
+        {
+            Event_BookingPage newF = new Event_BookingPage();
+            newF.ShowDialog();
+        }
+
+        private void Book_Event2_Click(object sender, EventArgs e)
+        {
+            Event_BookingPage newF = new Event_BookingPage();
+            newF.ShowDialog();
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -50,5 +50,15 @@ namespace TogetherCultureCRM
             Events_MainPage newForm = new Events_MainPage();
             newForm.ShowDialog();
         }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
