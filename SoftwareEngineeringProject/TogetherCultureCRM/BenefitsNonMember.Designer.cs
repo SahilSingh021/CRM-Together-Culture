@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.onlinemembersarea = new System.Windows.Forms.Label();
+            this.digitalconnectionboard_btn = new System.Windows.Forms.Label();
+            this.placehire_btn = new System.Windows.Forms.Label();
+            this.events_btn = new System.Windows.Forms.Label();
+            this.benefits_btn = new System.Windows.Forms.Label();
+            this.membership_btn = new System.Windows.Forms.Label();
+            this.profile_btn = new System.Windows.Forms.Label();
+            this.homepage_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -44,14 +52,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.homepage_btn = new System.Windows.Forms.Label();
-            this.profile_btn = new System.Windows.Forms.Label();
-            this.membership_btn = new System.Windows.Forms.Label();
-            this.benefits_btn = new System.Windows.Forms.Label();
-            this.events_btn = new System.Windows.Forms.Label();
-            this.placehire_btn = new System.Windows.Forms.Label();
-            this.digitalconnectionboard_btn = new System.Windows.Forms.Label();
-            this.onlinemembersarea = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -76,6 +77,110 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(148, 376);
             this.panel1.TabIndex = 2;
+            // 
+            // onlinemembersarea
+            // 
+            this.onlinemembersarea.AutoSize = true;
+            this.onlinemembersarea.BackColor = System.Drawing.Color.Transparent;
+            this.onlinemembersarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onlinemembersarea.ForeColor = System.Drawing.Color.Black;
+            this.onlinemembersarea.Location = new System.Drawing.Point(19, 199);
+            this.onlinemembersarea.Name = "onlinemembersarea";
+            this.onlinemembersarea.Size = new System.Drawing.Size(111, 34);
+            this.onlinemembersarea.TabIndex = 17;
+            this.onlinemembersarea.Text = "Online Members\r\nArea";
+            this.onlinemembersarea.Click += new System.EventHandler(this.onlinemembersarea_Click);
+            // 
+            // digitalconnectionboard_btn
+            // 
+            this.digitalconnectionboard_btn.AutoSize = true;
+            this.digitalconnectionboard_btn.BackColor = System.Drawing.Color.Transparent;
+            this.digitalconnectionboard_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.digitalconnectionboard_btn.ForeColor = System.Drawing.Color.Black;
+            this.digitalconnectionboard_btn.Location = new System.Drawing.Point(19, 165);
+            this.digitalconnectionboard_btn.Name = "digitalconnectionboard_btn";
+            this.digitalconnectionboard_btn.Size = new System.Drawing.Size(122, 34);
+            this.digitalconnectionboard_btn.TabIndex = 16;
+            this.digitalconnectionboard_btn.Text = "Digital Connection\r\nBoard";
+            this.digitalconnectionboard_btn.Click += new System.EventHandler(this.digitalconnectionboard_btn_Click);
+            // 
+            // placehire_btn
+            // 
+            this.placehire_btn.AutoSize = true;
+            this.placehire_btn.BackColor = System.Drawing.Color.Transparent;
+            this.placehire_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placehire_btn.ForeColor = System.Drawing.Color.Black;
+            this.placehire_btn.Location = new System.Drawing.Point(19, 148);
+            this.placehire_btn.Name = "placehire_btn";
+            this.placehire_btn.Size = new System.Drawing.Size(73, 17);
+            this.placehire_btn.TabIndex = 15;
+            this.placehire_btn.Text = "Place Hire";
+            this.placehire_btn.Click += new System.EventHandler(this.placehire_btn_Click);
+            // 
+            // events_btn
+            // 
+            this.events_btn.AutoSize = true;
+            this.events_btn.BackColor = System.Drawing.Color.Transparent;
+            this.events_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.events_btn.ForeColor = System.Drawing.Color.Black;
+            this.events_btn.Location = new System.Drawing.Point(19, 131);
+            this.events_btn.Name = "events_btn";
+            this.events_btn.Size = new System.Drawing.Size(51, 17);
+            this.events_btn.TabIndex = 14;
+            this.events_btn.Text = "Events";
+            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
+            // 
+            // benefits_btn
+            // 
+            this.benefits_btn.AutoSize = true;
+            this.benefits_btn.BackColor = System.Drawing.Color.Transparent;
+            this.benefits_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.benefits_btn.ForeColor = System.Drawing.Color.Red;
+            this.benefits_btn.Location = new System.Drawing.Point(19, 114);
+            this.benefits_btn.Name = "benefits_btn";
+            this.benefits_btn.Size = new System.Drawing.Size(59, 17);
+            this.benefits_btn.TabIndex = 13;
+            this.benefits_btn.Text = "Benefits";
+            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
+            // 
+            // membership_btn
+            // 
+            this.membership_btn.AutoSize = true;
+            this.membership_btn.BackColor = System.Drawing.Color.Transparent;
+            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membership_btn.ForeColor = System.Drawing.Color.Black;
+            this.membership_btn.Location = new System.Drawing.Point(19, 100);
+            this.membership_btn.Name = "membership_btn";
+            this.membership_btn.Size = new System.Drawing.Size(85, 17);
+            this.membership_btn.TabIndex = 12;
+            this.membership_btn.Text = "Membership";
+            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
+            // 
+            // profile_btn
+            // 
+            this.profile_btn.AutoSize = true;
+            this.profile_btn.BackColor = System.Drawing.Color.Transparent;
+            this.profile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profile_btn.ForeColor = System.Drawing.Color.Black;
+            this.profile_btn.Location = new System.Drawing.Point(19, 83);
+            this.profile_btn.Name = "profile_btn";
+            this.profile_btn.Size = new System.Drawing.Size(48, 17);
+            this.profile_btn.TabIndex = 11;
+            this.profile_btn.Text = "Profile";
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
+            // 
+            // homepage_btn
+            // 
+            this.homepage_btn.AutoSize = true;
+            this.homepage_btn.BackColor = System.Drawing.Color.Transparent;
+            this.homepage_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homepage_btn.ForeColor = System.Drawing.Color.Black;
+            this.homepage_btn.Location = new System.Drawing.Point(19, 66);
+            this.homepage_btn.Name = "homepage_btn";
+            this.homepage_btn.Size = new System.Drawing.Size(45, 17);
+            this.homepage_btn.TabIndex = 10;
+            this.homepage_btn.Text = "Home";
+            this.homepage_btn.Click += new System.EventHandler(this.homepage_btn_Click_1);
             // 
             // panel3
             // 
@@ -137,6 +242,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Bisque;
+            this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.panel11);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
@@ -149,6 +255,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(553, 278);
             this.panel7.TabIndex = 7;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel11
             // 
@@ -177,15 +284,16 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(325, 118);
+            this.panel9.Location = new System.Drawing.Point(341, 118);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 100);
             this.panel9.TabIndex = 7;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(325, 12);
+            this.panel8.Location = new System.Drawing.Point(341, 12);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 6;
@@ -250,109 +358,16 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "1.  ...";
             // 
-            // homepage_btn
+            // label2
             // 
-            this.homepage_btn.AutoSize = true;
-            this.homepage_btn.BackColor = System.Drawing.Color.Transparent;
-            this.homepage_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homepage_btn.ForeColor = System.Drawing.Color.Black;
-            this.homepage_btn.Location = new System.Drawing.Point(19, 66);
-            this.homepage_btn.Name = "homepage_btn";
-            this.homepage_btn.Size = new System.Drawing.Size(45, 17);
-            this.homepage_btn.TabIndex = 10;
-            this.homepage_btn.Text = "Home";
-            this.homepage_btn.Click += new System.EventHandler(this.homepage_btn_Click_1);
-            // 
-            // profile_btn
-            // 
-            this.profile_btn.AutoSize = true;
-            this.profile_btn.BackColor = System.Drawing.Color.Transparent;
-            this.profile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profile_btn.ForeColor = System.Drawing.Color.Black;
-            this.profile_btn.Location = new System.Drawing.Point(19, 83);
-            this.profile_btn.Name = "profile_btn";
-            this.profile_btn.Size = new System.Drawing.Size(48, 17);
-            this.profile_btn.TabIndex = 11;
-            this.profile_btn.Text = "Profile";
-            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
-            // 
-            // membership_btn
-            // 
-            this.membership_btn.AutoSize = true;
-            this.membership_btn.BackColor = System.Drawing.Color.Transparent;
-            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membership_btn.ForeColor = System.Drawing.Color.Black;
-            this.membership_btn.Location = new System.Drawing.Point(19, 100);
-            this.membership_btn.Name = "membership_btn";
-            this.membership_btn.Size = new System.Drawing.Size(85, 17);
-            this.membership_btn.TabIndex = 12;
-            this.membership_btn.Text = "Membership";
-            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
-            // 
-            // benefits_btn
-            // 
-            this.benefits_btn.AutoSize = true;
-            this.benefits_btn.BackColor = System.Drawing.Color.Transparent;
-            this.benefits_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.benefits_btn.ForeColor = System.Drawing.Color.Red;
-            this.benefits_btn.Location = new System.Drawing.Point(19, 114);
-            this.benefits_btn.Name = "benefits_btn";
-            this.benefits_btn.Size = new System.Drawing.Size(59, 17);
-            this.benefits_btn.TabIndex = 13;
-            this.benefits_btn.Text = "Benefits";
-            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
-            // 
-            // events_btn
-            // 
-            this.events_btn.AutoSize = true;
-            this.events_btn.BackColor = System.Drawing.Color.Transparent;
-            this.events_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.events_btn.ForeColor = System.Drawing.Color.Black;
-            this.events_btn.Location = new System.Drawing.Point(19, 131);
-            this.events_btn.Name = "events_btn";
-            this.events_btn.Size = new System.Drawing.Size(51, 17);
-            this.events_btn.TabIndex = 14;
-            this.events_btn.Text = "Events";
-            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
-            // 
-            // placehire_btn
-            // 
-            this.placehire_btn.AutoSize = true;
-            this.placehire_btn.BackColor = System.Drawing.Color.Transparent;
-            this.placehire_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placehire_btn.ForeColor = System.Drawing.Color.Black;
-            this.placehire_btn.Location = new System.Drawing.Point(19, 148);
-            this.placehire_btn.Name = "placehire_btn";
-            this.placehire_btn.Size = new System.Drawing.Size(73, 17);
-            this.placehire_btn.TabIndex = 15;
-            this.placehire_btn.Text = "Place Hire";
-            this.placehire_btn.Click += new System.EventHandler(this.placehire_btn_Click);
-            // 
-            // digitalconnectionboard_btn
-            // 
-            this.digitalconnectionboard_btn.AutoSize = true;
-            this.digitalconnectionboard_btn.BackColor = System.Drawing.Color.Transparent;
-            this.digitalconnectionboard_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.digitalconnectionboard_btn.ForeColor = System.Drawing.Color.Black;
-            this.digitalconnectionboard_btn.Location = new System.Drawing.Point(19, 165);
-            this.digitalconnectionboard_btn.Name = "digitalconnectionboard_btn";
-            this.digitalconnectionboard_btn.Size = new System.Drawing.Size(122, 34);
-            this.digitalconnectionboard_btn.TabIndex = 16;
-            this.digitalconnectionboard_btn.Text = "Digital Connection\r\nBoard";
-            this.digitalconnectionboard_btn.Click += new System.EventHandler(this.digitalconnectionboard_btn_Click);
-            // 
-            // onlinemembersarea
-            // 
-            this.onlinemembersarea.AutoSize = true;
-            this.onlinemembersarea.BackColor = System.Drawing.Color.Transparent;
-            this.onlinemembersarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onlinemembersarea.ForeColor = System.Drawing.Color.Black;
-            this.onlinemembersarea.Location = new System.Drawing.Point(19, 199);
-            this.onlinemembersarea.Name = "onlinemembersarea";
-            this.onlinemembersarea.Size = new System.Drawing.Size(111, 34);
-            this.onlinemembersarea.TabIndex = 17;
-            this.onlinemembersarea.Text = "Online Members\r\nArea";
-            this.onlinemembersarea.Click += new System.EventHandler(this.onlinemembersarea_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(326, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Sign up to a membership to access these benefits:\r\n";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // BenefitsNonMember
             // 
@@ -405,5 +420,6 @@
         private System.Windows.Forms.Label placehire_btn;
         private System.Windows.Forms.Label digitalconnectionboard_btn;
         private System.Windows.Forms.Label onlinemembersarea;
+        private System.Windows.Forms.Label label2;
     }
 }
