@@ -45,14 +45,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.workplace_find_out_more_btn = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.workplace_membership_btn = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.community_find_out_more_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.community_membership_btn = new System.Windows.Forms.Label();
-            this.community_find_out_more_btn = new System.Windows.Forms.Button();
-            this.workplace_find_out_more_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -248,6 +248,21 @@
             this.panel9.Size = new System.Drawing.Size(151, 82);
             this.panel9.TabIndex = 1;
             // 
+            // workplace_find_out_more_btn
+            // 
+            this.workplace_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.workplace_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.workplace_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workplace_find_out_more_btn.ForeColor = System.Drawing.Color.White;
+            this.workplace_find_out_more_btn.Location = new System.Drawing.Point(-9, 12);
+            this.workplace_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.workplace_find_out_more_btn.Name = "workplace_find_out_more_btn";
+            this.workplace_find_out_more_btn.Size = new System.Drawing.Size(160, 58);
+            this.workplace_find_out_more_btn.TabIndex = 19;
+            this.workplace_find_out_more_btn.Text = "Find Out More";
+            this.workplace_find_out_more_btn.UseVisualStyleBackColor = false;
+            this.workplace_find_out_more_btn.Click += new System.EventHandler(this.workplace_find_out_more_btn_Click);
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Bisque;
@@ -287,6 +302,20 @@
             this.panel7.Size = new System.Drawing.Size(151, 82);
             this.panel7.TabIndex = 1;
             // 
+            // community_find_out_more_btn
+            // 
+            this.community_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.community_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.community_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.community_find_out_more_btn.ForeColor = System.Drawing.Color.White;
+            this.community_find_out_more_btn.Location = new System.Drawing.Point(-5, 12);
+            this.community_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.community_find_out_more_btn.Name = "community_find_out_more_btn";
+            this.community_find_out_more_btn.Size = new System.Drawing.Size(160, 58);
+            this.community_find_out_more_btn.TabIndex = 18;
+            this.community_find_out_more_btn.Text = "Find Out More";
+            this.community_find_out_more_btn.UseVisualStyleBackColor = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Bisque;
@@ -306,34 +335,6 @@
             this.community_membership_btn.Text = "Community Membership";
             this.community_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.community_membership_btn.Click += new System.EventHandler(this.community_membership_btn_Click);
-            // 
-            // community_find_out_more_btn
-            // 
-            this.community_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.community_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.community_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.community_find_out_more_btn.ForeColor = System.Drawing.Color.White;
-            this.community_find_out_more_btn.Location = new System.Drawing.Point(-5, 12);
-            this.community_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.community_find_out_more_btn.Name = "community_find_out_more_btn";
-            this.community_find_out_more_btn.Size = new System.Drawing.Size(160, 58);
-            this.community_find_out_more_btn.TabIndex = 18;
-            this.community_find_out_more_btn.Text = "Find Out More";
-            this.community_find_out_more_btn.UseVisualStyleBackColor = false;
-            // 
-            // workplace_find_out_more_btn
-            // 
-            this.workplace_find_out_more_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.workplace_find_out_more_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.workplace_find_out_more_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workplace_find_out_more_btn.ForeColor = System.Drawing.Color.White;
-            this.workplace_find_out_more_btn.Location = new System.Drawing.Point(-9, 12);
-            this.workplace_find_out_more_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.workplace_find_out_more_btn.Name = "workplace_find_out_more_btn";
-            this.workplace_find_out_more_btn.Size = new System.Drawing.Size(160, 58);
-            this.workplace_find_out_more_btn.TabIndex = 19;
-            this.workplace_find_out_more_btn.Text = "Find Out More";
-            this.workplace_find_out_more_btn.UseVisualStyleBackColor = false;
             // 
             // IndividualMemberships
             // 

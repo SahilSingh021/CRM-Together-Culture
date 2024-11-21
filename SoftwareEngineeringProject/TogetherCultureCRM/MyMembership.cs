@@ -86,15 +86,19 @@ namespace TogetherCultureCRM
             newForm.ShowDialog();
         }
 
-        private void upgrade_membership_btn_Click(object sender, EventArgs e)
-        {
-            UpgradeMembership newForm = new UpgradeMembership();
-            newForm.ShowDialog();
-        }
+        
 
         private void digital_content_module_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void manage_membership_btn_Click(object sender, EventArgs e)
+        {
+            ManageMembership newForm = new ManageMembership();
+            newForm.ShowDialog();
         }
     }
 }

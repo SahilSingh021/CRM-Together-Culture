@@ -46,11 +46,15 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.organisational_membership_btn = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.organisational_membership_btn = new System.Windows.Forms.Label();
             this.individual_membership_btn = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.my_membership_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -59,6 +63,8 @@
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,6 +121,9 @@
             // 
             // online_members_area_btn
             // 
+            this.online_members_area_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.online_members_area_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.online_members_area_btn.Location = new System.Drawing.Point(1, 242);
             this.online_members_area_btn.Name = "online_members_area_btn";
@@ -125,6 +134,9 @@
             // 
             // place_hire_btn
             // 
+            this.place_hire_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.place_hire_btn.AutoSize = true;
             this.place_hire_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.place_hire_btn.Location = new System.Drawing.Point(4, 176);
@@ -180,6 +192,9 @@
             // 
             // digital_connection_board_btn
             // 
+            this.digital_connection_board_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.digital_connection_board_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.digital_connection_board_btn.Location = new System.Drawing.Point(3, 196);
             this.digital_connection_board_btn.Name = "digital_connection_board_btn";
@@ -221,6 +236,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Controls.Add(this.panel10);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.ForeColor = System.Drawing.Color.Black;
@@ -234,7 +250,7 @@
             this.panel6.BackColor = System.Drawing.Color.BurlyWood;
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
-            this.panel6.Location = new System.Drawing.Point(360, 37);
+            this.panel6.Location = new System.Drawing.Point(239, 37);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(186, 218);
             this.panel6.TabIndex = 1;
@@ -256,6 +272,17 @@
             this.panel8.Size = new System.Drawing.Size(151, 82);
             this.panel8.TabIndex = 1;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // organisational_membership_btn
+            // 
+            this.organisational_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.organisational_membership_btn.Location = new System.Drawing.Point(6, 20);
+            this.organisational_membership_btn.Name = "organisational_membership_btn";
+            this.organisational_membership_btn.Size = new System.Drawing.Size(139, 42);
+            this.organisational_membership_btn.TabIndex = 13;
+            this.organisational_membership_btn.Text = "Organisational Memberships";
+            this.organisational_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.organisational_membership_btn.Click += new System.EventHandler(this.organisational_membership_btn_Click);
             // 
             // panel5
             // 
@@ -284,17 +311,6 @@
             this.panel4.Size = new System.Drawing.Size(151, 82);
             this.panel4.TabIndex = 0;
             // 
-            // organisational_membership_btn
-            // 
-            this.organisational_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.organisational_membership_btn.Location = new System.Drawing.Point(6, 20);
-            this.organisational_membership_btn.Name = "organisational_membership_btn";
-            this.organisational_membership_btn.Size = new System.Drawing.Size(139, 42);
-            this.organisational_membership_btn.TabIndex = 13;
-            this.organisational_membership_btn.Text = "Organisational Memberships";
-            this.organisational_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.organisational_membership_btn.Click += new System.EventHandler(this.organisational_membership_btn_Click);
-            // 
             // individual_membership_btn
             // 
             this.individual_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -305,6 +321,44 @@
             this.individual_membership_btn.Text = "Individual Memberships";
             this.individual_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.individual_membership_btn.Click += new System.EventHandler(this.individual_membership_btn_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Controls.Add(this.panel13);
+            this.panel10.Location = new System.Drawing.Point(445, 37);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(122, 218);
+            this.panel10.TabIndex = 2;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel12.Location = new System.Drawing.Point(17, 118);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(102, 82);
+            this.panel12.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Bisque;
+            this.panel13.Controls.Add(this.my_membership_btn);
+            this.panel13.Location = new System.Drawing.Point(8, 20);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(111, 82);
+            this.panel13.TabIndex = 1;
+            // 
+            // my_membership_btn
+            // 
+            this.my_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.my_membership_btn.Location = new System.Drawing.Point(5, 20);
+            this.my_membership_btn.Name = "my_membership_btn";
+            this.my_membership_btn.Size = new System.Drawing.Size(103, 42);
+            this.my_membership_btn.TabIndex = 14;
+            this.my_membership_btn.Text = "My Membership";
+            this.my_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.my_membership_btn.Click += new System.EventHandler(this.my_membership_btn_Click);
             // 
             // Membership
             // 
@@ -327,6 +381,8 @@
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -356,6 +412,10 @@
         private System.Windows.Forms.Label membership_title;
         private System.Windows.Forms.Label organisational_membership_btn;
         private System.Windows.Forms.Label individual_membership_btn;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label my_membership_btn;
     }
 }
 

@@ -79,6 +79,12 @@
     <Compile Include="BusinessMembership.Designer.cs">
       <DependentUpon>BusinessMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="CancelMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelMembership.Designer.cs">
+      <DependentUpon>CancelMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="DigitalConnectionBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,11 +193,11 @@
     <Compile Include="MyMembership.Designer.cs">
       <DependentUpon>MyMembership.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpgradeMembership.cs">
+    <Compile Include="ManageMembership.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpgradeMembership.Designer.cs">
-      <DependentUpon>UpgradeMembership.cs</DependentUpon>
+    <Compile Include="ManageMembership.Designer.cs">
+      <DependentUpon>ManageMembership.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,8 +255,8 @@
     <EmbeddedResource Include="MyMembership.resx">
       <DependentUpon>MyMembership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpgradeMembership.resx">
-      <DependentUpon>UpgradeMembership.cs</DependentUpon>
+    <EmbeddedResource Include="ManageMembership.resx">
+      <DependentUpon>ManageMembership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -54,9 +54,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.upgrade_membership_btn = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.your_membership_benefits_btn = new System.Windows.Forms.Label();
+            this.manage_membership_btn = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -332,22 +332,11 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Bisque;
-            this.panel7.Controls.Add(this.upgrade_membership_btn);
+            this.panel7.Controls.Add(this.manage_membership_btn);
             this.panel7.Location = new System.Drawing.Point(18, 118);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(151, 39);
             this.panel7.TabIndex = 1;
-            // 
-            // upgrade_membership_btn
-            // 
-            this.upgrade_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upgrade_membership_btn.Location = new System.Drawing.Point(3, 0);
-            this.upgrade_membership_btn.Name = "upgrade_membership_btn";
-            this.upgrade_membership_btn.Size = new System.Drawing.Size(139, 42);
-            this.upgrade_membership_btn.TabIndex = 7;
-            this.upgrade_membership_btn.Text = "Upgrade Membership ";
-            this.upgrade_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.upgrade_membership_btn.Click += new System.EventHandler(this.upgrade_membership_btn_Click);
             // 
             // panel4
             // 
@@ -368,6 +357,17 @@
             this.your_membership_benefits_btn.Text = "Your Membership ";
             this.your_membership_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.your_membership_benefits_btn.Click += new System.EventHandler(this.your_membership_benefits_btn_Click);
+            // 
+            // manage_membership_btn
+            // 
+            this.manage_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manage_membership_btn.Location = new System.Drawing.Point(6, -2);
+            this.manage_membership_btn.Name = "manage_membership_btn";
+            this.manage_membership_btn.Size = new System.Drawing.Size(139, 42);
+            this.manage_membership_btn.TabIndex = 8;
+            this.manage_membership_btn.Text = "Manage Membership ";
+            this.manage_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.manage_membership_btn.Click += new System.EventHandler(this.manage_membership_btn_Click);
             // 
             // MyMembership
             // 
@@ -422,8 +422,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label digital_content_module_btn;
-        private System.Windows.Forms.Label upgrade_membership_btn;
         private System.Windows.Forms.Label your_membership_benefits_btn;
         private System.Windows.Forms.Label together_culture_logo;
+        private System.Windows.Forms.Label manage_membership_btn;
     }
 }

@@ -75,5 +75,10 @@ namespace TogetherCultureCRM
             OnlineMembersArea newForm = new OnlineMembersArea();
             newForm.ShowDialog();
         }
+
+        private void workplace_find_out_more_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

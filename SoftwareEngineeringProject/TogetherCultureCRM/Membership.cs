@@ -112,5 +112,11 @@ namespace TogetherCultureCRM
             IndividualMemberships newForm = new IndividualMemberships();
             newForm.ShowDialog();
         }
+
+        private void my_membership_btn_Click(object sender, EventArgs e)
+        {
+            MyMembership newForm = new MyMembership();
+            newForm.ShowDialog();
+        }
     }
 }
