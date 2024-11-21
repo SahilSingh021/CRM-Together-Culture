@@ -43,6 +43,10 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.quick_menu_btn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.my_membership_btn = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -51,20 +55,16 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.individual_membership_btn = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.my_membership_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.together_culture_btn);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 79);
+            this.panel1.Size = new System.Drawing.Size(844, 79);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -93,7 +93,7 @@
             this.together_culture_btn.BackColor = System.Drawing.Color.Transparent;
             this.together_culture_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.together_culture_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.together_culture_btn.Location = new System.Drawing.Point(449, 0);
+            this.together_culture_btn.Location = new System.Drawing.Point(704, 4);
             this.together_culture_btn.Name = "together_culture_btn";
             this.together_culture_btn.Size = new System.Drawing.Size(137, 49);
             this.together_culture_btn.TabIndex = 9;
@@ -115,7 +115,7 @@
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(141, 414);
+            this.panel2.Size = new System.Drawing.Size(141, 640);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -127,7 +127,7 @@
             this.online_members_area_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.online_members_area_btn.Location = new System.Drawing.Point(1, 242);
             this.online_members_area_btn.Name = "online_members_area_btn";
-            this.online_members_area_btn.Size = new System.Drawing.Size(137, 42);
+            this.online_members_area_btn.Size = new System.Drawing.Size(137, 51);
             this.online_members_area_btn.TabIndex = 17;
             this.online_members_area_btn.Text = "Online Members Area";
             this.online_members_area_btn.Click += new System.EventHandler(this.online_members_area_btn_Click);
@@ -242,17 +242,55 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(202, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(586, 300);
+            this.panel3.Size = new System.Drawing.Size(844, 526);
             this.panel3.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Controls.Add(this.panel13);
+            this.panel10.Location = new System.Drawing.Point(672, 37);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(122, 218);
+            this.panel10.TabIndex = 2;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel12.Location = new System.Drawing.Point(17, 118);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(102, 82);
+            this.panel12.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Bisque;
+            this.panel13.Controls.Add(this.my_membership_btn);
+            this.panel13.Location = new System.Drawing.Point(8, 20);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(111, 82);
+            this.panel13.TabIndex = 1;
+            // 
+            // my_membership_btn
+            // 
+            this.my_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.my_membership_btn.Location = new System.Drawing.Point(5, 20);
+            this.my_membership_btn.Name = "my_membership_btn";
+            this.my_membership_btn.Size = new System.Drawing.Size(103, 42);
+            this.my_membership_btn.TabIndex = 14;
+            this.my_membership_btn.Text = "My Membership";
+            this.my_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.my_membership_btn.Click += new System.EventHandler(this.my_membership_btn_Click);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.BurlyWood;
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
-            this.panel6.Location = new System.Drawing.Point(239, 37);
+            this.panel6.Location = new System.Drawing.Point(343, 37);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(186, 218);
+            this.panel6.Size = new System.Drawing.Size(275, 455);
             this.panel6.TabIndex = 1;
             // 
             // panel9
@@ -291,7 +329,7 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Location = new System.Drawing.Point(34, 37);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 218);
+            this.panel5.Size = new System.Drawing.Size(256, 455);
             this.panel5.TabIndex = 0;
             // 
             // panel7
@@ -322,50 +360,12 @@
             this.individual_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.individual_membership_btn.Click += new System.EventHandler(this.individual_membership_btn_Click);
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel10.Controls.Add(this.panel12);
-            this.panel10.Controls.Add(this.panel13);
-            this.panel10.Location = new System.Drawing.Point(445, 37);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(122, 218);
-            this.panel10.TabIndex = 2;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel12.Location = new System.Drawing.Point(17, 118);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(102, 82);
-            this.panel12.TabIndex = 1;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Bisque;
-            this.panel13.Controls.Add(this.my_membership_btn);
-            this.panel13.Location = new System.Drawing.Point(8, 20);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(111, 82);
-            this.panel13.TabIndex = 1;
-            // 
-            // my_membership_btn
-            // 
-            this.my_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.my_membership_btn.Location = new System.Drawing.Point(5, 20);
-            this.my_membership_btn.Name = "my_membership_btn";
-            this.my_membership_btn.Size = new System.Drawing.Size(103, 42);
-            this.my_membership_btn.TabIndex = 14;
-            this.my_membership_btn.Text = "My Membership";
-            this.my_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.my_membership_btn.Click += new System.EventHandler(this.my_membership_btn_Click);
-            // 
             // Membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 664);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -377,12 +377,12 @@
             this.panel2.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

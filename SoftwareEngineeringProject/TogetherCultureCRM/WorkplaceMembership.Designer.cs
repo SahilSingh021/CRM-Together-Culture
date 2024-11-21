@@ -76,7 +76,7 @@
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(141, 414);
+            this.panel2.Size = new System.Drawing.Size(141, 640);
             this.panel2.TabIndex = 2;
             // 
             // online_members_area_btn
@@ -192,7 +192,7 @@
             this.panel1.Controls.Add(this.workplace_membership_title);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 79);
+            this.panel1.Size = new System.Drawing.Size(844, 79);
             this.panel1.TabIndex = 3;
             // 
             // together_culture_logo
@@ -200,7 +200,7 @@
             this.together_culture_logo.BackColor = System.Drawing.Color.Transparent;
             this.together_culture_logo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.together_culture_logo.ForeColor = System.Drawing.Color.Maroon;
-            this.together_culture_logo.Location = new System.Drawing.Point(469, -3);
+            this.together_culture_logo.Location = new System.Drawing.Point(704, 0);
             this.together_culture_logo.Name = "together_culture_logo";
             this.together_culture_logo.Size = new System.Drawing.Size(137, 49);
             this.together_culture_logo.TabIndex = 9;
@@ -226,7 +226,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(202, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(586, 300);
+            this.panel3.Size = new System.Drawing.Size(844, 526);
             this.panel3.TabIndex = 4;
             // 
             // panel6
@@ -323,7 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 664);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

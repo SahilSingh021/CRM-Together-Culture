@@ -103,5 +103,10 @@ namespace TogetherCultureCRM
             MembershipSignUp newForm = new MembershipSignUp();
             newForm.ShowDialog();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -43,6 +43,8 @@
             this.together_culture_logo = new System.Windows.Forms.Label();
             this.manage_membership_title = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel_1 = new System.Windows.Forms.Panel();
+            this.cancel_membership_btn = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.upgrade_btn = new System.Windows.Forms.Label();
@@ -54,18 +56,16 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.your_membership_benefits_btn = new System.Windows.Forms.Label();
-            this.panel_1 = new System.Windows.Forms.Panel();
-            this.cancel_membership_btn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel_1.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel_1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,7 +83,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(141, 414);
+            this.panel1.Size = new System.Drawing.Size(141, 640);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -203,7 +203,7 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(202, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(586, 79);
+            this.panel2.Size = new System.Drawing.Size(844, 79);
             this.panel2.TabIndex = 13;
             // 
             // together_culture_logo
@@ -211,7 +211,7 @@
             this.together_culture_logo.BackColor = System.Drawing.Color.Transparent;
             this.together_culture_logo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.together_culture_logo.ForeColor = System.Drawing.Color.Maroon;
-            this.together_culture_logo.Location = new System.Drawing.Point(461, -5);
+            this.together_culture_logo.Location = new System.Drawing.Point(707, 0);
             this.together_culture_logo.Name = "together_culture_logo";
             this.together_culture_logo.Size = new System.Drawing.Size(137, 49);
             this.together_culture_logo.TabIndex = 9;
@@ -240,8 +240,29 @@
             this.panel4.ForeColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(202, 126);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(586, 300);
+            this.panel4.Size = new System.Drawing.Size(844, 526);
             this.panel4.TabIndex = 14;
+            // 
+            // panel_1
+            // 
+            this.panel_1.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel_1.Controls.Add(this.cancel_membership_btn);
+            this.panel_1.Location = new System.Drawing.Point(433, 3);
+            this.panel_1.Name = "panel_1";
+            this.panel_1.Size = new System.Drawing.Size(150, 28);
+            this.panel_1.TabIndex = 7;
+            // 
+            // cancel_membership_btn
+            // 
+            this.cancel_membership_btn.BackColor = System.Drawing.Color.Transparent;
+            this.cancel_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancel_membership_btn.Location = new System.Drawing.Point(0, 4);
+            this.cancel_membership_btn.Name = "cancel_membership_btn";
+            this.cancel_membership_btn.Size = new System.Drawing.Size(150, 30);
+            this.cancel_membership_btn.TabIndex = 5;
+            this.cancel_membership_btn.Text = "Cancel Membership";
+            this.cancel_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cancel_membership_btn.Click += new System.EventHandler(this.cancel_membership_btn_Click);
             // 
             // panel13
             // 
@@ -348,33 +369,12 @@
             this.your_membership_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.your_membership_benefits_btn.Click += new System.EventHandler(this.your_membership_benefits_btn_Click);
             // 
-            // panel_1
-            // 
-            this.panel_1.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel_1.Controls.Add(this.cancel_membership_btn);
-            this.panel_1.Location = new System.Drawing.Point(433, 3);
-            this.panel_1.Name = "panel_1";
-            this.panel_1.Size = new System.Drawing.Size(150, 28);
-            this.panel_1.TabIndex = 7;
-            // 
-            // cancel_membership_btn
-            // 
-            this.cancel_membership_btn.BackColor = System.Drawing.Color.Transparent;
-            this.cancel_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancel_membership_btn.Location = new System.Drawing.Point(0, 4);
-            this.cancel_membership_btn.Name = "cancel_membership_btn";
-            this.cancel_membership_btn.Size = new System.Drawing.Size(150, 30);
-            this.cancel_membership_btn.TabIndex = 5;
-            this.cancel_membership_btn.Text = "Cancel Membership";
-            this.cancel_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cancel_membership_btn.Click += new System.EventHandler(this.cancel_membership_btn_Click);
-            // 
             // ManageMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 664);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -387,12 +387,12 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel_1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            this.panel_1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

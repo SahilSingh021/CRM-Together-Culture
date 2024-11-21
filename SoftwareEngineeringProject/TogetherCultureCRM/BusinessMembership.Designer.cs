@@ -64,15 +64,13 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Bisque;
             this.panel1.Controls.Add(this.business_membership_title);
             this.panel1.Controls.Add(this.together_culture_btn);
-            this.panel1.Location = new System.Drawing.Point(202, 12);
+            this.panel1.Location = new System.Drawing.Point(206, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 78);
+            this.panel1.Size = new System.Drawing.Size(840, 78);
             this.panel1.TabIndex = 3;
             // 
             // business_membership_title
@@ -81,9 +79,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.business_membership_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.business_membership_title.Location = new System.Drawing.Point(27, 25);
+            this.business_membership_title.Location = new System.Drawing.Point(3, 30);
             this.business_membership_title.Name = "business_membership_title";
-            this.business_membership_title.Size = new System.Drawing.Size(429, 48);
+            this.business_membership_title.Size = new System.Drawing.Size(683, 48);
             this.business_membership_title.TabIndex = 10;
             this.business_membership_title.Text = "Business Membership";
             // 
@@ -97,16 +95,13 @@
             this.together_culture_btn.ForeColor = System.Drawing.Color.Maroon;
             this.together_culture_btn.Location = new System.Drawing.Point(464, -3);
             this.together_culture_btn.Name = "together_culture_btn";
-            this.together_culture_btn.Size = new System.Drawing.Size(136, 49);
+            this.together_culture_btn.Size = new System.Drawing.Size(390, 49);
             this.together_culture_btn.TabIndex = 9;
             this.together_culture_btn.Text = "Together Culture";
             this.together_culture_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Bisque;
             this.panel2.Controls.Add(this.online_members_area_btn);
             this.panel2.Controls.Add(this.digital_connection_board_btn);
@@ -119,7 +114,7 @@
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(141, 414);
+            this.panel2.Size = new System.Drawing.Size(141, 640);
             this.panel2.TabIndex = 4;
             // 
             // online_members_area_btn
@@ -230,16 +225,14 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Bisque;
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(202, 126);
+            this.panel3.Location = new System.Drawing.Point(206, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(586, 300);
+            this.panel3.Size = new System.Drawing.Size(840, 526);
             this.panel3.TabIndex = 5;
             // 
             // panel6
@@ -251,9 +244,9 @@
             this.panel6.Controls.Add(this.sign_up_btn);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
-            this.panel6.Location = new System.Drawing.Point(360, 37);
+            this.panel6.Location = new System.Drawing.Point(527, 37);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(186, 218);
+            this.panel6.Size = new System.Drawing.Size(273, 457);
             this.panel6.TabIndex = 1;
             // 
             // sign_up_btn
@@ -305,7 +298,7 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Location = new System.Drawing.Point(34, 37);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 218);
+            this.panel5.Size = new System.Drawing.Size(256, 457);
             this.panel5.TabIndex = 0;
             // 
             // panel7
@@ -341,7 +334,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 664);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

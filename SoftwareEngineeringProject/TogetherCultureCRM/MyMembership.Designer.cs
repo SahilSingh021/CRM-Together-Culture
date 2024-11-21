@@ -54,9 +54,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.manage_membership_btn = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.your_membership_benefits_btn = new System.Windows.Forms.Label();
-            this.manage_membership_btn = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -199,7 +199,7 @@
             this.panel1.Controls.Add(this.my_membership_title);
             this.panel1.Location = new System.Drawing.Point(202, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 79);
+            this.panel1.Size = new System.Drawing.Size(844, 79);
             this.panel1.TabIndex = 3;
             // 
             // together_culture_logo
@@ -338,6 +338,17 @@
             this.panel7.Size = new System.Drawing.Size(151, 39);
             this.panel7.TabIndex = 1;
             // 
+            // manage_membership_btn
+            // 
+            this.manage_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manage_membership_btn.Location = new System.Drawing.Point(6, -2);
+            this.manage_membership_btn.Name = "manage_membership_btn";
+            this.manage_membership_btn.Size = new System.Drawing.Size(139, 42);
+            this.manage_membership_btn.TabIndex = 8;
+            this.manage_membership_btn.Text = "Manage Membership ";
+            this.manage_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.manage_membership_btn.Click += new System.EventHandler(this.manage_membership_btn_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Bisque;
@@ -358,23 +369,12 @@
             this.your_membership_benefits_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.your_membership_benefits_btn.Click += new System.EventHandler(this.your_membership_benefits_btn_Click);
             // 
-            // manage_membership_btn
-            // 
-            this.manage_membership_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manage_membership_btn.Location = new System.Drawing.Point(6, -2);
-            this.manage_membership_btn.Name = "manage_membership_btn";
-            this.manage_membership_btn.Size = new System.Drawing.Size(139, 42);
-            this.manage_membership_btn.TabIndex = 8;
-            this.manage_membership_btn.Text = "Manage Membership ";
-            this.manage_membership_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.manage_membership_btn.Click += new System.EventHandler(this.manage_membership_btn_Click);
-            // 
             // MyMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 664);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
