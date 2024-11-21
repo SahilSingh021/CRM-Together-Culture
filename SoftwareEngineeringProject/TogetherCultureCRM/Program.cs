@@ -16,7 +16,7 @@ namespace TogetherCultureCRM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Events_MainPage());
+            Application.Run(new Membership());
         }
     }
 }

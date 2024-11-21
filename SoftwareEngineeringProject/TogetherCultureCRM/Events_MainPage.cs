@@ -29,11 +29,7 @@ namespace TogetherCultureCRM
             newForm.ShowDialog();
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Homepage newForm = new Homepage();
-            newForm.ShowDialog();
-        }
+        
 
         private void Place_hire_Click(object sender, EventArgs e)
         {
@@ -43,25 +39,33 @@ namespace TogetherCultureCRM
 
         private void Book_Click(object sender, EventArgs e)
         {
-            Event_BookingPage newF = new Event_BookingPage();
-            newF.ShowDialog();
+            Event_BookingPage newForm = new Event_BookingPage();
+            newForm.ShowDialog();
         }
 
         private void Book_event1_Click(object sender, EventArgs e)
         {
-            Event_BookingPage newF = new Event_BookingPage();
-            newF.ShowDialog();
+            Event_BookingPage newForm = new Event_BookingPage();
+            newForm.ShowDialog();
         }
 
         private void Book_Event2_Click(object sender, EventArgs e)
         {
-            Event_BookingPage newF = new Event_BookingPage();
-            newF.ShowDialog();
+            Event_BookingPage newForm = new Event_BookingPage();
+            newForm.ShowDialog();
         }
 
         private void pictureBox17_Click(object sender, EventArgs e)
         {
             
+        }
+
+        
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
         }
     }
 }

@@ -48,7 +48,6 @@
             this.Membership = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
             this.Place_hire = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +56,9 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Book_event1 = new System.Windows.Forms.Button();
+            this.Book_Event2 = new System.Windows.Forms.Button();
+            this.Book = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,9 +79,7 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.button17 = new System.Windows.Forms.Button();
-            this.Book = new System.Windows.Forms.Button();
-            this.Book_Event2 = new System.Windows.Forms.Button();
-            this.Book_event1 = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -267,11 +267,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Controls.Add(this.HomeButton);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.Membership);
             this.panel3.Controls.Add(this.Home);
             this.panel3.Controls.Add(this.Place_hire);
-            this.panel3.Controls.Add(this.HomeButton);
             this.panel3.Controls.Add(this.button15);
             this.panel3.Location = new System.Drawing.Point(1, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -323,18 +323,6 @@
             this.Place_hire.Text = "Place Hire ";
             this.Place_hire.UseVisualStyleBackColor = true;
             this.Place_hire.Click += new System.EventHandler(this.Place_hire_Click);
-            // 
-            // HomeButton
-            // 
-            this.HomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HomeButton.Location = new System.Drawing.Point(147, 14);
-            this.HomeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(217, 62);
-            this.HomeButton.TabIndex = 9;
-            this.HomeButton.Text = "Events";
-            this.HomeButton.UseVisualStyleBackColor = true;
-            this.HomeButton.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -439,6 +427,39 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1141, 738);
             this.panel5.TabIndex = 6;
+            // 
+            // Book_event1
+            // 
+            this.Book_event1.Location = new System.Drawing.Point(566, 208);
+            this.Book_event1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Book_event1.Name = "Book_event1";
+            this.Book_event1.Size = new System.Drawing.Size(112, 29);
+            this.Book_event1.TabIndex = 34;
+            this.Book_event1.Text = "Book";
+            this.Book_event1.UseVisualStyleBackColor = true;
+            this.Book_event1.Click += new System.EventHandler(this.Book_event1_Click);
+            // 
+            // Book_Event2
+            // 
+            this.Book_Event2.Location = new System.Drawing.Point(875, 214);
+            this.Book_Event2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Book_Event2.Name = "Book_Event2";
+            this.Book_Event2.Size = new System.Drawing.Size(112, 28);
+            this.Book_Event2.TabIndex = 33;
+            this.Book_Event2.Text = "Book";
+            this.Book_Event2.UseVisualStyleBackColor = true;
+            this.Book_Event2.Click += new System.EventHandler(this.Book_Event2_Click);
+            // 
+            // Book
+            // 
+            this.Book.Location = new System.Drawing.Point(235, 208);
+            this.Book.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Book.Name = "Book";
+            this.Book.Size = new System.Drawing.Size(112, 29);
+            this.Book.TabIndex = 15;
+            this.Book.Text = "Book";
+            this.Book.UseVisualStyleBackColor = true;
+            this.Book.Click += new System.EventHandler(this.Book_Click);
             // 
             // label3
             // 
@@ -660,38 +681,17 @@
             this.button17.Text = "Search Bar";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // Book
+            // HomeButton
             // 
-            this.Book.Location = new System.Drawing.Point(235, 208);
-            this.Book.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Book.Name = "Book";
-            this.Book.Size = new System.Drawing.Size(112, 29);
-            this.Book.TabIndex = 15;
-            this.Book.Text = "Book";
-            this.Book.UseVisualStyleBackColor = true;
-            this.Book.Click += new System.EventHandler(this.Book_Click);
-            // 
-            // Book_Event2
-            // 
-            this.Book_Event2.Location = new System.Drawing.Point(875, 214);
-            this.Book_Event2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Book_Event2.Name = "Book_Event2";
-            this.Book_Event2.Size = new System.Drawing.Size(112, 28);
-            this.Book_Event2.TabIndex = 33;
-            this.Book_Event2.Text = "Book";
-            this.Book_Event2.UseVisualStyleBackColor = true;
-            this.Book_Event2.Click += new System.EventHandler(this.Book_Event2_Click);
-            // 
-            // Book_event1
-            // 
-            this.Book_event1.Location = new System.Drawing.Point(566, 208);
-            this.Book_event1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Book_event1.Name = "Book_event1";
-            this.Book_event1.Size = new System.Drawing.Size(112, 29);
-            this.Book_event1.TabIndex = 34;
-            this.Book_event1.Text = "Book";
-            this.Book_event1.UseVisualStyleBackColor = true;
-            this.Book_event1.Click += new System.EventHandler(this.Book_event1_Click);
+            this.HomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeButton.Location = new System.Drawing.Point(176, 14);
+            this.HomeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(217, 62);
+            this.HomeButton.TabIndex = 15;
+            this.HomeButton.Text = "Events";
+            this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // Events_MainPage
             // 
@@ -757,7 +757,6 @@
         private System.Windows.Forms.Button Membership;
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.Button Place_hire;
-        private System.Windows.Forms.Button HomeButton;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
@@ -789,5 +788,6 @@
         private System.Windows.Forms.Button Book_event1;
         private System.Windows.Forms.Button Book_Event2;
         private System.Windows.Forms.Button Book;
+        private System.Windows.Forms.Button HomeButton;
     }
 }
