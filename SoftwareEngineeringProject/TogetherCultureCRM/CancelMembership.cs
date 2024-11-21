@@ -16,5 +16,16 @@ namespace TogetherCultureCRM
         {
             InitializeComponent();
         }
+
+        private void go_back_btn_Click(object sender, EventArgs e)
+        {
+            MyMembership newForm = new MyMembership();
+            newForm.ShowDialog();
+        }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
