@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06CEF042-1163-420D-9B86-D63B675F2815}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TogetherCultureCRM</RootNamespace>
+    <AssemblyName>TogetherCultureCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BenefitsMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenefitsMember.Designer.cs">
+      <DependentUpon>BenefitsMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BenefitsNonMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenefitsNonMember.Designer.cs">
+      <DependentUpon>BenefitsNonMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessMembership.Designer.cs">
+      <DependentUpon>BusinessMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelMembership.Designer.cs">
+      <DependentUpon>CancelMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\Data.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="CommunityMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunityMembership.Designer.cs">
+      <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalConnectionBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigitalConnectionBoard.Designer.cs">
+      <DependentUpon>DigitalConnectionBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events_MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events_MainPage.Designer.cs">
+      <DependentUpon>Events_MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event_BookingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event_BookingPage.Designer.cs">
+      <DependentUpon>Event_BookingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualMemberships.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndividualMemberships.Designer.cs">
+      <DependentUpon>IndividualMemberships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMembership.Designer.cs">
+      <DependentUpon>ManageMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Membership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Membership.Designer.cs">
+      <DependentUpon>Membership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembershipPayment.Designer.cs">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembershipSignUp.Designer.cs">
+      <DependentUpon>MembershipSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyMembership.Designer.cs">
+      <DependentUpon>MyMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotForProfitMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotForProfitMembership.Designer.cs">
+      <DependentUpon>NotForProfitMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineMembersArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineMembersArea.Designer.cs">
+      <DependentUpon>OnlineMembersArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganisationalMemberships.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganisationalMemberships.Designer.cs">
+      <DependentUpon>OrganisationalMemberships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceHire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaceHire.Designer.cs">
+      <DependentUpon>PlaceHire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkplaceMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkplaceMembership.Designer.cs">
+      <DependentUpon>WorkplaceMembership.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BenefitsMember.resx">
+      <DependentUpon>BenefitsMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenefitsNonMember.resx">
+      <DependentUpon>BenefitsNonMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessMembership.resx">
+      <DependentUpon>BusinessMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelMembership.resx">
+      <DependentUpon>CancelMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunityMembership.resx">
+      <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Events_MainPage.resx">
+      <DependentUpon>Events_MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event_BookingPage.resx">
+      <DependentUpon>Event_BookingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndividualMemberships.resx">
+      <DependentUpon>IndividualMemberships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMembership.resx">
+      <DependentUpon>ManageMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Membership.resx">
+      <DependentUpon>Membership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembershipPayment.resx">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembershipSignUp.resx">
+      <DependentUpon>MembershipSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyMembership.resx">
+      <DependentUpon>MyMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotForProfitMembership.resx">
+      <DependentUpon>NotForProfitMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganisationalMemberships.resx">
+      <DependentUpon>OrganisationalMemberships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaceHire.resx">
+      <DependentUpon>PlaceHire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkplaceMembership.resx">
+      <DependentUpon>WorkplaceMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
