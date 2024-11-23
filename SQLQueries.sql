@@ -1,44 +1,53 @@
 CREATE TABLE Users (
-    userID INT PRIMARY KEY IDENTITY(1,1),
+    userId VARCHAR(36) PRIMARY KEY,
     username VARCHAR(50) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL
 );
 
 CREATE TABLE Admin (
-    adminId INT PRIMARY KEY IDENTITY(1,1),
-    userId INT NOT NULL,
-    FOREIGN KEY (userId) REFERENCES Users(userID)
+    adminId VARCHAR(36) PRIMARY KEY,
+    userId VARCHAR(36) NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users(userId)
+);
+
+CREATE TABLE AdminRequests (
+    adminRequestId VARCHAR(36) PRIMARY KEY,
+    userId VARCHAR(36) NOT NULL,
+	requestDescription VARCHAR(MAX) NOT NULL,
+	requestTime DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
 CREATE TABLE MemberBenefits (
-    MemberBenefitsID INT PRIMARY KEY IDENTITY(1,1),
-    BenefitsDescription TEXT NOT NULL,
-    UsedBenefits BIT NOT NULL, 
+    memberBenefitsId VARCHAR(36) PRIMARY KEY,
+    benefitsDescription TEXT NOT NULL,
+    usedBenefits BIT NOT NULL, 
 );
 
 CREATE TABLE MembershipType (
-    MembershipTypeID INT PRIMARY KEY IDENTITY(1,1),
-	MemberBenefitsID INT,
-    TypeName VARCHAR(100) NOT NULL,
-    Description TEXT,
-    Cost DECIMAL(10, 2) NOT NULL,
-    Duration INT NOT NULL,
-    AccessLevel INT NOT NULL,
-    FOREIGN KEY (MemberBenefitsID) REFERENCES MemberBenefits(MemberBenefitsID)
+    membershipTypeId VARCHAR(36) PRIMARY KEY,
+	memberBenefitsId VARCHAR(36),
+    typeName VARCHAR(100) NOT NULL,
+    description TEXT,
+    cost DECIMAL(10, 2) NOT NULL,
+    duration INT NOT NULL,
+    accessLevel INT NOT NULL,
+    FOREIGN KEY (memberBenefitsId) REFERENCES MemberBenefits(memberBenefitsId)
 );
 
 CREATE TABLE Member (
-    memberId INT PRIMARY KEY IDENTITY(1,1),
-    userId INT NOT NULL,
-	membershipId INT NOT NULL,
-    FOREIGN KEY (userId) REFERENCES Users(userID),
-	FOREIGN KEY (membershipId) REFERENCES MembershipType(MembershipTypeID)
+    memberId VARCHAR(36) PRIMARY KEY,
+    userId VARCHAR(36) NOT NULL,
+	membershipId VARCHAR(36) NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users(userId),
+	FOREIGN KEY (membershipId) REFERENCES MembershipType(membershipTypeId)
 );
 
 
 SELECT * FROM Users
 SELECT * FROM Admin
+SELECT * FROM AdminRequests
 SELECT * FROM MemberBenefits
 SELECT * FROM MembershipType
 SELECT * FROM Member

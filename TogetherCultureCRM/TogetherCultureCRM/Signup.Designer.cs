@@ -40,6 +40,7 @@
             this.signUpBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.memberCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +103,7 @@
             // userNameTxt
             // 
             this.userNameTxt.Location = new System.Drawing.Point(65, 104);
-            this.userNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.userNameTxt.MaxLength = 20;
             this.userNameTxt.Name = "userNameTxt";
             this.userNameTxt.Size = new System.Drawing.Size(151, 20);
@@ -112,7 +113,7 @@
             // passwordTxt
             // 
             this.passwordTxt.Location = new System.Drawing.Point(65, 145);
-            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
             this.passwordTxt.Size = new System.Drawing.Size(151, 20);
@@ -121,7 +122,7 @@
             // confirmPasswordTxt
             // 
             this.confirmPasswordTxt.Location = new System.Drawing.Point(64, 186);
-            this.confirmPasswordTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmPasswordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.confirmPasswordTxt.Name = "confirmPasswordTxt";
             this.confirmPasswordTxt.PasswordChar = '*';
             this.confirmPasswordTxt.Size = new System.Drawing.Size(151, 20);
@@ -130,15 +131,15 @@
             // emailTxt
             // 
             this.emailTxt.Location = new System.Drawing.Point(65, 226);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(2);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(151, 20);
             this.emailTxt.TabIndex = 10;
             // 
             // signUpBtn
             // 
-            this.signUpBtn.Location = new System.Drawing.Point(65, 260);
-            this.signUpBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.signUpBtn.Location = new System.Drawing.Point(65, 282);
+            this.signUpBtn.Margin = new System.Windows.Forms.Padding(2);
             this.signUpBtn.Name = "signUpBtn";
             this.signUpBtn.Size = new System.Drawing.Size(151, 31);
             this.signUpBtn.TabIndex = 11;
@@ -149,7 +150,7 @@
             // loginBtn
             // 
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.loginBtn.Location = new System.Drawing.Point(65, 295);
+            this.loginBtn.Location = new System.Drawing.Point(65, 317);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(151, 31);
@@ -160,7 +161,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(65, 260);
+            this.button1.Location = new System.Drawing.Point(65, 282);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 31);
@@ -169,12 +170,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.signUpBtn_Click);
             // 
+            // memberCheckBox
+            // 
+            this.memberCheckBox.AutoSize = true;
+            this.memberCheckBox.Location = new System.Drawing.Point(65, 256);
+            this.memberCheckBox.Name = "memberCheckBox";
+            this.memberCheckBox.Size = new System.Drawing.Size(168, 17);
+            this.memberCheckBox.TabIndex = 18;
+            this.memberCheckBox.Text = "Do you want to be a member?";
+            this.memberCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(283, 384);
+            this.Controls.Add(this.memberCheckBox);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.signUpBtn);
@@ -188,7 +200,7 @@
             this.Controls.Add(this.userNameTxt);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";
@@ -213,5 +225,6 @@
         private System.Windows.Forms.Button signUpBtn;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox memberCheckBox;
     }
 }

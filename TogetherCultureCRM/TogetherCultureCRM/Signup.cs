@@ -58,6 +58,7 @@ namespace TogetherCultureCRM
             string password = passwordTxt.Text;
             string confirmPassword = confirmPasswordTxt.Text;
             string email = emailTxt.Text;
+            bool bMember = memberCheckBox.Checked;
 
             #region Sign Up Validations
             if (username == "" || password == "" || confirmPassword == "" || email == "")
@@ -97,10 +98,12 @@ namespace TogetherCultureCRM
             {
                 con.Open();
 
+                Guid userId = Guid.NewGuid();
                 // Insert row into user table
-                string insertUserSql = "INSERT INTO [Users] (username, email, password) VALUES (@username, @email, @password)";
+                string insertUserSql = "INSERT INTO [Users] (userId, username, email, password) VALUES (@userId, @username, @email, @password)";
                 using (SqlCommand command = new SqlCommand(insertUserSql, con))
                 {
+                    command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
@@ -108,7 +111,22 @@ namespace TogetherCultureCRM
                     command.ExecuteNonQuery();
                 }
 
-                con.Close();
+                if (bMember)
+                {
+                    Guid adminRequestId = Guid.NewGuid();
+                    string insertRequestSql = "INSERT INTO [AdminRequests] (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
+                    using (SqlCommand command = new SqlCommand(insertRequestSql, con))
+                    {
+                        command.Parameters.AddWithValue("@adminRequestId", adminRequestId);
+                        command.Parameters.AddWithValue("@userId", userId);
+                        command.Parameters.AddWithValue("@requestDescription", "Request to become a member.");
+                        command.Parameters.AddWithValue("@requestTime", DateTime.Now);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    con.Close();
+                }
 
                 MessageBox.Show("Registration Successful! You can now sign in.", "Success");
 
