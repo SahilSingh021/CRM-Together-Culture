@@ -16,7 +16,14 @@ namespace TogetherCultureCRM
         public Homepage()
         {
             InitializeComponent();
+
+            if (User.username != null)
+            {
+                msg.Text = User.username + " welcome!!";
+            }
         }
+
+        private void HomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
