@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\Data.cs" />
+    <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="CommunityMembership.cs">
       <SubType>Form</SubType>
@@ -121,6 +122,18 @@
     </Compile>
     <Compile Include="ManageMembership.Designer.cs">
       <DependentUpon>ManageMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberBenefitDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberBenefitDashboard.Designer.cs">
+      <DependentUpon>MemberBenefitDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberHomepage.Designer.cs">
+      <DependentUpon>MemberHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="Membership.cs">
       <SubType>Form</SubType>
@@ -222,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMembership.resx">
       <DependentUpon>ManageMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberBenefitDashboard.resx">
+      <DependentUpon>MemberBenefitDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberHomepage.resx">
+      <DependentUpon>MemberHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Membership.resx">
       <DependentUpon>Membership.cs</DependentUpon>
