@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminHomePage.cs">
+    <Compile Include="AdminPages\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminHomePage.Designer.cs">
+    <Compile Include="AdminPages\AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\AdminRequestsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminRequestsPage.Designer.cs">
+      <DependentUpon>AdminRequestsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationPages\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthenticationPages\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationPages\Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthenticationPages\Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="BenefitsMember.cs">
       <SubType>Form</SubType>
@@ -78,6 +96,7 @@
       <DependentUpon>CancelMembership.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\AdminRequests.cs" />
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\User.cs" />
@@ -86,6 +105,12 @@
     </Compile>
     <Compile Include="CommunityMembership.Designer.cs">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CC_Request.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CC_Request.Designer.cs">
+      <DependentUpon>CC_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="DigitalConnectionBoard.cs">
       <SubType>Form</SubType>
@@ -116,12 +141,6 @@
     </Compile>
     <Compile Include="IndividualMemberships.Designer.cs">
       <DependentUpon>IndividualMemberships.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageMembership.cs">
       <SubType>Form</SubType>
@@ -197,18 +216,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Signup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Signup.Designer.cs">
-      <DependentUpon>Signup.cs</DependentUpon>
-    </Compile>
     <Compile Include="WorkplaceMembership.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WorkplaceMembership.Designer.cs">
       <DependentUpon>WorkplaceMembership.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminPages\AdminHomePage.resx">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminRequestsPage.resx">
+      <DependentUpon>AdminRequestsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthenticationPages\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthenticationPages\Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BenefitsMember.resx">
       <DependentUpon>BenefitsMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +249,9 @@
     <EmbeddedResource Include="CommunityMembership.resx">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CC_Request.resx">
+      <DependentUpon>CC_Request.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Events_MainPage.resx">
       <DependentUpon>Events_MainPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IndividualMemberships.resx">
       <DependentUpon>IndividualMemberships.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMembership.resx">
       <DependentUpon>ManageMembership.cs</DependentUpon>
@@ -278,9 +303,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Signup.resx">
-      <DependentUpon>Signup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WorkplaceMembership.resx">
       <DependentUpon>WorkplaceMembership.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TogetherCultureCRM
+namespace TogetherCultureCRM.AdminPages
 {
     public partial class AdminHomePage : Form
     {
         public AdminHomePage()
         {
             InitializeComponent();
+        }
+
+        private void AdminHomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
+
+        private void manageRequestsBtn_Click(object sender, EventArgs e)
+        {
+            AdminRequestsPage adminRequestsPage = new AdminRequestsPage();
+            adminRequestsPage.Show();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace TogetherCultureCRM
+﻿namespace TogetherCultureCRM.AuthenticationPages
 {
     partial class Signup
     {

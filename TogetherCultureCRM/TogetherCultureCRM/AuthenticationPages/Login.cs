@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogetherCultureCRM.AdminPages;
 using TogetherCultureCRM.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace TogetherCultureCRM
+namespace TogetherCultureCRM.AuthenticationPages
 {
     public partial class Login : Form
     {
@@ -66,7 +67,6 @@ namespace TogetherCultureCRM
 
             Data data = new Data();
             string connectionString = data.ConnectionString;
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -90,20 +90,23 @@ namespace TogetherCultureCRM
                                 User.username = reader.GetString(reader.GetOrdinal("username"));
                                 User.password = reader.GetString(reader.GetOrdinal("password"));
                                 User.email = reader.GetString(reader.GetOrdinal("email"));
+                                User.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
 
                                 reader.Close();
 
-                                string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
-                                using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
+                                if (User.bIsAdmin)
                                 {
-                                    command1.Parameters.AddWithValue("@userId", User.userId);
-                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
+                                    using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
                                     {
-                                        if (reader1.Read())
+                                        command1.Parameters.AddWithValue("@userId", User.userId);
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
                                         {
-                                            Admin.adminId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("adminId")));
-                                            Admin.userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId")));
-                                            User.bIsAdmin = true;
+                                            if (reader1.Read())
+                                            {
+                                                Admin.adminId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("adminId")));
+                                                Admin.userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId")));
+                                            }
                                         }
                                     }
                                 }
