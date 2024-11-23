@@ -1,8 +1,8 @@
 CREATE TABLE Users (
     userID INT PRIMARY KEY IDENTITY(1,1),
-    username VARCHAR(50) NOT NULL,
+    username VARCHAR(50) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL
 );
 
 CREATE TABLE Admin (
