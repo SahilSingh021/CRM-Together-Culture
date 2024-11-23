@@ -51,3 +51,4 @@ SELECT * FROM AdminRequests
 SELECT * FROM MemberBenefits
 SELECT * FROM MembershipType
 SELECT * FROM Member
+

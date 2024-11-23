@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TogetherCultureCRM.Classes
 {
-    internal class Admin
+    internal static class Admin
     {
-        public int adminId { get; set; }
-        public int userId { get; set; }
+        public static Guid adminId { get; set; }
+        public static Guid userId { get; set; }
     }
 } 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogetherCultureCRM.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TogetherCultureCRM
@@ -85,14 +86,40 @@ namespace TogetherCultureCRM
                             if (storedPassword == password)
                             {
                                 // Passwords match - user is authenticated
-                                User.userId = reader.GetInt32(reader.GetOrdinal("userId"));
+                                User.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
                                 User.username = reader.GetString(reader.GetOrdinal("username"));
                                 User.password = reader.GetString(reader.GetOrdinal("password"));
                                 User.email = reader.GetString(reader.GetOrdinal("email"));
 
-                                Homepage homepage = new Homepage();
+                                reader.Close();
+
+                                string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
+                                using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
+                                {
+                                    command1.Parameters.AddWithValue("@userId", User.userId);
+                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    {
+                                        if (reader1.Read())
+                                        {
+                                            Admin.adminId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("adminId")));
+                                            Admin.userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId")));
+                                            User.bIsAdmin = true;
+                                        }
+                                    }
+                                }
+
+                                if (User.bIsAdmin)
+                                {
+                                    AdminHomePage adminHomePage = new AdminHomePage();
+                                    adminHomePage.Show();
+                                }
+                                else
+                                {
+                                    Homepage homepage = new Homepage();
+                                    homepage.Show();
+                                }
+
                                 this.Hide();
-                                homepage.Show();
                             }
                             else
                             {
