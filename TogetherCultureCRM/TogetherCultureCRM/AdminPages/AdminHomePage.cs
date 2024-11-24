@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogetherCultureCRM.Classes;
 
 namespace TogetherCultureCRM.AdminPages
 {
@@ -21,15 +22,20 @@ namespace TogetherCultureCRM.AdminPages
 
         protected override void OnLoad(EventArgs e)
         {
-            //base.OnLoad(e);
-
-            loggedInLbl.Text = "Logged in: " + User.username;
+            base.OnLoad(e);
+            loggedInLbl.Text = "Logged in: " + UserSession.username;
         }
 
         private void manageRequestsBtn_Click(object sender, EventArgs e)
         {
             AdminRequestsPage adminRequestsPage = new AdminRequestsPage();
             adminRequestsPage.Show();
+        }
+
+        private void manageUserBtn_Click(object sender, EventArgs e)
+        {
+            AdminManageUsersPage adminManageUsersPage = new AdminManageUsersPage();
+            adminManageUsersPage.Show();
         }
     }
 }

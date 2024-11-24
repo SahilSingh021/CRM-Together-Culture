@@ -59,6 +59,12 @@
     <Compile Include="AdminPages\AdminRequestsPage.Designer.cs">
       <DependentUpon>AdminRequestsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\AdminManageUsersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminManageUsersPage.Designer.cs">
+      <DependentUpon>AdminManageUsersPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AuthenticationPages\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +106,18 @@
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserSession.cs" />
     <Compile Include="CommunityMembership.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommunityMembership.Designer.cs">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CC_DisplayUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CC_DisplayUserCard.Designer.cs">
+      <DependentUpon>CC_DisplayUserCard.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\CC_Request.cs">
       <SubType>UserControl</SubType>
@@ -228,6 +241,9 @@
     <EmbeddedResource Include="AdminPages\AdminRequestsPage.resx">
       <DependentUpon>AdminRequestsPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminManageUsersPage.resx">
+      <DependentUpon>AdminManageUsersPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AuthenticationPages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommunityMembership.resx">
       <DependentUpon>CommunityMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CC_DisplayUserCard.resx">
+      <DependentUpon>CC_DisplayUserCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_Request.resx">
       <DependentUpon>CC_Request.cs</DependentUpon>

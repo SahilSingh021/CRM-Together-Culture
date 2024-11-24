@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogetherCultureCRM.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TogetherCultureCRM
@@ -17,9 +18,9 @@ namespace TogetherCultureCRM
         {
             InitializeComponent();
 
-            if (User.username != null)
+            if (UserSession.username != null)
             {
-                msg.Text = User.username + " welcome!!";
+                msg.Text = UserSession.username + " welcome!!";
             }
         }
 

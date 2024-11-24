@@ -42,7 +42,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.manageUserBtn = new System.Windows.Forms.Button();
             this.manageRequestsBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +50,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,31 +275,39 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.manageUserBtn);
+            this.panel3.Controls.Add(this.manageRequestsBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(200, 133);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(984, 628);
             this.panel3.TabIndex = 1;
             // 
-            // panel5
+            // manageUserBtn
             // 
-            this.panel5.Controls.Add(this.manageRequestsBtn);
-            this.panel5.Location = new System.Drawing.Point(13, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(240, 627);
-            this.panel5.TabIndex = 1;
+            this.manageUserBtn.BackColor = System.Drawing.Color.Khaki;
+            this.manageUserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manageUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageUserBtn.Location = new System.Drawing.Point(369, 43);
+            this.manageUserBtn.Name = "manageUserBtn";
+            this.manageUserBtn.Size = new System.Drawing.Size(240, 43);
+            this.manageUserBtn.TabIndex = 1;
+            this.manageUserBtn.Text = "Manage User";
+            this.manageUserBtn.UseVisualStyleBackColor = false;
+            this.manageUserBtn.Click += new System.EventHandler(this.manageUserBtn_Click);
             // 
             // manageRequestsBtn
             // 
             this.manageRequestsBtn.BackColor = System.Drawing.Color.Khaki;
             this.manageRequestsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manageRequestsBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.manageRequestsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.manageRequestsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageRequestsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageRequestsBtn.Location = new System.Drawing.Point(0, 0);
+            this.manageRequestsBtn.Location = new System.Drawing.Point(28, 43);
             this.manageRequestsBtn.Name = "manageRequestsBtn";
             this.manageRequestsBtn.Size = new System.Drawing.Size(240, 43);
             this.manageRequestsBtn.TabIndex = 0;
@@ -360,7 +367,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -387,6 +393,6 @@
         private System.Windows.Forms.Label loggedInLbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button manageRequestsBtn;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button manageUserBtn;
     }
 }

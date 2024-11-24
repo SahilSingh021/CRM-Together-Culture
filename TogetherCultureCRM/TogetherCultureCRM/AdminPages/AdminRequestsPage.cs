@@ -24,24 +24,7 @@ namespace TogetherCultureCRM.AdminPages
 
         protected override void OnLoad(EventArgs e)
         {
-            //base.OnLoad(e);
-
-            if (!User.bIsAdmin)
-            {
-                if (User.username == null)
-                {
-                    Login login = new Login();
-                    login.Show();
-                }
-                else
-                {
-                    Homepage homepage = new Homepage();
-                    homepage.Show();
-                }
-                this.Hide();
-                return;
-            }
-
+            base.OnLoad(e);
             requestPanel.Controls.Clear();
 
             Data data = new Data();

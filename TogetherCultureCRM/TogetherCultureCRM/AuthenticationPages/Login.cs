@@ -86,20 +86,21 @@ namespace TogetherCultureCRM.AuthenticationPages
                             if (storedPassword == password)
                             {
                                 // Passwords match - user is authenticated
-                                User.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
-                                User.username = reader.GetString(reader.GetOrdinal("username"));
-                                User.password = reader.GetString(reader.GetOrdinal("password"));
-                                User.email = reader.GetString(reader.GetOrdinal("email"));
-                                User.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
+                                UserSession.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
+                                UserSession.username = reader.GetString(reader.GetOrdinal("username"));
+                                UserSession.password = reader.GetString(reader.GetOrdinal("password"));
+                                UserSession.email = reader.GetString(reader.GetOrdinal("email"));
+                                UserSession.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
+                                UserSession.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
 
                                 reader.Close();
 
-                                if (User.bIsAdmin)
+                                if (UserSession.bIsAdmin)
                                 {
                                     string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
                                     {
-                                        command1.Parameters.AddWithValue("@userId", User.userId);
+                                        command1.Parameters.AddWithValue("@userId", UserSession.userId);
                                         using (SqlDataReader reader1 = command1.ExecuteReader())
                                         {
                                             if (reader1.Read())
@@ -111,7 +112,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-                                if (User.bIsAdmin)
+                                if (UserSession.bIsAdmin)
                                 {
                                     AdminHomePage adminHomePage = new AdminHomePage();
                                     adminHomePage.Show();

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace TogetherCultureCRM
 {
-    internal static class User
+    internal class User
     {
-        public static Guid userId { get; set; }
-        public static string username { get; set; }
-        public static string password { get; set; }
-        public static string email { get; set; }
-        public static bool bIsAdmin { get; set; }
+        public Guid userId { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public bool bIsAdmin { get; set; }
+        public bool bIsBanned { get; set; }
     }
 }
