@@ -286,10 +286,9 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.manageRequestsBtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(912, 0);
+            this.panel5.Location = new System.Drawing.Point(13, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(72, 628);
+            this.panel5.Size = new System.Drawing.Size(240, 627);
             this.panel5.TabIndex = 1;
             // 
             // manageRequestsBtn
@@ -303,7 +302,7 @@
             this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageRequestsBtn.Location = new System.Drawing.Point(0, 0);
             this.manageRequestsBtn.Name = "manageRequestsBtn";
-            this.manageRequestsBtn.Size = new System.Drawing.Size(72, 43);
+            this.manageRequestsBtn.Size = new System.Drawing.Size(240, 43);
             this.manageRequestsBtn.TabIndex = 0;
             this.manageRequestsBtn.Text = "Manage Requests";
             this.manageRequestsBtn.UseVisualStyleBackColor = false;
@@ -351,6 +350,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdminHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Home Page";

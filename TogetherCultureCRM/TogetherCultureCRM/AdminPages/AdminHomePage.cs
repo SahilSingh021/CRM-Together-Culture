@@ -19,6 +19,13 @@ namespace TogetherCultureCRM.AdminPages
 
         private void AdminHomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
+        protected override void OnLoad(EventArgs e)
+        {
+            //base.OnLoad(e);
+
+            loggedInLbl.Text = "Logged in: " + User.username;
+        }
+
         private void manageRequestsBtn_Click(object sender, EventArgs e)
         {
             AdminRequestsPage adminRequestsPage = new AdminRequestsPage();

@@ -43,7 +43,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 95);
+            this.panel1.Size = new System.Drawing.Size(804, 95);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -59,11 +59,12 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.AutoScroll = true;
             this.requestPanel.Controls.Add(this.noIncommingRequestsLbl);
             this.requestPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.requestPanel.Location = new System.Drawing.Point(0, 95);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(784, 666);
+            this.requestPanel.Size = new System.Drawing.Size(804, 666);
             this.requestPanel.TabIndex = 1;
             // 
             // noIncommingRequestsLbl
@@ -82,9 +83,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 761);
+            this.ClientSize = new System.Drawing.Size(804, 761);
             this.Controls.Add(this.requestPanel);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdminRequestsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminRequests";

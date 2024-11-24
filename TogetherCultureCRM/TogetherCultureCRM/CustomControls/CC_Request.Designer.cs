@@ -79,7 +79,7 @@
             // usernameTxt
             // 
             this.usernameTxt.AutoSize = true;
-            this.usernameTxt.Location = new System.Drawing.Point(22, 15);
+            this.usernameTxt.Location = new System.Drawing.Point(23, 15);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(55, 13);
             this.usernameTxt.TabIndex = 9;

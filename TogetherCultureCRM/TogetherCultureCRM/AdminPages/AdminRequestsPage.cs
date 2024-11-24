@@ -42,6 +42,8 @@ namespace TogetherCultureCRM.AdminPages
                 return;
             }
 
+            requestPanel.Controls.Clear();
+
             Data data = new Data();
             string connectionString = data.ConnectionString;
             List<Tuple<AdminRequests, string>> adminRequests = new List<Tuple<AdminRequests, string>>();
@@ -49,7 +51,7 @@ namespace TogetherCultureCRM.AdminPages
             {
                 con.Open();
 
-                string selectSql = "SELECT ar.adminRequestId, ar.userId, ar.requestDescription, ar.requestTime, u.username " +
+                string selectSql = "SELECT TOP 20 ar.adminRequestId, ar.userId, ar.requestDescription, ar.requestTime, u.username " +
                     "FROM AdminRequests ar " +
                     "JOIN Users u ON ar.userId = u.userId";
 
@@ -79,17 +81,28 @@ namespace TogetherCultureCRM.AdminPages
             if (adminRequests.Count > 0)
             {
                 noIncommingRequestsLbl.Hide();
+                int i = 0;
                 foreach (var item in adminRequests)
                 {
                     AdminRequests request = item.Item1;
                     string username = item.Item2;
 
                     var requestControl = new CC_Request();
-                    requestControl.UsernameLbl = username;
+                    requestControl.UsernameLbl = username + " - [" + request.requestTime.Date.ToString("dd/MM/yy") + "]";
                     requestControl.DescriptionLbl = request.requestDescription;
                     requestControl.AdminRequestIdLbl = request.adminRequestId.ToString();
 
                     requestPanel.Controls.Add(requestControl);
+
+                    if (requestPanel.Controls.Count > 1)
+                    {
+                        requestControl.Location = new Point(0, i * requestControl.Size.Height);
+                    }
+                    else
+                    {
+                        requestControl.Location = new Point(0, 0);
+                    }
+                    i++;
                 }
             }
             else noIncommingRequestsLbl.Show();
