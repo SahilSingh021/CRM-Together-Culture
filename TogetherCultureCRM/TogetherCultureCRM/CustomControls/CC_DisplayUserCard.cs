@@ -29,6 +29,12 @@ namespace TogetherCultureCRM.CustomControls
             set { usernameLbl.Text = value; }
         }
 
+        public string PasswordText
+        {
+            get { return passwordLbl.Text; }
+            set { passwordLbl.Text = value; }
+        }
+
         public string EmailText
         {
             get { return emailLbl.Text; }
@@ -45,6 +51,14 @@ namespace TogetherCultureCRM.CustomControls
         {
             get { return isBannedCheckBox.Checked; }
             set { isBannedCheckBox.Checked = value; }
+        }
+
+        public EventHandler ManageButtonClick
+        {
+            set
+            {
+                manageBtn.Click += value;
+            }
         }
     }
 }

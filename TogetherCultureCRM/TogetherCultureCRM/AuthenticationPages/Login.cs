@@ -93,6 +93,12 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 UserSession.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
                                 UserSession.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
 
+                                if (UserSession.bIsBanned)
+                                {
+                                    MessageBox.Show("You are banned from using this service. Please contact your admin.", "Banned", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+
                                 reader.Close();
 
                                 if (UserSession.bIsAdmin)

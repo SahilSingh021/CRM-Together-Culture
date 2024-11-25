@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\AdminEditUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminEditUserPage.Designer.cs">
+      <DependentUpon>AdminEditUserPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     <Compile Include="WorkplaceMembership.Designer.cs">
       <DependentUpon>WorkplaceMembership.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminPages\AdminEditUserPage.resx">
+      <DependentUpon>AdminEditUserPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>

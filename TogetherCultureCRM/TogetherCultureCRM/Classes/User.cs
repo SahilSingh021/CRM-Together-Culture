@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TogetherCultureCRM
 {
-    internal class User
+    public class User
     {
         public Guid userId { get; set; }
         public string username { get; set; }

@@ -52,6 +52,7 @@ namespace TogetherCultureCRM.AdminPages
                             {
                                 userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId"))),
                                 username = reader.GetString(reader.GetOrdinal("username")),
+                                password = reader.GetString(reader.GetOrdinal("password")),
                                 email = reader.GetString(reader.GetOrdinal("email")),
                                 bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin")),
                                 bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"))
@@ -73,9 +74,15 @@ namespace TogetherCultureCRM.AdminPages
                     var userDisplayCardControl = new CC_DisplayUserCard();
                     userDisplayCardControl.UserIdLbl = item.userId.ToString();
                     userDisplayCardControl.UsernameText = item.username;
+                    userDisplayCardControl.PasswordText = item.password;
                     userDisplayCardControl.EmailText = item.email;
                     userDisplayCardControl.IsAdmin = item.bIsAdmin;
                     userDisplayCardControl.IsBanned = item.bIsBanned;
+                    userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
+                    {
+                        AdminEditUserPage adminEditUserPage = new AdminEditUserPage(item);
+                        adminEditUserPage.Show();
+                    };
 
                     requestPanel.Controls.Add(userDisplayCardControl);
 

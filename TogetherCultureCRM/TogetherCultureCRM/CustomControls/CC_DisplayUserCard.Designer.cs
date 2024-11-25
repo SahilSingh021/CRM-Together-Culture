@@ -34,6 +34,7 @@
             this.manageBtn = new System.Windows.Forms.Button();
             this.userIdLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
+            this.passwordLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usernameLbl
@@ -88,7 +89,7 @@
             // userIdLbl
             // 
             this.userIdLbl.AutoSize = true;
-            this.userIdLbl.Location = new System.Drawing.Point(613, 15);
+            this.userIdLbl.Location = new System.Drawing.Point(216, 15);
             this.userIdLbl.Name = "userIdLbl";
             this.userIdLbl.Size = new System.Drawing.Size(36, 13);
             this.userIdLbl.TabIndex = 17;
@@ -104,10 +105,21 @@
             this.emailLbl.TabIndex = 18;
             this.emailLbl.Text = "Email";
             // 
+            // passwordLbl
+            // 
+            this.passwordLbl.AutoSize = true;
+            this.passwordLbl.Location = new System.Drawing.Point(216, 33);
+            this.passwordLbl.Name = "passwordLbl";
+            this.passwordLbl.Size = new System.Drawing.Size(52, 13);
+            this.passwordLbl.TabIndex = 19;
+            this.passwordLbl.Text = "password";
+            this.passwordLbl.Visible = false;
+            // 
             // CC_DisplayUserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.passwordLbl);
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.userIdLbl);
             this.Controls.Add(this.manageBtn);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button manageBtn;
         private System.Windows.Forms.Label userIdLbl;
         private System.Windows.Forms.Label emailLbl;
+        private System.Windows.Forms.Label passwordLbl;
     }
 }
