@@ -25,6 +25,30 @@ namespace TogetherCultureCRM
         {
             base.OnLoad(e);
             loggedInLbl.Text = "Logged in: " + UserSession.username;
+
+            if (UserSession.bIsAdmin)
+            {
+                Button adminHomePageTabBtn = new Button
+                {
+                    BackColor = System.Drawing.Color.FromArgb(128, 255, 128),
+                    Cursor = System.Windows.Forms.Cursors.Hand,
+                    FlatStyle = System.Windows.Forms.FlatStyle.Flat,
+                    Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
+                    ForeColor = System.Drawing.Color.Black,
+                    Location = new System.Drawing.Point(0, 477),
+                    Name = "adminHomePageTabBtn",
+                    Size = new System.Drawing.Size(200, 43),
+                    TabIndex = 11,
+                    Text = "     Admin Page",
+                    TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+                    UseVisualStyleBackColor = false
+                };
+
+                adminHomePageTabBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+                adminHomePageTabBtn.Click += new System.EventHandler(adminHomePageTabBtn_Click);
+
+                this.dashboard.Controls.Add(adminHomePageTabBtn);
+            }
         }
 
         private void manageRequestsBtn_Click(object sender, EventArgs e)
@@ -51,6 +75,11 @@ namespace TogetherCultureCRM
             eventsHomePageTabPanel.BringToFront();
             loggedInLbl.BringToFront();
             Homepage.ActiveForm.Text = "Events Home Page";
+        }
+
+        private void membershipPageTabBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

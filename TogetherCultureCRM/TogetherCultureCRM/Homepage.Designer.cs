@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.adminHomePageTabBtn = new System.Windows.Forms.Button();
+            this.dashboard = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.eventsHomePageTabBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.membershipPageTabBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.homeDashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +49,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.loggedInLbl = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,42 +58,23 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // dashboard
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.adminHomePageTabBtn);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.eventsHomePageTabBtn);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.homeDashboardBtn);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 761);
-            this.panel1.TabIndex = 0;
-            // 
-            // adminHomePageTabBtn
-            // 
-            this.adminHomePageTabBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.adminHomePageTabBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adminHomePageTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.adminHomePageTabBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.adminHomePageTabBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminHomePageTabBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminHomePageTabBtn.ForeColor = System.Drawing.Color.Black;
-            this.adminHomePageTabBtn.Location = new System.Drawing.Point(0, 477);
-            this.adminHomePageTabBtn.Name = "adminHomePageTabBtn";
-            this.adminHomePageTabBtn.Size = new System.Drawing.Size(200, 43);
-            this.adminHomePageTabBtn.TabIndex = 11;
-            this.adminHomePageTabBtn.Text = "     Admin Page";
-            this.adminHomePageTabBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adminHomePageTabBtn.UseVisualStyleBackColor = false;
-            this.adminHomePageTabBtn.Click += new System.EventHandler(this.adminHomePageTabBtn_Click);
+            this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dashboard.Controls.Add(this.button8);
+            this.dashboard.Controls.Add(this.button6);
+            this.dashboard.Controls.Add(this.button5);
+            this.dashboard.Controls.Add(this.eventsHomePageTabBtn);
+            this.dashboard.Controls.Add(this.button3);
+            this.dashboard.Controls.Add(this.membershipPageTabBtn);
+            this.dashboard.Controls.Add(this.button1);
+            this.dashboard.Controls.Add(this.homeDashboardBtn);
+            this.dashboard.Controls.Add(this.panel2);
+            this.dashboard.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dashboard.Location = new System.Drawing.Point(0, 0);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(200, 761);
+            this.dashboard.TabIndex = 0;
             // 
             // button8
             // 
@@ -187,23 +167,24 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // membershipPageTabBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 43);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "     Membership";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.membershipPageTabBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.membershipPageTabBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.membershipPageTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.membershipPageTabBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.membershipPageTabBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.membershipPageTabBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.membershipPageTabBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipPageTabBtn.ForeColor = System.Drawing.Color.Black;
+            this.membershipPageTabBtn.Location = new System.Drawing.Point(0, 219);
+            this.membershipPageTabBtn.Name = "membershipPageTabBtn";
+            this.membershipPageTabBtn.Size = new System.Drawing.Size(200, 43);
+            this.membershipPageTabBtn.TabIndex = 4;
+            this.membershipPageTabBtn.Text = "     Membership";
+            this.membershipPageTabBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.membershipPageTabBtn.UseVisualStyleBackColor = false;
+            this.membershipPageTabBtn.Click += new System.EventHandler(this.membershipPageTabBtn_Click);
             // 
             // button1
             // 
@@ -378,17 +359,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.loggedInLbl);
             this.Controls.Add(this.adminHomePagePanel);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.eventsHomePageTabPanel);
+            this.Controls.Add(this.dashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminHomePage_FormClosing);
-            this.panel1.ResumeLayout(false);
+            this.dashboard.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -404,18 +385,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel dashboard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button homeDashboardBtn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button adminHomePageTabBtn;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button eventsHomePageTabBtn;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button membershipPageTabBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
