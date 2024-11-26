@@ -118,17 +118,9 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-                                if (UserSession.bIsAdmin)
-                                {
-                                    AdminHomePage adminHomePage = new AdminHomePage();
-                                    adminHomePage.Show();
-                                }
-                                else
-                                {
-                                    Homepage homepage = new Homepage();
-                                    homepage.Show();
-                                }
-
+                                Homepage homepage = new Homepage();
+                                homepage.Show();
+                              
                                 this.Hide();
                             }
                             else

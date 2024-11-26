@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogetherCultureCRM.AdminPages;
 using TogetherCultureCRM.Classes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TogetherCultureCRM
 {
@@ -17,56 +17,40 @@ namespace TogetherCultureCRM
         public Homepage()
         {
             InitializeComponent();
-
-            if (UserSession.username != null)
-            {
-                msg.Text = UserSession.username + " welcome!!";
-            }
         }
 
-        private void HomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
+        private void AdminHomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-
+            base.OnLoad(e);
+            loggedInLbl.Text = "Logged in: " + UserSession.username;
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
+        private void manageRequestsBtn_Click(object sender, EventArgs e)
         {
-            
+            AdminRequestsPage adminRequestsPage = new AdminRequestsPage();
+            adminRequestsPage.Show();
         }
 
-        private void membership_btn_Click(object sender, EventArgs e)
+        private void manageUserBtn_Click(object sender, EventArgs e)
         {
-            Membership newForm = new Membership();
-            newForm.ShowDialog();
+            AdminManageUsersPage adminManageUsersPage = new AdminManageUsersPage();
+            adminManageUsersPage.Show();
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void adminHomePageTabBtn_Click(object sender, EventArgs e)
         {
-
+            adminHomePagePanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Admin Home Page";
         }
 
-        private void benefits_btn_Click(object sender, EventArgs e)
+        private void eventsHomePageTabBtn_Click(object sender, EventArgs e)
         {
-            BenefitsMember newForm = new BenefitsMember();
-            newForm.ShowDialog();
-        }
-
-        private void events_btn_Click(object sender, EventArgs e)
-        {
-            Events_MainPage newForm = new Events_MainPage();
-            newForm.ShowDialog();
-        }
-
-        private void panel13_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            eventsHomePageTabPanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Events Home Page";
         }
     }
 }

@@ -53,12 +53,6 @@
     <Compile Include="AdminPages\AdminEditUserPage.Designer.cs">
       <DependentUpon>AdminEditUserPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPages\AdminHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPages\AdminHomePage.Designer.cs">
-      <DependentUpon>AdminHomePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminPages\AdminRequestsPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,12 +167,6 @@
     <Compile Include="MemberBenefitDashboard.Designer.cs">
       <DependentUpon>MemberBenefitDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberHomepage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MemberHomepage.Designer.cs">
-      <DependentUpon>MemberHomepage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Membership.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,9 +232,6 @@
     <EmbeddedResource Include="AdminPages\AdminEditUserPage.resx">
       <DependentUpon>AdminEditUserPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPages\AdminHomePage.resx">
-      <DependentUpon>AdminHomePage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminRequestsPage.resx">
       <DependentUpon>AdminRequestsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,9 +282,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberBenefitDashboard.resx">
       <DependentUpon>MemberBenefitDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MemberHomepage.resx">
-      <DependentUpon>MemberHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Membership.resx">
       <DependentUpon>Membership.cs</DependentUpon>

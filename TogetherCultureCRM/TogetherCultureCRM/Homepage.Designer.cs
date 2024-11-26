@@ -28,497 +28,403 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.membership_btn = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.events_btn = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Image = new System.Windows.Forms.Label();
+            this.adminHomePageTabBtn = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.eventsHomePageTabBtn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.homeDashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.benefits_btn = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.manageUserBtn = new System.Windows.Forms.Button();
+            this.manageRequestsBtn = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.msg = new System.Windows.Forms.Label();
+            this.adminHomePagePanel = new System.Windows.Forms.Panel();
+            this.eventsHomePageTabPanel = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.loggedInLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.adminHomePagePanel.SuspendLayout();
+            this.eventsHomePageTabPanel.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(514, 7);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Settings";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(9, 389);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.adminHomePageTabBtn);
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.eventsHomePageTabBtn);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.homeDashboardBtn);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 42);
-            this.panel1.TabIndex = 5;
+            this.panel1.Size = new System.Drawing.Size(200, 761);
+            this.panel1.TabIndex = 0;
             // 
-            // label5
+            // adminHomePageTabBtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label5.Location = new System.Drawing.Point(34, 14);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Subscribe to our newsletter";
+            this.adminHomePageTabBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.adminHomePageTabBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminHomePageTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.adminHomePageTabBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.adminHomePageTabBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminHomePageTabBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminHomePageTabBtn.ForeColor = System.Drawing.Color.Black;
+            this.adminHomePageTabBtn.Location = new System.Drawing.Point(0, 477);
+            this.adminHomePageTabBtn.Name = "adminHomePageTabBtn";
+            this.adminHomePageTabBtn.Size = new System.Drawing.Size(200, 43);
+            this.adminHomePageTabBtn.TabIndex = 11;
+            this.adminHomePageTabBtn.Text = "     Admin Page";
+            this.adminHomePageTabBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adminHomePageTabBtn.UseVisualStyleBackColor = false;
+            this.adminHomePageTabBtn.Click += new System.EventHandler(this.adminHomePageTabBtn_Click);
             // 
-            // panel5
+            // button8
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel5.Location = new System.Drawing.Point(195, 14);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(115, 14);
-            this.panel5.TabIndex = 5;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(0, 434);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(200, 43);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "     Online Members Area";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.UseVisualStyleBackColor = false;
             // 
-            // panel10
+            // button6
             // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel10.Controls.Add(this.label12);
-            this.panel10.Controls.Add(this.flowLayoutPanel3);
-            this.panel10.Location = new System.Drawing.Point(9, 44);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(80, 36);
-            this.panel10.TabIndex = 15;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(0, 391);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(200, 43);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "     Digital Connection";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // button5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label12.Location = new System.Drawing.Point(17, 10);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 17);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Search";
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(0, 348);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(200, 43);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "     Place Hire";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel3
+            // eventsHomePageTabBtn
             // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(85, 19);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(6, 6);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.eventsHomePageTabBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.eventsHomePageTabBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eventsHomePageTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.eventsHomePageTabBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.eventsHomePageTabBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.eventsHomePageTabBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventsHomePageTabBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventsHomePageTabBtn.ForeColor = System.Drawing.Color.Black;
+            this.eventsHomePageTabBtn.Location = new System.Drawing.Point(0, 305);
+            this.eventsHomePageTabBtn.Name = "eventsHomePageTabBtn";
+            this.eventsHomePageTabBtn.Size = new System.Drawing.Size(200, 43);
+            this.eventsHomePageTabBtn.TabIndex = 6;
+            this.eventsHomePageTabBtn.Text = "     Events";
+            this.eventsHomePageTabBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.eventsHomePageTabBtn.UseVisualStyleBackColor = false;
+            this.eventsHomePageTabBtn.Click += new System.EventHandler(this.eventsHomePageTabBtn_Click);
             // 
-            // panel13
+            // button3
             // 
-            this.panel13.BackColor = System.Drawing.Color.Bisque;
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.membership_btn);
-            this.panel13.Location = new System.Drawing.Point(9, 94);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(159, 99);
-            this.panel13.TabIndex = 16;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(0, 262);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 43);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "     Benefits";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // membership_btn
+            // button2
             // 
-            this.membership_btn.AutoSize = true;
-            this.membership_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.membership_btn.Location = new System.Drawing.Point(37, 45);
-            this.membership_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.membership_btn.Name = "membership_btn";
-            this.membership_btn.Size = new System.Drawing.Size(92, 17);
-            this.membership_btn.TabIndex = 18;
-            this.membership_btn.Text = "Memberships";
-            this.membership_btn.Click += new System.EventHandler(this.membership_btn_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(0, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 43);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "     Membership";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel12
+            // button1
             // 
-            this.panel12.BackColor = System.Drawing.Color.Bisque;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.label14);
-            this.panel12.Location = new System.Drawing.Point(9, 205);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(159, 41);
-            this.panel12.TabIndex = 17;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(0, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 43);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "     Profile";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // label14
+            // homeDashboardBtn
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label14.Location = new System.Drawing.Point(25, 16);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Online Members Area";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Bisque;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.label13);
-            this.panel11.Location = new System.Drawing.Point(9, 251);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(159, 122);
-            this.panel11.TabIndex = 18;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label13.Location = new System.Drawing.Point(19, 55);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 17);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Top Services";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Controls.Add(this.events_btn);
-            this.panel4.Controls.Add(this.panel3);
-            this.panel4.Location = new System.Drawing.Point(219, 62);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(364, 112);
-            this.panel4.TabIndex = 19;
-            // 
-            // events_btn
-            // 
-            this.events_btn.AutoSize = true;
-            this.events_btn.BackColor = System.Drawing.Color.Black;
-            this.events_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.events_btn.ForeColor = System.Drawing.Color.Cornsilk;
-            this.events_btn.Location = new System.Drawing.Point(178, 55);
-            this.events_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.events_btn.Name = "events_btn";
-            this.events_btn.Size = new System.Drawing.Size(125, 18);
-            this.events_btn.TabIndex = 6;
-            this.events_btn.Text = "Upcoming Events";
-            this.events_btn.Click += new System.EventHandler(this.events_btn_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Cornsilk;
-            this.panel3.Location = new System.Drawing.Point(13, 19);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(127, 75);
-            this.panel3.TabIndex = 0;
-            // 
-            // Image
-            // 
-            this.Image.AutoSize = true;
-            this.Image.Location = new System.Drawing.Point(182, 44);
-            this.Image.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Image.Name = "Image";
-            this.Image.Size = new System.Drawing.Size(0, 13);
-            this.Image.TabIndex = 5;
+            this.homeDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.homeDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.homeDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.homeDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeDashboardBtn.ForeColor = System.Drawing.Color.Black;
+            this.homeDashboardBtn.Location = new System.Drawing.Point(0, 133);
+            this.homeDashboardBtn.Name = "homeDashboardBtn";
+            this.homeDashboardBtn.Size = new System.Drawing.Size(200, 43);
+            this.homeDashboardBtn.TabIndex = 2;
+            this.homeDashboardBtn.Text = "     Home";
+            this.homeDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeDashboardBtn.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Bisque;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(259, 179);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(159, 111);
-            this.panel2.TabIndex = 20;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 47);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Event Categories";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Bisque;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Location = new System.Drawing.Point(443, 188);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(103, 99);
-            this.panel8.TabIndex = 21;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 47);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "AI Chatbox";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Bisque;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.benefits_btn);
-            this.panel6.Location = new System.Drawing.Point(259, 295);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(112, 79);
-            this.panel6.TabIndex = 22;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // benefits_btn
-            // 
-            this.benefits_btn.AutoSize = true;
-            this.benefits_btn.Location = new System.Drawing.Point(35, 33);
-            this.benefits_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.benefits_btn.Name = "benefits_btn";
-            this.benefits_btn.Size = new System.Drawing.Size(45, 13);
-            this.benefits_btn.TabIndex = 12;
-            this.benefits_btn.Text = "Benefits";
-            this.benefits_btn.Click += new System.EventHandler(this.benefits_btn_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Bisque;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(375, 295);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(108, 79);
-            this.panel7.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 34);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Workspace";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Bisque;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.label11);
-            this.panel9.Location = new System.Drawing.Point(487, 295);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(108, 79);
-            this.panel9.TabIndex = 24;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label11.Location = new System.Drawing.Point(4, 34);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Customer Testimonials";
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.label15);
-            this.panel14.Location = new System.Drawing.Point(514, 402);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(83, 29);
-            this.panel14.TabIndex = 25;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label15.Location = new System.Drawing.Point(12, 13);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 17);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Contact us";
+            this.panel2.Size = new System.Drawing.Size(200, 133);
+            this.panel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(6, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 34);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Together\r\nCulture";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Size = new System.Drawing.Size(157, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dashboard";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.manageUserBtn);
+            this.panel3.Controls.Add(this.manageRequestsBtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 121);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(984, 628);
+            this.panel3.TabIndex = 1;
+            // 
+            // manageUserBtn
+            // 
+            this.manageUserBtn.BackColor = System.Drawing.Color.Khaki;
+            this.manageUserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manageUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageUserBtn.Location = new System.Drawing.Point(369, 43);
+            this.manageUserBtn.Name = "manageUserBtn";
+            this.manageUserBtn.Size = new System.Drawing.Size(240, 43);
+            this.manageUserBtn.TabIndex = 1;
+            this.manageUserBtn.Text = "Manage User";
+            this.manageUserBtn.UseVisualStyleBackColor = false;
+            this.manageUserBtn.Click += new System.EventHandler(this.manageUserBtn_Click);
+            // 
+            // manageRequestsBtn
+            // 
+            this.manageRequestsBtn.BackColor = System.Drawing.Color.Khaki;
+            this.manageRequestsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manageRequestsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.manageRequestsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.manageRequestsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageRequestsBtn.Location = new System.Drawing.Point(28, 43);
+            this.manageRequestsBtn.Name = "manageRequestsBtn";
+            this.manageRequestsBtn.Size = new System.Drawing.Size(240, 43);
+            this.manageRequestsBtn.TabIndex = 0;
+            this.manageRequestsBtn.Text = "Manage Requests";
+            this.manageRequestsBtn.UseVisualStyleBackColor = false;
+            this.manageRequestsBtn.Click += new System.EventHandler(this.manageRequestsBtn_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(984, 133);
+            this.panel4.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(459, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(318, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Alerts";
+            this.label2.Size = new System.Drawing.Size(248, 33);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Admin Homepage";
             // 
-            // msg
+            // adminHomePagePanel
             // 
-            this.msg.AutoSize = true;
-            this.msg.ForeColor = System.Drawing.Color.White;
-            this.msg.Location = new System.Drawing.Point(142, 19);
-            this.msg.Name = "msg";
-            this.msg.Size = new System.Drawing.Size(26, 13);
-            this.msg.TabIndex = 28;
-            this.msg.Text = "msg";
+            this.adminHomePagePanel.Controls.Add(this.panel4);
+            this.adminHomePagePanel.Controls.Add(this.panel3);
+            this.adminHomePagePanel.Location = new System.Drawing.Point(200, 12);
+            this.adminHomePagePanel.Name = "adminHomePagePanel";
+            this.adminHomePagePanel.Size = new System.Drawing.Size(984, 749);
+            this.adminHomePagePanel.TabIndex = 3;
+            // 
+            // eventsHomePageTabPanel
+            // 
+            this.eventsHomePageTabPanel.Controls.Add(this.panel5);
+            this.eventsHomePageTabPanel.Location = new System.Drawing.Point(200, 12);
+            this.eventsHomePageTabPanel.Name = "eventsHomePageTabPanel";
+            this.eventsHomePageTabPanel.Size = new System.Drawing.Size(984, 749);
+            this.eventsHomePageTabPanel.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(984, 133);
+            this.panel5.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(318, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(254, 33);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Events Homepage";
+            // 
+            // loggedInLbl
+            // 
+            this.loggedInLbl.BackColor = System.Drawing.Color.Transparent;
+            this.loggedInLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loggedInLbl.ForeColor = System.Drawing.Color.Black;
+            this.loggedInLbl.Location = new System.Drawing.Point(980, 2);
+            this.loggedInLbl.Name = "loggedInLbl";
+            this.loggedInLbl.Size = new System.Drawing.Size(202, 133);
+            this.loggedInLbl.TabIndex = 6;
+            this.loggedInLbl.Text = "Logged in:";
+            this.loggedInLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(616, 448);
-            this.Controls.Add(this.msg);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.Image);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.panel10);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.loggedInLbl);
+            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Controls.Add(this.eventsHomePageTabPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Homepage";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePage_FormClosing);
+            this.Text = "Home Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminHomePage_FormClosing);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.adminHomePagePanel.ResumeLayout(false);
+            this.eventsHomePageTabPanel.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label membership_btn;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label events_btn;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label Image;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button homeDashboardBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button adminHomePageTabBtn;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button eventsHomePageTabBtn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label benefits_btn;
-        private System.Windows.Forms.Label msg;
+        private System.Windows.Forms.Button manageRequestsBtn;
+        private System.Windows.Forms.Button manageUserBtn;
+        private System.Windows.Forms.Panel adminHomePagePanel;
+        private System.Windows.Forms.Panel eventsHomePageTabPanel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label loggedInLbl;
     }
 }

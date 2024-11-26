@@ -38,18 +38,25 @@ CREATE TABLE MembershipType (
     FOREIGN KEY (memberBenefitsId) REFERENCES MemberBenefits(memberBenefitsId)
 );
 
+CREATE TABLE MemberKeyIntrest (
+	keyIntrestId VARCHAR(36) PRIMARY KEY,
+	keyIntrestDescription TEXT NOT NULL
+);
+
 CREATE TABLE Member (
     memberId VARCHAR(36) PRIMARY KEY,
     userId VARCHAR(36) NOT NULL,
 	membershipId VARCHAR(36) NOT NULL,
+	keyIntrestId VARCHAR(36) NOT NULL,
     FOREIGN KEY (userId) REFERENCES Users(userId),
-	FOREIGN KEY (membershipId) REFERENCES MembershipType(membershipTypeId)
+	FOREIGN KEY (membershipId) REFERENCES MembershipType(membershipTypeId),
+	FOREIGN KEY (keyIntrestId) REFERENCES MemberKeyIntrest(keyIntrestId)
 );
-
 
 SELECT * FROM Users
 SELECT * FROM Admin
 SELECT * FROM AdminRequests
 SELECT * FROM MemberBenefits
 SELECT * FROM MembershipType
+SELECT * FROM MemberKeyIntrest
 SELECT * FROM Member
