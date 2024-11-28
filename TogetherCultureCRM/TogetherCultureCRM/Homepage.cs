@@ -79,7 +79,51 @@ namespace TogetherCultureCRM
 
         private void membershipPageTabBtn_Click(object sender, EventArgs e)
         {
+            membershipPanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Membership Page";
+        }
 
+        private void homeDashboardBtn_Click(object sender, EventArgs e)
+        {
+            homePagePanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Home Page";
+        }
+
+        private void profileDashboardBtn_Click(object sender, EventArgs e)
+        {
+            profilePagePanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Profile Page";
+        }
+
+        private void benefitsDashboardBtn_Click(object sender, EventArgs e)
+        {
+            benefitsPagePanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Benefits Page";
+        }
+
+        private void placeHireDashboardBtn_Click(object sender, EventArgs e)
+        {
+            placeHirePanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Place Hire Page";
+        }
+
+        private void digitalConnectionDashboardBtn_Click(object sender, EventArgs e)
+        {
+            digitalConnectionPanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Digital Connection Page";
+        }
+
+        private void onlineMembersAreadDashboardBtn_Click(object sender, EventArgs e)
+        {
+            onlineMembersAreaPanel.BringToFront();
+            loggedInLbl.BringToFront();
+            Homepage.ActiveForm.Text = "Online Members Area Page";
         }
     }
 }
