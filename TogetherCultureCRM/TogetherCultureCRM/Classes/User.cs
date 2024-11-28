@@ -14,5 +14,7 @@ namespace TogetherCultureCRM
         public string email { get; set; }
         public bool bIsAdmin { get; set; }
         public bool bIsBanned { get; set; }
+        public bool bIsMember { get; set; }
+
     }
 }

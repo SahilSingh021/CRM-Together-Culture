@@ -14,5 +14,7 @@ namespace TogetherCultureCRM.Classes
         public static string email { get; set; }
         public static bool bIsAdmin { get; set; }
         public static bool bIsBanned { get; set; }
+        public static bool bIsMember { get; set; }
+        public static Member Member {  get; set; } 
     }
 }

@@ -38,6 +38,7 @@ namespace TogetherCultureCRM.AdminPages
             passwordTxt.Text = _selectdUser.password;
             isAdminCheckBox.Checked = _selectdUser.bIsAdmin;
             isBannedCheckBox.Checked = _selectdUser.bIsBanned;
+            isMemberCheckBox.Checked = _selectdUser.bIsMember;
         }
 
         private User _selectdUser;
@@ -49,9 +50,10 @@ namespace TogetherCultureCRM.AdminPages
             string password = passwordTxt.Text;
             bool isAdmin = isAdminCheckBox.Checked;
             bool isBanned = isBannedCheckBox.Checked;
+            bool isMember = isMemberCheckBox.Checked;
 
             if (username == _selectdUser.username && email == _selectdUser.email && password == _selectdUser.password
-                && isAdmin == _selectdUser.bIsAdmin && isBanned == _selectdUser.bIsBanned)
+                && isAdmin == _selectdUser.bIsAdmin && isBanned == _selectdUser.bIsBanned && isMember == _selectdUser.bIsMember)
             {
                 MessageBox.Show("User is already up to date. Nothing to modify.");
                 return;
@@ -66,7 +68,9 @@ namespace TogetherCultureCRM.AdminPages
                                                       email = @email, 
                                                       password = @password, 
                                                       bIsAdmin = @isAdmin, 
-                                                      bIsBanned = @isBanned WHERE userId = @userId";
+                                                      bIsBanned = @isBanned,
+                                                      bIsMember = @isMember WHERE userId = @userId";
+                                                      
 
                 using (SqlCommand command = new SqlCommand(updateSql, con))
                 {
@@ -76,6 +80,7 @@ namespace TogetherCultureCRM.AdminPages
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@isAdmin", isAdmin);
                     command.Parameters.AddWithValue("@isBanned", isBanned);
+                    command.Parameters.AddWithValue("@isMember", isMember);
 
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -117,6 +122,7 @@ namespace TogetherCultureCRM.AdminPages
             _selectdUser.password = password;
             _selectdUser.bIsAdmin = isAdmin;
             _selectdUser.bIsBanned = isBanned;
+            _selectdUser.bIsMember = isMember;
         }
     }
 }

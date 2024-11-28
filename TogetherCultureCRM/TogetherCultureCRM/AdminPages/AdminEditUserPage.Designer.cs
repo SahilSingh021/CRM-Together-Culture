@@ -31,17 +31,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.isBannedCheckBox = new System.Windows.Forms.CheckBox();
-            this.isAdminCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.userIdTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.usernameTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.emailTxt = new System.Windows.Forms.TextBox();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.TextBox();
-            this.updateBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.emailTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userIdTxt = new System.Windows.Forms.TextBox();
+            this.isBannedCheckBox = new System.Windows.Forms.CheckBox();
+            this.isAdminCheckBox = new System.Windows.Forms.CheckBox();
+            this.isMemberCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             // mainPanel
             // 
             this.mainPanel.AutoScroll = true;
+            this.mainPanel.Controls.Add(this.isMemberCheckBox);
             this.mainPanel.Controls.Add(this.updateBtn);
             this.mainPanel.Controls.Add(this.label5);
             this.mainPanel.Controls.Add(this.passwordTxt);
@@ -86,6 +88,101 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(804, 666);
             this.mainPanel.TabIndex = 1;
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateBtn.Location = new System.Drawing.Point(272, 387);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(250, 35);
+            this.updateBtn.TabIndex = 30;
+            this.updateBtn.Text = "UPDATE";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(269, 314);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Password:";
+            // 
+            // passwordTxt
+            // 
+            this.passwordTxt.Location = new System.Drawing.Point(272, 333);
+            this.passwordTxt.MaxLength = 30;
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.PasswordChar = '*';
+            this.passwordTxt.Size = new System.Drawing.Size(250, 20);
+            this.passwordTxt.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(269, 270);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Email:";
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.Location = new System.Drawing.Point(272, 289);
+            this.emailTxt.MaxLength = 30;
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.Size = new System.Drawing.Size(250, 20);
+            this.emailTxt.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(269, 226);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Username:";
+            // 
+            // usernameTxt
+            // 
+            this.usernameTxt.Location = new System.Drawing.Point(272, 245);
+            this.usernameTxt.MaxLength = 30;
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(250, 20);
+            this.usernameTxt.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(269, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "User ID:";
+            // 
+            // userIdTxt
+            // 
+            this.userIdTxt.Enabled = false;
+            this.userIdTxt.Location = new System.Drawing.Point(272, 200);
+            this.userIdTxt.MaxLength = 30;
+            this.userIdTxt.Name = "userIdTxt";
+            this.userIdTxt.Size = new System.Drawing.Size(250, 20);
+            this.userIdTxt.TabIndex = 22;
             // 
             // isBannedCheckBox
             // 
@@ -109,100 +206,16 @@
             this.isAdminCheckBox.Text = "Is Admin";
             this.isAdminCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // isMemberCheckBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(269, 181);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "User ID:";
-            // 
-            // userIdTxt
-            // 
-            this.userIdTxt.Enabled = false;
-            this.userIdTxt.Location = new System.Drawing.Point(272, 200);
-            this.userIdTxt.MaxLength = 30;
-            this.userIdTxt.Name = "userIdTxt";
-            this.userIdTxt.Size = new System.Drawing.Size(250, 20);
-            this.userIdTxt.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(269, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Username:";
-            // 
-            // usernameTxt
-            // 
-            this.usernameTxt.Location = new System.Drawing.Point(272, 245);
-            this.usernameTxt.MaxLength = 30;
-            this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(250, 20);
-            this.usernameTxt.TabIndex = 24;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(269, 270);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Email:";
-            // 
-            // emailTxt
-            // 
-            this.emailTxt.Location = new System.Drawing.Point(272, 289);
-            this.emailTxt.MaxLength = 30;
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(250, 20);
-            this.emailTxt.TabIndex = 26;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(269, 314);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Password:";
-            // 
-            // passwordTxt
-            // 
-            this.passwordTxt.Location = new System.Drawing.Point(272, 333);
-            this.passwordTxt.MaxLength = 30;
-            this.passwordTxt.Name = "passwordTxt";
-            this.passwordTxt.PasswordChar = '*';
-            this.passwordTxt.Size = new System.Drawing.Size(250, 20);
-            this.passwordTxt.TabIndex = 28;
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBtn.Location = new System.Drawing.Point(272, 387);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(250, 35);
-            this.updateBtn.TabIndex = 30;
-            this.updateBtn.Text = "UPDATE";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            this.isMemberCheckBox.AutoSize = true;
+            this.isMemberCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isMemberCheckBox.Location = new System.Drawing.Point(424, 363);
+            this.isMemberCheckBox.Name = "isMemberCheckBox";
+            this.isMemberCheckBox.Size = new System.Drawing.Size(75, 17);
+            this.isMemberCheckBox.TabIndex = 31;
+            this.isMemberCheckBox.Text = "Is Member";
+            this.isMemberCheckBox.UseVisualStyleBackColor = true;
             // 
             // AdminEditUserPage
             // 
@@ -240,5 +253,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.CheckBox isMemberCheckBox;
     }
 }

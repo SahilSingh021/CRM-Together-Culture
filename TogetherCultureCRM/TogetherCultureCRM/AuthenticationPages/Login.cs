@@ -92,6 +92,8 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 UserSession.email = reader.GetString(reader.GetOrdinal("email"));
                                 UserSession.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
                                 UserSession.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
+                                UserSession.bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"));
+                                
 
                                 if (UserSession.bIsBanned)
                                 {
@@ -117,6 +119,26 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
                                 }
+
+                                if (UserSession.bIsMember)
+                                {
+                                    string selectMemberSql = "SELECT * FROM [Member] WHERE userId=@userId";
+                                    using (SqlCommand command1 = new SqlCommand(selectMemberSql, con))
+                                    {
+                                        command1.Parameters.AddWithValue("@userId", UserSession.userId);
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                                        {
+                                            if (reader1.Read())
+                                            {
+                                                UserSession.Member.memberId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberId")));
+                                                UserSession.Member.userId = UserSession.userId;
+                                                UserSession.Member.membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId")));
+                                                UserSession.Member.interestId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("interestId")));
+                                            }
+                                        }
+                                    }
+                                }
+
 
                                 Homepage homepage = new Homepage();
                                 homepage.Show();

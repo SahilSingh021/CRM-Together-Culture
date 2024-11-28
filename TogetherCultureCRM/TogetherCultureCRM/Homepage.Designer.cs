@@ -38,6 +38,8 @@
             this.profileDashboardBtn = new System.Windows.Forms.Button();
             this.homeDashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.loggedInLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.manageUserBtn = new System.Windows.Forms.Button();
             this.manageRequestsBtn = new System.Windows.Forms.Button();
@@ -68,8 +70,9 @@
             this.onlineMembersAreaPanel = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.loggedInLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.activeMembershipPanel = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -91,6 +94,8 @@
             this.panel11.SuspendLayout();
             this.onlineMembersAreaPanel.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.activeMembershipPanel.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboard
@@ -273,6 +278,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 133);
             this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Logged In:";
+            // 
+            // loggedInLbl
+            // 
+            this.loggedInLbl.AllowDrop = true;
+            this.loggedInLbl.AutoSize = true;
+            this.loggedInLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loggedInLbl.ForeColor = System.Drawing.Color.White;
+            this.loggedInLbl.Location = new System.Drawing.Point(61, 68);
+            this.loggedInLbl.Name = "loggedInLbl";
+            this.loggedInLbl.Size = new System.Drawing.Size(66, 24);
+            this.loggedInLbl.TabIndex = 2;
+            this.loggedInLbl.Text = "NAME";
             // 
             // panel3
             // 
@@ -569,41 +598,46 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Online Members Area";
             // 
-            // loggedInLbl
+            // activeMembershipPanel
             // 
-            this.loggedInLbl.AllowDrop = true;
-            this.loggedInLbl.AutoSize = true;
-            this.loggedInLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loggedInLbl.ForeColor = System.Drawing.Color.White;
-            this.loggedInLbl.Location = new System.Drawing.Point(61, 68);
-            this.loggedInLbl.Name = "loggedInLbl";
-            this.loggedInLbl.Size = new System.Drawing.Size(66, 24);
-            this.loggedInLbl.TabIndex = 2;
-            this.loggedInLbl.Text = "NAME";
+            this.activeMembershipPanel.Controls.Add(this.panel13);
+            this.activeMembershipPanel.Location = new System.Drawing.Point(200, 13);
+            this.activeMembershipPanel.Name = "activeMembershipPanel";
+            this.activeMembershipPanel.Size = new System.Drawing.Size(984, 749);
+            this.activeMembershipPanel.TabIndex = 14;
             // 
-            // label1
+            // panel13
             // 
-            this.label1.AllowDrop = true;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(44, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Logged In:";
+            this.panel13.Controls.Add(this.label11);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(984, 133);
+            this.panel13.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(318, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(223, 33);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "My Membership";
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.activeMembershipPanel);
+            this.Controls.Add(this.membershipPanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
             this.Controls.Add(this.placeHirePanel);
             this.Controls.Add(this.benefitsPagePanel);
-            this.Controls.Add(this.membershipPanel);
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.eventsHomePageTabPanel);
@@ -645,6 +679,9 @@
             this.onlineMembersAreaPanel.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.activeMembershipPanel.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -693,5 +730,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label loggedInLbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel activeMembershipPanel;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label11;
     }
 }

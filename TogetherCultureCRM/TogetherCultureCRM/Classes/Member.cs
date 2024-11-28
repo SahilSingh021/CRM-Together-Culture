@@ -8,7 +8,9 @@ namespace TogetherCultureCRM.Classes
 {
     internal class Member
     {
-        public int memberId {  get; set; }
-        public int userId { get; set; }
+        public Guid memberId {  get; set; }
+        public Guid userId { get; set; }
+        public Guid membershipTypeId { get; set; }
+        public Guid interestId { get; set; }
     }
 }
