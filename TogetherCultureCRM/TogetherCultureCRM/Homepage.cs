@@ -107,7 +107,12 @@ namespace TogetherCultureCRM
         {
             DashboardBtn_BackColorReset();
             membershipPageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
-            membershipPanel.BringToFront();
+
+            if (UserSession.User.bIsMember)
+                activeMembershipPanel.BringToFront();
+            else
+                membershipPanel.BringToFront();
+
             Homepage.ActiveForm.Text = "Membership Page";
         }
 
