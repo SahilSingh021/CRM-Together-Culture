@@ -5,6 +5,21 @@ CREATE TABLE Users (
     email VARCHAR(100) NOT NULL UNIQUE,
 	bIsAdmin BIT NOT NULL DEFAULT 0,
 	bIsBanned BIT NOT NULL DEFAULT 0,
+	bIsMember BIT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IntrestTag (
+    tagId VARCHAR(36) PRIMARY KEY,
+    tagName VARCHAR(50) NOT NULL,
+    tagCreationDate DATETIME DEFAULT GETDATE(),
+);
+
+CREATE TABLE UserTag (
+    userId VARCHAR(36),
+	tagId VARCHAR(36),
+	PRIMARY KEY (userId, tagId),
+	FOREIGN KEY (userId) REFERENCES Users(userId),
+	FOREIGN KEY (tagId) REFERENCES IntrestTag(tagId)
 );
 
 CREATE TABLE Admin (
@@ -21,42 +36,63 @@ CREATE TABLE AdminRequests (
     FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
-CREATE TABLE MemberBenefits (
-    memberBenefitsId VARCHAR(36) PRIMARY KEY,
-    benefitsDescription TEXT NOT NULL,
-    usedBenefits BIT NOT NULL, 
-);
-
 CREATE TABLE MembershipType (
     membershipTypeId VARCHAR(36) PRIMARY KEY,
-	memberBenefitsId VARCHAR(36),
     typeName VARCHAR(100) NOT NULL,
     description TEXT,
     cost DECIMAL(10, 2) NOT NULL,
-    duration INT NOT NULL,
-    accessLevel INT NOT NULL,
-    FOREIGN KEY (memberBenefitsId) REFERENCES MemberBenefits(memberBenefitsId)
+    duration VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE MemberKeyIntrest (
-	keyIntrestId VARCHAR(36) PRIMARY KEY,
-	keyIntrestDescription TEXT NOT NULL
+CREATE TABLE MemberBenefits (
+    memberBenefitsId VARCHAR(36) PRIMARY KEY,
+	membershipTypeId VARCHAR(36),
+    benefitsDescription TEXT NOT NULL,
+	FOREIGN KEY (membershipTypeId) REFERENCES MembershipType(membershipTypeId)
+);
+
+CREATE TABLE MembershipTypeBenefits (
+    membershipTypeId VARCHAR(36),
+	memberBenefitsId VARCHAR(36),
+	PRIMARY KEY (membershipTypeId, memberBenefitsId),
+	FOREIGN KEY (membershipTypeId) REFERENCES MembershipType(membershipTypeId),
+	FOREIGN KEY (memberBenefitsId) REFERENCES MemberBenefits(memberBenefitsId)
+);
+
+CREATE TABLE KeyIntrest (
+	intrestId VARCHAR(36) PRIMARY KEY,
+	keyIntrestDescription TEXT NOT NULL,
+	intrestDate DATETIME DEFAULT GETDATE()
 );
 
 CREATE TABLE Member (
     memberId VARCHAR(36) PRIMARY KEY,
     userId VARCHAR(36) NOT NULL,
-	membershipId VARCHAR(36) NOT NULL,
-	keyIntrestId VARCHAR(36) NOT NULL,
+	membershipTypeId VARCHAR(36) NOT NULL,
+	intrestId VARCHAR(36) NOT NULL,
     FOREIGN KEY (userId) REFERENCES Users(userId),
-	FOREIGN KEY (membershipId) REFERENCES MembershipType(membershipTypeId),
-	FOREIGN KEY (keyIntrestId) REFERENCES MemberKeyIntrest(keyIntrestId)
+	FOREIGN KEY (membershipTypeId) REFERENCES MembershipType(membershipTypeId),
+	FOREIGN KEY (intrestId) REFERENCES KeyIntrest(intrestId)
+);
+
+CREATE TABLE MemberKeyIntrest (
+	memberId VARCHAR(36),
+	intrestId VARCHAR(36),
+	PRIMARY KEY (memberId, intrestId),
+	FOREIGN KEY (memberId) REFERENCES Member(memberId),
+	FOREIGN KEY (intrestId) REFERENCES KeyIntrest(intrestId)
 );
 
 SELECT * FROM Users
+SELECT * FROM IntrestTag
+SELECT * FROM UserTag
+
 SELECT * FROM Admin
 SELECT * FROM AdminRequests
-SELECT * FROM MemberBenefits
+
 SELECT * FROM MembershipType
-SELECT * FROM MemberKeyIntrest
+SELECT * FROM MemberBenefits
+SELECT * FROM MembershipTypeBenefits
+SELECT * FROM KeyIntrest
 SELECT * FROM Member
+SELECT * FROM MemberKeyIntrest
