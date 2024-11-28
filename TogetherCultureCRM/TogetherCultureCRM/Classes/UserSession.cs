@@ -8,13 +8,13 @@ namespace TogetherCultureCRM.Classes
 {
     internal static class UserSession
     {
-        public static Guid userId { get; set; }
-        public static string username { get; set; }
-        public static string password { get; set; }
-        public static string email { get; set; }
-        public static bool bIsAdmin { get; set; }
-        public static bool bIsBanned { get; set; }
-        public static bool bIsMember { get; set; }
+        static UserSession()
+        {
+            User = new User();
+            Member = new Member();
+        }
+
+        public static User User { get; set; }
         public static Member Member {  get; set; } 
     }
 }

@@ -123,6 +123,8 @@ namespace TogetherCultureCRM.AdminPages
             _selectdUser.bIsAdmin = isAdmin;
             _selectdUser.bIsBanned = isBanned;
             _selectdUser.bIsMember = isMember;
+
+            this.Close();
         }
     }
 }

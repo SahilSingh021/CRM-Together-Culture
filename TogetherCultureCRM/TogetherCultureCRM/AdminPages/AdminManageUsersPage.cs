@@ -22,7 +22,7 @@ namespace TogetherCultureCRM.AdminPages
             InitializeComponent();
         }
 
-        private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
+        void LoadData()
         {
             string searchBarText = searchBarTxt.Text;
 
@@ -55,7 +55,8 @@ namespace TogetherCultureCRM.AdminPages
                                 password = reader.GetString(reader.GetOrdinal("password")),
                                 email = reader.GetString(reader.GetOrdinal("email")),
                                 bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin")),
-                                bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"))
+                                bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned")),
+                                bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"))
                             };
 
                             userList.Add(user);
@@ -78,6 +79,7 @@ namespace TogetherCultureCRM.AdminPages
                     userDisplayCardControl.EmailText = item.email;
                     userDisplayCardControl.IsAdmin = item.bIsAdmin;
                     userDisplayCardControl.IsBanned = item.bIsBanned;
+                    userDisplayCardControl.IsMember = item.bIsMember;
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
                         AdminEditUserPage adminEditUserPage = new AdminEditUserPage(item);
@@ -97,6 +99,16 @@ namespace TogetherCultureCRM.AdminPages
                     i++;
                 }
             }
+        }
+
+        private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            LoadData();
+        }
+
+        private void AdminManageUsersPage_Activated(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -99,7 +99,8 @@
             this.MaximizeBox = false;
             this.Name = "AdminManageUsersPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminRequests";
+            this.Text = "Manage Requests";
+            this.Activated += new System.EventHandler(this.AdminManageUsersPage_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

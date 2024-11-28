@@ -86,16 +86,16 @@ namespace TogetherCultureCRM.AuthenticationPages
                             if (storedPassword == password)
                             {
                                 // Passwords match - user is authenticated
-                                UserSession.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
-                                UserSession.username = reader.GetString(reader.GetOrdinal("username"));
-                                UserSession.password = reader.GetString(reader.GetOrdinal("password"));
-                                UserSession.email = reader.GetString(reader.GetOrdinal("email"));
-                                UserSession.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
-                                UserSession.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
-                                UserSession.bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"));
+                                UserSession.User.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
+                                UserSession.User.username = reader.GetString(reader.GetOrdinal("username"));
+                                UserSession.User.password = reader.GetString(reader.GetOrdinal("password"));
+                                UserSession.User.email = reader.GetString(reader.GetOrdinal("email"));
+                                UserSession.User.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
+                                UserSession.User.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
+                                UserSession.User.bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"));
                                 
 
-                                if (UserSession.bIsBanned)
+                                if (UserSession.User.bIsBanned)
                                 {
                                     MessageBox.Show("You are banned from using this service. Please contact your admin.", "Banned", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
@@ -103,12 +103,12 @@ namespace TogetherCultureCRM.AuthenticationPages
 
                                 reader.Close();
 
-                                if (UserSession.bIsAdmin)
+                                if (UserSession.User.bIsAdmin)
                                 {
                                     string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
                                     {
-                                        command1.Parameters.AddWithValue("@userId", UserSession.userId);
+                                        command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
                                         using (SqlDataReader reader1 = command1.ExecuteReader())
                                         {
                                             if (reader1.Read())
@@ -120,25 +120,24 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-                                if (UserSession.bIsMember)
+                                if (UserSession.User.bIsMember)
                                 {
                                     string selectMemberSql = "SELECT * FROM [Member] WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectMemberSql, con))
                                     {
-                                        command1.Parameters.AddWithValue("@userId", UserSession.userId);
+                                        command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
                                         using (SqlDataReader reader1 = command1.ExecuteReader())
                                         {
                                             if (reader1.Read())
                                             {
                                                 UserSession.Member.memberId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberId")));
-                                                UserSession.Member.userId = UserSession.userId;
+                                                UserSession.Member.userId = UserSession.User.userId;
                                                 UserSession.Member.membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId")));
-                                                UserSession.Member.interestId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("interestId")));
+                                                UserSession.Member.interestId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("intrestId")));
                                             }
                                         }
                                     }
                                 }
-
 
                                 Homepage homepage = new Homepage();
                                 homepage.Show();

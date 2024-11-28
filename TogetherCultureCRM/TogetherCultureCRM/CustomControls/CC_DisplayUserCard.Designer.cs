@@ -35,6 +35,7 @@
             this.userIdLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
             this.passwordLbl = new System.Windows.Forms.Label();
+            this.isMemberCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // usernameLbl
@@ -115,10 +116,23 @@
             this.passwordLbl.Text = "password";
             this.passwordLbl.Visible = false;
             // 
+            // isMemberCheckBox
+            // 
+            this.isMemberCheckBox.AutoSize = true;
+            this.isMemberCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isMemberCheckBox.Enabled = false;
+            this.isMemberCheckBox.Location = new System.Drawing.Point(408, 33);
+            this.isMemberCheckBox.Name = "isMemberCheckBox";
+            this.isMemberCheckBox.Size = new System.Drawing.Size(75, 17);
+            this.isMemberCheckBox.TabIndex = 20;
+            this.isMemberCheckBox.Text = "Is Member";
+            this.isMemberCheckBox.UseVisualStyleBackColor = true;
+            // 
             // CC_DisplayUserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.isMemberCheckBox);
             this.Controls.Add(this.passwordLbl);
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.userIdLbl);
@@ -142,5 +156,6 @@
         private System.Windows.Forms.Label userIdLbl;
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label passwordLbl;
+        private System.Windows.Forms.CheckBox isMemberCheckBox;
     }
 }

@@ -25,13 +25,13 @@ namespace TogetherCultureCRM
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            loggedInLbl.Text = UserSession.username;
+            loggedInLbl.Text = UserSession.User.username;
 
             homePagePanel.BringToFront();
             homeDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             Homepage.ActiveForm.Text = "Home Page";
 
-            if (UserSession.bIsAdmin)
+            if (UserSession.User.bIsAdmin)
             {
                 _adminHomePageTabBtn = new Button
                 {
@@ -69,7 +69,7 @@ namespace TogetherCultureCRM
             digitalConnectionDashboardBtn.BackColor = col;
             onlineMembersAreadDashboardBtn.BackColor = col;
 
-            if (UserSession.bIsAdmin && _adminHomePageTabBtn != null)
+            if (UserSession.User.bIsAdmin && _adminHomePageTabBtn != null)
             {
                 _adminHomePageTabBtn.BackColor = col;
             }
