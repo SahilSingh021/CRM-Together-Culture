@@ -93,7 +93,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 UserSession.User.bIsAdmin = reader.GetBoolean(reader.GetOrdinal("bIsAdmin"));
                                 UserSession.User.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
                                 UserSession.User.bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"));
-                                
+
 
                                 if (UserSession.User.bIsBanned)
                                 {
@@ -138,35 +138,36 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
                                 }
+                                else
+                                {
+                                    string selectMembershipTypeSql = "SELECT * FROM [MembershipType]";
+                                    using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
+                                    {
+                                        using (SqlDataReader reader1 = command.ExecuteReader())
+                                        {
+                                            if (reader.Read())
+                                            {
+                                                string storedPassword = reader.GetString(reader.GetOrdinal("password"));
+                                            }
 
-                                Homepage homepage = new Homepage();
-                                homepage.Show();
-                              
-                                this.Hide();
+                                            Homepage homepage = new Homepage();
+                                            homepage.Show();
+
+                                            this.Hide();
+                                        }
+                                    }
+                                }
                             }
-                            else
-                            {
-                                // Passwords do not match - authentication failed
-                                MessageBox.Show("Authentication Unsuccessful. Please Try Again!", "Failure");
-                            }
-                        }
-                        else
-                        {
-                            // No matching user record - authentication failed
-                            MessageBox.Show("Authentication Unsuccessful. Please Try Again!", "Failure");
+
+                            con.Close();
                         }
                     }
+
+                    private void signUpBtn_Click(object sender, EventArgs e)
+                    {
+                        Signup signup = new Signup();
+                        this.Hide();
+                        signup.Show();
+                    }
                 }
-
-                con.Close();
             }
-        }
-
-        private void signUpBtn_Click(object sender, EventArgs e)
-        {
-            Signup signup = new Signup();
-            this.Hide();
-            signup.Show();
-        }
-    }
-}

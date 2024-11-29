@@ -12,9 +12,11 @@ namespace TogetherCultureCRM.Classes
         {
             User = new User();
             Member = new Member();
+            MembershipType = new MembershipType();
         }
 
         public static User User { get; set; }
         public static Member Member {  get; set; } 
+        public static MembershipType MembershipType {  get; set; } 
     }
 }

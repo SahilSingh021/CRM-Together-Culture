@@ -73,6 +73,10 @@
             this.activeMembershipPanel = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.membershipDropBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.becomeAMemberBtn = new System.Windows.Forms.Button();
+            this.membershipDescriptionTxtBox = new System.Windows.Forms.RichTextBox();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -460,6 +464,10 @@
             // 
             // membershipPanel
             // 
+            this.membershipPanel.Controls.Add(this.membershipDescriptionTxtBox);
+            this.membershipPanel.Controls.Add(this.becomeAMemberBtn);
+            this.membershipPanel.Controls.Add(this.label12);
+            this.membershipPanel.Controls.Add(this.membershipDropBox);
             this.membershipPanel.Controls.Add(this.panel8);
             this.membershipPanel.Location = new System.Drawing.Point(200, 12);
             this.membershipPanel.Name = "membershipPanel";
@@ -626,13 +634,60 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
+            // membershipDropBox
+            // 
+            this.membershipDropBox.FormattingEnabled = true;
+            this.membershipDropBox.Location = new System.Drawing.Point(140, 273);
+            this.membershipDropBox.Name = "membershipDropBox";
+            this.membershipDropBox.Size = new System.Drawing.Size(252, 21);
+            this.membershipDropBox.TabIndex = 4;
+            this.membershipDropBox.SelectedIndexChanged += new System.EventHandler(this.membershipDropBox_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(136, 250);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(108, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Memberships:";
+            // 
+            // becomeAMemberBtn
+            // 
+            this.becomeAMemberBtn.BackColor = System.Drawing.Color.Khaki;
+            this.becomeAMemberBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.becomeAMemberBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.becomeAMemberBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.becomeAMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.becomeAMemberBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.becomeAMemberBtn.Location = new System.Drawing.Point(443, 251);
+            this.becomeAMemberBtn.Name = "becomeAMemberBtn";
+            this.becomeAMemberBtn.Size = new System.Drawing.Size(240, 43);
+            this.becomeAMemberBtn.TabIndex = 6;
+            this.becomeAMemberBtn.Text = "Become a Member";
+            this.becomeAMemberBtn.UseVisualStyleBackColor = false;
+            // 
+            // membershipDescriptionTxtBox
+            // 
+            this.membershipDescriptionTxtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.membershipDescriptionTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.membershipDescriptionTxtBox.Enabled = false;
+            this.membershipDescriptionTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipDescriptionTxtBox.Location = new System.Drawing.Point(41, 527);
+            this.membershipDescriptionTxtBox.Name = "membershipDescriptionTxtBox";
+            this.membershipDescriptionTxtBox.Size = new System.Drawing.Size(905, 190);
+            this.membershipDescriptionTxtBox.TabIndex = 8;
+            this.membershipDescriptionTxtBox.Text = "";
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
+            this.Controls.Add(this.adminHomePagePanel);
+            this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
@@ -641,7 +696,6 @@
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.eventsHomePageTabPanel);
-            this.Controls.Add(this.adminHomePagePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
@@ -665,6 +719,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.membershipPanel.ResumeLayout(false);
+            this.membershipPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.benefitsPagePanel.ResumeLayout(false);
@@ -733,5 +788,9 @@
         private System.Windows.Forms.Panel activeMembershipPanel;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox membershipDropBox;
+        private System.Windows.Forms.Button becomeAMemberBtn;
+        private System.Windows.Forms.RichTextBox membershipDescriptionTxtBox;
     }
 }

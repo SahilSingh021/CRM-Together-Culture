@@ -110,7 +110,7 @@ namespace TogetherCultureCRM
 
             if (UserSession.User.bIsMember)
                 activeMembershipPanel.BringToFront();
-            else
+            else 
                 membershipPanel.BringToFront();
 
             Homepage.ActiveForm.Text = "Membership Page";
@@ -162,6 +162,11 @@ namespace TogetherCultureCRM
             onlineMembersAreadDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             onlineMembersAreaPanel.BringToFront();
             Homepage.ActiveForm.Text = "Online Members Area Page";
+        }
+
+        private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
