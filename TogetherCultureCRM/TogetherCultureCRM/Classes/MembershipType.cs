@@ -14,6 +14,5 @@ namespace TogetherCultureCRM.Classes
         public decimal cost { get; set; }
         public decimal joiningFee { get; set; }
         public string duration { get; set; }
-
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TogetherCultureCRM.AdminPages;
 using TogetherCultureCRM.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TogetherCultureCRM
 {
@@ -110,8 +113,15 @@ namespace TogetherCultureCRM
 
             if (UserSession.User.bIsMember)
                 activeMembershipPanel.BringToFront();
-            else 
+            else
+            {
+                foreach (var membershipType in UserSession.MembershipTypes)
+                {
+                    membershipDropBox.Items.Add(membershipType.typeName);
+                }
+
                 membershipPanel.BringToFront();
+            }
 
             Homepage.ActiveForm.Text = "Membership Page";
         }
@@ -166,7 +176,68 @@ namespace TogetherCultureCRM
 
         private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedMembershipTypeName = membershipDropBox.Text;
+            var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
 
+            membershipDescriptionTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
+            selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
+        }
+
+        private void becomeAMemberBtn_Click(object sender, EventArgs e)
+        {
+            Guid memberId = Guid.NewGuid();
+            Guid currentUserId = UserSession.User.userId;
+            string selectedMembershipTypeName = membershipDropBox.Text;
+            var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
+
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                // Update Users table for bIsMemeber
+                string updateUserSql = "UPDATE Users SET bIsMember=1 WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(updateUserSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", currentUserId);
+                    command.ExecuteNonQuery();
+                }
+
+                // Add record to Member table
+                string insertMemberSql = "INSERT INTO Member (memberId, userId, membershipTypeId) VALUES (@memberId, @userId, @membershipTypeId)";
+                using (SqlCommand command = new SqlCommand(insertMemberSql, con))
+                {
+                    command.Parameters.AddWithValue("@memberId", memberId);
+                    command.Parameters.AddWithValue("@userId", currentUserId);
+                    command.Parameters.AddWithValue("@membershipTypeId", selectedMembership.membershipTypeId);
+                    command.ExecuteNonQuery();
+                }
+                con.Close();
+
+                UserSession.User.bIsMember = true;
+
+                UserSession.Member.memberId = memberId;
+                UserSession.Member.userId = currentUserId;
+                UserSession.Member.membershipTypeId = selectedMembership.membershipTypeId;
+
+                UserSession.ActiveMembership = selectedMembership;
+
+                UserSession.MembershipTypes.Clear();
+
+                MessageBox.Show("You membership has been updated to " + selectedMembership.typeName + "!");
+            }
+
+            activeMembershipPanel.BringToFront();
+            activeMembershipPanel.Focus();
+        }
+
+        private void activeMembershipPanel_Enter(object sender, EventArgs e)
+        {
+            var selectedMembership = UserSession.ActiveMembership;
+
+            membershipInfoTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
+            selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
         }
     }
 }

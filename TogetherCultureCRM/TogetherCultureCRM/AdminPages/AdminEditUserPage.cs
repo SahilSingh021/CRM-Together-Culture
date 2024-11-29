@@ -59,6 +59,13 @@ namespace TogetherCultureCRM.AdminPages
                 return;
             }
 
+            if (_selectdUser.userId == UserSession.User.userId)
+            {
+                MessageBox.Show("You cannot update your own user.");
+                this.Close();
+                return; 
+            }
+
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -95,10 +102,42 @@ namespace TogetherCultureCRM.AdminPages
                                 command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
                                 command1.ExecuteNonQuery();
                             }
+
+                            UserSession.User.bIsAdmin = true;
                         }
                         else if (_selectdUser.bIsAdmin && !isAdmin)
                         {
                             string deleteSql = @"DELETE FROM Admin WHERE userId = @userId";
+                            using (SqlCommand command1 = new SqlCommand(deleteSql, con))
+                            {
+                                command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
+                                command1.ExecuteNonQuery();
+                            }
+                        }
+
+                        if (!_selectdUser.bIsMember && isMember)
+                        {
+                            Guid communityMembershipId;
+                            string selectSql = "SELECT membershipTypeId FROM MembershipType WHERE typeName = 'Community'";
+                            using (SqlCommand command1 = new SqlCommand(selectSql, con))
+                            {
+                                var result = command1.ExecuteScalar();
+                                communityMembershipId = Guid.Parse(result.ToString());
+                            }
+
+                            Guid memberId = Guid.NewGuid();
+                            string insertMemberSql = "INSERT INTO Member (memberId, userId, membershipTypeId) VALUES (@memberId, @userId, @membershipTypeId)";
+                            using (SqlCommand command1 = new SqlCommand(insertMemberSql, con))
+                            {
+                                command1.Parameters.AddWithValue("@memberId", memberId);
+                                command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
+                                command1.Parameters.AddWithValue("@membershipTypeId", communityMembershipId);
+                                command1.ExecuteNonQuery();
+                            }
+                        }
+                        else if (_selectdUser.bIsMember && !isMember)
+                        {
+                            string deleteSql = @"DELETE FROM Member WHERE userId = @userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
                                 command1.Parameters.AddWithValue("@userId", _selectdUser.userId);

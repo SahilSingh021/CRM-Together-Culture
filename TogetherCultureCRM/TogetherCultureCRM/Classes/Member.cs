@@ -11,6 +11,5 @@ namespace TogetherCultureCRM.Classes
         public Guid memberId {  get; set; }
         public Guid userId { get; set; }
         public Guid membershipTypeId { get; set; }
-        public Guid interestId { get; set; }
     }
 }

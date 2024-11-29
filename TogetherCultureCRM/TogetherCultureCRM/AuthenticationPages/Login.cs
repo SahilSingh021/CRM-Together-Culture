@@ -113,8 +113,8 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         {
                                             if (reader1.Read())
                                             {
-                                                Admin.adminId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("adminId")));
-                                                Admin.userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId")));
+                                                UserSession.Admin.adminId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("adminId")));
+                                                UserSession.Admin.userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId")));
                                             }
                                         }
                                     }
@@ -133,7 +133,24 @@ namespace TogetherCultureCRM.AuthenticationPages
                                                 UserSession.Member.memberId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberId")));
                                                 UserSession.Member.userId = UserSession.User.userId;
                                                 UserSession.Member.membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId")));
-                                                UserSession.Member.interestId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("intrestId")));
+                                            }
+                                        }
+                                    }
+
+                                    string selectActiveMembershipSql = "SELECT * FROM MembershipType WHERE membershipTypeId=@membershipTypeId";
+                                    using (SqlCommand command1 = new SqlCommand(selectActiveMembershipSql, con))
+                                    {
+                                        command1.Parameters.AddWithValue("@membershipTypeId", UserSession.Member.membershipTypeId);
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                                        {
+                                            if (reader1.Read())
+                                            {
+                                                UserSession.ActiveMembership.membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId")));
+                                                UserSession.ActiveMembership.typeName = reader1.GetString(reader1.GetOrdinal("typeName"));
+                                                UserSession.ActiveMembership.description = reader1.GetString(reader1.GetOrdinal("description"));
+                                                UserSession.ActiveMembership.cost = reader1.GetDecimal(reader1.GetOrdinal("cost"));
+                                                UserSession.ActiveMembership.joiningFee = reader1.GetDecimal(reader1.GetOrdinal("joiningFee"));
+                                                UserSession.ActiveMembership.duration = reader1.GetString(reader1.GetOrdinal("duration"));
                                             }
                                         }
                                     }
@@ -143,31 +160,42 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     string selectMembershipTypeSql = "SELECT * FROM [MembershipType]";
                                     using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
                                     {
-                                        using (SqlDataReader reader1 = command.ExecuteReader())
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
                                         {
-                                            if (reader.Read())
+                                            while (reader1.Read())
                                             {
-                                                string storedPassword = reader.GetString(reader.GetOrdinal("password"));
+                                                MembershipType membershipType = new MembershipType()
+                                                {
+                                                    membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId"))),
+                                                    typeName = reader1.GetString(reader1.GetOrdinal("typeName")),
+                                                    description = reader1.GetString(reader1.GetOrdinal("description")),
+                                                    cost = reader1.GetDecimal(reader1.GetOrdinal("cost")),
+                                                    joiningFee = reader1.GetDecimal(reader1.GetOrdinal("joiningFee")),
+                                                    duration = reader1.GetString(reader1.GetOrdinal("duration"))
+                                                };
+
+                                                UserSession.MembershipTypes.Add(membershipType);
                                             }
-
-                                            Homepage homepage = new Homepage();
-                                            homepage.Show();
-
-                                            this.Hide();
                                         }
                                     }
                                 }
+
+                                con.Close();
+                                Homepage homepage = new Homepage();
+                                homepage.Show();
+                                this.Hide();
                             }
-
-                            con.Close();
                         }
-                    }
-
-                    private void signUpBtn_Click(object sender, EventArgs e)
-                    {
-                        Signup signup = new Signup();
-                        this.Hide();
-                        signup.Show();
                     }
                 }
             }
+        }
+
+        private void signUpBtn_Click(object sender, EventArgs e)
+        {
+            Signup signup = new Signup();
+            this.Hide();
+            signup.Show();
+        }
+    }
+}
