@@ -56,6 +56,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.membershipPanel = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.membershipBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.membershipDescriptionTxtBox = new System.Windows.Forms.RichTextBox();
             this.becomeAMemberBtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,12 +78,14 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.activeMembershipPanel = new System.Windows.Forms.Panel();
-            this.membershipInfoTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.membershipBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.membershipNameLbl = new System.Windows.Forms.Label();
+            this.descriptionLbl = new System.Windows.Forms.Label();
+            this.costLbl = new System.Windows.Forms.Label();
+            this.joiningFeeLbl = new System.Windows.Forms.Label();
+            this.durationLbl = new System.Windows.Forms.Label();
+            this.cancleMembershipBtn = new System.Windows.Forms.Button();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -481,14 +486,44 @@
             this.membershipPanel.Size = new System.Drawing.Size(984, 749);
             this.membershipPanel.TabIndex = 9;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(54, 432);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(105, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Membership Benefits";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 234);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Membership Data";
+            // 
+            // membershipBenefitsTxtBox
+            // 
+            this.membershipBenefitsTxtBox.BackColor = System.Drawing.Color.White;
+            this.membershipBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.membershipBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipBenefitsTxtBox.Location = new System.Drawing.Point(57, 446);
+            this.membershipBenefitsTxtBox.Name = "membershipBenefitsTxtBox";
+            this.membershipBenefitsTxtBox.ReadOnly = true;
+            this.membershipBenefitsTxtBox.Size = new System.Drawing.Size(874, 255);
+            this.membershipBenefitsTxtBox.TabIndex = 9;
+            this.membershipBenefitsTxtBox.Text = "Select a membership to view membership benefits...";
+            // 
             // membershipDescriptionTxtBox
             // 
             this.membershipDescriptionTxtBox.BackColor = System.Drawing.Color.White;
             this.membershipDescriptionTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.membershipDescriptionTxtBox.Enabled = false;
             this.membershipDescriptionTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.membershipDescriptionTxtBox.Location = new System.Drawing.Point(57, 250);
             this.membershipDescriptionTxtBox.Name = "membershipDescriptionTxtBox";
+            this.membershipDescriptionTxtBox.ReadOnly = true;
             this.membershipDescriptionTxtBox.Size = new System.Drawing.Size(874, 172);
             this.membershipDescriptionTxtBox.TabIndex = 8;
             this.membershipDescriptionTxtBox.Text = "Select a membership to view membership data...";
@@ -663,24 +698,17 @@
             // 
             // activeMembershipPanel
             // 
-            this.activeMembershipPanel.Controls.Add(this.membershipInfoTxtBox);
+            this.activeMembershipPanel.Controls.Add(this.cancleMembershipBtn);
+            this.activeMembershipPanel.Controls.Add(this.durationLbl);
+            this.activeMembershipPanel.Controls.Add(this.joiningFeeLbl);
+            this.activeMembershipPanel.Controls.Add(this.costLbl);
+            this.activeMembershipPanel.Controls.Add(this.descriptionLbl);
+            this.activeMembershipPanel.Controls.Add(this.membershipNameLbl);
             this.activeMembershipPanel.Controls.Add(this.panel13);
             this.activeMembershipPanel.Location = new System.Drawing.Point(200, 13);
             this.activeMembershipPanel.Name = "activeMembershipPanel";
             this.activeMembershipPanel.Size = new System.Drawing.Size(984, 749);
             this.activeMembershipPanel.TabIndex = 14;
-            // 
-            // membershipInfoTxtBox
-            // 
-            this.membershipInfoTxtBox.BackColor = System.Drawing.Color.White;
-            this.membershipInfoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.membershipInfoTxtBox.Enabled = false;
-            this.membershipInfoTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membershipInfoTxtBox.Location = new System.Drawing.Point(215, 215);
-            this.membershipInfoTxtBox.Name = "membershipInfoTxtBox";
-            this.membershipInfoTxtBox.Size = new System.Drawing.Size(555, 318);
-            this.membershipInfoTxtBox.TabIndex = 9;
-            this.membershipInfoTxtBox.Text = "";
             // 
             // panel13
             // 
@@ -696,41 +724,77 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(318, 51);
+            this.label11.Location = new System.Drawing.Point(390, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(223, 33);
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
-            // membershipBenefitsTxtBox
+            // membershipNameLbl
             // 
-            this.membershipBenefitsTxtBox.BackColor = System.Drawing.Color.White;
-            this.membershipBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.membershipBenefitsTxtBox.Enabled = false;
-            this.membershipBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membershipBenefitsTxtBox.Location = new System.Drawing.Point(57, 446);
-            this.membershipBenefitsTxtBox.Name = "membershipBenefitsTxtBox";
-            this.membershipBenefitsTxtBox.Size = new System.Drawing.Size(874, 255);
-            this.membershipBenefitsTxtBox.TabIndex = 9;
-            this.membershipBenefitsTxtBox.Text = "Select a membership to view membership benefits...";
+            this.membershipNameLbl.AutoSize = true;
+            this.membershipNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipNameLbl.Location = new System.Drawing.Point(53, 179);
+            this.membershipNameLbl.Name = "membershipNameLbl";
+            this.membershipNameLbl.Size = new System.Drawing.Size(146, 20);
+            this.membershipNameLbl.TabIndex = 4;
+            this.membershipNameLbl.Text = "Membership Name:";
             // 
-            // label13
+            // descriptionLbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(54, 234);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 13);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Membership Data";
+            this.descriptionLbl.AutoSize = true;
+            this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLbl.Location = new System.Drawing.Point(53, 235);
+            this.descriptionLbl.Name = "descriptionLbl";
+            this.descriptionLbl.Size = new System.Drawing.Size(93, 20);
+            this.descriptionLbl.TabIndex = 5;
+            this.descriptionLbl.Text = "Description:";
             // 
-            // label14
+            // costLbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 432);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(105, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Membership Benefits";
+            this.costLbl.AutoSize = true;
+            this.costLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costLbl.Location = new System.Drawing.Point(53, 289);
+            this.costLbl.Name = "costLbl";
+            this.costLbl.Size = new System.Drawing.Size(46, 20);
+            this.costLbl.TabIndex = 6;
+            this.costLbl.Text = "Cost:";
+            // 
+            // joiningFeeLbl
+            // 
+            this.joiningFeeLbl.AutoSize = true;
+            this.joiningFeeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.joiningFeeLbl.Location = new System.Drawing.Point(53, 341);
+            this.joiningFeeLbl.Name = "joiningFeeLbl";
+            this.joiningFeeLbl.Size = new System.Drawing.Size(95, 20);
+            this.joiningFeeLbl.TabIndex = 7;
+            this.joiningFeeLbl.Text = "Joining Fee:";
+            // 
+            // durationLbl
+            // 
+            this.durationLbl.AutoSize = true;
+            this.durationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLbl.Location = new System.Drawing.Point(53, 394);
+            this.durationLbl.Name = "durationLbl";
+            this.durationLbl.Size = new System.Drawing.Size(74, 20);
+            this.durationLbl.TabIndex = 8;
+            this.durationLbl.Text = "Duration:";
+            // 
+            // cancleMembershipBtn
+            // 
+            this.cancleMembershipBtn.BackColor = System.Drawing.Color.Khaki;
+            this.cancleMembershipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancleMembershipBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.cancleMembershipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.cancleMembershipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancleMembershipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancleMembershipBtn.Location = new System.Drawing.Point(691, 445);
+            this.cancleMembershipBtn.Name = "cancleMembershipBtn";
+            this.cancleMembershipBtn.Size = new System.Drawing.Size(240, 43);
+            this.cancleMembershipBtn.TabIndex = 9;
+            this.cancleMembershipBtn.Text = "Cancel Membership";
+            this.cancleMembershipBtn.UseVisualStyleBackColor = false;
+            this.cancleMembershipBtn.Click += new System.EventHandler(this.cancleMembershipBtn_Click);
             // 
             // Homepage
             // 
@@ -787,6 +851,7 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.activeMembershipPanel.ResumeLayout(false);
+            this.activeMembershipPanel.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.ResumeLayout(false);
@@ -844,9 +909,14 @@
         private System.Windows.Forms.ComboBox membershipDropBox;
         private System.Windows.Forms.Button becomeAMemberBtn;
         private System.Windows.Forms.RichTextBox membershipDescriptionTxtBox;
-        private System.Windows.Forms.RichTextBox membershipInfoTxtBox;
         private System.Windows.Forms.RichTextBox membershipBenefitsTxtBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label membershipNameLbl;
+        private System.Windows.Forms.Label descriptionLbl;
+        private System.Windows.Forms.Label costLbl;
+        private System.Windows.Forms.Label joiningFeeLbl;
+        private System.Windows.Forms.Label durationLbl;
+        private System.Windows.Forms.Button cancleMembershipBtn;
     }
 }

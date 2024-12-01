@@ -115,13 +115,46 @@ namespace TogetherCultureCRM
             {
                 var selectedMembership = UserSession.ActiveMembership;
 
-                membershipInfoTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
-                selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
+                membershipNameLbl.Text = "Membership Name: " + selectedMembership.typeName;
+                descriptionLbl.Text = "Description: " + selectedMembership.description;
+                costLbl.Text = "Cost: £" + selectedMembership.cost.ToString();
+                joiningFeeLbl.Text = "Joining Fee: £" + selectedMembership.joiningFee.ToString();
+                durationLbl.Text = "Duration: " + selectedMembership.duration;
 
                 activeMembershipPanel.BringToFront();
             }
             else
             {
+                membershipDropBox.Items.Clear();
+                UserSession.MembershipTypes.Clear();
+                Data data = new Data();
+                string connectionString = data.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string selectMembershipTypeSql = "SELECT * FROM MembershipType";
+                    using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
+                    {
+                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                        {
+                            while (reader1.Read())
+                            {
+                                MembershipType membershipType = new MembershipType()
+                                {
+                                    membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId"))),
+                                    typeName = reader1.GetString(reader1.GetOrdinal("typeName")),
+                                    description = reader1.GetString(reader1.GetOrdinal("description")),
+                                    cost = reader1.GetDecimal(reader1.GetOrdinal("cost")),
+                                    joiningFee = reader1.GetDecimal(reader1.GetOrdinal("joiningFee")),
+                                    duration = reader1.GetString(reader1.GetOrdinal("duration"))
+                                };
+
+                                UserSession.MembershipTypes.Add(membershipType);
+                            }
+                        }
+                    }
+                }
+
                 foreach (var membershipType in UserSession.MembershipTypes)
                 {
                     membershipDropBox.Items.Add(membershipType.typeName);
@@ -261,7 +294,7 @@ namespace TogetherCultureCRM
             {
                 con.Open();
 
-                // Delet any requests in the AdminRequests table created at signup
+                // Delete any requests in the AdminRequests table created at signup
                 string deleteSql = @"DELETE FROM AdminRequests WHERE userId=@userId";
                 using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                 {
@@ -301,8 +334,51 @@ namespace TogetherCultureCRM
                 MessageBox.Show("You membership has been updated to " + selectedMembership.typeName + "!");
             }
 
-            activeMembershipPanel.BringToFront();
-            //activeMembershipPanel.Focus();
+            membershipPageTabBtn.PerformClick();
+        }
+
+        private void cancleMembershipBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                    "Are you sure you want to cancel your memberships?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+            if (result == DialogResult.Yes)
+            {
+                Guid currentUserId = UserSession.User.userId;
+                Data dataCls = new Data();
+                string connectionString = dataCls.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    // Update Users table for bIsMemeber
+                    string updateUserSql = "UPDATE Users SET bIsMember=0 WHERE userId=@userId";
+                    using (SqlCommand command = new SqlCommand(updateUserSql, con))
+                    {
+                        command.Parameters.AddWithValue("@userId", currentUserId);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Delete Member record
+                    string deleteSql = @"DELETE FROM Member WHERE userId=@userId";
+                    using (SqlCommand command1 = new SqlCommand(deleteSql, con))
+                    {
+                        command1.Parameters.AddWithValue("@userId", currentUserId);
+                        command1.ExecuteNonQuery();
+                    }
+                }
+
+                UserSession.User.bIsMember = false;
+                UserSession.Member = new Member();
+                UserSession.ActiveMembership = new MembershipType();
+
+                membershipPageTabBtn.PerformClick();
+            }
+            return;
         }
     }
 }

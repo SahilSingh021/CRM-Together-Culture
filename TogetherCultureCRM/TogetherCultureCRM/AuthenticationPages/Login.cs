@@ -155,35 +155,16 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    string selectMembershipTypeSql = "SELECT * FROM MembershipType";
-                                    using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
-                                    {
-                                        using (SqlDataReader reader1 = command1.ExecuteReader())
-                                        {
-                                            while (reader1.Read())
-                                            {
-                                                MembershipType membershipType = new MembershipType()
-                                                {
-                                                    membershipTypeId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("membershipTypeId"))),
-                                                    typeName = reader1.GetString(reader1.GetOrdinal("typeName")),
-                                                    description = reader1.GetString(reader1.GetOrdinal("description")),
-                                                    cost = reader1.GetDecimal(reader1.GetOrdinal("cost")),
-                                                    joiningFee = reader1.GetDecimal(reader1.GetOrdinal("joiningFee")),
-                                                    duration = reader1.GetString(reader1.GetOrdinal("duration"))
-                                                };
-
-                                                UserSession.MembershipTypes.Add(membershipType);
-                                            }
-                                        }
-                                    }
-                                }
 
                                 con.Close();
                                 Homepage homepage = new Homepage();
                                 homepage.Show();
                                 this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Wrong credentials! Please try again.", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
                             }
                         }
                         else
