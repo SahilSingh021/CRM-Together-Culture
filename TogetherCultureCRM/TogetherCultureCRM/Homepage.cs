@@ -112,7 +112,14 @@ namespace TogetherCultureCRM
             membershipPageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
 
             if (UserSession.User.bIsMember)
+            {
+                var selectedMembership = UserSession.ActiveMembership;
+
+                membershipInfoTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
+                selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
+
                 activeMembershipPanel.BringToFront();
+            }
             else
             {
                 foreach (var membershipType in UserSession.MembershipTypes)
@@ -144,6 +151,19 @@ namespace TogetherCultureCRM
 
         private void benefitsDashboardBtn_Click(object sender, EventArgs e)
         {
+            if (!UserSession.User.bIsMember)
+            {
+                DialogResult result = MessageBox.Show(
+                    "This is a members-only area. Would you like to view available memberships?",
+                    "Membership Required",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+                if (result == DialogResult.Yes) membershipPageTabBtn.PerformClick();
+                return;
+            }
+
             DashboardBtn_BackColorReset();
             benefitsDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             benefitsPagePanel.BringToFront();
@@ -179,8 +199,53 @@ namespace TogetherCultureCRM
             string selectedMembershipTypeName = membershipDropBox.Text;
             var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
 
-            membershipDescriptionTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
-            selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            List<string> memberBenefits = new List<string>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                List<Guid> memberBenefitsIdList = new List<Guid>();
+                con.Open();
+                string selectSql = "SELECT memberBenefitsId FROM MembershipTypeBenefits WHERE membershipTypeId=@membershipTypeId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@membershipTypeId", selectedMembership.membershipTypeId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            memberBenefitsIdList.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("memberBenefitsId"))));
+                        }
+                    }
+                }
+
+                string selectSql1 = "SELECT benefitsDescription FROM MemberBenefits WHERE memberBenefitsId=@memberBenefitsId";
+                foreach (Guid memberBenefitsId in memberBenefitsIdList)
+                {
+                    using (SqlCommand command1 = new SqlCommand(selectSql1, con))
+                    {
+                        command1.Parameters.AddWithValue("@memberBenefitsId", memberBenefitsId);
+                        using (SqlDataReader reader = command1.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                memberBenefits.Add(reader.GetString(reader.GetOrdinal("benefitsDescription")));
+                            }
+                        }
+                    }
+                }
+            }
+
+            membershipDescriptionTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\nDescription: " + selectedMembership.description + "\nCost: £" +
+            selectedMembership.cost.ToString() + "\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\nDuration: " + selectedMembership.duration;
+
+            StringBuilder sb = new StringBuilder();
+            foreach (string memberBenefit in memberBenefits)
+            {
+                sb.AppendLine(memberBenefit);
+            }
+
+            membershipBenefitsTxtBox.Text = sb.ToString();
         }
 
         private void becomeAMemberBtn_Click(object sender, EventArgs e)
@@ -237,15 +302,7 @@ namespace TogetherCultureCRM
             }
 
             activeMembershipPanel.BringToFront();
-            activeMembershipPanel.Focus();
-        }
-
-        private void activeMembershipPanel_Enter(object sender, EventArgs e)
-        {
-            var selectedMembership = UserSession.ActiveMembership;
-
-            membershipInfoTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\n\nDescription: " + selectedMembership.description + "\n\nCost: £" +
-            selectedMembership.cost.ToString() + "\n\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\n\nDuration: " + selectedMembership.duration;
+            //activeMembershipPanel.Focus();
         }
     }
 }

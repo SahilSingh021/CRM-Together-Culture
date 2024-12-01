@@ -78,6 +78,9 @@
             this.membershipInfoTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.membershipBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -465,6 +468,9 @@
             // 
             // membershipPanel
             // 
+            this.membershipPanel.Controls.Add(this.label14);
+            this.membershipPanel.Controls.Add(this.label13);
+            this.membershipPanel.Controls.Add(this.membershipBenefitsTxtBox);
             this.membershipPanel.Controls.Add(this.membershipDescriptionTxtBox);
             this.membershipPanel.Controls.Add(this.becomeAMemberBtn);
             this.membershipPanel.Controls.Add(this.label12);
@@ -481,11 +487,11 @@
             this.membershipDescriptionTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.membershipDescriptionTxtBox.Enabled = false;
             this.membershipDescriptionTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membershipDescriptionTxtBox.Location = new System.Drawing.Point(200, 293);
+            this.membershipDescriptionTxtBox.Location = new System.Drawing.Point(57, 250);
             this.membershipDescriptionTxtBox.Name = "membershipDescriptionTxtBox";
-            this.membershipDescriptionTxtBox.Size = new System.Drawing.Size(555, 318);
+            this.membershipDescriptionTxtBox.Size = new System.Drawing.Size(874, 172);
             this.membershipDescriptionTxtBox.TabIndex = 8;
-            this.membershipDescriptionTxtBox.Text = "";
+            this.membershipDescriptionTxtBox.Text = "Select a membership to view membership data...";
             // 
             // becomeAMemberBtn
             // 
@@ -495,7 +501,7 @@
             this.becomeAMemberBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.becomeAMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.becomeAMemberBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.becomeAMemberBtn.Location = new System.Drawing.Point(555, 229);
+            this.becomeAMemberBtn.Location = new System.Drawing.Point(731, 181);
             this.becomeAMemberBtn.Name = "becomeAMemberBtn";
             this.becomeAMemberBtn.Size = new System.Drawing.Size(200, 43);
             this.becomeAMemberBtn.TabIndex = 6;
@@ -507,7 +513,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(196, 206);
+            this.label12.Location = new System.Drawing.Point(53, 180);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 20);
             this.label12.TabIndex = 5;
@@ -516,10 +522,11 @@
             // membershipDropBox
             // 
             this.membershipDropBox.FormattingEnabled = true;
-            this.membershipDropBox.Location = new System.Drawing.Point(200, 229);
+            this.membershipDropBox.Location = new System.Drawing.Point(57, 203);
             this.membershipDropBox.Name = "membershipDropBox";
-            this.membershipDropBox.Size = new System.Drawing.Size(338, 21);
+            this.membershipDropBox.Size = new System.Drawing.Size(406, 21);
             this.membershipDropBox.TabIndex = 4;
+            this.membershipDropBox.Text = "Select Membership...";
             this.membershipDropBox.SelectedIndexChanged += new System.EventHandler(this.membershipDropBox_SelectedIndexChanged);
             // 
             // panel8
@@ -536,7 +543,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(318, 51);
+            this.label6.Location = new System.Drawing.Point(390, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 33);
             this.label6.TabIndex = 2;
@@ -662,7 +669,6 @@
             this.activeMembershipPanel.Name = "activeMembershipPanel";
             this.activeMembershipPanel.Size = new System.Drawing.Size(984, 749);
             this.activeMembershipPanel.TabIndex = 14;
-            this.activeMembershipPanel.Enter += new System.EventHandler(this.activeMembershipPanel_Enter);
             // 
             // membershipInfoTxtBox
             // 
@@ -695,6 +701,36 @@
             this.label11.Size = new System.Drawing.Size(223, 33);
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
+            // 
+            // membershipBenefitsTxtBox
+            // 
+            this.membershipBenefitsTxtBox.BackColor = System.Drawing.Color.White;
+            this.membershipBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.membershipBenefitsTxtBox.Enabled = false;
+            this.membershipBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipBenefitsTxtBox.Location = new System.Drawing.Point(57, 446);
+            this.membershipBenefitsTxtBox.Name = "membershipBenefitsTxtBox";
+            this.membershipBenefitsTxtBox.Size = new System.Drawing.Size(874, 255);
+            this.membershipBenefitsTxtBox.TabIndex = 9;
+            this.membershipBenefitsTxtBox.Text = "Select a membership to view membership benefits...";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 234);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Membership Data";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(54, 432);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(105, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Membership Benefits";
             // 
             // Homepage
             // 
@@ -809,5 +845,8 @@
         private System.Windows.Forms.Button becomeAMemberBtn;
         private System.Windows.Forms.RichTextBox membershipDescriptionTxtBox;
         private System.Windows.Forms.RichTextBox membershipInfoTxtBox;
+        private System.Windows.Forms.RichTextBox membershipBenefitsTxtBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }

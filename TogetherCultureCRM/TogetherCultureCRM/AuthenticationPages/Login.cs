@@ -71,7 +71,7 @@ namespace TogetherCultureCRM.AuthenticationPages
             {
                 con.Open();
 
-                string selectSql = "SELECT * FROM [Users] WHERE username=@username";
+                string selectSql = "SELECT * FROM Users WHERE username=@username";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
                     command.Parameters.AddWithValue("@username", username);
@@ -105,7 +105,7 @@ namespace TogetherCultureCRM.AuthenticationPages
 
                                 if (UserSession.User.bIsAdmin)
                                 {
-                                    string selectAdminSql = "SELECT * FROM [Admin] WHERE userId=@userId";
+                                    string selectAdminSql = "SELECT * FROM Admin WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
                                     {
                                         command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
@@ -122,7 +122,7 @@ namespace TogetherCultureCRM.AuthenticationPages
 
                                 if (UserSession.User.bIsMember)
                                 {
-                                    string selectMemberSql = "SELECT * FROM [Member] WHERE userId=@userId";
+                                    string selectMemberSql = "SELECT * FROM Member WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectMemberSql, con))
                                     {
                                         command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
@@ -157,7 +157,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 }
                                 else
                                 {
-                                    string selectMembershipTypeSql = "SELECT * FROM [MembershipType]";
+                                    string selectMembershipTypeSql = "SELECT * FROM MembershipType";
                                     using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
                                     {
                                         using (SqlDataReader reader1 = command1.ExecuteReader())
@@ -185,6 +185,11 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 homepage.Show();
                                 this.Hide();
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong credentials! Please try again.", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                     }
                 }
