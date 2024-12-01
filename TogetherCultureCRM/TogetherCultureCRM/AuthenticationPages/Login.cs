@@ -154,6 +154,42 @@ namespace TogetherCultureCRM.AuthenticationPages
                                             }
                                         }
                                     }
+
+                                    List<Guid> memberBenefitsIdList = new List<Guid>();
+                                    string selectSql1 = "SELECT memberBenefitsId FROM MembershipTypeBenefits WHERE membershipTypeId=@membershipTypeId";
+                                    using (SqlCommand command1 = new SqlCommand(selectSql1, con))
+                                    {
+                                        command1.Parameters.AddWithValue("@membershipTypeId", UserSession.Member.membershipTypeId);
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                                        {
+                                            while (reader1.Read())
+                                            {
+                                                memberBenefitsIdList.Add(Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberBenefitsId"))));
+                                            }
+                                        }
+                                    }
+
+                                    string selectSql2 = "SELECT * FROM MemberBenefits WHERE memberBenefitsId=@memberBenefitsId";
+                                    foreach (Guid memberBenefitsId in memberBenefitsIdList)
+                                    {
+                                        using (SqlCommand command1 = new SqlCommand(selectSql2, con))
+                                        {
+                                            command1.Parameters.AddWithValue("@memberBenefitsId", memberBenefitsId);
+                                            using (SqlDataReader reader1 = command1.ExecuteReader())
+                                            {
+                                                while (reader1.Read())
+                                                {
+                                                    MemberBenefits memberBenefit = new MemberBenefits()
+                                                    {
+                                                        memberBenefitsId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberBenefitsId"))),
+                                                        benefitsDescription = reader1.GetString(reader1.GetOrdinal("benefitsDescription"))
+                                                    };
+
+                                                    UserSession.ActiveMemberBenefits.Add(memberBenefit);
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
 
                                 con.Close();

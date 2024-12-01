@@ -14,6 +14,7 @@ namespace TogetherCultureCRM.Classes
             Admin = new Admin();
             Member = new Member();
             ActiveMembership = new MembershipType();
+            ActiveMemberBenefits = new List<MemberBenefits>();
             MembershipTypes = new List<MembershipType>();
         }
 
@@ -21,6 +22,7 @@ namespace TogetherCultureCRM.Classes
         public static Admin Admin { get; set; }
         public static Member Member {  get; set; }
         public static MembershipType ActiveMembership { get; set; }
+        public static List<MemberBenefits> ActiveMemberBenefits { get; set; }
         public static List<MembershipType> MembershipTypes { get; set; }
     }
 }
