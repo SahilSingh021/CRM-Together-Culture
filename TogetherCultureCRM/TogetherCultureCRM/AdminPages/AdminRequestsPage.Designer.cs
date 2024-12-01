@@ -33,7 +33,6 @@
             this.requestPanel = new System.Windows.Forms.Panel();
             this.noIncommingRequestsLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.requestPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,11 +59,10 @@
             // requestPanel
             // 
             this.requestPanel.AutoScroll = true;
-            this.requestPanel.Controls.Add(this.noIncommingRequestsLbl);
             this.requestPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.requestPanel.Location = new System.Drawing.Point(0, 95);
+            this.requestPanel.Location = new System.Drawing.Point(0, 101);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(804, 666);
+            this.requestPanel.Size = new System.Drawing.Size(804, 660);
             this.requestPanel.TabIndex = 1;
             // 
             // noIncommingRequestsLbl
@@ -73,10 +71,10 @@
             this.noIncommingRequestsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.noIncommingRequestsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noIncommingRequestsLbl.ForeColor = System.Drawing.Color.Black;
-            this.noIncommingRequestsLbl.Location = new System.Drawing.Point(253, 48);
+            this.noIncommingRequestsLbl.Location = new System.Drawing.Point(259, 175);
             this.noIncommingRequestsLbl.Name = "noIncommingRequestsLbl";
             this.noIncommingRequestsLbl.Size = new System.Drawing.Size(286, 29);
-            this.noIncommingRequestsLbl.TabIndex = 3;
+            this.noIncommingRequestsLbl.TabIndex = 4;
             this.noIncommingRequestsLbl.Text = "No incomming requests...";
             // 
             // AdminRequestsPage
@@ -84,6 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 761);
+            this.Controls.Add(this.noIncommingRequestsLbl);
             this.Controls.Add(this.requestPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -91,11 +90,11 @@
             this.Name = "AdminRequestsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminRequests";
+            this.Activated += new System.EventHandler(this.AdminRequestsPage_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.requestPanel.ResumeLayout(false);
-            this.requestPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

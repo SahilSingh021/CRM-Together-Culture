@@ -38,5 +38,21 @@ namespace TogetherCultureCRM.CustomControls
             get { return adminRequestIdLbl.Text; }
             set { adminRequestIdLbl.Text = value; }
         }
+
+        public EventHandler ApproveButtonClick
+        {
+            set
+            {
+                approveBtn.Click += value;
+            }
+        }
+
+        public EventHandler DenyButtonClick
+        {
+            set
+            {
+                denyBtn.Click += value;
+            }
+        }
     }
 }

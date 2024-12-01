@@ -75,9 +75,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.activeMembershipPanel = new System.Windows.Forms.Panel();
+            this.membershipInfoTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.membershipInfoTxtBox = new System.Windows.Forms.RichTextBox();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -664,6 +664,18 @@
             this.activeMembershipPanel.TabIndex = 14;
             this.activeMembershipPanel.Enter += new System.EventHandler(this.activeMembershipPanel_Enter);
             // 
+            // membershipInfoTxtBox
+            // 
+            this.membershipInfoTxtBox.BackColor = System.Drawing.Color.White;
+            this.membershipInfoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.membershipInfoTxtBox.Enabled = false;
+            this.membershipInfoTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membershipInfoTxtBox.Location = new System.Drawing.Point(215, 215);
+            this.membershipInfoTxtBox.Name = "membershipInfoTxtBox";
+            this.membershipInfoTxtBox.Size = new System.Drawing.Size(555, 318);
+            this.membershipInfoTxtBox.TabIndex = 9;
+            this.membershipInfoTxtBox.Text = "";
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.label11);
@@ -684,23 +696,12 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
-            // membershipInfoTxtBox
-            // 
-            this.membershipInfoTxtBox.BackColor = System.Drawing.Color.White;
-            this.membershipInfoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.membershipInfoTxtBox.Enabled = false;
-            this.membershipInfoTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membershipInfoTxtBox.Location = new System.Drawing.Point(215, 215);
-            this.membershipInfoTxtBox.Name = "membershipInfoTxtBox";
-            this.membershipInfoTxtBox.Size = new System.Drawing.Size(555, 318);
-            this.membershipInfoTxtBox.TabIndex = 9;
-            this.membershipInfoTxtBox.Text = "";
-            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.membershipPanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.homePagePanel);
@@ -711,7 +712,6 @@
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.eventsHomePageTabPanel);
-            this.Controls.Add(this.membershipPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";

@@ -80,20 +80,6 @@ CREATE TABLE MemberKeyIntrest (
 	FOREIGN KEY (intrestId) REFERENCES KeyIntrest(intrestId)
 );
 
-SELECT * FROM Users
-SELECT * FROM IntrestTag
-SELECT * FROM UserTag
-
-SELECT * FROM Admin
-SELECT * FROM AdminRequests
-
-SELECT * FROM MembershipType
-SELECT * FROM MemberBenefits
-SELECT * FROM MembershipTypeBenefits
-SELECT * FROM KeyIntrest
-SELECT * FROM Member
-SELECT * FROM MemberKeyIntrest
-
 -- Users Table Inserts
 INSERT INTO Users (userId, username, password, email, bIsAdmin, bIsBanned, bIsMember)
 VALUES 
@@ -102,7 +88,9 @@ VALUES
     ('180C3802-A27A-4C7F-B60F-ED73F6E46F1F', 'Sam', '111111', 'sam@admin.com', 1, 0, 1),
     ('8B6157DF-1330-492A-A410-5A599DF91694', 'Jordan', 'Smith2103', 'jordan@example.com', 0, 0, 1),
 	('F439C28D-B7A1-479E-B9FB-FE65B0CF96CD', 'Lewis', 'LewisQWERTY', 'lewis@example.com', 0, 1, 0),
-    ('D46C7718-20C6-4578-B412-745CD6C42DE8', 'Taylor', 'Swift5052', 'taylor@example.com', 0, 0, 0)
+    ('D46C7718-20C6-4578-B412-745CD6C42DE8', 'Taylor', 'Swift5052', 'taylor@example.com', 0, 0, 0),
+	('1C55E361-A275-4ACB-996E-618D82DB58F7', 'James', 'Cathy202', 'james@example.com', 0, 0, 0),
+	('8783AC43-8558-4633-93A7-3BB543504430', 'Kelly', 'Fire0200', 'kelly@example.com', 0, 0, 0)
 
 -- IntrestTag Table Inserts
 INSERT INTO IntrestTag (tagId, tagName)
@@ -125,6 +113,12 @@ VALUES
     ('385F047E-2575-49F6-8600-ADBBE1ADB244', (SELECT userId FROM Users WHERE username = 'Sahil')),
     ('0ECD7803-3956-4075-B3BA-ECAAC40275ED', (SELECT userId FROM Users WHERE username = 'Kai')),
     ('24B25A5F-A6EB-47E6-A2EC-F27412054145', (SELECT userId FROM Users WHERE username = 'Sam'))
+
+-- AdminRequests Table Inserts
+INSERT INTO AdminRequests (adminRequestId, userId, requestDescription)
+VALUES
+    ('C5A2D5EA-2A8C-4B8F-ABC3-5962454B1507', '1C55E361-A275-4ACB-996E-618D82DB58F7', 'Request to become a member.'),
+	('71FBCDD2-9E77-4EE7-9A73-EE78DCAA1AD5', '8783AC43-8558-4633-93A7-3BB543504430', 'Request to become a member.')
 
 -- MembershipType Table Inserts
 INSERT INTO MembershipType(membershipTypeId, typeName, description, cost, joiningFee, duration)
@@ -258,3 +252,16 @@ VALUES
     ('2C3EAB65-9C4C-46E3-9DF1-2747FF58D026', '8B6157DF-1330-492A-A410-5A599DF91694', '51B6C680-EFBC-4AFC-B499-CDAEA034E3CA')
 
 
+SELECT * FROM Users
+SELECT * FROM IntrestTag
+SELECT * FROM UserTag
+
+SELECT * FROM Admin
+SELECT * FROM AdminRequests
+
+SELECT * FROM MembershipType
+SELECT * FROM MemberBenefits
+SELECT * FROM MembershipTypeBenefits
+SELECT * FROM KeyIntrest
+SELECT * FROM Member
+SELECT * FROM MemberKeyIntrest

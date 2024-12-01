@@ -107,7 +107,7 @@ namespace TogetherCultureCRM.AdminPages
                         }
                         else if (_selectdUser.bIsAdmin && !isAdmin)
                         {
-                            string deleteSql = @"DELETE FROM Admin WHERE userId = @userId";
+                            string deleteSql = @"DELETE FROM Admin WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
                                 command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
@@ -117,8 +117,15 @@ namespace TogetherCultureCRM.AdminPages
 
                         if (!_selectdUser.bIsMember && isMember)
                         {
+                            string deleteSql = @"DELETE FROM AdminRequests WHERE userId=@userId";
+                            using (SqlCommand command1 = new SqlCommand(deleteSql, con))
+                            {
+                                command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
+                                command1.ExecuteNonQuery();
+                            }
+
                             Guid communityMembershipId;
-                            string selectSql = "SELECT membershipTypeId FROM MembershipType WHERE typeName = 'Community'";
+                            string selectSql = "SELECT membershipTypeId FROM MembershipType WHERE typeName='Community'";
                             using (SqlCommand command1 = new SqlCommand(selectSql, con))
                             {
                                 var result = command1.ExecuteScalar();
@@ -137,7 +144,7 @@ namespace TogetherCultureCRM.AdminPages
                         }
                         else if (_selectdUser.bIsMember && !isMember)
                         {
-                            string deleteSql = @"DELETE FROM Member WHERE userId = @userId";
+                            string deleteSql = @"DELETE FROM Member WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
                                 command1.Parameters.AddWithValue("@userId", _selectdUser.userId);

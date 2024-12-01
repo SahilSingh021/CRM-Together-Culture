@@ -196,6 +196,14 @@ namespace TogetherCultureCRM
             {
                 con.Open();
 
+                // Delet any requests in the AdminRequests table created at signup
+                string deleteSql = @"DELETE FROM AdminRequests WHERE userId=@userId";
+                using (SqlCommand command1 = new SqlCommand(deleteSql, con))
+                {
+                    command1.Parameters.AddWithValue("@userId", currentUserId);
+                    command1.ExecuteNonQuery();
+                }
+
                 // Update Users table for bIsMemeber
                 string updateUserSql = "UPDATE Users SET bIsMember=1 WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(updateUserSql, con))
