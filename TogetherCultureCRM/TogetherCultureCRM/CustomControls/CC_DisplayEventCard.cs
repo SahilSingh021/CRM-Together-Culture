@@ -52,6 +52,24 @@ namespace TogetherCultureCRM.CustomControls
             set { eventTimeLbl.Text = value; }
         }
 
+        public string BookEventButtonText
+        {
+            get { return bookEventBtn.Text; }
+            set { bookEventBtn.Text = value; }
+        }
+
+        public bool BookEventButtonEnabled
+        {
+            get { return bookEventBtn.Enabled; }
+            set { bookEventBtn.Enabled = value; }
+        }
+
+        public Color BookEventButtonBackColor
+        {
+            get { return bookEventBtn.BackColor; }
+            set { bookEventBtn.BackColor = value; }
+        }
+
         public EventHandler BookEventClick
         {
             set

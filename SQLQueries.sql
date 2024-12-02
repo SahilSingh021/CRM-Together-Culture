@@ -33,7 +33,6 @@ CREATE TABLE UserTag (
     userId VARCHAR(36),
 	tagId VARCHAR(36),
 	userTagCreationDate DATETIME DEFAULT GETDATE(),
-	PRIMARY KEY (userId, tagId),
 	FOREIGN KEY (userId) REFERENCES Users(userId),
 	FOREIGN KEY (tagId) REFERENCES IntrestTag(tagId)
 );

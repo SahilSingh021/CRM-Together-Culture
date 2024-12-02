@@ -114,35 +114,11 @@ namespace TogetherCultureCRM
 
             if (result == DialogResult.Yes)
             {
-                bool bEventAlreadyBooked = false;
                 Data dataCls = new Data();
                 string connectionString = dataCls.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-
-                    //check if user has already booked this event
-                    string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId AND eventId=@eventId";
-                    using (SqlCommand command = new SqlCommand(selectSql, con))
-                    {
-                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
-                        command.Parameters.AddWithValue("@eventId", eventId);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                bEventAlreadyBooked = true;
-                            }
-                        }
-                    }
-
-                    if (bEventAlreadyBooked)
-                    {
-                        con.Close();
-                        MessageBox.Show("You have already booked this event!", "Event Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
                     //insert record into UserEvents
                     string insertSql = "INSERT INTO UserEvents (eventId, userId) VALUES (@eventId, @userId)";
                     using (SqlCommand command = new SqlCommand(insertSql, con))
@@ -165,6 +141,7 @@ namespace TogetherCultureCRM
                 }
 
                 MessageBox.Show("You have booked this Event!", "Event Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                eventsHomePageTabBtn.PerformClick();
             }
         }
 
@@ -176,10 +153,36 @@ namespace TogetherCultureCRM
             eventsHomePageTabPanel.BringToFront();
             Homepage.ActiveForm.Text = "Events Home Page";
 
+            List<Guid> eventIds = new List<Guid>();
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            eventIds.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))));
+                        }
+                    }
+                }
+            }
+
             int heightCount = 0;
             int widthCount = 0;
             foreach (var Event in UserSession.Events)
             {
+                bool eventBooked = false;
+                foreach (var evenId in eventIds)
+                {
+                    if (evenId == Event.eventId) eventBooked = true;
+                }
+
                 var eventDisplayCard = new CC_DisplayEventCard()
                 {
                     EventId = Event.eventId.ToString(),
@@ -193,6 +196,13 @@ namespace TogetherCultureCRM
                         BookEvent(Guid.Parse(Event.eventId.ToString()), Guid.Parse(Event.tagId.ToString()));
                     }
                 };
+
+                if (eventBooked)
+                {
+                    eventDisplayCard.BookEventButtonText = "Booked";
+                    eventDisplayCard.BookEventButtonBackColor = Color.Silver;
+                    eventDisplayCard.BookEventButtonEnabled = false;
+                }
 
                 eventBookingPanel.Controls.Add(eventDisplayCard);
 
