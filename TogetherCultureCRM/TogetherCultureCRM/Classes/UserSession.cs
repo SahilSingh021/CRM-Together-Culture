@@ -17,6 +17,7 @@ namespace TogetherCultureCRM.Classes
             SubscribedMemberBenefits = new List<MemberBenefits>();
             UsedMemberBenefits = new List<UsedMemberBenefits>();
             MembershipTypes = new List<MembershipType>();
+            Events = new List<Event>();
         }
 
         public static User User { get; set; }
@@ -26,5 +27,6 @@ namespace TogetherCultureCRM.Classes
         public static List<MemberBenefits> SubscribedMemberBenefits { get; set; }
         public static List<UsedMemberBenefits> UsedMemberBenefits { get; set; }
         public static List<MembershipType> MembershipTypes { get; set; }
+        public static List<Event> Events { get; set; }
     }
 }

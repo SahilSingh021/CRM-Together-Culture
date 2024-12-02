@@ -204,11 +204,31 @@ namespace TogetherCultureCRM.AuthenticationPages
                                                     usedMemberBenefitsId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("usedMemberBenefitsId"))),
                                                     memberId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberId"))),
                                                     memberBenefitsId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberBenefitsId"))),
-                                                    usageDate = reader1.GetDateTime(reader1.GetOrdinal("usageDate")),
+                                                    usageDate = reader1.GetDateTime(reader1.GetOrdinal("usageDate"))
                                                 };
 
                                                 UserSession.UsedMemberBenefits.Add(usedMemberBenefit);
                                             }
+                                        }
+                                    }
+                                }
+
+                                string selectSql4 = "SELECT * FROM Event";
+                                using (SqlCommand command1 = new SqlCommand(selectSql4, con))
+                                {
+                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    {
+                                        while (reader1.Read())
+                                        {
+                                            Event @event = new Event()
+                                            {
+                                                eventId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("eventId"))),
+                                                tagId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("tagId"))),
+                                                eventName = reader1.GetString(reader1.GetOrdinal("eventName")),
+                                                eventDate = reader1.GetDateTime(reader1.GetOrdinal("eventDate"))
+                                            };
+
+                                            UserSession.Events.Add(@event);
                                         }
                                     }
                                 }

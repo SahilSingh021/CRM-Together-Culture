@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TogetherCultureCRM.AdminPages;
 using TogetherCultureCRM.Classes;
+using TogetherCultureCRM.CustomControls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -102,12 +103,102 @@ namespace TogetherCultureCRM
             Homepage.ActiveForm.Text = "Admin Home Page";
         }
 
+        public void BookEvent(Guid eventId, Guid tagId)
+        {
+            bool bEventAlreadyBooked = false;
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                //check if user has already booked this event
+                string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId AND eventId=@eventId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    command.Parameters.AddWithValue("@eventId", eventId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bEventAlreadyBooked = true;
+                        }
+                    }
+                }
+
+                if (bEventAlreadyBooked)
+                {
+                    con.Close();
+                    MessageBox.Show("You have already booked this event!", "Event Booked");
+                    return;
+                }
+
+                //insert record into UserEvents
+                string insertSql = "INSERT INTO UserEvents (eventId, userId) VALUES (@eventId, @userId)";
+                using (SqlCommand command = new SqlCommand(insertSql, con))
+                {
+                    command.Parameters.AddWithValue("@eventId", eventId);
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                //insert record into UserTag
+                string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
+                using (SqlCommand command = new SqlCommand(insertSql1, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    command.Parameters.AddWithValue("@tagId", tagId);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("You have booked this Event!", "Event Booked");
+        }
+
         private void eventsHomePageTabBtn_Click(object sender, EventArgs e)
         {
             DashboardBtn_BackColorReset();
             eventsHomePageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
             eventsHomePageTabPanel.BringToFront();
             Homepage.ActiveForm.Text = "Events Home Page";
+
+            int heightCount = 0;
+            int widthCount = 0;
+            foreach (var Event in UserSession.Events)
+            {
+                var eventDisplayCard = new CC_DisplayEventCard()
+                {
+                    EventId = Event.eventId.ToString(),
+                    TagId = Event.tagId.ToString(),
+                    EventName = Event.eventName,
+                    EventDate = Event.eventDate.ToString("dddd-mm-yyyy"),
+                    EventTime = Event.eventDate.ToString("t"),
+                    BookEventClick = (s, eventArg) =>
+                    {
+                        BookEvent(Guid.Parse(Event.eventId.ToString()), Guid.Parse(Event.tagId.ToString()));
+                    }
+                };
+
+                eventBookingPanel.Controls.Add(eventDisplayCard);
+                if (eventBookingPanel.Controls.Count > 0)
+                {
+                    eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+                    if (widthCount > 3)
+                    {
+                        heightCount++;
+                        widthCount = 0;
+                    }
+                }
+                else
+                {
+                    eventDisplayCard.Location = new Point(0, 0);
+                }
+                
+                widthCount++;
+            }
         }
 
         private void membershipPageTabBtn_Click(object sender, EventArgs e)

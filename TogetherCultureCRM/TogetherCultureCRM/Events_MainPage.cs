@@ -25,8 +25,7 @@ namespace TogetherCultureCRM
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Membership newForm = new Membership();
-            newForm.ShowDialog();
+            
         }
 
         

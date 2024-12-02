@@ -53,6 +53,14 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.profilePagePanel = new System.Windows.Forms.Panel();
+            this.postRequestPanel = new System.Windows.Forms.Panel();
+            this.requestDateLbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.preMemberPanel = new System.Windows.Forms.Panel();
+            this.requestMembershipBtn = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.membershipPanel = new System.Windows.Forms.Panel();
@@ -90,14 +98,7 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.preMemberPanel = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.requestMembershipBtn = new System.Windows.Forms.Button();
-            this.postRequestPanel = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.requestDateLbl = new System.Windows.Forms.Label();
+            this.eventBookingPanel = new System.Windows.Forms.Panel();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,6 +109,8 @@
             this.homePagePanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.profilePagePanel.SuspendLayout();
+            this.postRequestPanel.SuspendLayout();
+            this.preMemberPanel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.membershipPanel.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -121,8 +124,6 @@
             this.panel12.SuspendLayout();
             this.activeMembershipPanel.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.preMemberPanel.SuspendLayout();
-            this.postRequestPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboard
@@ -403,6 +404,7 @@
             // 
             // eventsHomePageTabPanel
             // 
+            this.eventsHomePageTabPanel.Controls.Add(this.eventBookingPanel);
             this.eventsHomePageTabPanel.Controls.Add(this.panel5);
             this.eventsHomePageTabPanel.Location = new System.Drawing.Point(200, 12);
             this.eventsHomePageTabPanel.Name = "eventsHomePageTabPanel";
@@ -466,6 +468,100 @@
             this.profilePagePanel.Name = "profilePagePanel";
             this.profilePagePanel.Size = new System.Drawing.Size(984, 749);
             this.profilePagePanel.TabIndex = 8;
+            // 
+            // postRequestPanel
+            // 
+            this.postRequestPanel.Controls.Add(this.requestDateLbl);
+            this.postRequestPanel.Controls.Add(this.label19);
+            this.postRequestPanel.Controls.Add(this.label20);
+            this.postRequestPanel.Location = new System.Drawing.Point(0, 141);
+            this.postRequestPanel.Name = "postRequestPanel";
+            this.postRequestPanel.Size = new System.Drawing.Size(984, 252);
+            this.postRequestPanel.TabIndex = 5;
+            this.postRequestPanel.Visible = false;
+            // 
+            // requestDateLbl
+            // 
+            this.requestDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestDateLbl.ForeColor = System.Drawing.Color.Black;
+            this.requestDateLbl.Location = new System.Drawing.Point(479, 116);
+            this.requestDateLbl.Name = "requestDateLbl";
+            this.requestDateLbl.Size = new System.Drawing.Size(465, 53);
+            this.requestDateLbl.TabIndex = 5;
+            this.requestDateLbl.Text = "Request Date: ";
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(32, 74);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(922, 58);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "You have already submitted a request, and it is currently awaiting admin approval" +
+    ".";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(32, 28);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(426, 25);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "Awaiting Approval From Administrators ";
+            // 
+            // preMemberPanel
+            // 
+            this.preMemberPanel.Controls.Add(this.requestMembershipBtn);
+            this.preMemberPanel.Controls.Add(this.label18);
+            this.preMemberPanel.Controls.Add(this.label17);
+            this.preMemberPanel.Location = new System.Drawing.Point(1, 140);
+            this.preMemberPanel.Name = "preMemberPanel";
+            this.preMemberPanel.Size = new System.Drawing.Size(984, 252);
+            this.preMemberPanel.TabIndex = 4;
+            this.preMemberPanel.Visible = false;
+            // 
+            // requestMembershipBtn
+            // 
+            this.requestMembershipBtn.BackColor = System.Drawing.Color.Khaki;
+            this.requestMembershipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.requestMembershipBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.requestMembershipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.requestMembershipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.requestMembershipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestMembershipBtn.Location = new System.Drawing.Point(714, 179);
+            this.requestMembershipBtn.Name = "requestMembershipBtn";
+            this.requestMembershipBtn.Size = new System.Drawing.Size(240, 43);
+            this.requestMembershipBtn.TabIndex = 5;
+            this.requestMembershipBtn.Text = "Request Membership";
+            this.requestMembershipBtn.UseVisualStyleBackColor = false;
+            this.requestMembershipBtn.Click += new System.EventHandler(this.requestMembershipBtn_Click);
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(32, 74);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(922, 128);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "If you wish to become a \'Community Member\', you can submit a request, which will " +
+    "be subject to approval by the administrators.";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(32, 28);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(404, 25);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Request To Be A Community Member";
             // 
             // panel7
             // 
@@ -858,105 +954,21 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
-            // preMemberPanel
+            // eventBookingPanel
             // 
-            this.preMemberPanel.Controls.Add(this.requestMembershipBtn);
-            this.preMemberPanel.Controls.Add(this.label18);
-            this.preMemberPanel.Controls.Add(this.label17);
-            this.preMemberPanel.Location = new System.Drawing.Point(1, 140);
-            this.preMemberPanel.Name = "preMemberPanel";
-            this.preMemberPanel.Size = new System.Drawing.Size(984, 252);
-            this.preMemberPanel.TabIndex = 4;
-            this.preMemberPanel.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(32, 28);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(404, 25);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Request To Be A Community Member";
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(32, 74);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(922, 128);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "If you wish to become a \'Community Member\', you can submit a request, which will " +
-    "be subject to approval by the administrators.";
-            // 
-            // requestMembershipBtn
-            // 
-            this.requestMembershipBtn.BackColor = System.Drawing.Color.Khaki;
-            this.requestMembershipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.requestMembershipBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.requestMembershipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
-            this.requestMembershipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.requestMembershipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestMembershipBtn.Location = new System.Drawing.Point(714, 179);
-            this.requestMembershipBtn.Name = "requestMembershipBtn";
-            this.requestMembershipBtn.Size = new System.Drawing.Size(240, 43);
-            this.requestMembershipBtn.TabIndex = 5;
-            this.requestMembershipBtn.Text = "Request Membership";
-            this.requestMembershipBtn.UseVisualStyleBackColor = false;
-            this.requestMembershipBtn.Click += new System.EventHandler(this.requestMembershipBtn_Click);
-            // 
-            // postRequestPanel
-            // 
-            this.postRequestPanel.Controls.Add(this.requestDateLbl);
-            this.postRequestPanel.Controls.Add(this.label19);
-            this.postRequestPanel.Controls.Add(this.label20);
-            this.postRequestPanel.Location = new System.Drawing.Point(0, 141);
-            this.postRequestPanel.Name = "postRequestPanel";
-            this.postRequestPanel.Size = new System.Drawing.Size(984, 252);
-            this.postRequestPanel.TabIndex = 5;
-            this.postRequestPanel.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(32, 74);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(922, 58);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "You have already submitted a request, and it is currently awaiting admin approval" +
-    ".";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(32, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(426, 25);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "Awaiting Approval From Administrators ";
-            // 
-            // requestDateLbl
-            // 
-            this.requestDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestDateLbl.ForeColor = System.Drawing.Color.Black;
-            this.requestDateLbl.Location = new System.Drawing.Point(479, 116);
-            this.requestDateLbl.Name = "requestDateLbl";
-            this.requestDateLbl.Size = new System.Drawing.Size(465, 53);
-            this.requestDateLbl.TabIndex = 5;
-            this.requestDateLbl.Text = "Request Date: ";
+            this.eventBookingPanel.AutoScroll = true;
+            this.eventBookingPanel.Location = new System.Drawing.Point(0, 133);
+            this.eventBookingPanel.Name = "eventBookingPanel";
+            this.eventBookingPanel.Size = new System.Drawing.Size(985, 617);
+            this.eventBookingPanel.TabIndex = 4;
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.eventsHomePageTabPanel);
+            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
@@ -965,9 +977,7 @@
             this.Controls.Add(this.digitalConnectionPanel);
             this.Controls.Add(this.placeHirePanel);
             this.Controls.Add(this.dashboard);
-            this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.membershipPanel);
-            this.Controls.Add(this.adminHomePagePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
@@ -988,6 +998,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.profilePagePanel.ResumeLayout(false);
+            this.postRequestPanel.ResumeLayout(false);
+            this.postRequestPanel.PerformLayout();
+            this.preMemberPanel.ResumeLayout(false);
+            this.preMemberPanel.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.membershipPanel.ResumeLayout(false);
@@ -1011,10 +1025,6 @@
             this.activeMembershipPanel.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.preMemberPanel.ResumeLayout(false);
-            this.preMemberPanel.PerformLayout();
-            this.postRequestPanel.ResumeLayout(false);
-            this.postRequestPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1091,5 +1101,6 @@
         private System.Windows.Forms.Label requestDateLbl;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel eventBookingPanel;
     }
 }

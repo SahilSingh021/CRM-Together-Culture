@@ -35,14 +35,12 @@ namespace TogetherCultureCRM
 
         private void Memebrship_Click(object sender, EventArgs e)
         {
-            Membership newForm = new Membership();
-            newForm.ShowDialog();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MembershipPayment newForm = new MembershipPayment();    
-            newForm.ShowDialog();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
