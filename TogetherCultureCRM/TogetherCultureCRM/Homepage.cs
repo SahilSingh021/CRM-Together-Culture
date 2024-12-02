@@ -184,6 +184,48 @@ namespace TogetherCultureCRM
             profileDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             profilePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Profile Page";
+
+            if (!UserSession.User.bIsMember)
+            {
+                // Check if the user has already made a request to become a member
+                bool bRequestMade = false;
+                DateTime requestDateTime = DateTime.Now;
+                Data dataCls = new Data();
+                string connectionString = dataCls.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    Guid adminRequestId = Guid.NewGuid();
+                    string selectSql = "SELECT * FROM AdminRequests WHERE userId=@userId";
+                    using (SqlCommand command = new SqlCommand(selectSql, con))
+                    {
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                requestDateTime = reader.GetDateTime(reader.GetOrdinal("requestTime"));
+                                bRequestMade = true;
+                            }
+                        }
+                    }
+                    con.Close();
+                }
+
+                if (!bRequestMade)
+                {
+                    postRequestPanel.Hide();
+                    preMemberPanel.Show();
+                    preMemberPanel.BringToFront();
+                }
+                else
+                {
+                    requestDateLbl.Text = "Request Date: " + requestDateTime.ToString("dd/MMMM/yyyyy");
+                    preMemberPanel.Hide();
+                    postRequestPanel.Show();
+                    postRequestPanel.BringToFront();
+                }
+            }
         }
 
         private void benefitsDashboardBtn_Click(object sender, EventArgs e)
@@ -451,5 +493,41 @@ namespace TogetherCultureCRM
             }
             return;
         }
+
+        private void requestMembershipBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                    "Are you sure you want to submit a membership request?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+            if (result == DialogResult.Yes)
+            {
+                Data dataCls = new Data();
+                string connectionString = dataCls.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    Guid adminRequestId = Guid.NewGuid();
+                    string insertRequestSql = "INSERT INTO [AdminRequests] (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
+                    using (SqlCommand command = new SqlCommand(insertRequestSql, con))
+                    {
+                        command.Parameters.AddWithValue("@adminRequestId", adminRequestId);
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        command.Parameters.AddWithValue("@requestDescription", "Request to become a member.");
+                        command.Parameters.AddWithValue("@requestTime", DateTime.Now);
+
+                        command.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+
+                profileDashboardBtn.PerformClick();
+            }
+            return;
+        }
+
     }
 }

@@ -58,7 +58,6 @@ namespace TogetherCultureCRM.AuthenticationPages
             string password = passwordTxt.Text;
             string confirmPassword = confirmPasswordTxt.Text;
             string email = emailTxt.Text;
-            bool bMember = memberCheckBox.Checked;
 
             #region Sign Up Validations
             if (username == "" || password == "" || confirmPassword == "" || email == "")
@@ -109,23 +108,6 @@ namespace TogetherCultureCRM.AuthenticationPages
                     command.Parameters.AddWithValue("@password", password);
 
                     command.ExecuteNonQuery();
-                }
-
-                if (bMember)
-                {
-                    Guid adminRequestId = Guid.NewGuid();
-                    string insertRequestSql = "INSERT INTO [AdminRequests] (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
-                    using (SqlCommand command = new SqlCommand(insertRequestSql, con))
-                    {
-                        command.Parameters.AddWithValue("@adminRequestId", adminRequestId);
-                        command.Parameters.AddWithValue("@userId", userId);
-                        command.Parameters.AddWithValue("@requestDescription", "Request to become a member.");
-                        command.Parameters.AddWithValue("@requestTime", DateTime.Now);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    con.Close();
                 }
 
                 MessageBox.Show("Registration Successful! You can now sign in.", "Success");
