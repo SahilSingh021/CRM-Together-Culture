@@ -36,12 +36,13 @@
             this.emailLbl = new System.Windows.Forms.Label();
             this.passwordLbl = new System.Windows.Forms.Label();
             this.isMemberCheckBox = new System.Windows.Forms.CheckBox();
+            this.membershipLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usernameLbl
             // 
             this.usernameLbl.AutoSize = true;
-            this.usernameLbl.Location = new System.Drawing.Point(14, 15);
+            this.usernameLbl.Location = new System.Drawing.Point(14, 9);
             this.usernameLbl.Name = "usernameLbl";
             this.usernameLbl.Size = new System.Drawing.Size(55, 13);
             this.usernameLbl.TabIndex = 10;
@@ -100,7 +101,7 @@
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(14, 30);
+            this.emailLbl.Location = new System.Drawing.Point(14, 24);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(32, 13);
             this.emailLbl.TabIndex = 18;
@@ -128,10 +129,20 @@
             this.isMemberCheckBox.Text = "Is Member";
             this.isMemberCheckBox.UseVisualStyleBackColor = true;
             // 
+            // membershipLbl
+            // 
+            this.membershipLbl.AutoSize = true;
+            this.membershipLbl.Location = new System.Drawing.Point(14, 39);
+            this.membershipLbl.Name = "membershipLbl";
+            this.membershipLbl.Size = new System.Drawing.Size(64, 13);
+            this.membershipLbl.TabIndex = 21;
+            this.membershipLbl.Text = "Membership";
+            // 
             // CC_DisplayUserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.membershipLbl);
             this.Controls.Add(this.isMemberCheckBox);
             this.Controls.Add(this.passwordLbl);
             this.Controls.Add(this.emailLbl);
@@ -157,5 +168,6 @@
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label passwordLbl;
         private System.Windows.Forms.CheckBox isMemberCheckBox;
+        private System.Windows.Forms.Label membershipLbl;
     }
 }

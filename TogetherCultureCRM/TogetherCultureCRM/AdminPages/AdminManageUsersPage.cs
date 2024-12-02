@@ -35,15 +35,29 @@ namespace TogetherCultureCRM.AdminPages
             requestPanel.Controls.Clear();
             Data data = new Data();
             string connectionString = data.ConnectionString;
-            List<User> userList = new List<User>();
+            List<Tuple<User, string>> userList = new List<Tuple<User, string>>();
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                string selectSql = "SELECT TOP 20 * FROM Users WHERE LOWER(username) LIKE LOWER(@searchText) + '%'";
+                string selectSql = @"SELECT TOP 20
+                                        u.userId, u.username, u.password, u.email, u.bIsAdmin, u.bIsBanned, u.bIsMember, m.membershipTypeId, mt.typeName
+                                    FROM 
+                                        Users u
+                                    LEFT JOIN 
+                                        Member m ON u.userId = m.userId
+                                    LEFT JOIN 
+                                        MembershipType mt ON m.membershipTypeId = mt.membershipTypeId
+                                    WHERE 
+                                        LOWER(u.username) LIKE LOWER(@searchText) + '%'
+                                    ORDER BY 
+                                        u.username;";
+
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
                     command.Parameters.AddWithValue("@searchText", searchBarText);
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -59,7 +73,11 @@ namespace TogetherCultureCRM.AdminPages
                                 bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"))
                             };
 
-                            userList.Add(user);
+                            string membershipName = reader.IsDBNull(reader.GetOrdinal("typeName"))
+                                ? ""
+                                : reader.GetString(reader.GetOrdinal("typeName"));
+
+                            userList.Add(new Tuple<User, string>(user, membershipName));
                         }
                     }
                 }
@@ -67,22 +85,32 @@ namespace TogetherCultureCRM.AdminPages
                 con.Close();
             }
 
+
             if (userList.Count > 0)
             {
                 int i = 0;
                 foreach (var item in userList)
                 {
+                    var user = item.Item1;
                     var userDisplayCardControl = new CC_DisplayUserCard();
-                    userDisplayCardControl.UserIdLbl = item.userId.ToString();
-                    userDisplayCardControl.UsernameText = item.username;
-                    userDisplayCardControl.PasswordText = item.password;
-                    userDisplayCardControl.EmailText = item.email;
-                    userDisplayCardControl.IsAdmin = item.bIsAdmin;
-                    userDisplayCardControl.IsBanned = item.bIsBanned;
-                    userDisplayCardControl.IsMember = item.bIsMember;
+                    userDisplayCardControl.UserIdLbl = user.userId.ToString();
+                    userDisplayCardControl.UsernameText = "Username: " + user.username;
+                    userDisplayCardControl.PasswordText = user.password;
+                    userDisplayCardControl.EmailText = "Email: " + user.email;
+                    userDisplayCardControl.IsAdmin = user.bIsAdmin;
+                    userDisplayCardControl.IsBanned = user.bIsBanned;
+                    userDisplayCardControl.IsMember = user.bIsMember;
+
+                    if (user.bIsMember)
+                    {
+                        userDisplayCardControl.MembershipText = "Membership: " + item.Item2;
+                        userDisplayCardControl.MembershipTextVisible = true;
+                    }
+                    else userDisplayCardControl.MembershipTextVisible = false;
+
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
-                        AdminEditUserPage adminEditUserPage = new AdminEditUserPage(item);
+                        AdminEditUserPage adminEditUserPage = new AdminEditUserPage(user);
                         adminEditUserPage.Owner = this;
                         adminEditUserPage.ShowInTaskbar = false;
                         adminEditUserPage.Show();

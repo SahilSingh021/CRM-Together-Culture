@@ -41,6 +41,18 @@ namespace TogetherCultureCRM.CustomControls
             set { emailLbl.Text = value; }
         }
 
+        public string MembershipText
+        {
+            get { return membershipLbl.Text; }
+            set { membershipLbl.Text = value; }
+        }
+
+        public bool MembershipTextVisible
+        {
+            get { return membershipLbl.Visible; }
+            set { membershipLbl.Visible = value; }
+        }
+
         public bool IsMember
         {
             get { return isMemberCheckBox.Checked; }
