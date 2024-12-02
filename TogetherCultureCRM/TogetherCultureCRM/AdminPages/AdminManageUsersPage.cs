@@ -25,14 +25,9 @@ namespace TogetherCultureCRM.AdminPages
         void LoadData()
         {
             string searchBarText = searchBarTxt.Text;
-
-            if (searchBarText.Length <= 0)
-            {
-                requestPanel.Controls.Clear();
-                return;
-            }
-
             requestPanel.Controls.Clear();
+            if (searchBarText.Length <= 0) return;
+
             Data data = new Data();
             string connectionString = data.ConnectionString;
             List<Tuple<User, string>> userList = new List<Tuple<User, string>>();

@@ -195,7 +195,6 @@ namespace TogetherCultureCRM
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    Guid adminRequestId = Guid.NewGuid();
                     string selectSql = "SELECT * FROM AdminRequests WHERE userId=@userId";
                     using (SqlCommand command = new SqlCommand(selectSql, con))
                     {
@@ -501,7 +500,7 @@ namespace TogetherCultureCRM
                     "Confirmation",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information
-                );
+            );
 
             if (result == DialogResult.Yes)
             {
