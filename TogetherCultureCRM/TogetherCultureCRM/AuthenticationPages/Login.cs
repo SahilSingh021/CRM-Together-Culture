@@ -185,8 +185,29 @@ namespace TogetherCultureCRM.AuthenticationPages
                                                         benefitsDescription = reader1.GetString(reader1.GetOrdinal("benefitsDescription"))
                                                     };
 
-                                                    UserSession.ActiveMemberBenefits.Add(memberBenefit);
+                                                    UserSession.SubscribedMemberBenefits.Add(memberBenefit);
                                                 }
+                                            }
+                                        }
+                                    }
+
+                                    string selectSql3 = "SELECT * FROM UsedMemberBenefits WHERE memberId=@memberId";
+                                    using (SqlCommand command1 = new SqlCommand(selectSql3, con))
+                                    {
+                                        command1.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
+                                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                                        {
+                                            while (reader1.Read())
+                                            {
+                                                UsedMemberBenefits usedMemberBenefit = new UsedMemberBenefits()
+                                                {
+                                                    usedMemberBenefitsId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("usedMemberBenefitsId"))),
+                                                    memberId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberId"))),
+                                                    memberBenefitsId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("memberBenefitsId"))),
+                                                    usageDate = reader1.GetDateTime(reader1.GetOrdinal("usageDate")),
+                                                };
+
+                                                UserSession.UsedMemberBenefits.Add(usedMemberBenefit);
                                             }
                                         }
                                     }

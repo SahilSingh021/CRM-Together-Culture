@@ -206,13 +206,25 @@ namespace TogetherCultureCRM
             benefitsPagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Active Benefits Page";
 
-            StringBuilder sb = new StringBuilder();
-            foreach (MemberBenefits memberBenefit in UserSession.ActiveMemberBenefits)
+            StringBuilder usedBenefitsSB = new StringBuilder();
+            StringBuilder unusedBenefitsSB = new StringBuilder();
+            foreach (MemberBenefits memberBenefit in UserSession.SubscribedMemberBenefits)
             {
-                sb.AppendLine(memberBenefit.benefitsDescription + "\n");
+                bool usedBenefit = false;
+                foreach (UsedMemberBenefits usedMemberBenefit in UserSession.UsedMemberBenefits)
+                {
+                    if (memberBenefit.memberBenefitsId == usedMemberBenefit.memberBenefitsId)
+                    {
+                        usedBenefitsSB.AppendLine(memberBenefit.benefitsDescription);
+                        usedBenefit = true;
+                    }
+                }
+                if (!usedBenefit) unusedBenefitsSB.AppendLine(memberBenefit.benefitsDescription);
             }
 
-            activeBenefitsTxtBox.Text = sb.ToString();
+            unusedBenefitsTxtBox.Text = unusedBenefitsSB.ToString();
+            if (UserSession.UsedMemberBenefits.Count > 0) usedBenefitsTxtBox.Text = usedBenefitsSB.ToString();
+            else usedBenefitsTxtBox.Text = "No benefits have been used so far.";
         }
 
         private void placeHireDashboardBtn_Click(object sender, EventArgs e)
@@ -363,7 +375,7 @@ namespace TogetherCultureCRM
                                     benefitsDescription = reader1.GetString(reader1.GetOrdinal("benefitsDescription"))
                                 };
 
-                                UserSession.ActiveMemberBenefits.Add(memberBenefit);
+                                UserSession.SubscribedMemberBenefits.Add(memberBenefit);
                             }
                         }
                     }
@@ -412,6 +424,14 @@ namespace TogetherCultureCRM
                         command.ExecuteNonQuery();
                     }
 
+                    // Delete UsedMemberBenefits records as member table has a FK restraint based of this table
+                    string deleteSql1 = @"DELETE FROM UsedMemberBenefits WHERE memberId=@memberId";
+                    using (SqlCommand command1 = new SqlCommand(deleteSql1, con))
+                    {
+                        command1.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
+                        command1.ExecuteNonQuery();
+                    }
+
                     // Delete Member record
                     string deleteSql = @"DELETE FROM Member WHERE userId=@userId";
                     using (SqlCommand command1 = new SqlCommand(deleteSql, con))
@@ -424,7 +444,8 @@ namespace TogetherCultureCRM
                 UserSession.User.bIsMember = false;
                 UserSession.Member = new Member();
                 UserSession.ActiveMembership = new MembershipType();
-                UserSession.ActiveMemberBenefits.Clear();
+                UserSession.SubscribedMemberBenefits.Clear();
+                UserSession.UsedMemberBenefits.Clear();
 
                 membershipPageTabBtn.PerformClick();
             }

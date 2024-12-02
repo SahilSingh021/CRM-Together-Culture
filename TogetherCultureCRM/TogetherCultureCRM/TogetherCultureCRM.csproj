@@ -107,6 +107,7 @@
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\MemberBenefits.cs" />
     <Compile Include="Classes\MembershipType.cs" />
+    <Compile Include="Classes\UsedMemberBenefits.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserSession.cs" />
     <Compile Include="CommunityMembership.cs">

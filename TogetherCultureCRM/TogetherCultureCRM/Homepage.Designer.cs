@@ -66,7 +66,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.benefitsPagePanel = new System.Windows.Forms.Panel();
-            this.activeBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
+            this.unusedBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.placeHirePanel = new System.Windows.Forms.Panel();
@@ -87,6 +87,9 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.usedBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -587,24 +590,27 @@
             // 
             // benefitsPagePanel
             // 
-            this.benefitsPagePanel.Controls.Add(this.activeBenefitsTxtBox);
+            this.benefitsPagePanel.Controls.Add(this.label16);
+            this.benefitsPagePanel.Controls.Add(this.label15);
+            this.benefitsPagePanel.Controls.Add(this.usedBenefitsTxtBox);
+            this.benefitsPagePanel.Controls.Add(this.unusedBenefitsTxtBox);
             this.benefitsPagePanel.Controls.Add(this.panel9);
             this.benefitsPagePanel.Location = new System.Drawing.Point(201, 12);
             this.benefitsPagePanel.Name = "benefitsPagePanel";
             this.benefitsPagePanel.Size = new System.Drawing.Size(984, 749);
             this.benefitsPagePanel.TabIndex = 10;
             // 
-            // activeBenefitsTxtBox
+            // unusedBenefitsTxtBox
             // 
-            this.activeBenefitsTxtBox.BackColor = System.Drawing.Color.White;
-            this.activeBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.activeBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activeBenefitsTxtBox.Location = new System.Drawing.Point(56, 181);
-            this.activeBenefitsTxtBox.Name = "activeBenefitsTxtBox";
-            this.activeBenefitsTxtBox.ReadOnly = true;
-            this.activeBenefitsTxtBox.Size = new System.Drawing.Size(874, 520);
-            this.activeBenefitsTxtBox.TabIndex = 10;
-            this.activeBenefitsTxtBox.Text = "Your active benefits are shown here...";
+            this.unusedBenefitsTxtBox.BackColor = System.Drawing.Color.White;
+            this.unusedBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unusedBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unusedBenefitsTxtBox.Location = new System.Drawing.Point(56, 181);
+            this.unusedBenefitsTxtBox.Name = "unusedBenefitsTxtBox";
+            this.unusedBenefitsTxtBox.ReadOnly = true;
+            this.unusedBenefitsTxtBox.Size = new System.Drawing.Size(874, 198);
+            this.unusedBenefitsTxtBox.TabIndex = 10;
+            this.unusedBenefitsTxtBox.Text = "Your unused benefits are shown here...";
             // 
             // panel9
             // 
@@ -620,11 +626,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(389, 52);
+            this.label7.Location = new System.Drawing.Point(405, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 33);
+            this.label7.Size = new System.Drawing.Size(120, 33);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Active Benefits";
+            this.label7.Text = "Benefits";
             // 
             // placeHirePanel
             // 
@@ -810,13 +816,43 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
+            // usedBenefitsTxtBox
+            // 
+            this.usedBenefitsTxtBox.BackColor = System.Drawing.Color.White;
+            this.usedBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usedBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usedBenefitsTxtBox.Location = new System.Drawing.Point(56, 418);
+            this.usedBenefitsTxtBox.Name = "usedBenefitsTxtBox";
+            this.usedBenefitsTxtBox.ReadOnly = true;
+            this.usedBenefitsTxtBox.Size = new System.Drawing.Size(874, 198);
+            this.usedBenefitsTxtBox.TabIndex = 11;
+            this.usedBenefitsTxtBox.Text = "Your used benefits are shown here...";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(53, 164);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(111, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Unused Benefits Data";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(53, 402);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(99, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Used Benefits Data";
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.benefitsPagePanel);
+            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
@@ -853,6 +889,7 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.benefitsPagePanel.ResumeLayout(false);
+            this.benefitsPagePanel.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.placeHirePanel.ResumeLayout(false);
@@ -932,6 +969,9 @@
         private System.Windows.Forms.Label joiningFeeLbl;
         private System.Windows.Forms.Label durationLbl;
         private System.Windows.Forms.Button cancleMembershipBtn;
-        private System.Windows.Forms.RichTextBox activeBenefitsTxtBox;
+        private System.Windows.Forms.RichTextBox unusedBenefitsTxtBox;
+        private System.Windows.Forms.RichTextBox usedBenefitsTxtBox;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
