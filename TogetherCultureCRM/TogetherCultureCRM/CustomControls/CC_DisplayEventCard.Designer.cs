@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.eventDateLbl = new System.Windows.Forms.Label();
+            this.eventDayLbl = new System.Windows.Forms.Label();
             this.eventNameLbl = new System.Windows.Forms.Label();
             this.eventTimeLbl = new System.Windows.Forms.Label();
             this.bookEventBtn = new System.Windows.Forms.Button();
             this.eventIdLbl = new System.Windows.Forms.Label();
             this.tagIdLbl = new System.Windows.Forms.Label();
+            this.eventDateLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // eventDateLbl
+            // eventDayLbl
             // 
-            this.eventDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.eventDateLbl.AutoSize = true;
-            this.eventDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventDateLbl.Location = new System.Drawing.Point(41, 31);
-            this.eventDateLbl.Name = "eventDateLbl";
-            this.eventDateLbl.Size = new System.Drawing.Size(141, 20);
-            this.eventDateLbl.TabIndex = 0;
-            this.eventDateLbl.Text = "Monday/02/2025";
+            this.eventDayLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.eventDayLbl.AutoSize = true;
+            this.eventDayLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventDayLbl.Location = new System.Drawing.Point(70, 30);
+            this.eventDayLbl.Name = "eventDayLbl";
+            this.eventDayLbl.Size = new System.Drawing.Size(71, 20);
+            this.eventDayLbl.TabIndex = 0;
+            this.eventDayLbl.Text = "Monday";
             // 
             // eventNameLbl
             // 
@@ -103,17 +104,29 @@
             this.tagIdLbl.Text = "tagId";
             this.tagIdLbl.Visible = false;
             // 
+            // eventDateLbl
+            // 
+            this.eventDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.eventDateLbl.AutoSize = true;
+            this.eventDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventDateLbl.Location = new System.Drawing.Point(58, 49);
+            this.eventDateLbl.Name = "eventDateLbl";
+            this.eventDateLbl.Size = new System.Drawing.Size(99, 20);
+            this.eventDateLbl.TabIndex = 6;
+            this.eventDateLbl.Text = "01/02/2025";
+            // 
             // CC_DisplayEventCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.eventDateLbl);
             this.Controls.Add(this.tagIdLbl);
             this.Controls.Add(this.eventIdLbl);
             this.Controls.Add(this.bookEventBtn);
             this.Controls.Add(this.eventTimeLbl);
             this.Controls.Add(this.eventNameLbl);
-            this.Controls.Add(this.eventDateLbl);
+            this.Controls.Add(this.eventDayLbl);
             this.Name = "CC_DisplayEventCard";
             this.Size = new System.Drawing.Size(220, 250);
             this.ResumeLayout(false);
@@ -123,11 +136,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label eventDateLbl;
+        private System.Windows.Forms.Label eventDayLbl;
         private System.Windows.Forms.Label eventNameLbl;
         private System.Windows.Forms.Label eventTimeLbl;
         private System.Windows.Forms.Button bookEventBtn;
         private System.Windows.Forms.Label eventIdLbl;
         private System.Windows.Forms.Label tagIdLbl;
+        private System.Windows.Forms.Label eventDateLbl;
     }
 }

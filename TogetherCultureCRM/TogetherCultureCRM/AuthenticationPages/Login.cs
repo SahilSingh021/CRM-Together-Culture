@@ -213,7 +213,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-                                string selectSql4 = "SELECT * FROM Event";
+                                string selectSql4 = "SELECT * FROM Event ORDER BY eventDate";
                                 using (SqlCommand command1 = new SqlCommand(selectSql4, con))
                                 {
                                     using (SqlDataReader reader1 = command1.ExecuteReader())

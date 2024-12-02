@@ -105,61 +105,72 @@ namespace TogetherCultureCRM
 
         public void BookEvent(Guid eventId, Guid tagId)
         {
-            bool bEventAlreadyBooked = false;
-            Data dataCls = new Data();
-            string connectionString = dataCls.ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
+            DialogResult result = MessageBox.Show(
+                    "Are you sure you want to book this event?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+            );
 
-                //check if user has already booked this event
-                string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId AND eventId=@eventId";
-                using (SqlCommand command = new SqlCommand(selectSql, con))
+            if (result == DialogResult.Yes)
+            {
+                bool bEventAlreadyBooked = false;
+                Data dataCls = new Data();
+                string connectionString = dataCls.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
-                    command.Parameters.AddWithValue("@eventId", eventId);
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    con.Open();
+
+                    //check if user has already booked this event
+                    string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId AND eventId=@eventId";
+                    using (SqlCommand command = new SqlCommand(selectSql, con))
                     {
-                        if (reader.Read())
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        command.Parameters.AddWithValue("@eventId", eventId);
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            bEventAlreadyBooked = true;
+                            if (reader.Read())
+                            {
+                                bEventAlreadyBooked = true;
+                            }
                         }
+                    }
+
+                    if (bEventAlreadyBooked)
+                    {
+                        con.Close();
+                        MessageBox.Show("You have already booked this event!", "Event Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    //insert record into UserEvents
+                    string insertSql = "INSERT INTO UserEvents (eventId, userId) VALUES (@eventId, @userId)";
+                    using (SqlCommand command = new SqlCommand(insertSql, con))
+                    {
+                        command.Parameters.AddWithValue("@eventId", eventId);
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    //insert record into UserTag
+                    string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
+                    using (SqlCommand command = new SqlCommand(insertSql1, con))
+                    {
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        command.Parameters.AddWithValue("@tagId", tagId);
+
+                        command.ExecuteNonQuery();
                     }
                 }
 
-                if (bEventAlreadyBooked)
-                {
-                    con.Close();
-                    MessageBox.Show("You have already booked this event!", "Event Booked");
-                    return;
-                }
-
-                //insert record into UserEvents
-                string insertSql = "INSERT INTO UserEvents (eventId, userId) VALUES (@eventId, @userId)";
-                using (SqlCommand command = new SqlCommand(insertSql, con))
-                {
-                    command.Parameters.AddWithValue("@eventId", eventId);
-                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
-
-                    command.ExecuteNonQuery();
-                }
-
-                //insert record into UserTag
-                string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
-                using (SqlCommand command = new SqlCommand(insertSql1, con))
-                {
-                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
-                    command.Parameters.AddWithValue("@tagId", tagId);
-
-                    command.ExecuteNonQuery();
-                }
+                MessageBox.Show("You have booked this Event!", "Event Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            MessageBox.Show("You have booked this Event!", "Event Booked");
         }
 
         private void eventsHomePageTabBtn_Click(object sender, EventArgs e)
         {
+            eventBookingPanel.Controls.Clear();
             DashboardBtn_BackColorReset();
             eventsHomePageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
             eventsHomePageTabPanel.BringToFront();
@@ -174,8 +185,9 @@ namespace TogetherCultureCRM
                     EventId = Event.eventId.ToString(),
                     TagId = Event.tagId.ToString(),
                     EventName = Event.eventName,
-                    EventDate = Event.eventDate.ToString("dddd-mm-yyyy"),
-                    EventTime = Event.eventDate.ToString("t"),
+                    EventDate = Event.eventDate.ToString("dd/MM/yyyy"),
+                    EventDay = Event.eventDate.ToString("dddd"),
+                    EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
                     BookEventClick = (s, eventArg) =>
                     {
                         BookEvent(Guid.Parse(Event.eventId.ToString()), Guid.Parse(Event.tagId.ToString()));
@@ -183,20 +195,17 @@ namespace TogetherCultureCRM
                 };
 
                 eventBookingPanel.Controls.Add(eventDisplayCard);
-                if (eventBookingPanel.Controls.Count > 0)
+
+                eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+                eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
+
+                if (heightCount > 0) eventDisplayCard.Location = new Point(eventDisplayCard.Location.X, eventDisplayCard.Location.Y + (heightCount * 20));
+
+                if (widthCount == 3)
                 {
-                    eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
-                    if (widthCount > 3)
-                    {
-                        heightCount++;
-                        widthCount = 0;
-                    }
+                    heightCount++;
+                    widthCount = -1;
                 }
-                else
-                {
-                    eventDisplayCard.Location = new Point(0, 0);
-                }
-                
                 widthCount++;
             }
         }

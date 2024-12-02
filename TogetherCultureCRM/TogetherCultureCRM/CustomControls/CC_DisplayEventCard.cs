@@ -28,6 +28,12 @@ namespace TogetherCultureCRM.CustomControls
             set { tagIdLbl.Text = value; }
         }
 
+        public string EventDay
+        {
+            get { return eventDayLbl.Text; }
+            set { eventDayLbl.Text = value; }
+        }
+
         public string EventDate
         {
             get { return eventDateLbl.Text; }

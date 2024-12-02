@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.adminHomePagePanel = new System.Windows.Forms.Panel();
             this.eventsHomePageTabPanel = new System.Windows.Forms.Panel();
+            this.eventBookingPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.homePagePanel = new System.Windows.Forms.Panel();
@@ -98,7 +99,6 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.eventBookingPanel = new System.Windows.Forms.Panel();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -410,6 +410,14 @@
             this.eventsHomePageTabPanel.Name = "eventsHomePageTabPanel";
             this.eventsHomePageTabPanel.Size = new System.Drawing.Size(984, 749);
             this.eventsHomePageTabPanel.TabIndex = 5;
+            // 
+            // eventBookingPanel
+            // 
+            this.eventBookingPanel.AutoScroll = true;
+            this.eventBookingPanel.Location = new System.Drawing.Point(16, 133);
+            this.eventBookingPanel.Name = "eventBookingPanel";
+            this.eventBookingPanel.Size = new System.Drawing.Size(969, 617);
+            this.eventBookingPanel.TabIndex = 4;
             // 
             // panel5
             // 
@@ -953,14 +961,6 @@
             this.label11.Size = new System.Drawing.Size(223, 33);
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
-            // 
-            // eventBookingPanel
-            // 
-            this.eventBookingPanel.AutoScroll = true;
-            this.eventBookingPanel.Location = new System.Drawing.Point(0, 133);
-            this.eventBookingPanel.Name = "eventBookingPanel";
-            this.eventBookingPanel.Size = new System.Drawing.Size(985, 617);
-            this.eventBookingPanel.TabIndex = 4;
             // 
             // Homepage
             // 
