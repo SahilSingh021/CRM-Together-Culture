@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.isMemberCheckBox = new System.Windows.Forms.CheckBox();
             this.updateBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.userIdTxt = new System.Windows.Forms.TextBox();
             this.isBannedCheckBox = new System.Windows.Forms.CheckBox();
             this.isAdminCheckBox = new System.Windows.Forms.CheckBox();
-            this.isMemberCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,17 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(804, 666);
             this.mainPanel.TabIndex = 1;
+            // 
+            // isMemberCheckBox
+            // 
+            this.isMemberCheckBox.AutoSize = true;
+            this.isMemberCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isMemberCheckBox.Location = new System.Drawing.Point(424, 363);
+            this.isMemberCheckBox.Name = "isMemberCheckBox";
+            this.isMemberCheckBox.Size = new System.Drawing.Size(75, 17);
+            this.isMemberCheckBox.TabIndex = 31;
+            this.isMemberCheckBox.Text = "Is Member";
+            this.isMemberCheckBox.UseVisualStyleBackColor = true;
             // 
             // updateBtn
             // 
@@ -205,17 +216,6 @@
             this.isAdminCheckBox.TabIndex = 20;
             this.isAdminCheckBox.Text = "Is Admin";
             this.isAdminCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // isMemberCheckBox
-            // 
-            this.isMemberCheckBox.AutoSize = true;
-            this.isMemberCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.isMemberCheckBox.Location = new System.Drawing.Point(424, 363);
-            this.isMemberCheckBox.Name = "isMemberCheckBox";
-            this.isMemberCheckBox.Size = new System.Drawing.Size(75, 17);
-            this.isMemberCheckBox.TabIndex = 31;
-            this.isMemberCheckBox.Text = "Is Member";
-            this.isMemberCheckBox.UseVisualStyleBackColor = true;
             // 
             // AdminEditUserPage
             // 

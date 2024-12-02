@@ -81,12 +81,16 @@ namespace TogetherCultureCRM
         private void manageRequestsBtn_Click(object sender, EventArgs e)
         {
             AdminRequestsPage adminRequestsPage = new AdminRequestsPage();
+            adminRequestsPage.Owner = this;
+            adminRequestsPage.ShowInTaskbar = false;
             adminRequestsPage.Show();
         }
 
         private void manageUserBtn_Click(object sender, EventArgs e)
         {
             AdminManageUsersPage adminManageUsersPage = new AdminManageUsersPage();
+            adminManageUsersPage.Owner = this;
+            adminManageUsersPage.ShowInTaskbar = false;
             adminManageUsersPage.Show();
         }
 

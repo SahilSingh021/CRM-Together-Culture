@@ -83,6 +83,8 @@ namespace TogetherCultureCRM.AdminPages
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
                         AdminEditUserPage adminEditUserPage = new AdminEditUserPage(item);
+                        adminEditUserPage.Owner = this;
+                        adminEditUserPage.ShowInTaskbar = false;
                         adminEditUserPage.Show();
                     };
 

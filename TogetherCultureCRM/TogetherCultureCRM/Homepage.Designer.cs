@@ -66,6 +66,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.benefitsPagePanel = new System.Windows.Forms.Panel();
+            this.activeBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.placeHirePanel = new System.Windows.Forms.Panel();
@@ -86,7 +87,6 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.activeBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -594,6 +594,18 @@
             this.benefitsPagePanel.Size = new System.Drawing.Size(984, 749);
             this.benefitsPagePanel.TabIndex = 10;
             // 
+            // activeBenefitsTxtBox
+            // 
+            this.activeBenefitsTxtBox.BackColor = System.Drawing.Color.White;
+            this.activeBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.activeBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeBenefitsTxtBox.Location = new System.Drawing.Point(56, 181);
+            this.activeBenefitsTxtBox.Name = "activeBenefitsTxtBox";
+            this.activeBenefitsTxtBox.ReadOnly = true;
+            this.activeBenefitsTxtBox.Size = new System.Drawing.Size(874, 520);
+            this.activeBenefitsTxtBox.TabIndex = 10;
+            this.activeBenefitsTxtBox.Text = "Your active benefits are shown here...";
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label7);
@@ -798,26 +810,14 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
-            // activeBenefitsTxtBox
-            // 
-            this.activeBenefitsTxtBox.BackColor = System.Drawing.Color.White;
-            this.activeBenefitsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.activeBenefitsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activeBenefitsTxtBox.Location = new System.Drawing.Point(56, 181);
-            this.activeBenefitsTxtBox.Name = "activeBenefitsTxtBox";
-            this.activeBenefitsTxtBox.ReadOnly = true;
-            this.activeBenefitsTxtBox.Size = new System.Drawing.Size(874, 520);
-            this.activeBenefitsTxtBox.TabIndex = 10;
-            this.activeBenefitsTxtBox.Text = "Your active benefits are shown here...";
-            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
-            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
