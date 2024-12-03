@@ -18,19 +18,18 @@ namespace TogetherCultureCRM.Classes
             UsedMemberBenefits = new List<UsedMemberBenefits>();
             MembershipTypes = new List<MembershipType>();
             Events = new List<Event>();
-            VisitorLog = new List<VisitorLog>();
+            VisitorLogs = new List<VisitorLog>();
         }
 
         public static User User { get; set; }
         public static Admin Admin { get; set; }
         public static Member Member {  get; set; }
         public static MembershipType ActiveMembership { get; set; }
+        public static MemberKeyIntrest MemberKeyIntrest { get; set; }
         public static List<MemberBenefits> SubscribedMemberBenefits { get; set; }
         public static List<UsedMemberBenefits> UsedMemberBenefits { get; set; }
         public static List<MembershipType> MembershipTypes { get; set; }
         public static List<Event> Events { get; set; }
-        public static List<VisitorLog> VisitorLog { get; set; }
-
-
+        public static List<VisitorLog> VisitorLogs { get; set; }
     }
 }

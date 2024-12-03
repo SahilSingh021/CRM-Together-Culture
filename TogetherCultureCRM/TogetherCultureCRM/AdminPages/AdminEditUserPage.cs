@@ -12,6 +12,7 @@ using TogetherCultureCRM.AuthenticationPages;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using TogetherCultureCRM.Classes;
 using TogetherCultureCRM.CustomControls;
+using System.Text.RegularExpressions;
 
 namespace TogetherCultureCRM.AdminPages
 {
@@ -51,6 +52,29 @@ namespace TogetherCultureCRM.AdminPages
             bool isAdmin = isAdminCheckBox.Checked;
             bool isBanned = isBannedCheckBox.Checked;
             bool isMember = isMemberCheckBox.Checked;
+
+            #region User Validations
+            if (username == "" || password == "" || email == "")
+            {
+                MessageBox.Show("Please fill in all the feilds.", "Invalid Inputs");
+                return;
+            }
+            if (username.Length < 3 || username.Length > 20 || username.StartsWith("_") || username.EndsWith("_"))
+            {
+                MessageBox.Show("Please enter a username that is between 3 and 20 characters long. The username cannot start or end with an underscore.", "Invalid Username");
+                return;
+            }
+            if (password.Length < 6 || password.Length > 20)
+            {
+                MessageBox.Show("Please enter a password that is between 6 and 20 characters long.", "Invalid password");
+                return;
+            }
+            if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Invalid email address. Please enter a valid email address.", "Invalid Email");
+                return;
+            }
+            #endregion
 
             if (username == _selectdUser.username && email == _selectdUser.email && password == _selectdUser.password
                 && isAdmin == _selectdUser.bIsAdmin && isBanned == _selectdUser.bIsBanned && isMember == _selectdUser.bIsMember)

@@ -82,7 +82,7 @@ CREATE TABLE MembershipTypeBenefits (
 
 CREATE TABLE KeyIntrest (
 	intrestId VARCHAR(36) PRIMARY KEY,
-	keyIntrestName TEXT NOT NULL
+	keyIntrestName VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Member (

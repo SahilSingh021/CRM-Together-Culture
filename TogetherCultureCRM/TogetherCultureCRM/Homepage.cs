@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TogetherCultureCRM.AdminPages;
@@ -295,13 +297,25 @@ namespace TogetherCultureCRM
             profilePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Profile Page";
 
+            if (UserSession.VisitorLogs.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var visitorLog in UserSession.VisitorLogs)
+                {
+                    sb.AppendLine($"{UserSession.User.username} visited on the {visitorLog.visitDate.ToString("dd/MM/yyyy")}, at {visitorLog.visitDate.ToString("t")}.");
+                }
+                visitorLogTxt.Text = sb.ToString();
+            }
+            else visitorLogTxt.Text = "You have not made any visits to Together Culture as of now.";
+
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+
             if (!UserSession.User.bIsMember)
             {
                 // Check if the user has already made a request to become a member
                 bool bRequestMade = false;
                 DateTime requestDateTime = DateTime.Now;
-                Data dataCls = new Data();
-                string connectionString = dataCls.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
@@ -334,7 +348,47 @@ namespace TogetherCultureCRM
                     postRequestPanel.Show();
                     postRequestPanel.BringToFront();
                 }
+                updateUserProfilePanel.BringToFront();
+                return;
             }
+
+            // Load Username and Email of current user into field
+            usernameTxt.Text = UserSession.User.username;
+            emailTxt.Text = UserSession.User.email;
+
+            // Load MemberKeyIntrest
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql = "SELECT m.memberId, m.intrestId, m.memberKeyIntrestDate, k.intrestId, k.keyIntrestName FROM MemberKeyIntrest AS m LEFT JOIN KeyIntrest AS k ON m.intrestId = k.intrestId WHERE m.memberId = @memberId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            MemberKeyIntrest memberKeyIntrest = new MemberKeyIntrest()
+                            {
+                                memberId = Guid.Parse(reader.GetString(reader.GetOrdinal("memberId"))),
+                                intrestId = Guid.Parse(reader.GetString(reader.GetOrdinal("intrestId"))),
+                                keyIntrestName = reader.IsDBNull(reader.GetOrdinal("keyIntrestName")) ? null : reader.GetString(reader.GetOrdinal("keyIntrestName")),
+                                memberKeyIntrestDate = reader.GetDateTime(reader.GetOrdinal("memberKeyIntrestDate"))
+                            };
+
+                            UserSession.MemberKeyIntrest = memberKeyIntrest;
+                        }
+                    }
+                }
+                con.Close();
+            }
+
+            if (UserSession.MemberKeyIntrest != null) KeyInterest_CheckedChanged(UserSession.MemberKeyIntrest.keyIntrestName);
+
+            postRequestPanel.Hide();
+            preMemberPanel.Hide();
+            memberProfilePanel.BringToFront();
+            updateUserProfilePanel.BringToFront();
         }
 
         private void benefitsDashboardBtn_Click(object sender, EventArgs e)
@@ -595,6 +649,7 @@ namespace TogetherCultureCRM
                 UserSession.User.bIsMember = false;
                 UserSession.Member = new Member();
                 UserSession.ActiveMembership = new MembershipType();
+                UserSession.MemberKeyIntrest = new MemberKeyIntrest();
                 UserSession.SubscribedMemberBenefits.Clear();
                 UserSession.UsedMemberBenefits.Clear();
 
@@ -620,7 +675,7 @@ namespace TogetherCultureCRM
                 {
                     con.Open();
                     Guid adminRequestId = Guid.NewGuid();
-                    string insertRequestSql = "INSERT INTO [AdminRequests] (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
+                    string insertRequestSql = "INSERT INTO AdminRequests (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
                     using (SqlCommand command = new SqlCommand(insertRequestSql, con))
                     {
                         command.Parameters.AddWithValue("@adminRequestId", adminRequestId);
@@ -638,5 +693,206 @@ namespace TogetherCultureCRM
             return;
         }
 
+        private void updateUserProfileBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update your user infromation?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                string username = usernameTxt.Text;
+                string email = emailTxt.Text;
+
+                #region User Validations
+                if (username == "" || email == "")
+                {
+                    MessageBox.Show("Please fill in all the feilds.", "Invalid Inputs");
+                    return;
+                }
+                if (username.Length < 3 || username.Length > 20 || username.StartsWith("_") || username.EndsWith("_"))
+                {
+                    MessageBox.Show("Please enter a username that is between 3 and 20 characters long. The username cannot start or end with an underscore.", "Invalid Username");
+                    return;
+                }
+                if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    MessageBox.Show("Invalid email address. Please enter a valid email address.", "Invalid Email");
+                    return;
+                }
+                #endregion
+
+                if (username == UserSession.User.username && email == UserSession.User.email)
+                {
+                    MessageBox.Show("User is already up to date. Nothing to modify.", "Up to date", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                Data data = new Data();
+                string connectionString = data.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string updateSql = @"UPDATE Users SET username=@username, email=@email WHERE userId=@userId";
+
+                    using (SqlCommand command = new SqlCommand(updateSql, con))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Update current session
+                UserSession.User.username = username;
+                UserSession.User.email = email;
+
+                MessageBox.Show("User has been updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                loggedInLbl.Text = username;
+                profileDashboardBtn.PerformClick();
+            }
+        }
+
+        public void KeyInterest_CheckedChanged(string interestName)
+        {
+            caringCheckBox.Checked = false;
+            sharingCheckBox.Checked = false;
+            workingCheckBox.Checked = false;
+            learningCheckBox.Checked = false;
+            happeningCheckBox.Checked = false;
+
+            switch (interestName)
+            {
+                case "Caring":
+                    caringCheckBox.Checked = true;
+                    break;
+                case "Sharing":
+                    sharingCheckBox.Checked = true;
+                    break;
+                case "Working":
+                    workingCheckBox.Checked = true;
+                    break;
+                case "Learning":
+                    learningCheckBox.Checked = true;
+                    break;
+                case "Happening":
+                    happeningCheckBox.Checked = true;
+                    break;
+            }
+        }
+
+        private void caringCheckBox_Click(object sender, EventArgs e)
+        {
+            KeyInterest_CheckedChanged("Caring");
+        }
+
+        private void sharingCheckBox_Click(object sender, EventArgs e)
+        {
+            KeyInterest_CheckedChanged("Sharing");
+        }
+
+        private void workingCheckBox_Click(object sender, EventArgs e)
+        {
+            KeyInterest_CheckedChanged("Working");
+        }
+
+        private void learningCheckBox_Click(object sender, EventArgs e)
+        {
+            KeyInterest_CheckedChanged("Learning");
+        }
+
+        private void happeningCheckBox_Click(object sender, EventArgs e)
+        {
+            KeyInterest_CheckedChanged("Happening");
+        }
+
+        private void updateKeyIntrestBtn_Click(object sender, EventArgs e)
+        {
+            var checkboxes = new List<(bool IsChecked, string Text)>
+            {
+                (caringCheckBox.Checked, caringCheckBox.Text),
+                (sharingCheckBox.Checked, sharingCheckBox.Text),
+                (workingCheckBox.Checked, workingCheckBox.Text),
+                (learningCheckBox.Checked, learningCheckBox.Text),
+                (happeningCheckBox.Checked, happeningCheckBox.Text)
+            };
+
+            string currentKeyInterestName = UserSession.MemberKeyIntrest?.keyIntrestName;
+            string newKeyInterestName = null;
+
+            // Find a matching checkbox for the current key interest
+            var currentMatch = checkboxes.FirstOrDefault(cb => cb.IsChecked && cb.Text == currentKeyInterestName);
+            if (currentMatch != default)
+            {
+                MessageBox.Show("Key Interest is already up to date. Nothing to modify.", "Info Up to Date", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Find the new key interest name from the checked checkbox
+            var newMatch = checkboxes.FirstOrDefault(cb => cb.IsChecked);
+            if (newMatch == default)
+            {
+                MessageBox.Show("Please select a Key Interest to update.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            newKeyInterestName = newMatch.Text;
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+
+            // Delete Current Record (if it exists)
+            if (UserSession.MemberKeyIntrest != null)
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string deleteSql = "DELETE FROM MemberKeyIntrest WHERE intrestId = @intrestId";
+                    using (SqlCommand command = new SqlCommand(deleteSql, con))
+                    {
+                        command.Parameters.AddWithValue("@intrestId", UserSession.MemberKeyIntrest.intrestId);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            Guid intrestId = Guid.Empty;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                // Retrieve the intrestId for the new key interest
+                string selectSql = "SELECT intrestId FROM KeyIntrest WHERE keyIntrestName = @keyIntrestName";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@keyIntrestName", newKeyInterestName);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            intrestId = Guid.Parse(reader.GetString(reader.GetOrdinal("intrestId")));
+                        }
+                    }
+                }
+
+                // Insert the new key intrest record
+                string insertSql = "INSERT INTO MemberKeyIntrest (memberId, intrestId) VALUES (@memberId, @intrestId)";
+                using (SqlCommand command = new SqlCommand(insertSql, con))
+                {
+                    command.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
+                    command.Parameters.AddWithValue("@intrestId", intrestId);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Key Interest has been updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            profileDashboardBtn.PerformClick();
+        }
     }
 }

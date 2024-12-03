@@ -233,6 +233,26 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                string selectSql5 = "SELECT * FROM VisitorLog WHERE userId=@userId ORDER BY visitDate";
+                                using (SqlCommand command1 = new SqlCommand(selectSql5, con))
+                                {
+                                    command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    {
+                                        while (reader1.Read())
+                                        {
+                                            VisitorLog visitorLog = new VisitorLog()
+                                            {
+                                                visitorId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("visitorId"))),
+                                                userId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("userId"))),
+                                                visitDate = reader1.GetDateTime(reader1.GetOrdinal("visitDate")),
+                                            };
+
+                                            UserSession.VisitorLogs.Add(visitorLog);
+                                        }
+                                    }
+                                }
+
                                 con.Close();
                                 Homepage homepage = new Homepage();
                                 homepage.Show();

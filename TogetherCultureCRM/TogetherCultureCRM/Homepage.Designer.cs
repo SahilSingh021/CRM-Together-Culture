@@ -54,16 +54,35 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.profilePagePanel = new System.Windows.Forms.Panel();
-            this.postRequestPanel = new System.Windows.Forms.Panel();
-            this.requestDateLbl = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.updateUserProfilePanel = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.updateUserProfileBtn = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.emailTxt = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
+            this.memberProfilePanel = new System.Windows.Forms.Panel();
+            this.workingCheckBox = new System.Windows.Forms.CheckBox();
+            this.happeningCheckBox = new System.Windows.Forms.CheckBox();
+            this.learningCheckBox = new System.Windows.Forms.CheckBox();
+            this.sharingCheckBox = new System.Windows.Forms.CheckBox();
+            this.caringCheckBox = new System.Windows.Forms.CheckBox();
+            this.updateKeyIntrestBtn = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.visitorLogTxt = new System.Windows.Forms.RichTextBox();
             this.preMemberPanel = new System.Windows.Forms.Panel();
             this.requestMembershipBtn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.postRequestPanel = new System.Windows.Forms.Panel();
+            this.requestDateLbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.membershipPanel = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -109,9 +128,12 @@
             this.homePagePanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.profilePagePanel.SuspendLayout();
-            this.postRequestPanel.SuspendLayout();
+            this.updateUserProfilePanel.SuspendLayout();
+            this.memberProfilePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.preMemberPanel.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.postRequestPanel.SuspendLayout();
             this.membershipPanel.SuspendLayout();
             this.panel8.SuspendLayout();
             this.benefitsPagePanel.SuspendLayout();
@@ -469,13 +491,319 @@
             // 
             // profilePagePanel
             // 
-            this.profilePagePanel.Controls.Add(this.postRequestPanel);
+            this.profilePagePanel.Controls.Add(this.updateUserProfilePanel);
+            this.profilePagePanel.Controls.Add(this.memberProfilePanel);
+            this.profilePagePanel.Controls.Add(this.panel1);
             this.profilePagePanel.Controls.Add(this.preMemberPanel);
             this.profilePagePanel.Controls.Add(this.panel7);
+            this.profilePagePanel.Controls.Add(this.postRequestPanel);
             this.profilePagePanel.Location = new System.Drawing.Point(200, 12);
             this.profilePagePanel.Name = "profilePagePanel";
             this.profilePagePanel.Size = new System.Drawing.Size(984, 749);
             this.profilePagePanel.TabIndex = 8;
+            // 
+            // updateUserProfilePanel
+            // 
+            this.updateUserProfilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updateUserProfilePanel.Controls.Add(this.label25);
+            this.updateUserProfilePanel.Controls.Add(this.updateUserProfileBtn);
+            this.updateUserProfilePanel.Controls.Add(this.label22);
+            this.updateUserProfilePanel.Controls.Add(this.emailTxt);
+            this.updateUserProfilePanel.Controls.Add(this.label24);
+            this.updateUserProfilePanel.Controls.Add(this.usernameTxt);
+            this.updateUserProfilePanel.Location = new System.Drawing.Point(40, 260);
+            this.updateUserProfilePanel.Name = "updateUserProfilePanel";
+            this.updateUserProfilePanel.Size = new System.Drawing.Size(301, 266);
+            this.updateUserProfilePanel.TabIndex = 8;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(50, 19);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(199, 33);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "Update Profile";
+            // 
+            // updateUserProfileBtn
+            // 
+            this.updateUserProfileBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.updateUserProfileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateUserProfileBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.updateUserProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.updateUserProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateUserProfileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateUserProfileBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateUserProfileBtn.Location = new System.Drawing.Point(27, 189);
+            this.updateUserProfileBtn.Name = "updateUserProfileBtn";
+            this.updateUserProfileBtn.Size = new System.Drawing.Size(250, 35);
+            this.updateUserProfileBtn.TabIndex = 35;
+            this.updateUserProfileBtn.Text = "UPDATE";
+            this.updateUserProfileBtn.UseVisualStyleBackColor = false;
+            this.updateUserProfileBtn.Click += new System.EventHandler(this.updateUserProfileBtn_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(24, 130);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 16);
+            this.label22.TabIndex = 34;
+            this.label22.Text = "Email:";
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.Location = new System.Drawing.Point(27, 149);
+            this.emailTxt.MaxLength = 30;
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.Size = new System.Drawing.Size(250, 20);
+            this.emailTxt.TabIndex = 33;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(24, 86);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(73, 16);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Username:";
+            // 
+            // usernameTxt
+            // 
+            this.usernameTxt.Location = new System.Drawing.Point(27, 105);
+            this.usernameTxt.MaxLength = 30;
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(250, 20);
+            this.usernameTxt.TabIndex = 31;
+            // 
+            // memberProfilePanel
+            // 
+            this.memberProfilePanel.Controls.Add(this.workingCheckBox);
+            this.memberProfilePanel.Controls.Add(this.happeningCheckBox);
+            this.memberProfilePanel.Controls.Add(this.learningCheckBox);
+            this.memberProfilePanel.Controls.Add(this.sharingCheckBox);
+            this.memberProfilePanel.Controls.Add(this.caringCheckBox);
+            this.memberProfilePanel.Controls.Add(this.updateKeyIntrestBtn);
+            this.memberProfilePanel.Controls.Add(this.label26);
+            this.memberProfilePanel.Controls.Add(this.label23);
+            this.memberProfilePanel.Location = new System.Drawing.Point(0, 140);
+            this.memberProfilePanel.Name = "memberProfilePanel";
+            this.memberProfilePanel.Size = new System.Drawing.Size(984, 349);
+            this.memberProfilePanel.TabIndex = 6;
+            // 
+            // workingCheckBox
+            // 
+            this.workingCheckBox.AutoSize = true;
+            this.workingCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.workingCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workingCheckBox.Location = new System.Drawing.Point(745, 110);
+            this.workingCheckBox.Name = "workingCheckBox";
+            this.workingCheckBox.Size = new System.Drawing.Size(99, 28);
+            this.workingCheckBox.TabIndex = 41;
+            this.workingCheckBox.Text = "Working";
+            this.workingCheckBox.UseVisualStyleBackColor = true;
+            this.workingCheckBox.Click += new System.EventHandler(this.workingCheckBox_Click);
+            // 
+            // happeningCheckBox
+            // 
+            this.happeningCheckBox.AutoSize = true;
+            this.happeningCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.happeningCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.happeningCheckBox.Location = new System.Drawing.Point(624, 150);
+            this.happeningCheckBox.Name = "happeningCheckBox";
+            this.happeningCheckBox.Size = new System.Drawing.Size(123, 28);
+            this.happeningCheckBox.TabIndex = 40;
+            this.happeningCheckBox.Text = "Happening";
+            this.happeningCheckBox.UseVisualStyleBackColor = true;
+            this.happeningCheckBox.Click += new System.EventHandler(this.happeningCheckBox_Click);
+            // 
+            // learningCheckBox
+            // 
+            this.learningCheckBox.AutoSize = true;
+            this.learningCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.learningCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.learningCheckBox.Location = new System.Drawing.Point(508, 150);
+            this.learningCheckBox.Name = "learningCheckBox";
+            this.learningCheckBox.Size = new System.Drawing.Size(103, 28);
+            this.learningCheckBox.TabIndex = 39;
+            this.learningCheckBox.Text = "Learning";
+            this.learningCheckBox.UseVisualStyleBackColor = true;
+            this.learningCheckBox.Click += new System.EventHandler(this.learningCheckBox_Click);
+            // 
+            // sharingCheckBox
+            // 
+            this.sharingCheckBox.AutoSize = true;
+            this.sharingCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sharingCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharingCheckBox.Location = new System.Drawing.Point(624, 110);
+            this.sharingCheckBox.Name = "sharingCheckBox";
+            this.sharingCheckBox.Size = new System.Drawing.Size(94, 28);
+            this.sharingCheckBox.TabIndex = 38;
+            this.sharingCheckBox.Text = "Sharing";
+            this.sharingCheckBox.UseVisualStyleBackColor = true;
+            this.sharingCheckBox.Click += new System.EventHandler(this.sharingCheckBox_Click);
+            // 
+            // caringCheckBox
+            // 
+            this.caringCheckBox.AutoSize = true;
+            this.caringCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.caringCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caringCheckBox.Location = new System.Drawing.Point(508, 110);
+            this.caringCheckBox.Name = "caringCheckBox";
+            this.caringCheckBox.Size = new System.Drawing.Size(84, 28);
+            this.caringCheckBox.TabIndex = 37;
+            this.caringCheckBox.Text = "Caring";
+            this.caringCheckBox.UseVisualStyleBackColor = true;
+            this.caringCheckBox.Click += new System.EventHandler(this.caringCheckBox_Click);
+            // 
+            // updateKeyIntrestBtn
+            // 
+            this.updateKeyIntrestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.updateKeyIntrestBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateKeyIntrestBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.updateKeyIntrestBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.updateKeyIntrestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateKeyIntrestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateKeyIntrestBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateKeyIntrestBtn.Location = new System.Drawing.Point(508, 196);
+            this.updateKeyIntrestBtn.Name = "updateKeyIntrestBtn";
+            this.updateKeyIntrestBtn.Size = new System.Drawing.Size(181, 44);
+            this.updateKeyIntrestBtn.TabIndex = 36;
+            this.updateKeyIntrestBtn.Text = "UPDATE";
+            this.updateKeyIntrestBtn.UseVisualStyleBackColor = false;
+            this.updateKeyIntrestBtn.Click += new System.EventHandler(this.updateKeyIntrestBtn_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(503, 55);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(145, 29);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Key Interest:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(35, 55);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(247, 29);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Member Profile Panel";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.visitorLogTxt);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 529);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(984, 220);
+            this.panel1.TabIndex = 7;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(37, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(73, 16);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Visitor Log:";
+            // 
+            // visitorLogTxt
+            // 
+            this.visitorLogTxt.BackColor = System.Drawing.Color.White;
+            this.visitorLogTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.visitorLogTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visitorLogTxt.Location = new System.Drawing.Point(40, 27);
+            this.visitorLogTxt.Name = "visitorLogTxt";
+            this.visitorLogTxt.ReadOnly = true;
+            this.visitorLogTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.visitorLogTxt.Size = new System.Drawing.Size(904, 167);
+            this.visitorLogTxt.TabIndex = 13;
+            this.visitorLogTxt.Text = "Visitor Logs are shown here...";
+            // 
+            // preMemberPanel
+            // 
+            this.preMemberPanel.Controls.Add(this.requestMembershipBtn);
+            this.preMemberPanel.Controls.Add(this.label18);
+            this.preMemberPanel.Controls.Add(this.label17);
+            this.preMemberPanel.Location = new System.Drawing.Point(1, 140);
+            this.preMemberPanel.Name = "preMemberPanel";
+            this.preMemberPanel.Size = new System.Drawing.Size(984, 252);
+            this.preMemberPanel.TabIndex = 4;
+            this.preMemberPanel.Visible = false;
+            // 
+            // requestMembershipBtn
+            // 
+            this.requestMembershipBtn.BackColor = System.Drawing.Color.Khaki;
+            this.requestMembershipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.requestMembershipBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.requestMembershipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.requestMembershipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.requestMembershipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestMembershipBtn.Location = new System.Drawing.Point(714, 179);
+            this.requestMembershipBtn.Name = "requestMembershipBtn";
+            this.requestMembershipBtn.Size = new System.Drawing.Size(240, 43);
+            this.requestMembershipBtn.TabIndex = 5;
+            this.requestMembershipBtn.Text = "Request Membership";
+            this.requestMembershipBtn.UseVisualStyleBackColor = false;
+            this.requestMembershipBtn.Click += new System.EventHandler(this.requestMembershipBtn_Click);
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(32, 74);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(922, 128);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "If you wish to become a \'Community Member\', you can submit a request, which will " +
+    "be subject to approval by the administrators.";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(32, 28);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(404, 25);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Request To Be A Community Member";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(984, 133);
+            this.panel7.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(374, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 33);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Profile Page";
             // 
             // postRequestPanel
             // 
@@ -520,76 +848,6 @@
             this.label20.Size = new System.Drawing.Size(426, 25);
             this.label20.TabIndex = 3;
             this.label20.Text = "Awaiting Approval From Administrators ";
-            // 
-            // preMemberPanel
-            // 
-            this.preMemberPanel.Controls.Add(this.requestMembershipBtn);
-            this.preMemberPanel.Controls.Add(this.label18);
-            this.preMemberPanel.Controls.Add(this.label17);
-            this.preMemberPanel.Location = new System.Drawing.Point(1, 140);
-            this.preMemberPanel.Name = "preMemberPanel";
-            this.preMemberPanel.Size = new System.Drawing.Size(984, 252);
-            this.preMemberPanel.TabIndex = 4;
-            this.preMemberPanel.Visible = false;
-            // 
-            // requestMembershipBtn
-            // 
-            this.requestMembershipBtn.BackColor = System.Drawing.Color.Khaki;
-            this.requestMembershipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.requestMembershipBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.requestMembershipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
-            this.requestMembershipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.requestMembershipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestMembershipBtn.Location = new System.Drawing.Point(714, 179);
-            this.requestMembershipBtn.Name = "requestMembershipBtn";
-            this.requestMembershipBtn.Size = new System.Drawing.Size(240, 43);
-            this.requestMembershipBtn.TabIndex = 5;
-            this.requestMembershipBtn.Text = "Request Membership";
-            this.requestMembershipBtn.UseVisualStyleBackColor = false;
-            this.requestMembershipBtn.Click += new System.EventHandler(this.requestMembershipBtn_Click);
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(32, 74);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(922, 128);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "If you wish to become a \'Community Member\', you can submit a request, which will " +
-    "be subject to approval by the administrators.";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(32, 28);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(404, 25);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Request To Be A Community Member";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(984, 133);
-            this.panel7.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(374, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 33);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Profile Page";
             // 
             // membershipPanel
             // 
@@ -968,15 +1226,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.profilePagePanel);
-            this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.adminHomePagePanel);
-            this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
             this.Controls.Add(this.placeHirePanel);
             this.Controls.Add(this.dashboard);
+            this.Controls.Add(this.benefitsPagePanel);
+            this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -998,12 +1256,18 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.profilePagePanel.ResumeLayout(false);
-            this.postRequestPanel.ResumeLayout(false);
-            this.postRequestPanel.PerformLayout();
+            this.updateUserProfilePanel.ResumeLayout(false);
+            this.updateUserProfilePanel.PerformLayout();
+            this.memberProfilePanel.ResumeLayout(false);
+            this.memberProfilePanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.preMemberPanel.ResumeLayout(false);
             this.preMemberPanel.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.postRequestPanel.ResumeLayout(false);
+            this.postRequestPanel.PerformLayout();
             this.membershipPanel.ResumeLayout(false);
             this.membershipPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1102,5 +1366,24 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel eventBookingPanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel memberProfilePanel;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RichTextBox visitorLogTxt;
+        private System.Windows.Forms.Panel updateUserProfilePanel;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button updateUserProfileBtn;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox emailTxt;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox usernameTxt;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button updateKeyIntrestBtn;
+        private System.Windows.Forms.CheckBox workingCheckBox;
+        private System.Windows.Forms.CheckBox happeningCheckBox;
+        private System.Windows.Forms.CheckBox learningCheckBox;
+        private System.Windows.Forms.CheckBox sharingCheckBox;
+        private System.Windows.Forms.CheckBox caringCheckBox;
+        private System.Windows.Forms.Label label23;
     }
 }

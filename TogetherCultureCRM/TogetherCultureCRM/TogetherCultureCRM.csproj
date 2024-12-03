@@ -83,6 +83,7 @@
     <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\MemberBenefits.cs" />
+    <Compile Include="Classes\MemberKeyIntrest.cs" />
     <Compile Include="Classes\MembershipType.cs" />
     <Compile Include="Classes\UsedMemberBenefits.cs" />
     <Compile Include="Classes\User.cs" />
@@ -106,35 +107,11 @@
     <Compile Include="CustomControls\CC_Request.Designer.cs">
       <DependentUpon>CC_Request.cs</DependentUpon>
     </Compile>
-    <Compile Include="DigitalConnectionBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DigitalConnectionBoard.Designer.cs">
-      <DependentUpon>DigitalConnectionBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Events_MainPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Events_MainPage.Designer.cs">
-      <DependentUpon>Events_MainPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Event_BookingPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Event_BookingPage.Designer.cs">
-      <DependentUpon>Event_BookingPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PlaceHire.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PlaceHire.Designer.cs">
-      <DependentUpon>PlaceHire.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,17 +139,8 @@
     <EmbeddedResource Include="CustomControls\CC_Request.resx">
       <DependentUpon>CC_Request.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Events_MainPage.resx">
-      <DependentUpon>Events_MainPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Event_BookingPage.resx">
-      <DependentUpon>Event_BookingPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PlaceHire.resx">
-      <DependentUpon>PlaceHire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
