@@ -87,6 +87,7 @@
     <Compile Include="Classes\UsedMemberBenefits.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserSession.cs" />
+    <Compile Include="Classes\VisitorLog.cs" />
     <Compile Include="CustomControls\CC_DisplayEventCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
