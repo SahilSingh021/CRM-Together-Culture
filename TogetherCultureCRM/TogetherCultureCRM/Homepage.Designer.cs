@@ -120,6 +120,10 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.digitalContentDashboardBtn = new System.Windows.Forms.Button();
+            this.digitalContentPanel = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -148,11 +152,14 @@
             this.panel12.SuspendLayout();
             this.activeMembershipPanel.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.digitalContentPanel.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboard
             // 
             this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dashboard.Controls.Add(this.digitalContentDashboardBtn);
             this.dashboard.Controls.Add(this.onlineMembersAreadDashboardBtn);
             this.dashboard.Controls.Add(this.digitalConnectionDashboardBtn);
             this.dashboard.Controls.Add(this.placeHireDashboardBtn);
@@ -375,7 +382,7 @@
             this.eventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.eventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventSearchBtn.Location = new System.Drawing.Point(41, 335);
+            this.eventSearchBtn.Location = new System.Drawing.Point(44, 335);
             this.eventSearchBtn.Name = "eventSearchBtn";
             this.eventSearchBtn.Size = new System.Drawing.Size(260, 260);
             this.eventSearchBtn.TabIndex = 3;
@@ -391,7 +398,7 @@
             this.userEventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.userEventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userEventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEventSearchBtn.Location = new System.Drawing.Point(685, 40);
+            this.userEventSearchBtn.Location = new System.Drawing.Point(682, 40);
             this.userEventSearchBtn.Name = "userEventSearchBtn";
             this.userEventSearchBtn.Size = new System.Drawing.Size(260, 260);
             this.userEventSearchBtn.TabIndex = 2;
@@ -407,7 +414,7 @@
             this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUserBtn.Location = new System.Drawing.Point(362, 42);
+            this.manageUserBtn.Location = new System.Drawing.Point(364, 42);
             this.manageUserBtn.Name = "manageUserBtn";
             this.manageUserBtn.Size = new System.Drawing.Size(260, 260);
             this.manageUserBtn.TabIndex = 1;
@@ -423,7 +430,7 @@
             this.manageRequestsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageRequestsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageRequestsBtn.Location = new System.Drawing.Point(41, 42);
+            this.manageRequestsBtn.Location = new System.Drawing.Point(44, 42);
             this.manageRequestsBtn.Name = "manageRequestsBtn";
             this.manageRequestsBtn.Size = new System.Drawing.Size(260, 260);
             this.manageRequestsBtn.TabIndex = 0;
@@ -1256,11 +1263,59 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
+            // digitalContentDashboardBtn
+            // 
+            this.digitalContentDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.digitalContentDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.digitalContentDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.digitalContentDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.digitalContentDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.digitalContentDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.digitalContentDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.digitalContentDashboardBtn.ForeColor = System.Drawing.Color.Black;
+            this.digitalContentDashboardBtn.Location = new System.Drawing.Point(0, 477);
+            this.digitalContentDashboardBtn.Name = "digitalContentDashboardBtn";
+            this.digitalContentDashboardBtn.Size = new System.Drawing.Size(200, 43);
+            this.digitalContentDashboardBtn.TabIndex = 11;
+            this.digitalContentDashboardBtn.Text = "     Digital Content";
+            this.digitalContentDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.digitalContentDashboardBtn.UseVisualStyleBackColor = false;
+            this.digitalContentDashboardBtn.Click += new System.EventHandler(this.digitalContentDashboardBtn_Click);
+            // 
+            // digitalContentPanel
+            // 
+            this.digitalContentPanel.Controls.Add(this.panel15);
+            this.digitalContentPanel.Location = new System.Drawing.Point(200, 13);
+            this.digitalContentPanel.Name = "digitalContentPanel";
+            this.digitalContentPanel.Size = new System.Drawing.Size(984, 749);
+            this.digitalContentPanel.TabIndex = 15;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.label27);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(984, 133);
+            this.panel15.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(358, 50);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(206, 33);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Digital Content";
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.homePagePanel);
@@ -1325,6 +1380,9 @@
             this.activeMembershipPanel.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.digitalContentPanel.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1423,5 +1481,9 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button eventSearchBtn;
         private System.Windows.Forms.Button userEventSearchBtn;
+        private System.Windows.Forms.Button digitalContentDashboardBtn;
+        private System.Windows.Forms.Panel digitalContentPanel;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label27;
     }
 }

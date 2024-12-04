@@ -46,20 +46,20 @@ namespace TogetherCultureCRM
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0),
                     ForeColor = Color.Black,
-                    Location = new Point(0, 477),
+                    Location = new Point(0, 520),
                     Name = "adminHomePageTabBtn",
                     Size = new Size(200, 43),
                     TabIndex = 11,
                     Text = "     Admin Page",
                     TextAlign = ContentAlignment.MiddleLeft,
-                    UseVisualStyleBackColor = false
+                    UseVisualStyleBackColor = false,
                 };
 
                 _adminHomePageTabBtn.FlatAppearance.BorderColor = Color.Silver;
                 _adminHomePageTabBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
                 _adminHomePageTabBtn.Click += new EventHandler(adminHomePageTabBtn_Click);
 
-                this.dashboard.Controls.Add(_adminHomePageTabBtn);
+                dashboard.Controls.Add(_adminHomePageTabBtn);
             }
         }
 
@@ -74,6 +74,7 @@ namespace TogetherCultureCRM
             placeHireDashboardBtn.BackColor = col;
             digitalConnectionDashboardBtn.BackColor = col;
             onlineMembersAreadDashboardBtn.BackColor = col;
+            digitalContentDashboardBtn.BackColor = col;
 
             if (UserSession.User.bIsAdmin && _adminHomePageTabBtn != null)
             {
@@ -470,6 +471,14 @@ namespace TogetherCultureCRM
             onlineMembersAreadDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             onlineMembersAreaPanel.BringToFront();
             Homepage.ActiveForm.Text = "Online Members Area Page";
+        }
+
+        private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
+        {
+            DashboardBtn_BackColorReset();
+            digitalContentDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
+            digitalContentPanel.BringToFront();
+            Homepage.ActiveForm.Text = "Digital Content Page";
         }
 
         private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
