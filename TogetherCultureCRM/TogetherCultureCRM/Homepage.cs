@@ -324,6 +324,10 @@ namespace TogetherCultureCRM
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
 
+            // Load Username and Email of current user into field
+            usernameTxt.Text = UserSession.User.username;
+            emailTxt.Text = UserSession.User.email;
+
             if (!UserSession.User.bIsMember)
             {
                 // Check if the user has already made a request to become a member
@@ -364,10 +368,6 @@ namespace TogetherCultureCRM
                 updateUserProfilePanel.BringToFront();
                 return;
             }
-
-            // Load Username and Email of current user into field
-            usernameTxt.Text = UserSession.User.username;
-            emailTxt.Text = UserSession.User.email;
 
             // Load MemberKeyIntrest
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -645,6 +645,14 @@ namespace TogetherCultureCRM
                     // Delete UsedMemberBenefits records as member table has a FK restraint based of this table
                     string deleteSql1 = @"DELETE FROM UsedMemberBenefits WHERE memberId=@memberId";
                     using (SqlCommand command1 = new SqlCommand(deleteSql1, con))
+                    {
+                        command1.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
+                        command1.ExecuteNonQuery();
+                    }
+
+                    // Delete MemberKeyIntrest records as member table has a FK restraint based of this table
+                    string deleteSql2 = @"DELETE FROM MemberKeyIntrest WHERE memberId=@memberId";
+                    using (SqlCommand command1 = new SqlCommand(deleteSql2, con))
                     {
                         command1.Parameters.AddWithValue("@memberId", UserSession.Member.memberId);
                         command1.ExecuteNonQuery();
