@@ -15,9 +15,9 @@ using TogetherCultureCRM.CustomControls;
 
 namespace TogetherCultureCRM.AdminPages
 {
-    public partial class AdminManageUsersPage : Form
+    public partial class AdminUserEventSearchPage : Form
     {
-        public AdminManageUsersPage()
+        public AdminUserEventSearchPage()
         {
             InitializeComponent();
         }
@@ -103,13 +103,14 @@ namespace TogetherCultureCRM.AdminPages
                     }
                     else userDisplayCardControl.MembershipTextVisible = false;
 
+                    userDisplayCardControl.ManageButtonText = "View Event & Vist Details";
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
-                        AdminEditUserPage adminEditUserPage = new AdminEditUserPage(user);
-                        adminEditUserPage.Text = "Admin Edit " + user.username;
-                        adminEditUserPage.Owner = this;
-                        adminEditUserPage.ShowInTaskbar = false;
-                        adminEditUserPage.Show();
+                        AdminViewUserEventsAndVisitsPage adminViewUserEventsAndVisitsPage = new AdminViewUserEventsAndVisitsPage(user);
+                        adminViewUserEventsAndVisitsPage.Text = user.username + "'s Events & Visit Logs";
+                        adminViewUserEventsAndVisitsPage.Owner = this;
+                        adminViewUserEventsAndVisitsPage.ShowInTaskbar = false;
+                        adminViewUserEventsAndVisitsPage.Show();
                     };
 
                     requestPanel.Controls.Add(userDisplayCardControl);
@@ -132,7 +133,7 @@ namespace TogetherCultureCRM.AdminPages
             LoadData();
         }
 
-        private void AdminManageUsersPage_Activated(object sender, EventArgs e)
+        private void AdminUserEventSearchPage_Activated(object sender, EventArgs e)
         {
             LoadData();
         }

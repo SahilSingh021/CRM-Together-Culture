@@ -65,6 +65,18 @@
     <Compile Include="AdminPages\AdminManageUsersPage.Designer.cs">
       <DependentUpon>AdminManageUsersPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\AdminUserEventSearchPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminUserEventSearchPage.Designer.cs">
+      <DependentUpon>AdminUserEventSearchPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\AdminViewUserEventsAndVisitsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminViewUserEventsAndVisitsPage.Designer.cs">
+      <DependentUpon>AdminViewUserEventsAndVisitsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AuthenticationPages\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminManageUsersPage.resx">
       <DependentUpon>AdminManageUsersPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminUserEventSearchPage.resx">
+      <DependentUpon>AdminUserEventSearchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminViewUserEventsAndVisitsPage.resx">
+      <DependentUpon>AdminViewUserEventsAndVisitsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AuthenticationPages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

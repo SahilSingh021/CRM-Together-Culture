@@ -168,8 +168,29 @@ namespace TogetherCultureCRM.AdminPages
                         }
                         else if (_selectdUser.bIsMember && !isMember)
                         {
-                            string deleteSql = @"DELETE FROM Member WHERE userId=@userId";
+                            Guid memberId = Guid.Empty;
+                            string selectSql = "SELECT * FROM Member WHERE userId=@userId";
+                            using (SqlCommand command1 = new SqlCommand(selectSql, con))
+                            {
+                                command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
+                                using (SqlDataReader reader = command1.ExecuteReader())
+                                {
+                                    if (reader.Read())
+                                    {
+                                        memberId = Guid.Parse(reader.GetString(reader.GetOrdinal("memberId")));
+                                    }
+                                }
+                            }
+
+                            string deleteSql = @"DELETE FROM UsedMemberBenefits WHERE memberId=@memberId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
+                            {
+                                command1.Parameters.AddWithValue("@memberId", memberId);
+                                command1.ExecuteNonQuery();
+                            }
+
+                            string deleteSql1 = @"DELETE FROM Member WHERE userId=@userId";
+                            using (SqlCommand command1 = new SqlCommand(deleteSql1, con))
                             {
                                 command1.Parameters.AddWithValue("@userId", _selectdUser.userId);
                                 command1.ExecuteNonQuery();

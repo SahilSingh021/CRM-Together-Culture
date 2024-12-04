@@ -97,6 +97,19 @@ namespace TogetherCultureCRM
             adminManageUsersPage.Show();
         }
 
+        private void userEventSearchBtn_Click(object sender, EventArgs e)
+        {
+            AdminUserEventSearchPage adminUserEventSearchPage = new AdminUserEventSearchPage();
+            adminUserEventSearchPage.Owner = this;
+            adminUserEventSearchPage.ShowInTaskbar = false;
+            adminUserEventSearchPage.Show();
+        }
+
+        private void eventSearchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void adminHomePageTabBtn_Click(object sender, EventArgs e)
         {
             DashboardBtn_BackColorReset();

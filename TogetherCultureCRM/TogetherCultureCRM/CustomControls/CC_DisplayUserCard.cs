@@ -59,16 +59,40 @@ namespace TogetherCultureCRM.CustomControls
             set { isMemberCheckBox.Checked = value; }
         }
 
+        public bool IsMemberVisible
+        {
+            get { return isMemberCheckBox.Visible; }
+            set { isMemberCheckBox.Visible = value; }
+        }
+
         public bool IsAdmin
         {
             get { return isAdminCheckBox.Checked; }
             set { isAdminCheckBox.Checked = value; }
         }
 
+        public bool IsAdminVisible
+        {
+            get { return isAdminCheckBox.Visible; }
+            set { isAdminCheckBox.Visible = value; }
+        }
+
         public bool IsBanned
         {
             get { return isBannedCheckBox.Checked; }
             set { isBannedCheckBox.Checked = value; }
+        }
+
+        public bool IsBannedVisible
+        {
+            get { return isBannedCheckBox.Visible; }
+            set { isBannedCheckBox.Visible = value; }
+        }
+
+        public string ManageButtonText
+        {
+            get { return manageBtn.Text; }
+            set { manageBtn.Text = value; }
         }
 
         public EventHandler ManageButtonClick

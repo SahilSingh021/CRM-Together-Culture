@@ -118,6 +118,8 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.userEventSearchBtn = new System.Windows.Forms.Button();
+            this.eventSearchBtn = new System.Windows.Forms.Button();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -355,6 +357,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.eventSearchBtn);
+            this.panel3.Controls.Add(this.userEventSearchBtn);
             this.panel3.Controls.Add(this.manageUserBtn);
             this.panel3.Controls.Add(this.manageRequestsBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -371,7 +375,7 @@
             this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUserBtn.Location = new System.Drawing.Point(369, 43);
+            this.manageUserBtn.Location = new System.Drawing.Point(372, 43);
             this.manageUserBtn.Name = "manageUserBtn";
             this.manageUserBtn.Size = new System.Drawing.Size(240, 43);
             this.manageUserBtn.TabIndex = 1;
@@ -1220,14 +1224,45 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
+            // userEventSearchBtn
+            // 
+            this.userEventSearchBtn.BackColor = System.Drawing.Color.Khaki;
+            this.userEventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userEventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.userEventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.userEventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userEventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userEventSearchBtn.Location = new System.Drawing.Point(716, 43);
+            this.userEventSearchBtn.Name = "userEventSearchBtn";
+            this.userEventSearchBtn.Size = new System.Drawing.Size(240, 43);
+            this.userEventSearchBtn.TabIndex = 2;
+            this.userEventSearchBtn.Text = "User Event Search";
+            this.userEventSearchBtn.UseVisualStyleBackColor = false;
+            this.userEventSearchBtn.Click += new System.EventHandler(this.userEventSearchBtn_Click);
+            // 
+            // eventSearchBtn
+            // 
+            this.eventSearchBtn.BackColor = System.Drawing.Color.Khaki;
+            this.eventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.eventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.eventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventSearchBtn.Location = new System.Drawing.Point(28, 216);
+            this.eventSearchBtn.Name = "eventSearchBtn";
+            this.eventSearchBtn.Size = new System.Drawing.Size(240, 43);
+            this.eventSearchBtn.TabIndex = 3;
+            this.eventSearchBtn.Text = "Event Search";
+            this.eventSearchBtn.UseVisualStyleBackColor = false;
+            this.eventSearchBtn.Click += new System.EventHandler(this.eventSearchBtn_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.profilePagePanel);
-            this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.adminHomePagePanel);
+            this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
@@ -1236,6 +1271,7 @@
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
+            this.Controls.Add(this.eventsHomePageTabPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
@@ -1385,5 +1421,7 @@
         private System.Windows.Forms.CheckBox sharingCheckBox;
         private System.Windows.Forms.CheckBox caringCheckBox;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button eventSearchBtn;
+        private System.Windows.Forms.Button userEventSearchBtn;
     }
 }
