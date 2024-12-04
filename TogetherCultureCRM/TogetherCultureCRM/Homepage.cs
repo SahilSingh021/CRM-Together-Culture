@@ -107,7 +107,10 @@ namespace TogetherCultureCRM
 
         private void eventSearchBtn_Click(object sender, EventArgs e)
         {
-
+            AdminEventSearchPage adminEventSearchPage = new AdminEventSearchPage();
+            adminEventSearchPage.Owner = this;
+            adminEventSearchPage.ShowInTaskbar = false;
+            adminEventSearchPage.Show();
         }
 
         private void adminHomePageTabBtn_Click(object sender, EventArgs e)
@@ -525,9 +528,16 @@ namespace TogetherCultureCRM
 
         private void becomeAMemberBtn_Click(object sender, EventArgs e)
         {
+            string selectedMembershipTypeName = membershipDropBox.Text;
+
+            if (selectedMembershipTypeName == "Select Membership...")
+            {
+                MessageBox.Show("Please select a membership. Try again.");
+                return;
+            }
+
             Guid memberId = Guid.NewGuid();
             Guid currentUserId = UserSession.User.userId;
-            string selectedMembershipTypeName = membershipDropBox.Text;
             var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
 
             Data dataCls = new Data();
@@ -610,7 +620,7 @@ namespace TogetherCultureCRM
 
                 UserSession.MembershipTypes.Clear();
 
-                MessageBox.Show("You membership has been updated to " + selectedMembership.typeName + "!");
+                MessageBox.Show("You membership has been updated to " + selectedMembership.typeName + "!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             membershipPageTabBtn.PerformClick();

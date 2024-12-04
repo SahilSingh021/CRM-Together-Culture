@@ -53,6 +53,12 @@
     <Compile Include="AdminPages\AdminEditUserPage.Designer.cs">
       <DependentUpon>AdminEditUserPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\AdminEventSearchPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminEventSearchPage.Designer.cs">
+      <DependentUpon>AdminEventSearchPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\AdminRequestsPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="AdminPages\AdminUserEventSearchPage.Designer.cs">
       <DependentUpon>AdminUserEventSearchPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\AdminViewEventDetailsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminViewEventDetailsPage.Designer.cs">
+      <DependentUpon>AdminViewEventDetailsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\AdminViewUserEventsAndVisitsPage.cs">
       <SubType>Form</SubType>
@@ -130,6 +142,9 @@
     <EmbeddedResource Include="AdminPages\AdminEditUserPage.resx">
       <DependentUpon>AdminEditUserPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminEventSearchPage.resx">
+      <DependentUpon>AdminEventSearchPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminRequestsPage.resx">
       <DependentUpon>AdminRequestsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminUserEventSearchPage.resx">
       <DependentUpon>AdminUserEventSearchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\AdminViewEventDetailsPage.resx">
+      <DependentUpon>AdminViewEventDetailsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\AdminViewUserEventsAndVisitsPage.resx">
       <DependentUpon>AdminViewUserEventsAndVisitsPage.cs</DependentUpon>

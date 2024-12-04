@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TogetherCultureCRM.Classes
 {
-    internal class Event
+    public class Event
     {
         public Guid eventId { get; set; }
         public Guid tagId { get; set; }

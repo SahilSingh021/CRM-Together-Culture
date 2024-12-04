@@ -94,6 +94,12 @@ namespace TogetherCultureCRM.AdminPages
 
         public void CC_Request_ApproveBtnClick(Guid userId, string username)
         {
+            if (userId == UserSession.User.userId)
+            {
+                MessageBox.Show("You cannot approve your own requests.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))

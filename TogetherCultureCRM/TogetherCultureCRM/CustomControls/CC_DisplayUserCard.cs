@@ -95,6 +95,18 @@ namespace TogetherCultureCRM.CustomControls
             set { manageBtn.Text = value; }
         }
 
+        public bool ManageButtonEnabled
+        {
+            get { return manageBtn.Enabled; }
+            set { manageBtn.Enabled = value; }
+        }
+
+        public Color ManageButtonColor
+        {
+            get { return manageBtn.BackColor; }
+            set { manageBtn.BackColor = value; }
+        }
+
         public EventHandler ManageButtonClick
         {
             set
