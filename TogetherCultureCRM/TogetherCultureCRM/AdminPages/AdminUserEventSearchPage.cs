@@ -103,7 +103,7 @@ namespace TogetherCultureCRM.AdminPages
                     }
                     else userDisplayCardControl.MembershipTextVisible = false;
 
-                    userDisplayCardControl.ManageButtonText = "View Event & Vist Details";
+                    userDisplayCardControl.ManageButtonText = "View Event && Vist Details";
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
                         AdminViewUserEventsAndVisitsPage adminViewUserEventsAndVisitsPage = new AdminViewUserEventsAndVisitsPage(user);

@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.loggedInLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.eventSearchBtn = new System.Windows.Forms.Button();
+            this.userEventSearchBtn = new System.Windows.Forms.Button();
             this.manageUserBtn = new System.Windows.Forms.Button();
             this.manageRequestsBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -118,8 +120,6 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.userEventSearchBtn = new System.Windows.Forms.Button();
-            this.eventSearchBtn = new System.Windows.Forms.Button();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -367,6 +367,38 @@
             this.panel3.Size = new System.Drawing.Size(984, 628);
             this.panel3.TabIndex = 1;
             // 
+            // eventSearchBtn
+            // 
+            this.eventSearchBtn.BackColor = System.Drawing.Color.Khaki;
+            this.eventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.eventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.eventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventSearchBtn.Location = new System.Drawing.Point(41, 335);
+            this.eventSearchBtn.Name = "eventSearchBtn";
+            this.eventSearchBtn.Size = new System.Drawing.Size(260, 260);
+            this.eventSearchBtn.TabIndex = 3;
+            this.eventSearchBtn.Text = "Event Search";
+            this.eventSearchBtn.UseVisualStyleBackColor = false;
+            this.eventSearchBtn.Click += new System.EventHandler(this.eventSearchBtn_Click);
+            // 
+            // userEventSearchBtn
+            // 
+            this.userEventSearchBtn.BackColor = System.Drawing.Color.Khaki;
+            this.userEventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userEventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.userEventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.userEventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userEventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userEventSearchBtn.Location = new System.Drawing.Point(685, 40);
+            this.userEventSearchBtn.Name = "userEventSearchBtn";
+            this.userEventSearchBtn.Size = new System.Drawing.Size(260, 260);
+            this.userEventSearchBtn.TabIndex = 2;
+            this.userEventSearchBtn.Text = "User Event Search";
+            this.userEventSearchBtn.UseVisualStyleBackColor = false;
+            this.userEventSearchBtn.Click += new System.EventHandler(this.userEventSearchBtn_Click);
+            // 
             // manageUserBtn
             // 
             this.manageUserBtn.BackColor = System.Drawing.Color.Khaki;
@@ -375,9 +407,9 @@
             this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUserBtn.Location = new System.Drawing.Point(372, 43);
+            this.manageUserBtn.Location = new System.Drawing.Point(362, 42);
             this.manageUserBtn.Name = "manageUserBtn";
-            this.manageUserBtn.Size = new System.Drawing.Size(240, 43);
+            this.manageUserBtn.Size = new System.Drawing.Size(260, 260);
             this.manageUserBtn.TabIndex = 1;
             this.manageUserBtn.Text = "Manage User";
             this.manageUserBtn.UseVisualStyleBackColor = false;
@@ -391,9 +423,9 @@
             this.manageRequestsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageRequestsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageRequestsBtn.Location = new System.Drawing.Point(28, 43);
+            this.manageRequestsBtn.Location = new System.Drawing.Point(41, 42);
             this.manageRequestsBtn.Name = "manageRequestsBtn";
-            this.manageRequestsBtn.Size = new System.Drawing.Size(240, 43);
+            this.manageRequestsBtn.Size = new System.Drawing.Size(260, 260);
             this.manageRequestsBtn.TabIndex = 0;
             this.manageRequestsBtn.Text = "Manage Requests";
             this.manageRequestsBtn.UseVisualStyleBackColor = false;
@@ -413,7 +445,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(318, 51);
+            this.label2.Location = new System.Drawing.Point(371, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(248, 33);
             this.label2.TabIndex = 2;
@@ -1223,38 +1255,6 @@
             this.label11.Size = new System.Drawing.Size(223, 33);
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
-            // 
-            // userEventSearchBtn
-            // 
-            this.userEventSearchBtn.BackColor = System.Drawing.Color.Khaki;
-            this.userEventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userEventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.userEventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
-            this.userEventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userEventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEventSearchBtn.Location = new System.Drawing.Point(716, 43);
-            this.userEventSearchBtn.Name = "userEventSearchBtn";
-            this.userEventSearchBtn.Size = new System.Drawing.Size(240, 43);
-            this.userEventSearchBtn.TabIndex = 2;
-            this.userEventSearchBtn.Text = "User Event Search";
-            this.userEventSearchBtn.UseVisualStyleBackColor = false;
-            this.userEventSearchBtn.Click += new System.EventHandler(this.userEventSearchBtn_Click);
-            // 
-            // eventSearchBtn
-            // 
-            this.eventSearchBtn.BackColor = System.Drawing.Color.Khaki;
-            this.eventSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eventSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.eventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
-            this.eventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventSearchBtn.Location = new System.Drawing.Point(28, 216);
-            this.eventSearchBtn.Name = "eventSearchBtn";
-            this.eventSearchBtn.Size = new System.Drawing.Size(240, 43);
-            this.eventSearchBtn.TabIndex = 3;
-            this.eventSearchBtn.Text = "Event Search";
-            this.eventSearchBtn.UseVisualStyleBackColor = false;
-            this.eventSearchBtn.Click += new System.EventHandler(this.eventSearchBtn_Click);
             // 
             // Homepage
             // 
