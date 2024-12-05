@@ -46,7 +46,7 @@ namespace TogetherCultureCRM
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0),
                     ForeColor = Color.Black,
-                    Location = new Point(0, 520),
+                    Location = new Point(0, 477),
                     Name = "adminHomePageTabBtn",
                     Size = new Size(200, 43),
                     TabIndex = 11,
@@ -71,7 +71,6 @@ namespace TogetherCultureCRM
             membershipPageTabBtn.BackColor = col;
             benefitsDashboardBtn.BackColor = col;
             eventsHomePageTabBtn.BackColor = col;
-            placeHireDashboardBtn.BackColor = col;
             digitalConnectionDashboardBtn.BackColor = col;
             onlineMembersAreadDashboardBtn.BackColor = col;
             digitalContentDashboardBtn.BackColor = col;
@@ -447,14 +446,6 @@ namespace TogetherCultureCRM
             unusedBenefitsTxtBox.Text = unusedBenefitsSB.ToString();
             if (UserSession.UsedMemberBenefits.Count > 0) usedBenefitsTxtBox.Text = usedBenefitsSB.ToString();
             else usedBenefitsTxtBox.Text = "No benefits have been used so far.";
-        }
-
-        private void placeHireDashboardBtn_Click(object sender, EventArgs e)
-        {
-            DashboardBtn_BackColorReset();
-            placeHireDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
-            placeHirePanel.BringToFront();
-            Homepage.ActiveForm.Text = "Place Hire Page";
         }
 
         private void digitalConnectionDashboardBtn_Click(object sender, EventArgs e)

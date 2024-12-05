@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dashboard = new System.Windows.Forms.Panel();
+            this.digitalContentDashboardBtn = new System.Windows.Forms.Button();
             this.onlineMembersAreadDashboardBtn = new System.Windows.Forms.Button();
             this.digitalConnectionDashboardBtn = new System.Windows.Forms.Button();
-            this.placeHireDashboardBtn = new System.Windows.Forms.Button();
             this.eventsHomePageTabBtn = new System.Windows.Forms.Button();
             this.benefitsDashboardBtn = new System.Windows.Forms.Button();
             this.membershipPageTabBtn = new System.Windows.Forms.Button();
@@ -102,9 +102,6 @@
             this.unusedBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.placeHirePanel = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.digitalConnectionPanel = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -120,7 +117,6 @@
             this.membershipNameLbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.digitalContentDashboardBtn = new System.Windows.Forms.Button();
             this.digitalContentPanel = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
@@ -144,8 +140,6 @@
             this.panel8.SuspendLayout();
             this.benefitsPagePanel.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.placeHirePanel.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.digitalConnectionPanel.SuspendLayout();
             this.panel11.SuspendLayout();
             this.onlineMembersAreaPanel.SuspendLayout();
@@ -162,7 +156,6 @@
             this.dashboard.Controls.Add(this.digitalContentDashboardBtn);
             this.dashboard.Controls.Add(this.onlineMembersAreadDashboardBtn);
             this.dashboard.Controls.Add(this.digitalConnectionDashboardBtn);
-            this.dashboard.Controls.Add(this.placeHireDashboardBtn);
             this.dashboard.Controls.Add(this.eventsHomePageTabBtn);
             this.dashboard.Controls.Add(this.benefitsDashboardBtn);
             this.dashboard.Controls.Add(this.membershipPageTabBtn);
@@ -175,6 +168,25 @@
             this.dashboard.Size = new System.Drawing.Size(200, 761);
             this.dashboard.TabIndex = 0;
             // 
+            // digitalContentDashboardBtn
+            // 
+            this.digitalContentDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.digitalContentDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.digitalContentDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.digitalContentDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.digitalContentDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.digitalContentDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.digitalContentDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.digitalContentDashboardBtn.ForeColor = System.Drawing.Color.Black;
+            this.digitalContentDashboardBtn.Location = new System.Drawing.Point(0, 434);
+            this.digitalContentDashboardBtn.Name = "digitalContentDashboardBtn";
+            this.digitalContentDashboardBtn.Size = new System.Drawing.Size(200, 43);
+            this.digitalContentDashboardBtn.TabIndex = 11;
+            this.digitalContentDashboardBtn.Text = "     Digital Content";
+            this.digitalContentDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.digitalContentDashboardBtn.UseVisualStyleBackColor = false;
+            this.digitalContentDashboardBtn.Click += new System.EventHandler(this.digitalContentDashboardBtn_Click);
+            // 
             // onlineMembersAreadDashboardBtn
             // 
             this.onlineMembersAreadDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
@@ -185,7 +197,7 @@
             this.onlineMembersAreadDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.onlineMembersAreadDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onlineMembersAreadDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.onlineMembersAreadDashboardBtn.Location = new System.Drawing.Point(0, 434);
+            this.onlineMembersAreadDashboardBtn.Location = new System.Drawing.Point(0, 391);
             this.onlineMembersAreadDashboardBtn.Name = "onlineMembersAreadDashboardBtn";
             this.onlineMembersAreadDashboardBtn.Size = new System.Drawing.Size(200, 43);
             this.onlineMembersAreadDashboardBtn.TabIndex = 10;
@@ -204,7 +216,7 @@
             this.digitalConnectionDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.digitalConnectionDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.digitalConnectionDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.digitalConnectionDashboardBtn.Location = new System.Drawing.Point(0, 391);
+            this.digitalConnectionDashboardBtn.Location = new System.Drawing.Point(0, 348);
             this.digitalConnectionDashboardBtn.Name = "digitalConnectionDashboardBtn";
             this.digitalConnectionDashboardBtn.Size = new System.Drawing.Size(200, 43);
             this.digitalConnectionDashboardBtn.TabIndex = 8;
@@ -212,25 +224,6 @@
             this.digitalConnectionDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.digitalConnectionDashboardBtn.UseVisualStyleBackColor = false;
             this.digitalConnectionDashboardBtn.Click += new System.EventHandler(this.digitalConnectionDashboardBtn_Click);
-            // 
-            // placeHireDashboardBtn
-            // 
-            this.placeHireDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.placeHireDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.placeHireDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.placeHireDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.placeHireDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.placeHireDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.placeHireDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placeHireDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.placeHireDashboardBtn.Location = new System.Drawing.Point(0, 348);
-            this.placeHireDashboardBtn.Name = "placeHireDashboardBtn";
-            this.placeHireDashboardBtn.Size = new System.Drawing.Size(200, 43);
-            this.placeHireDashboardBtn.TabIndex = 7;
-            this.placeHireDashboardBtn.Text = "     Place Hire";
-            this.placeHireDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.placeHireDashboardBtn.UseVisualStyleBackColor = false;
-            this.placeHireDashboardBtn.Click += new System.EventHandler(this.placeHireDashboardBtn_Click);
             // 
             // eventsHomePageTabBtn
             // 
@@ -1079,34 +1072,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Benefits";
             // 
-            // placeHirePanel
-            // 
-            this.placeHirePanel.Controls.Add(this.panel10);
-            this.placeHirePanel.Location = new System.Drawing.Point(200, 12);
-            this.placeHirePanel.Name = "placeHirePanel";
-            this.placeHirePanel.Size = new System.Drawing.Size(984, 749);
-            this.placeHirePanel.TabIndex = 11;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(984, 133);
-            this.panel10.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(318, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 33);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Place Hire";
-            // 
             // digitalConnectionPanel
             // 
             this.digitalConnectionPanel.Controls.Add(this.panel11);
@@ -1263,25 +1228,6 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "My Membership";
             // 
-            // digitalContentDashboardBtn
-            // 
-            this.digitalContentDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.digitalContentDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.digitalContentDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.digitalContentDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.digitalContentDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.digitalContentDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.digitalContentDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.digitalContentDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.digitalContentDashboardBtn.Location = new System.Drawing.Point(0, 477);
-            this.digitalContentDashboardBtn.Name = "digitalContentDashboardBtn";
-            this.digitalContentDashboardBtn.Size = new System.Drawing.Size(200, 43);
-            this.digitalContentDashboardBtn.TabIndex = 11;
-            this.digitalContentDashboardBtn.Text = "     Digital Content";
-            this.digitalContentDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.digitalContentDashboardBtn.UseVisualStyleBackColor = false;
-            this.digitalContentDashboardBtn.Click += new System.EventHandler(this.digitalContentDashboardBtn_Click);
-            // 
             // digitalContentPanel
             // 
             this.digitalContentPanel.Controls.Add(this.panel15);
@@ -1315,13 +1261,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.adminHomePagePanel);
-            this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.digitalConnectionPanel);
-            this.Controls.Add(this.placeHirePanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
@@ -1367,9 +1312,6 @@
             this.benefitsPagePanel.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.placeHirePanel.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.digitalConnectionPanel.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -1395,7 +1337,6 @@
         private System.Windows.Forms.Button profileDashboardBtn;
         private System.Windows.Forms.Button onlineMembersAreadDashboardBtn;
         private System.Windows.Forms.Button digitalConnectionDashboardBtn;
-        private System.Windows.Forms.Button placeHireDashboardBtn;
         private System.Windows.Forms.Button eventsHomePageTabBtn;
         private System.Windows.Forms.Button benefitsDashboardBtn;
         private System.Windows.Forms.Button membershipPageTabBtn;
@@ -1420,9 +1361,6 @@
         private System.Windows.Forms.Panel benefitsPagePanel;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel placeHirePanel;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel digitalConnectionPanel;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label9;
