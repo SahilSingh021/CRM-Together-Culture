@@ -121,9 +121,34 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.digitalContentPanel = new System.Windows.Forms.Panel();
+            this.digitalContentDataPanel = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
-            this.digitalContentDataPanel = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.searchBarTxt = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.userIntrestsPanel = new System.Windows.Forms.Panel();
+            this.userTagTxt = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.sportsTagBtn = new System.Windows.Forms.Button();
+            this.moviesTagBtn = new System.Windows.Forms.Button();
+            this.marketingTagBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.securityTagBtn = new System.Windows.Forms.Button();
+            this.gamesTagBtn = new System.Windows.Forms.Button();
+            this.sculptingTagBtn = new System.Windows.Forms.Button();
+            this.programmingTagBtn = new System.Windows.Forms.Button();
+            this.writingTagBtn = new System.Windows.Forms.Button();
+            this.shoppingTagBtn = new System.Windows.Forms.Button();
+            this.artTagBtn = new System.Windows.Forms.Button();
+            this.languagesTagBtn = new System.Windows.Forms.Button();
+            this.networkingTagBtn = new System.Windows.Forms.Button();
+            this.singingTagBtn = new System.Windows.Forms.Button();
+            this.cafeTagBtn = new System.Windows.Forms.Button();
+            this.cookingTagBtn = new System.Windows.Forms.Button();
+            this.recommendedModulesPanel = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.recommendedEventsPanel = new System.Windows.Forms.Panel();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -152,6 +177,8 @@
             this.panel13.SuspendLayout();
             this.digitalContentPanel.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.userIntrestsPanel.SuspendLayout();
+            this.recommendedModulesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboard
@@ -503,6 +530,28 @@
             // 
             // homePagePanel
             // 
+            this.homePagePanel.Controls.Add(this.label30);
+            this.homePagePanel.Controls.Add(this.searchBarTxt);
+            this.homePagePanel.Controls.Add(this.label28);
+            this.homePagePanel.Controls.Add(this.userIntrestsPanel);
+            this.homePagePanel.Controls.Add(this.sportsTagBtn);
+            this.homePagePanel.Controls.Add(this.moviesTagBtn);
+            this.homePagePanel.Controls.Add(this.marketingTagBtn);
+            this.homePagePanel.Controls.Add(this.button1);
+            this.homePagePanel.Controls.Add(this.securityTagBtn);
+            this.homePagePanel.Controls.Add(this.gamesTagBtn);
+            this.homePagePanel.Controls.Add(this.sculptingTagBtn);
+            this.homePagePanel.Controls.Add(this.programmingTagBtn);
+            this.homePagePanel.Controls.Add(this.writingTagBtn);
+            this.homePagePanel.Controls.Add(this.shoppingTagBtn);
+            this.homePagePanel.Controls.Add(this.artTagBtn);
+            this.homePagePanel.Controls.Add(this.languagesTagBtn);
+            this.homePagePanel.Controls.Add(this.networkingTagBtn);
+            this.homePagePanel.Controls.Add(this.singingTagBtn);
+            this.homePagePanel.Controls.Add(this.cafeTagBtn);
+            this.homePagePanel.Controls.Add(this.cookingTagBtn);
+            this.homePagePanel.Controls.Add(this.recommendedModulesPanel);
+            this.homePagePanel.Controls.Add(this.recommendedEventsPanel);
             this.homePagePanel.Controls.Add(this.panel6);
             this.homePagePanel.Location = new System.Drawing.Point(200, 12);
             this.homePagePanel.Name = "homePagePanel";
@@ -1280,6 +1329,14 @@
             this.digitalContentPanel.Size = new System.Drawing.Size(984, 749);
             this.digitalContentPanel.TabIndex = 15;
             // 
+            // digitalContentDataPanel
+            // 
+            this.digitalContentDataPanel.AutoScroll = true;
+            this.digitalContentDataPanel.Location = new System.Drawing.Point(75, 134);
+            this.digitalContentDataPanel.Name = "digitalContentDataPanel";
+            this.digitalContentDataPanel.Size = new System.Drawing.Size(910, 614);
+            this.digitalContentDataPanel.TabIndex = 4;
+            // 
             // panel15
             // 
             this.panel15.Controls.Add(this.label27);
@@ -1300,24 +1357,342 @@
             this.label27.TabIndex = 2;
             this.label27.Text = "Digital Content";
             // 
-            // digitalContentDataPanel
+            // label30
             // 
-            this.digitalContentDataPanel.AutoScroll = true;
-            this.digitalContentDataPanel.Location = new System.Drawing.Point(75, 134);
-            this.digitalContentDataPanel.Name = "digitalContentDataPanel";
-            this.digitalContentDataPanel.Size = new System.Drawing.Size(910, 614);
-            this.digitalContentDataPanel.TabIndex = 4;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(3, 288);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(150, 15);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Recommended Events";
+            // 
+            // searchBarTxt
+            // 
+            this.searchBarTxt.Location = new System.Drawing.Point(555, 137);
+            this.searchBarTxt.MaxLength = 30;
+            this.searchBarTxt.Name = "searchBarTxt";
+            this.searchBarTxt.Size = new System.Drawing.Size(300, 20);
+            this.searchBarTxt.TabIndex = 61;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(392, 139);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(158, 16);
+            this.label28.TabIndex = 60;
+            this.label28.Text = "Search Event Tag Name:";
+            // 
+            // userIntrestsPanel
+            // 
+            this.userIntrestsPanel.Controls.Add(this.userTagTxt);
+            this.userIntrestsPanel.Controls.Add(this.label8);
+            this.userIntrestsPanel.Location = new System.Drawing.Point(1, 131);
+            this.userIntrestsPanel.Name = "userIntrestsPanel";
+            this.userIntrestsPanel.Size = new System.Drawing.Size(385, 154);
+            this.userIntrestsPanel.TabIndex = 42;
+            // 
+            // userTagTxt
+            // 
+            this.userTagTxt.BackColor = System.Drawing.Color.White;
+            this.userTagTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userTagTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userTagTxt.Location = new System.Drawing.Point(5, 28);
+            this.userTagTxt.Name = "userTagTxt";
+            this.userTagTxt.ReadOnly = true;
+            this.userTagTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.userTagTxt.Size = new System.Drawing.Size(377, 123);
+            this.userTagTxt.TabIndex = 14;
+            this.userTagTxt.Text = "User Interests Tag Names are shown here...";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(2, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(251, 15);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "These are your interests since joining:";
+            // 
+            // sportsTagBtn
+            // 
+            this.sportsTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.sportsTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sportsTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.sportsTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.sportsTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sportsTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sportsTagBtn.Location = new System.Drawing.Point(871, 610);
+            this.sportsTagBtn.Name = "sportsTagBtn";
+            this.sportsTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.sportsTagBtn.TabIndex = 59;
+            this.sportsTagBtn.Text = "Sports";
+            this.sportsTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // moviesTagBtn
+            // 
+            this.moviesTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.moviesTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moviesTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.moviesTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.moviesTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.moviesTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moviesTagBtn.Location = new System.Drawing.Point(871, 576);
+            this.moviesTagBtn.Name = "moviesTagBtn";
+            this.moviesTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.moviesTagBtn.TabIndex = 58;
+            this.moviesTagBtn.Text = "Movies";
+            this.moviesTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // marketingTagBtn
+            // 
+            this.marketingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.marketingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.marketingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.marketingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.marketingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.marketingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marketingTagBtn.Location = new System.Drawing.Point(871, 542);
+            this.marketingTagBtn.Name = "marketingTagBtn";
+            this.marketingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.marketingTagBtn.TabIndex = 57;
+            this.marketingTagBtn.Text = "Marketing";
+            this.marketingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Khaki;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(871, 474);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 30);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "News";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // securityTagBtn
+            // 
+            this.securityTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.securityTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.securityTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.securityTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.securityTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.securityTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityTagBtn.Location = new System.Drawing.Point(871, 508);
+            this.securityTagBtn.Name = "securityTagBtn";
+            this.securityTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.securityTagBtn.TabIndex = 55;
+            this.securityTagBtn.Text = "Security";
+            this.securityTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // gamesTagBtn
+            // 
+            this.gamesTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.gamesTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gamesTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.gamesTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.gamesTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gamesTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gamesTagBtn.Location = new System.Drawing.Point(871, 439);
+            this.gamesTagBtn.Name = "gamesTagBtn";
+            this.gamesTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.gamesTagBtn.TabIndex = 54;
+            this.gamesTagBtn.Text = "Games";
+            this.gamesTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // sculptingTagBtn
+            // 
+            this.sculptingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.sculptingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sculptingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.sculptingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.sculptingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sculptingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sculptingTagBtn.Location = new System.Drawing.Point(871, 404);
+            this.sculptingTagBtn.Name = "sculptingTagBtn";
+            this.sculptingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.sculptingTagBtn.TabIndex = 53;
+            this.sculptingTagBtn.Text = "Sculpting";
+            this.sculptingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // programmingTagBtn
+            // 
+            this.programmingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.programmingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.programmingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.programmingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.programmingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.programmingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.programmingTagBtn.Location = new System.Drawing.Point(871, 370);
+            this.programmingTagBtn.Name = "programmingTagBtn";
+            this.programmingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.programmingTagBtn.TabIndex = 52;
+            this.programmingTagBtn.Text = "Programming";
+            this.programmingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // writingTagBtn
+            // 
+            this.writingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.writingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.writingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.writingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.writingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.writingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.writingTagBtn.Location = new System.Drawing.Point(871, 336);
+            this.writingTagBtn.Name = "writingTagBtn";
+            this.writingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.writingTagBtn.TabIndex = 51;
+            this.writingTagBtn.Text = "Writing";
+            this.writingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // shoppingTagBtn
+            // 
+            this.shoppingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.shoppingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.shoppingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.shoppingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.shoppingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shoppingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shoppingTagBtn.Location = new System.Drawing.Point(871, 302);
+            this.shoppingTagBtn.Name = "shoppingTagBtn";
+            this.shoppingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.shoppingTagBtn.TabIndex = 50;
+            this.shoppingTagBtn.Text = "Shopping";
+            this.shoppingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // artTagBtn
+            // 
+            this.artTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.artTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.artTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.artTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.artTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.artTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artTagBtn.Location = new System.Drawing.Point(871, 268);
+            this.artTagBtn.Name = "artTagBtn";
+            this.artTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.artTagBtn.TabIndex = 49;
+            this.artTagBtn.Text = "Art";
+            this.artTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // languagesTagBtn
+            // 
+            this.languagesTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.languagesTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.languagesTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.languagesTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.languagesTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.languagesTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.languagesTagBtn.Location = new System.Drawing.Point(871, 644);
+            this.languagesTagBtn.Name = "languagesTagBtn";
+            this.languagesTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.languagesTagBtn.TabIndex = 48;
+            this.languagesTagBtn.Text = "Languages";
+            this.languagesTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // networkingTagBtn
+            // 
+            this.networkingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.networkingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.networkingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.networkingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.networkingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.networkingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.networkingTagBtn.Location = new System.Drawing.Point(871, 234);
+            this.networkingTagBtn.Name = "networkingTagBtn";
+            this.networkingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.networkingTagBtn.TabIndex = 47;
+            this.networkingTagBtn.Text = "Networking";
+            this.networkingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // singingTagBtn
+            // 
+            this.singingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.singingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.singingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.singingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.singingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.singingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.singingTagBtn.Location = new System.Drawing.Point(871, 200);
+            this.singingTagBtn.Name = "singingTagBtn";
+            this.singingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.singingTagBtn.TabIndex = 46;
+            this.singingTagBtn.Text = "Singing";
+            this.singingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // cafeTagBtn
+            // 
+            this.cafeTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.cafeTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cafeTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.cafeTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.cafeTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cafeTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cafeTagBtn.Location = new System.Drawing.Point(871, 166);
+            this.cafeTagBtn.Name = "cafeTagBtn";
+            this.cafeTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.cafeTagBtn.TabIndex = 45;
+            this.cafeTagBtn.Text = "Cafe";
+            this.cafeTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // cookingTagBtn
+            // 
+            this.cookingTagBtn.BackColor = System.Drawing.Color.Khaki;
+            this.cookingTagBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cookingTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.cookingTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.cookingTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cookingTagBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cookingTagBtn.Location = new System.Drawing.Point(871, 132);
+            this.cookingTagBtn.Name = "cookingTagBtn";
+            this.cookingTagBtn.Size = new System.Drawing.Size(110, 30);
+            this.cookingTagBtn.TabIndex = 44;
+            this.cookingTagBtn.Text = "Cooking";
+            this.cookingTagBtn.UseVisualStyleBackColor = false;
+            // 
+            // recommendedModulesPanel
+            // 
+            this.recommendedModulesPanel.Controls.Add(this.label29);
+            this.recommendedModulesPanel.Location = new System.Drawing.Point(392, 178);
+            this.recommendedModulesPanel.Name = "recommendedModulesPanel";
+            this.recommendedModulesPanel.Size = new System.Drawing.Size(463, 569);
+            this.recommendedModulesPanel.TabIndex = 43;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(17, 13);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(87, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Events searched";
+            this.label29.Visible = false;
+            // 
+            // recommendedEventsPanel
+            // 
+            this.recommendedEventsPanel.Location = new System.Drawing.Point(1, 311);
+            this.recommendedEventsPanel.Name = "recommendedEventsPanel";
+            this.recommendedEventsPanel.Size = new System.Drawing.Size(385, 436);
+            this.recommendedEventsPanel.TabIndex = 41;
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.profilePagePanel);
             this.Controls.Add(this.adminHomePagePanel);
-            this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.digitalConnectionPanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.benefitsPagePanel);
@@ -1341,6 +1716,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.homePagePanel.ResumeLayout(false);
+            this.homePagePanel.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.profilePagePanel.ResumeLayout(false);
@@ -1377,6 +1753,10 @@
             this.digitalContentPanel.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.userIntrestsPanel.ResumeLayout(false);
+            this.userIntrestsPanel.PerformLayout();
+            this.recommendedModulesPanel.ResumeLayout(false);
+            this.recommendedModulesPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1479,5 +1859,30 @@
         private System.Windows.Forms.RichTextBox chatTextBox;
         private System.Windows.Forms.Button sendMsgBtn;
         private System.Windows.Forms.Panel digitalContentDataPanel;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox searchBarTxt;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel userIntrestsPanel;
+        private System.Windows.Forms.RichTextBox userTagTxt;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button sportsTagBtn;
+        private System.Windows.Forms.Button moviesTagBtn;
+        private System.Windows.Forms.Button marketingTagBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button securityTagBtn;
+        private System.Windows.Forms.Button gamesTagBtn;
+        private System.Windows.Forms.Button sculptingTagBtn;
+        private System.Windows.Forms.Button programmingTagBtn;
+        private System.Windows.Forms.Button writingTagBtn;
+        private System.Windows.Forms.Button shoppingTagBtn;
+        private System.Windows.Forms.Button artTagBtn;
+        private System.Windows.Forms.Button languagesTagBtn;
+        private System.Windows.Forms.Button networkingTagBtn;
+        private System.Windows.Forms.Button singingTagBtn;
+        private System.Windows.Forms.Button cafeTagBtn;
+        private System.Windows.Forms.Button cookingTagBtn;
+        private System.Windows.Forms.Panel recommendedModulesPanel;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel recommendedEventsPanel;
     }
 }

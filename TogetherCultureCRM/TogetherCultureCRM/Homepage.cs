@@ -61,6 +61,8 @@ namespace TogetherCultureCRM
 
                 dashboard.Controls.Add(_adminHomePageTabBtn);
             }
+
+            LoadHomePanelData();
         }
 
         public void DashboardBtn_BackColorReset()
@@ -302,12 +304,64 @@ namespace TogetherCultureCRM
             Homepage.ActiveForm.Text = "Membership Page";
         }
 
+        public void LoadHomePanelData()
+        {
+            Data data = new Data();
+            string connectionString = data.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string selectSql = @"SELECT ut.userId, ut.tagId, ut.userTagCreationDate, it.tagId, it.tagName 
+                                     FROM UserTag ut
+                                     LEFT JOIN IntrestTag it ON ut.tagId = it.tagId 
+                                     WHERE ut.userId=@userId   
+                                     ORDER BY ut.userTagCreationDate";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UserTag userTag = new UserTag()
+                            {
+                                userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId"))),
+                                tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
+                                userTagCreationDate = reader.GetDateTime(reader.GetOrdinal("userTagCreationDate"))
+                            };
+
+                            string tagName = reader.GetString(reader.GetOrdinal("tagName"));
+
+                            UserSession.UserTagAndNameList.Add(new Tuple<UserTag, string>(userTag, tagName));
+
+                        }
+                    }
+                }
+            }
+            if (UserSession.UserTagAndNameList.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var userTagAndName in UserSession.UserTagAndNameList)
+                {
+                    var userTag = userTagAndName.Item1 as UserTag;
+                    string tagName = userTagAndName.Item2 as string;
+
+                    sb.AppendLine($"{UserSession.User.username} was interested in {tagName} on the {userTag.userTagCreationDate.ToString("dd/MM/yyyy")}, at {userTag.userTagCreationDate.ToString("t")}.");
+                }
+                userTagTxt.Text = sb.ToString();
+            }
+            else userTagTxt.Text = "You have no interests as of now. Interact more on the app to get interest tags.";
+        }
+
         private void homeDashboardBtn_Click(object sender, EventArgs e)
         {
             DashboardBtn_BackColorReset();
             homeDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             homePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Home Page";
+
+            LoadHomePanelData();
         }
 
         private void profileDashboardBtn_Click(object sender, EventArgs e)
