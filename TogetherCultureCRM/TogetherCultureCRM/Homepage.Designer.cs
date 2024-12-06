@@ -106,6 +106,9 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.onlineMembersAreaPanel = new System.Windows.Forms.Panel();
+            this.sendMsgBtn = new System.Windows.Forms.Button();
+            this.chatTextBox = new System.Windows.Forms.RichTextBox();
+            this.chatMessagesPanel = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.activeMembershipPanel = new System.Windows.Forms.Panel();
@@ -120,9 +123,7 @@
             this.digitalContentPanel = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
-            this.chatMessagesPanel = new System.Windows.Forms.Panel();
-            this.chatTextBox = new System.Windows.Forms.RichTextBox();
-            this.sendMsgBtn = new System.Windows.Forms.Button();
+            this.digitalContentDataPanel = new System.Windows.Forms.Panel();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1114,6 +1115,42 @@
             this.onlineMembersAreaPanel.Size = new System.Drawing.Size(984, 749);
             this.onlineMembersAreaPanel.TabIndex = 13;
             // 
+            // sendMsgBtn
+            // 
+            this.sendMsgBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
+            this.sendMsgBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sendMsgBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.sendMsgBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.sendMsgBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendMsgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendMsgBtn.ForeColor = System.Drawing.Color.Black;
+            this.sendMsgBtn.Location = new System.Drawing.Point(808, 692);
+            this.sendMsgBtn.Name = "sendMsgBtn";
+            this.sendMsgBtn.Size = new System.Drawing.Size(172, 54);
+            this.sendMsgBtn.TabIndex = 37;
+            this.sendMsgBtn.Text = "Send";
+            this.sendMsgBtn.UseVisualStyleBackColor = false;
+            this.sendMsgBtn.Click += new System.EventHandler(this.sendMsgBtn_Click);
+            // 
+            // chatTextBox
+            // 
+            this.chatTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatTextBox.Location = new System.Drawing.Point(16, 692);
+            this.chatTextBox.MaxLength = 250;
+            this.chatTextBox.Multiline = false;
+            this.chatTextBox.Name = "chatTextBox";
+            this.chatTextBox.Size = new System.Drawing.Size(787, 54);
+            this.chatTextBox.TabIndex = 5;
+            this.chatTextBox.Text = "";
+            // 
+            // chatMessagesPanel
+            // 
+            this.chatMessagesPanel.AutoScroll = true;
+            this.chatMessagesPanel.Location = new System.Drawing.Point(6, 134);
+            this.chatMessagesPanel.Name = "chatMessagesPanel";
+            this.chatMessagesPanel.Size = new System.Drawing.Size(976, 554);
+            this.chatMessagesPanel.TabIndex = 4;
+            // 
             // panel12
             // 
             this.panel12.Controls.Add(this.label10);
@@ -1236,6 +1273,7 @@
             // 
             // digitalContentPanel
             // 
+            this.digitalContentPanel.Controls.Add(this.digitalContentDataPanel);
             this.digitalContentPanel.Controls.Add(this.panel15);
             this.digitalContentPanel.Location = new System.Drawing.Point(200, 13);
             this.digitalContentPanel.Name = "digitalContentPanel";
@@ -1262,50 +1300,22 @@
             this.label27.TabIndex = 2;
             this.label27.Text = "Digital Content";
             // 
-            // chatMessagesPanel
+            // digitalContentDataPanel
             // 
-            this.chatMessagesPanel.AutoScroll = true;
-            this.chatMessagesPanel.Location = new System.Drawing.Point(6, 134);
-            this.chatMessagesPanel.Name = "chatMessagesPanel";
-            this.chatMessagesPanel.Size = new System.Drawing.Size(976, 554);
-            this.chatMessagesPanel.TabIndex = 4;
-            // 
-            // chatTextBox
-            // 
-            this.chatTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatTextBox.Location = new System.Drawing.Point(16, 692);
-            this.chatTextBox.MaxLength = 250;
-            this.chatTextBox.Multiline = false;
-            this.chatTextBox.Name = "chatTextBox";
-            this.chatTextBox.Size = new System.Drawing.Size(787, 54);
-            this.chatTextBox.TabIndex = 5;
-            this.chatTextBox.Text = "";
-            // 
-            // sendMsgBtn
-            // 
-            this.sendMsgBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.sendMsgBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sendMsgBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.sendMsgBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.sendMsgBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendMsgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendMsgBtn.ForeColor = System.Drawing.Color.Black;
-            this.sendMsgBtn.Location = new System.Drawing.Point(808, 692);
-            this.sendMsgBtn.Name = "sendMsgBtn";
-            this.sendMsgBtn.Size = new System.Drawing.Size(172, 54);
-            this.sendMsgBtn.TabIndex = 37;
-            this.sendMsgBtn.Text = "Send";
-            this.sendMsgBtn.UseVisualStyleBackColor = false;
-            this.sendMsgBtn.Click += new System.EventHandler(this.sendMsgBtn_Click);
+            this.digitalContentDataPanel.AutoScroll = true;
+            this.digitalContentDataPanel.Location = new System.Drawing.Point(75, 134);
+            this.digitalContentDataPanel.Name = "digitalContentDataPanel";
+            this.digitalContentDataPanel.Size = new System.Drawing.Size(910, 614);
+            this.digitalContentDataPanel.TabIndex = 4;
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.profilePagePanel);
-            this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.digitalConnectionPanel);
@@ -1468,5 +1478,6 @@
         private System.Windows.Forms.Panel chatMessagesPanel;
         private System.Windows.Forms.RichTextBox chatTextBox;
         private System.Windows.Forms.Button sendMsgBtn;
+        private System.Windows.Forms.Panel digitalContentDataPanel;
     }
 }

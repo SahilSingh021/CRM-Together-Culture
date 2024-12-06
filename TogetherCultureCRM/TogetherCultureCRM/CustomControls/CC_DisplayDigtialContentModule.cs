@@ -23,10 +23,16 @@ namespace TogetherCultureCRM.CustomControls
             set { moduleNameLbl.Text = value; }
         }
 
-        public string ModuleDateTime
+        public string ModuleDate
         {
             get { return moduleDateLbl.Text; }
             set { moduleDateLbl.Text = value; }
+        }
+
+        public bool ModuleDateVisible
+        {
+            get { return moduleDateLbl.Visible; }
+            set { moduleDateLbl.Visible = value; }
         }
 
         public string BookModuleButtonText
@@ -47,7 +53,7 @@ namespace TogetherCultureCRM.CustomControls
             set { bookModuleBtn.BackColor = value; }
         }
 
-        public EventHandler BookModuleClick
+        public EventHandler BookModuleButtonClick
         {
             set
             {

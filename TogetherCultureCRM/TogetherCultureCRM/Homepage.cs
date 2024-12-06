@@ -224,9 +224,13 @@ namespace TogetherCultureCRM
 
                 eventBookingPanel.Controls.Add(eventDisplayCard);
 
+                // Modifies the width and height of the card
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+
+                // Adds gap (width) between cards
                 eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
 
+                // Adds gap (height) between cards
                 if (heightCount > 0) eventDisplayCard.Location = new Point(eventDisplayCard.Location.X, eventDisplayCard.Location.Y + (heightCount * 20));
 
                 if (widthCount == 3)
@@ -575,8 +579,30 @@ namespace TogetherCultureCRM
             onlineMembersAreadDashboardBtn.PerformClick();
         }
 
+        public void BookDigitalContentModule(Guid digitalContentModuleId, string moduleName)
+        {
+            // Book the DigitalContentModule for the current user
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string insertSql = "INSERT INTO UserDigitalContentModule (userId, digitalContentModuleId) VALUES (@userId, @digitalContentModuleId)";
+                using (SqlCommand command = new SqlCommand(insertSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    command.Parameters.AddWithValue("@digitalContentModuleId", digitalContentModuleId);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("You have successfully booked " + moduleName + "!", "Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            digitalContentDashboardBtn.PerformClick();
+        }
+
         private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
         {
+            digitalContentDataPanel.Controls.Clear();
             if (!UserSession.User.bIsMember)
             {
                 DialogResult result = MessageBox.Show(
@@ -595,7 +621,7 @@ namespace TogetherCultureCRM
             digitalContentPanel.BringToFront();
             Homepage.ActiveForm.Text = "Digital Content Page";
 
-            List<Tuple<Guid, DateTime>> bookedDigitalContentModule = new List<Tuple<Guid, DateTime>>();
+            List<Tuple<Guid, DateTime>> bookedDigitalContentModules = new List<Tuple<Guid, DateTime>>();
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -610,36 +636,68 @@ namespace TogetherCultureCRM
                         while (reader.Read())
                         {
                             Guid digitalContentModuleId = Guid.Parse(reader.GetString(reader.GetOrdinal("digitalContentModuleId")));
-                            DateTime moduleDateBooked = reader.GetDateTime(reader.GetOrdinal("moduleDateBoked"));
+                            DateTime moduleDateBooked = reader.GetDateTime(reader.GetOrdinal("moduleDateBooked"));
 
                             Tuple<Guid, DateTime> moduleInfo = Tuple.Create(digitalContentModuleId, moduleDateBooked);
-                            bookedDigitalContentModule.Add(moduleInfo);
+                            bookedDigitalContentModules.Add(moduleInfo);
                         }
                     }
                 }
             }
 
+            int heightCount = 0;
+            int widthCount = 0;
             foreach (var digitalContentModule in UserSession.DigitalContentModules)
             {
-                var bookedigitalModuleId = bookedDigitalContentModule.item1
-
+                DateTime moduleDateTime = DateTime.Now;
                 bool bookedModule = false;
-                foreach (var digitalContentModuleId in bookedDigitalContentModule)
+                foreach (var bookedDigitalContentModule in bookedDigitalContentModules)
                 {
-                    if (digitalContentModuleId == digitalContentModule.digitalContentModuleId)
+                    var bookedigitalModuleId = bookedDigitalContentModule.Item1;
+
+                    if (bookedigitalModuleId == digitalContentModule.digitalContentModuleId)
+                    {
+                        moduleDateTime = bookedDigitalContentModule.Item2;
                         bookedModule = true;
+                    }
                 }
 
                 var moduleDisplayCard = new CC_DisplayDigtialContentModule()
                 {
                     ModuleName = digitalContentModule.moduleName,
-
+                    BookModuleButtonClick = (s, eventArg) =>
+                    {
+                        BookDigitalContentModule(digitalContentModule.digitalContentModuleId, digitalContentModule.moduleName);
+                    }
                 };
 
                 if (bookedModule)
                 {
-                    moduleDisplayCard.ModuleDateTime
+                    moduleDisplayCard.ModuleDateVisible = true;
+                    moduleDisplayCard.ModuleDate = moduleDateTime.ToString("dd/MM/yy");
+                    moduleDisplayCard.Enabled = false;
+                    moduleDisplayCard.BookModuleButtonText = "Module Booked";
+                    moduleDisplayCard.BookModuleButtonBackColor = Color.Silver;
                 }
+                else moduleDisplayCard.ModuleDateVisible = false;
+
+                digitalContentDataPanel.Controls.Add(moduleDisplayCard);
+
+                // Modifies the width and height of the card
+                moduleDisplayCard.Location = new Point(widthCount * moduleDisplayCard.Size.Width, heightCount * moduleDisplayCard.Size.Height);
+
+                // Adds gap (width) between cards
+                moduleDisplayCard.Location = new Point(moduleDisplayCard.Location.X + (widthCount * 20), moduleDisplayCard.Location.Y);
+
+                // Adds gap (height) between cards
+                if (heightCount > 0) moduleDisplayCard.Location = new Point(moduleDisplayCard.Location.X, moduleDisplayCard.Location.Y + (heightCount * 20));
+
+                if (widthCount == 2)
+                {
+                    heightCount++;
+                    widthCount = -1;
+                }
+                widthCount++;
             }
         }
 

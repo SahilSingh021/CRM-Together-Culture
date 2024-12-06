@@ -36,10 +36,11 @@
             // moduleNameLbl
             // 
             this.moduleNameLbl.AutoSize = true;
-            this.moduleNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleNameLbl.Location = new System.Drawing.Point(60, 11);
+            this.moduleNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleNameLbl.Location = new System.Drawing.Point(13, 9);
+            this.moduleNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.moduleNameLbl.Name = "moduleNameLbl";
-            this.moduleNameLbl.Size = new System.Drawing.Size(112, 20);
+            this.moduleNameLbl.Size = new System.Drawing.Size(86, 15);
             this.moduleNameLbl.TabIndex = 0;
             this.moduleNameLbl.Text = "Module Name";
             // 
@@ -47,11 +48,13 @@
             // 
             this.moduleDateLbl.AutoSize = true;
             this.moduleDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleDateLbl.Location = new System.Drawing.Point(121, 93);
+            this.moduleDateLbl.Location = new System.Drawing.Point(91, 76);
+            this.moduleDateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.moduleDateLbl.Name = "moduleDateLbl";
-            this.moduleDateLbl.Size = new System.Drawing.Size(104, 20);
+            this.moduleDateLbl.Size = new System.Drawing.Size(88, 17);
             this.moduleDateLbl.TabIndex = 1;
             this.moduleDateLbl.Text = "Module Date";
+            this.moduleDateLbl.Visible = false;
             // 
             // bookModuleBtn
             // 
@@ -61,23 +64,24 @@
             this.bookModuleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.bookModuleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bookModuleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookModuleBtn.Location = new System.Drawing.Point(47, 133);
-            this.bookModuleBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.bookModuleBtn.Location = new System.Drawing.Point(35, 108);
             this.bookModuleBtn.Name = "bookModuleBtn";
-            this.bookModuleBtn.Size = new System.Drawing.Size(267, 52);
+            this.bookModuleBtn.Size = new System.Drawing.Size(200, 42);
             this.bookModuleBtn.TabIndex = 4;
             this.bookModuleBtn.Text = "Book Module";
             this.bookModuleBtn.UseVisualStyleBackColor = false;
             // 
             // CC_DisplayDigtialContentModule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.bookModuleBtn);
             this.Controls.Add(this.moduleDateLbl);
             this.Controls.Add(this.moduleNameLbl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CC_DisplayDigtialContentModule";
-            this.Size = new System.Drawing.Size(350, 200);
+            this.Size = new System.Drawing.Size(262, 162);
             this.ResumeLayout(false);
             this.PerformLayout();
 
