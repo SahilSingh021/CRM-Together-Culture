@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\AdminRequests.cs" />
+    <Compile Include="Classes\ChatLog.cs" />
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\Member.cs" />
@@ -113,6 +114,12 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserSession.cs" />
     <Compile Include="Classes\VisitorLog.cs" />
+    <Compile Include="CustomControls\CC_DisplayChatLogCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CC_DisplayChatLogCard.Designer.cs">
+      <DependentUpon>CC_DisplayChatLogCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CC_DisplayEventCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AuthenticationPages\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CC_DisplayChatLogCard.resx">
+      <DependentUpon>CC_DisplayChatLogCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_DisplayEventCard.resx">
       <DependentUpon>CC_DisplayEventCard.cs</DependentUpon>

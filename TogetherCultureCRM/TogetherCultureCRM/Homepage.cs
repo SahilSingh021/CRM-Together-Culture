@@ -455,13 +455,124 @@ namespace TogetherCultureCRM
             digitalConnectionPanel.BringToFront();
             Homepage.ActiveForm.Text = "Digital Connection Page";
         }
+        public void LoadChatsToChatPanel()
+        {
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            List<Tuple<ChatLog, string>> chatLogs = new List<Tuple<ChatLog, string>>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql = "SELECT TOP 50 c.chatId, c.userId, c.chatMessage, c.chatDateTime, u.userId, u.username " +
+                                   "FROM ChatLogs c " +
+                                   "LEFT JOIN Users u ON c.userId = u.userId " +
+                                   "ORDER BY c.chatDateTime";
+
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ChatLog chatLog = new ChatLog()
+                            {
+                                chatId = Guid.Parse(reader.GetString(reader.GetOrdinal("chatId"))),
+                                userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId"))),
+                                chatMessage = reader.GetString(reader.GetOrdinal("chatMessage")),
+                                chatDateTime = reader.GetDateTime(reader.GetOrdinal("chatDateTime")),
+                            };
+
+                            string username = reader.GetString(reader.GetOrdinal("username"));
+                            chatLogs.Add(new Tuple<ChatLog, string>(chatLog, username));
+                        }
+                    }
+                }
+            }
+
+            if (chatLogs.Count > 0)
+            {
+                int i = 0;
+                int totalLogs = chatLogs.Count;
+                CC_DisplayChatLogCard lastChatControl = null;
+                foreach (var chatLog in chatLogs)
+                {
+                    ChatLog chat = chatLog.Item1 as ChatLog;
+                    string username = chatLog.Item2 as string;
+
+                    var chatDisplayCardControl = new CC_DisplayChatLogCard()
+                    {
+                        UsernameAndDateText = username + " - (" + chat.chatDateTime.ToString("dd/MM/yyyy") + ")",
+                        ChatMessageText = chat.chatMessage
+                    };
+
+                    chatMessagesPanel.Controls.Add(chatDisplayCardControl);
+
+                    if (chatMessagesPanel.Controls.Count > 1)
+                    {
+                        chatDisplayCardControl.Location = new Point(0, i * chatDisplayCardControl.Size.Height);
+                    }
+                    else
+                    {
+                        chatDisplayCardControl.Location = new Point(0, 0);
+                    }
+
+                    if (i == (totalLogs - 1)) lastChatControl = chatDisplayCardControl;
+                    i++;
+                }
+
+                chatMessagesPanel.ScrollControlIntoView(lastChatControl);
+            }
+        }
 
         private void onlineMembersAreadDashboardBtn_Click(object sender, EventArgs e)
         {
+            chatMessagesPanel.Controls.Clear();
+            if (!UserSession.User.bIsMember)
+            {
+                DialogResult result = MessageBox.Show(
+                    "This is a members-only area. Would you like to view available memberships?",
+                    "Membership Required",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+                if (result == DialogResult.Yes) membershipPageTabBtn.PerformClick();
+                return;
+            }
+
             DashboardBtn_BackColorReset();
             onlineMembersAreadDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             onlineMembersAreaPanel.BringToFront();
             Homepage.ActiveForm.Text = "Online Members Area Page";
+
+            LoadChatsToChatPanel();
+        }
+
+        private void sendMsgBtn_Click(object sender, EventArgs e)
+        {
+            // Insert Chat Record into ChatLogs
+            if (UserSession.User.bIsMember)
+            {
+                string chatText = chatTextBox.Text;
+                Guid chatId = Guid.NewGuid();
+                Data dataCls = new Data();
+                string connectionString = dataCls.ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string insertSql = "INSERT INTO ChatLogs (chatId, userId, chatMessage) VALUES (@chatId, @userId, @chatMessage)";
+                    using (SqlCommand command = new SqlCommand(insertSql, con))
+                    {
+                        command.Parameters.AddWithValue("@chatId", chatId);
+                        command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        command.Parameters.AddWithValue("@chatMessage", chatText);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            chatTextBox.Text = "";
+            onlineMembersAreadDashboardBtn.PerformClick();
         }
 
         private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
