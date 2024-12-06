@@ -19,6 +19,7 @@ namespace TogetherCultureCRM.Classes
             MembershipTypes = new List<MembershipType>();
             Events = new List<Event>();
             VisitorLogs = new List<VisitorLog>();
+            DigitalContentModules = new List<DigitalContentModule>();
         }
 
         public static User User { get; set; }
@@ -31,5 +32,6 @@ namespace TogetherCultureCRM.Classes
         public static List<MembershipType> MembershipTypes { get; set; }
         public static List<Event> Events { get; set; }
         public static List<VisitorLog> VisitorLogs { get; set; }
+        public static List<DigitalContentModule> DigitalContentModules { get; set; }
     }
 }

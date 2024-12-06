@@ -253,6 +253,26 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                //Load all DigitalContentModule table
+                                string selectSql6 = "SELECT * FROM DigitalContentModule";
+                                using (SqlCommand command1 = new SqlCommand(selectSql6, con))
+                                {
+                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    {
+                                        while (reader1.Read())
+                                        {
+                                            DigitalContentModule digitalContentModule = new DigitalContentModule()
+                                            {
+                                                digitalContentModuleId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("digitalContentModuleId"))),
+                                                tagId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("tagId"))),
+                                                moduleName = reader1.GetString(reader1.GetOrdinal("moduleName")),
+                                            };
+
+                                            UserSession.DigitalContentModules.Add(digitalContentModule);
+                                        }
+                                    }
+                                }
+
                                 con.Close();
                                 Homepage homepage = new Homepage();
                                 homepage.Show();

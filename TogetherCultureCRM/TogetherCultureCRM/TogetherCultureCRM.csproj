@@ -105,6 +105,7 @@
     <Compile Include="Classes\AdminRequests.cs" />
     <Compile Include="Classes\ChatLog.cs" />
     <Compile Include="Classes\Data.cs" />
+    <Compile Include="Classes\DigitalContentModule.cs" />
     <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\MemberBenefits.cs" />
@@ -119,6 +120,12 @@
     </Compile>
     <Compile Include="CustomControls\CC_DisplayChatLogCard.Designer.cs">
       <DependentUpon>CC_DisplayChatLogCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CC_DisplayDigtialContentModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CC_DisplayDigtialContentModule.Designer.cs">
+      <DependentUpon>CC_DisplayDigtialContentModule.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\CC_DisplayEventCard.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_DisplayChatLogCard.resx">
       <DependentUpon>CC_DisplayChatLogCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CC_DisplayDigtialContentModule.resx">
+      <DependentUpon>CC_DisplayDigtialContentModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_DisplayEventCard.resx">
       <DependentUpon>CC_DisplayEventCard.cs</DependentUpon>

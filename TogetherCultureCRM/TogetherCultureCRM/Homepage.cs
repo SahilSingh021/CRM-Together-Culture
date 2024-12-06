@@ -577,10 +577,70 @@ namespace TogetherCultureCRM
 
         private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
         {
+            if (!UserSession.User.bIsMember)
+            {
+                DialogResult result = MessageBox.Show(
+                    "This is a members-only area. Would you like to view available memberships?",
+                    "Membership Required",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+                if (result == DialogResult.Yes) membershipPageTabBtn.PerformClick();
+                return;
+            }
+
             DashboardBtn_BackColorReset();
             digitalContentDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             digitalContentPanel.BringToFront();
             Homepage.ActiveForm.Text = "Digital Content Page";
+
+            List<Tuple<Guid, DateTime>> bookedDigitalContentModule = new List<Tuple<Guid, DateTime>>();
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql = "SELECT * FROM UserDigitalContentModule WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Guid digitalContentModuleId = Guid.Parse(reader.GetString(reader.GetOrdinal("digitalContentModuleId")));
+                            DateTime moduleDateBooked = reader.GetDateTime(reader.GetOrdinal("moduleDateBoked"));
+
+                            Tuple<Guid, DateTime> moduleInfo = Tuple.Create(digitalContentModuleId, moduleDateBooked);
+                            bookedDigitalContentModule.Add(moduleInfo);
+                        }
+                    }
+                }
+            }
+
+            foreach (var digitalContentModule in UserSession.DigitalContentModules)
+            {
+                var bookedigitalModuleId = bookedDigitalContentModule.item1
+
+                bool bookedModule = false;
+                foreach (var digitalContentModuleId in bookedDigitalContentModule)
+                {
+                    if (digitalContentModuleId == digitalContentModule.digitalContentModuleId)
+                        bookedModule = true;
+                }
+
+                var moduleDisplayCard = new CC_DisplayDigtialContentModule()
+                {
+                    ModuleName = digitalContentModule.moduleName,
+
+                };
+
+                if (bookedModule)
+                {
+                    moduleDisplayCard.ModuleDateTime
+                }
+            }
         }
 
         private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
