@@ -1426,6 +1426,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.homePagePanel);
+            this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.profilePagePanel);
@@ -1435,7 +1436,6 @@
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
-            this.Controls.Add(this.eventsHomePageTabPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";

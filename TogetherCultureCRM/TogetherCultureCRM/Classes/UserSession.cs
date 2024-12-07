@@ -20,7 +20,6 @@ namespace TogetherCultureCRM.Classes
             Events = new List<Event>();
             VisitorLogs = new List<VisitorLog>();
             DigitalContentModules = new List<DigitalContentModule>();
-            UserTagAndNameList = new List<Tuple<UserTag, string>>();
             IntrestTagList = new List<IntrestTag>();
         }
 
@@ -35,7 +34,6 @@ namespace TogetherCultureCRM.Classes
         public static List<Event> Events { get; set; }
         public static List<VisitorLog> VisitorLogs { get; set; }
         public static List<DigitalContentModule> DigitalContentModules { get; set; }
-        public static List<Tuple<UserTag, string>> UserTagAndNameList { get; set; }
         public static List<IntrestTag> IntrestTagList { get; set; }
     }
 }
