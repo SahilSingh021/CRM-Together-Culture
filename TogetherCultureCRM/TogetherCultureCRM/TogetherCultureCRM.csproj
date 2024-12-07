@@ -107,6 +107,7 @@
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\DigitalContentModule.cs" />
     <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\IntrestTag.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\MemberBenefits.cs" />
     <Compile Include="Classes\MemberKeyIntrest.cs" />
@@ -139,6 +140,12 @@
     </Compile>
     <Compile Include="CustomControls\CC_DisplayUserCard.Designer.cs">
       <DependentUpon>CC_DisplayUserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CC_HomeInterestTagButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CC_HomeInterestTagButton.Designer.cs">
+      <DependentUpon>CC_HomeInterestTagButton.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\CC_Request.cs">
       <SubType>UserControl</SubType>
@@ -192,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_DisplayUserCard.resx">
       <DependentUpon>CC_DisplayUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CC_HomeInterestTagButton.resx">
+      <DependentUpon>CC_HomeInterestTagButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CC_Request.resx">
       <DependentUpon>CC_Request.cs</DependentUpon>

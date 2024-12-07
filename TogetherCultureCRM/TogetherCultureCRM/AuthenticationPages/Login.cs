@@ -273,6 +273,25 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                string selectSql7 = "SELECT * FROM IntrestTag";
+                                using (SqlCommand command1 = new SqlCommand(selectSql7, con))
+                                {
+                                    using (SqlDataReader reader1 = command1.ExecuteReader())
+                                    {
+                                        while (reader1.Read())
+                                        {
+                                            IntrestTag intrestTag = new IntrestTag()
+                                            {
+                                                tagId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("tagId"))),
+                                                tagName = reader1.GetString(reader1.GetOrdinal("tagName")),
+                                            };
+
+                                            UserSession.IntrestTagList.Add(intrestTag);
+                                        }
+                                    }
+                                }
+
+
                                 con.Close();
                                 Homepage homepage = new Homepage();
                                 homepage.Show();

@@ -224,7 +224,7 @@ namespace TogetherCultureCRM
                     eventDisplayCard.BookEventButtonEnabled = false;
                 }
 
-                eventBookingPanel.Controls.Add(eventDisplayCard);
+                eventSearchPanel.Controls.Add(eventDisplayCard);
 
                 // Modifies the width and height of the card
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
@@ -304,6 +304,103 @@ namespace TogetherCultureCRM
             Homepage.ActiveForm.Text = "Membership Page";
         }
 
+        public void LoadClickedIntrestTagEvents_IntoEventSearchPanel(Guid tagId)
+        {
+            List<Guid> eventIds = new List<Guid>();
+            List<Event> events = new List<Event>();
+            Data data = new Data();
+            string connectionString = data.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                //Load all events related to tag Id
+                string selectSql = @"SELECT * FROM Event WHERE tagId = @tagId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@tagId", tagId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Event @event = new Event()
+                            {
+                                eventId = Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))),
+                                tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
+                                eventName = reader.GetString(reader.GetOrdinal("eventName")),
+                                eventDate = reader.GetDateTime(reader.GetOrdinal("eventDate"))
+                            };
+                            events.Add(@event);
+                        }
+                    }
+                }
+
+                //Load all events related to tag Id
+                string selectSql1 = "SELECT * FROM UserEvents WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(selectSql1, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            eventIds.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))));
+                        }
+                    }
+                }
+            }
+
+            int heightCount = 0;
+            int widthCount = 0;
+            foreach (var Event in events)
+            {
+                bool eventBooked = false;
+                foreach (var eventId in eventIds)
+                {
+                    if (eventId == Event.eventId) eventBooked = true;
+                }
+
+                var eventDisplayCard = new CC_DisplayEventCard()
+                {
+                    EventId = Event.eventId.ToString(),
+                    TagId = Event.tagId.ToString(),
+                    EventName = Event.eventName,
+                    EventDate = Event.eventDate.ToString("dd/MM/yyyy"),
+                    EventDay = Event.eventDate.ToString("dddd"),
+                    EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
+                    BookEventClick = (s, eventArg) =>
+                    {
+                        BookEvent(Guid.Parse(Event.eventId.ToString()), Guid.Parse(Event.tagId.ToString()));
+                    }
+                };
+
+                if (eventBooked)
+                {
+                    eventDisplayCard.BookEventButtonText = "Booked";
+                    eventDisplayCard.BookEventButtonBackColor = Color.Silver;
+                    eventDisplayCard.BookEventButtonEnabled = false;
+                }
+
+                eventBookingPanel.Controls.Add(eventDisplayCard);
+
+                // Modifies the width and height of the card
+                eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+
+                // Adds gap (width) between cards
+                eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
+
+                // Adds gap (height) between cards
+                if (heightCount > 0) eventDisplayCard.Location = new Point(eventDisplayCard.Location.X, eventDisplayCard.Location.Y + (heightCount * 20));
+
+                if (widthCount == 1)
+                {
+                    heightCount++;
+                    widthCount = -1;
+                }
+                widthCount++;
+            }
+        }
+
         public void LoadHomePanelData()
         {
             Data data = new Data();
@@ -312,6 +409,7 @@ namespace TogetherCultureCRM
             {
                 con.Open();
 
+                //First Query for userTag text box
                 string selectSql = @"SELECT ut.userId, ut.tagId, ut.userTagCreationDate, it.tagId, it.tagName 
                                      FROM UserTag ut
                                      LEFT JOIN IntrestTag it ON ut.tagId = it.tagId 
@@ -330,15 +428,14 @@ namespace TogetherCultureCRM
                                 tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
                                 userTagCreationDate = reader.GetDateTime(reader.GetOrdinal("userTagCreationDate"))
                             };
-
                             string tagName = reader.GetString(reader.GetOrdinal("tagName"));
 
                             UserSession.UserTagAndNameList.Add(new Tuple<UserTag, string>(userTag, tagName));
-
                         }
                     }
                 }
             }
+
             if (UserSession.UserTagAndNameList.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
@@ -352,6 +449,44 @@ namespace TogetherCultureCRM
                 userTagTxt.Text = sb.ToString();
             }
             else userTagTxt.Text = "You have no interests as of now. Interact more on the app to get interest tags.";
+
+            int heightCount = 0;
+            bool bAlreadyAssigned = false;
+            foreach (var intrestTag in UserSession.IntrestTagList)
+            {
+                foreach (var userTagAndName in UserSession.UserTagAndNameList)
+                {
+                    if (intrestTag.tagId == userTagAndName.Item1.tagId)
+                    {
+                        bAlreadyAssigned = true;
+                    }
+                }
+
+                var homeIntrestTagButtonControl = new CC_HomeInterestTagButton()
+                {
+                    TagId = intrestTag.tagId.ToString(),
+                    IntrestTagButtonText = intrestTag.tagName,
+                };
+
+                if (bAlreadyAssigned)
+                {
+                    homeIntrestTagButtonControl.IntrestTagButtonClick = (s, e) =>
+                    {
+                        LoadClickedIntrestTagEvents_IntoEventSearchPanel(intrestTag.tagId);
+                    };
+                }
+                else
+                {
+                    homeIntrestTagButtonControl.IntrestTagButtonClick = (s, e) =>
+                    {
+
+                    };
+                }
+
+                homeInterestTagButtonPanel.Controls.Add(homeIntrestTagButtonControl);
+                homeIntrestTagButtonControl.Location = new Point(homeIntrestTagButtonControl.Location.X, homeIntrestTagButtonControl.Location.Y + (heightCount * 40));
+                heightCount++;
+            }
         }
 
         private void homeDashboardBtn_Click(object sender, EventArgs e)
