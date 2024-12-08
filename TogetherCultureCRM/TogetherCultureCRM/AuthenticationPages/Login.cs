@@ -21,71 +21,59 @@ namespace TogetherCultureCRM.AuthenticationPages
             InitializeComponent();
         }
 
+        //Function executes when the form is closing and if it is it closes the app as this is a parent form
         private void Login_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
-        private void Login_Load(object sender, EventArgs e)
+        //This function executes when the user clicks the signup button
+        private void signUpBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+            //Show signup form and hide current form
             Signup signup = new Signup();
-            signup.ShowDialog();
+            this.Hide();
+            signup.Show();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //This function executes when the user clicks the login button
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            //Get the text from all the textboxes on the login form and store them in variables
             string username = userNameTxt.Text;
             string password = passwordTxt.Text;
 
+            //Validate the inputs above to see if the user has not made any mistakes
             if (username == "" || password == "")
             {
                 MessageBox.Show("Please fill in all the feilds.", "Invalid Inputs");
                 return;
             }
 
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
+                //SELECT the User WHERE the username matches with what the user has provided in the username text box
                 string selectSql = "SELECT * FROM Users WHERE username=@username";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
+                    //Add the read username text for the placeholder '@username' above
                     command.Parameters.AddWithValue("@username", username);
 
+                    //Execute the SELECT query
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // Check if there is a matching user record
                         if (reader.Read())
                         {
+                            //If there is a matching record then retrieve the password of that user
                             string storedPassword = reader.GetString(reader.GetOrdinal("password"));
 
+                            //Check to see if the password from the database matches the password the user has provided
                             if (storedPassword == password)
                             {
-                                // Passwords match - user is authenticated
+                                //If password matches - user is authenticated and we load user data into 'User' class instance inside the static 'UserSession' calss
                                 UserSession.User.userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId")));
                                 UserSession.User.username = reader.GetString(reader.GetOrdinal("username"));
                                 UserSession.User.password = reader.GetString(reader.GetOrdinal("password"));
@@ -94,17 +82,19 @@ namespace TogetherCultureCRM.AuthenticationPages
                                 UserSession.User.bIsBanned = reader.GetBoolean(reader.GetOrdinal("bIsBanned"));
                                 UserSession.User.bIsMember = reader.GetBoolean(reader.GetOrdinal("bIsMember"));
 
-
+                                //Check if the user has been banned and if they have then display a message and exit the app
                                 if (UserSession.User.bIsBanned)
                                 {
                                     MessageBox.Show("You are banned from using this service. Please contact your admin.", "Banned", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
-
+                                //Close this reader so we can execute more to get other user related details
                                 reader.Close();
 
+                                //Check if the current user is an admin
                                 if (UserSession.User.bIsAdmin)
                                 {
+                                    //If they are Admin then load the Admin table data into the 'Admin' class instance inside the static 'UserSession' calss
                                     string selectAdminSql = "SELECT * FROM Admin WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectAdminSql, con))
                                     {
@@ -120,8 +110,10 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                //Check if the user is a Member
                                 if (UserSession.User.bIsMember)
                                 {
+                                    //If they are Member then SELECT Member details of the current user from the Member table and store in the 'Member' class instance inside the static 'UserSession' calss
                                     string selectMemberSql = "SELECT * FROM Member WHERE userId=@userId";
                                     using (SqlCommand command1 = new SqlCommand(selectMemberSql, con))
                                     {
@@ -137,6 +129,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
 
+                                    //Load the Members ActiveMembership details into the 'ActiveMembership' class instance inside the static 'UserSession' calss
                                     string selectActiveMembershipSql = "SELECT * FROM MembershipType WHERE membershipTypeId=@membershipTypeId";
                                     using (SqlCommand command1 = new SqlCommand(selectActiveMembershipSql, con))
                                     {
@@ -155,6 +148,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
 
+                                    //Load all memberBenefitsIds from the MembershipTypeBenefits table WHERE membershipTypeId matched the current users membershipTypeId
                                     List<Guid> memberBenefitsIdList = new List<Guid>();
                                     string selectSql1 = "SELECT memberBenefitsId FROM MembershipTypeBenefits WHERE membershipTypeId=@membershipTypeId";
                                     using (SqlCommand command1 = new SqlCommand(selectSql1, con))
@@ -169,6 +163,8 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
 
+                                    //Load all MemberBenefits that are related to each memberBenefitsId inside the memberBenefitsIdList
+                                    //Then store them inside the List of 'MemberBenefits' class instances AS 'SubscribedMemberBenefits' inside the static 'UserSession' calss
                                     string selectSql2 = "SELECT * FROM MemberBenefits WHERE memberBenefitsId=@memberBenefitsId";
                                     foreach (Guid memberBenefitsId in memberBenefitsIdList)
                                     {
@@ -191,6 +187,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                         }
                                     }
 
+                                    //Load all UsedMemberBenefits for the current user and store them inside the the List of 'UsedMemberBenefits' class instances AS 'UsedMemberBenefits' inside the static 'UserSession' calss
                                     string selectSql3 = "SELECT * FROM UsedMemberBenefits WHERE memberId=@memberId";
                                     using (SqlCommand command1 = new SqlCommand(selectSql3, con))
                                     {
@@ -213,6 +210,8 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                //Load all events and store them inside the the List of 'Event' class instances AS 'Events' inside the static 'UserSession' calss
+                                //And ORDER them by eventDate
                                 string selectSql4 = "SELECT * FROM Event ORDER BY eventDate";
                                 using (SqlCommand command1 = new SqlCommand(selectSql4, con))
                                 {
@@ -233,6 +232,8 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                //Load all visitorLogs for the current user and store them inside the the List of 'VisitorLog' class instances AS 'VisitorLogs' inside the static 'UserSession' calss
+                                //And ORDER them by visitDate
                                 string selectSql5 = "SELECT * FROM VisitorLog WHERE userId=@userId ORDER BY visitDate";
                                 using (SqlCommand command1 = new SqlCommand(selectSql5, con))
                                 {
@@ -253,7 +254,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-                                //Load all DigitalContentModule table
+                                //Load all DigitalContentModule and store them inside the the List of 'DigitalContentModule' class instances AS 'DigitalContentModules' inside the static 'UserSession' calss
                                 string selectSql6 = "SELECT * FROM DigitalContentModule";
                                 using (SqlCommand command1 = new SqlCommand(selectSql6, con))
                                 {
@@ -273,6 +274,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
+                                //Load all interestTags and store them inside the the List of 'IntrestTag' class instances AS 'IntrestTagList' inside the static 'UserSession' calss
                                 string selectSql7 = "SELECT * FROM IntrestTag";
                                 using (SqlCommand command1 = new SqlCommand(selectSql7, con))
                                 {
@@ -291,7 +293,7 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     }
                                 }
 
-
+                                //Close connection to the DB, show homepage form and hide this form
                                 con.Close();
                                 Homepage homepage = new Homepage();
                                 homepage.Show();
@@ -299,25 +301,20 @@ namespace TogetherCultureCRM.AuthenticationPages
                             }
                             else
                             {
+                                //If the password dosnt match show the user a message
                                 MessageBox.Show("Wrong credentials! Please try again.", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
                         else
                         {
+                            //If there is not a matching record then show the user a message
                             MessageBox.Show("Wrong credentials! Please try again.", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
                 }
             }
-        }
-
-        private void signUpBtn_Click(object sender, EventArgs e)
-        {
-            Signup signup = new Signup();
-            this.Hide();
-            signup.Show();
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using TogetherCultureCRM.AdminPages;
 using TogetherCultureCRM.Classes;
 using TogetherCultureCRM.CustomControls;
@@ -25,18 +26,26 @@ namespace TogetherCultureCRM
             InitializeComponent();
         }
 
+        //Function executes when the form is closing and if it is it closes the app as this is a parent form
         private void AdminHomePage_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
+        //Instance of the AdminHomePage Button as its being created at runtime
         private Button _adminHomePageTabBtn;
+
+        //This function executes when the HomePage is loaded
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            //Set the username for the logged in user on the top left of the app
             loggedInLbl.Text = UserSession.User.username;
 
+            //Bring the HomePage pannel to the front and change the color of the Home dashboard button to the 'selected button' color and rename the window name to 'Home Page'
             homePagePanel.BringToFront();
             homeDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             Homepage.ActiveForm.Text = "Home Page";
 
+            //If the current user is an Admin then create the Admin dashboard button and add it to the dashboard
             if (UserSession.User.bIsAdmin)
             {
                 _adminHomePageTabBtn = new Button
@@ -57,14 +66,18 @@ namespace TogetherCultureCRM
 
                 _adminHomePageTabBtn.FlatAppearance.BorderColor = Color.Silver;
                 _adminHomePageTabBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+                //Assign the dashboard button a function to execute when its clicked by the user
                 _adminHomePageTabBtn.Click += new EventHandler(adminHomePageTabBtn_Click);
 
+                //Add the controll to the dashbaord pannel
                 dashboard.Controls.Add(_adminHomePageTabBtn);
             }
 
+            //Call the LoadHomePanelData function
             LoadHomePanelData();
         }
 
+        //Function to reset all the dashboard buttons BackColor property
         public void DashboardBtn_BackColorReset()
         {
             Color col = Color.FromArgb(247, 255, 247);
@@ -83,52 +96,66 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function is called when the Admin clicks the Manage Requests button
         private void manageRequestsBtn_Click(object sender, EventArgs e)
         {
+            //Show the AdminRequestsPage and set the current form as the parent form and make sure the AdminRequestsPage dosnt show in the taskbar
             AdminRequestsPage adminRequestsPage = new AdminRequestsPage();
             adminRequestsPage.Owner = this;
             adminRequestsPage.ShowInTaskbar = false;
             adminRequestsPage.Show();
         }
 
+        //This function is called when the Admin clicks the Manage Requests button
         private void manageUserBtn_Click(object sender, EventArgs e)
         {
+            //Show the AdminManageUsersPage and set the current form as the parent form and make sure the AdminManageUsersPage dosnt show in the taskbar
             AdminManageUsersPage adminManageUsersPage = new AdminManageUsersPage();
             adminManageUsersPage.Owner = this;
             adminManageUsersPage.ShowInTaskbar = false;
             adminManageUsersPage.Show();
         }
 
+        //This function is called when the Admin clicks the User Search button
         private void userEventSearchBtn_Click(object sender, EventArgs e)
         {
+            //Show the AdminUserEventSearchPage and set the current form as the parent form and make sure the AdminUserEventSearchPage dosnt show in the taskbar
             AdminUserEventSearchPage adminUserEventSearchPage = new AdminUserEventSearchPage();
             adminUserEventSearchPage.Owner = this;
             adminUserEventSearchPage.ShowInTaskbar = false;
             adminUserEventSearchPage.Show();
         }
 
+        //This function is called when the Admin clicks the Event Search button
         private void eventSearchBtn_Click(object sender, EventArgs e)
         {
+            //Show the AdminEventSearchPage and set the current form as the parent form and make sure the AdminEventSearchPage dosnt show in the taskbar
             AdminEventSearchPage adminEventSearchPage = new AdminEventSearchPage();
             adminEventSearchPage.Owner = this;
             adminEventSearchPage.ShowInTaskbar = false;
             adminEventSearchPage.Show();
         }
 
+        //This function is called when the Admin clicks the All Users button
         private void allUsersBtn_Click(object sender, EventArgs e)
         {
+            //Show the AdminAllUsersPage and set the current form as the parent form and make sure the AdminAllUsersPage dosnt show in the taskbar
             AdminAllUsersPage adminAllUsersPage = new AdminAllUsersPage();
             adminAllUsersPage.Owner = this;
             adminAllUsersPage.ShowInTaskbar = false;
             adminAllUsersPage.Show();
         }
 
+        //This function loads all the AdminHomePage data
         public void LoadAdminHomePageData()
         {
+            //Create a new Dictionary which take a string as the key and stores int as the value
             Dictionary<string, int> storage = new Dictionary<string, int>();
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
 
+            //This query stores the name of the table as TableName and then stores number of records in that table as RecordCount for Users, Admin, Member, DigitalContentModule and the Event table
             string selectSql = @"SELECT 'Users' AS TableName, COUNT(*) AS RecordCount FROM Users
                              UNION ALL
                              SELECT 'Admin' AS TableName, COUNT(*) AS RecordCount FROM Admin
@@ -147,6 +174,7 @@ namespace TogetherCultureCRM
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        //Read all that is returned from the db and store it inside the Dictionary 'storage' we created above as a key and value pair
                         while (reader.Read())
                         {
                             string tableName = reader.GetString(reader.GetOrdinal("TableName"));
@@ -158,6 +186,7 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Get the data from the Dictionary 'storage' and set the Text property of each lable on the AdminHomePage to the correct key and value
             totalNumberOfUsersLbl.Text = "Total Number of Users: " + storage["Users"].ToString();
             totalNumberOfAdminsLbl.Text = "Total Number of Admins: " + storage["Admin"].ToString();
             totalNumberOfMembersLbl.Text = "Total Number of Members: " + storage["Member"].ToString();
@@ -165,18 +194,23 @@ namespace TogetherCultureCRM
             totalNumberOfEventsLbl.Text = "Total Number of Events: " + storage["Event"].ToString();
         }
 
+        //This function executes when the user clicks Admin HomePage button in the dashboard
         private void adminHomePageTabBtn_Click(object sender, EventArgs e)
         {
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             _adminHomePageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
             adminHomePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Admin Home Page";
 
+            //Call LoadAdminHomePageData to load all the data to the admin homepage pannel
             LoadAdminHomePageData();
         }
 
+        //This function is used to book an event for the the current user
         public void BookEvent(Guid eventId, Guid tagId)
         {
+            //Confirm if the user wants to book the event
             DialogResult result = MessageBox.Show(
                     "Are you sure you want to book this event?",
                     "Confirmation",
@@ -186,13 +220,14 @@ namespace TogetherCultureCRM
 
             if (result == DialogResult.Yes)
             {
-                bool tagIdFound = false;
+                //If they confirm then access the connection string from the App.config and open a connection with the database
+                bool tagIdFound = false;    // This is to check if the user has already been assigned the interest tag associated with this event
                 Data dataCls = new Data();
                 string connectionString = dataCls.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    //insert record into UserEvents
+                    //Insert record into UserEvents for the current user
                     string insertSql = "INSERT INTO UserEvents (eventId, userId) VALUES (@eventId, @userId)";
                     using (SqlCommand command = new SqlCommand(insertSql, con))
                     {
@@ -202,7 +237,7 @@ namespace TogetherCultureCRM
                         command.ExecuteNonQuery();
                     }
 
-                    //check if UserTag record already exists
+                    //Check if UserTag record already exists for the current user
                     string selectSql = @"SELECT * FROM UserTag WHERE userId=@userId AND tagId=@tagId";
                     using (SqlCommand command = new SqlCommand(selectSql, con))
                     {
@@ -212,6 +247,7 @@ namespace TogetherCultureCRM
                         {
                             if (reader.Read())
                             {
+                                //If it does already exists then set 'tagIdFound' to true
                                 tagIdFound = true;
                             }
                         }
@@ -219,7 +255,7 @@ namespace TogetherCultureCRM
 
                     if (!tagIdFound)
                     {
-                        //insert record into UserTag
+                        //If UserTag record dosn't exists Insert record into UserTag for the current user
                         string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
                         using (SqlCommand command = new SqlCommand(insertSql1, con))
                         {
@@ -231,25 +267,33 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Show success message to the user and refresh the events page by 'eventsHomePageTabBtn.PerformClick();'
                 MessageBox.Show("You have booked this Event!", "Event Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 eventsHomePageTabBtn.PerformClick();
             }
         }
 
+        //This function executes when the user clicks Events page button in the dashboard
         private void eventsHomePageTabBtn_Click(object sender, EventArgs e)
         {
+            //Clear eventBookingPanel for fresh new records to be inserted
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             eventBookingPanel.Controls.Clear();
             DashboardBtn_BackColorReset();
             eventsHomePageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
             eventsHomePageTabPanel.BringToFront();
             Homepage.ActiveForm.Text = "Events Home Page";
 
+            //Create a list of Guids to store all the eventId's that the current user is already booked too (for comparison purposes)
             List<Guid> eventIds = new List<Guid>();
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
+                //Load all user events eventIds that have been booked by the current user into eventIds
                 string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
@@ -264,16 +308,20 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Loop through every event avaliable to all users
             int heightCount = 0;
             int widthCount = 0;
             foreach (var Event in UserSession.Events)
             {
+                //Check if the current event that is being looped has already been booked by the user by comapring the eventId properties
+                //If it has already been booked then set 'eventBooked' to true
                 bool eventBooked = false;
                 foreach (var evenId in eventIds)
                 {
                     if (evenId == Event.eventId) eventBooked = true;
                 }
 
+                //Create a new instance of the CC_DisplayEventCard custom control and assign the appropriate details to the exposed properties
                 var eventDisplayCard = new CC_DisplayEventCard()
                 {
                     EventId = Event.eventId.ToString(),
@@ -284,19 +332,23 @@ namespace TogetherCultureCRM
                     EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
                     BookEventClick = (s, eventArg) =>
                     {
+                        //Call the BookEvent function to book the current event
                         BookEvent(Guid.Parse(Event.eventId.ToString()), Guid.Parse(Event.tagId.ToString()));
                     }
                 };
 
                 if (eventBooked)
                 {
+                    //If this event is already booked by the user then block the user from rebooking it and chnage color and text of the button
                     eventDisplayCard.BookEventButtonText = "Booked";
                     eventDisplayCard.BookEventButtonBackColor = Color.Silver;
                     eventDisplayCard.BookEventButtonEnabled = false;
                 }
 
+                //Add the event to the eventBookingPanel
                 eventBookingPanel.Controls.Add(eventDisplayCard);
 
+                //Modif the location of the control that has been added to the eventBookingPanel so they do not overlap one another
                 // Modifies the width and height of the card
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
 
@@ -315,13 +367,16 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function executes when the user clicks Membership page button in the dashboard
         private void membershipPageTabBtn_Click(object sender, EventArgs e)
         {
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color
             DashboardBtn_BackColorReset();
             membershipPageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
 
             if (UserSession.User.bIsMember)
             {
+                //If the current user is a member then get their active membership, laod the active membership to the labels on the activeMembershipPanel and bring it to the front
                 var selectedMembership = UserSession.ActiveMembership;
 
                 membershipNameLbl.Text = "Membership Name: " + selectedMembership.typeName;
@@ -334,13 +389,18 @@ namespace TogetherCultureCRM
             }
             else
             {
+                //If the current user is not a member clear all itms in membershipDropBox and the List of 'MembershipTypes' class instance for new data
                 membershipDropBox.Items.Clear();
                 UserSession.MembershipTypes.Clear();
+
+                //Access the connection string from the App.config and open a connection with the database
                 Data data = new Data();
                 string connectionString = data.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+
+                    //Load all MembershipType into the List of 'MembershipTypes' class instance in the static 'UserSession' class
                     string selectMembershipTypeSql = "SELECT * FROM MembershipType";
                     using (SqlCommand command1 = new SqlCommand(selectMembershipTypeSql, con))
                     {
@@ -366,28 +426,38 @@ namespace TogetherCultureCRM
 
                 foreach (var membershipType in UserSession.MembershipTypes)
                 {
+                    //Add all the loaded MembershipTypes 'typeName' property to the membershipDropBox
                     membershipDropBox.Items.Add(membershipType.typeName);
                 }
 
+                //Bring membershipPanel to the front
                 membershipPanel.BringToFront();
             }
 
+            //Rename the window name
             Homepage.ActiveForm.Text = "Membership Page";
         }
 
+        //This function loads events related to the tag button clicked by the user into the eventSearchPanel
         public void LoadClickedIntrestTagEvents_IntoEventSearchPanel(Guid tagId)
         {
+            //Clear the search bar text and clear eventSearchPanel for new controls
             searchBarTxt.Text = "";
             eventSearchPanel.Controls.Clear();
+
+            //Create a List<Guid> eventIds to load all the event ids the user has already booked for comparison
             List<Guid> eventIds = new List<Guid>();
+            //Create List<Event> events to load all events that are related to the tag clicked
             List<Event> events = new List<Event>();
+
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                //Load all events related to tag Id
+                //Load all events related to tag Id and add them to events
                 string selectSql = @"SELECT * FROM Event WHERE tagId = @tagId";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
@@ -408,7 +478,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
-                //Load all user Events
+                //Load all user Events and add them to eventIds
                 string selectSql1 = "SELECT * FROM UserEvents WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(selectSql1, con))
                 {
@@ -423,16 +493,19 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Loop over all the events that are loaded for the clicked tag
             int heightCount = 0;
             int widthCount = 0;
             foreach (var Event in events)
             {
+                //compare if the eventId of the current event is the same as one of the booked events and if so then set eventBooked to true
                 bool eventBooked = false;
                 foreach (var eventId in eventIds)
                 {
                     if (eventId == Event.eventId) eventBooked = true;
                 }
 
+                //Create a new instance of the CC_DisplayEventCard custom control and assign the appropriate details to the exposed properties
                 var eventDisplayCard = new CC_DisplayEventCard()
                 {
                     EventId = Event.eventId.ToString(),
@@ -443,6 +516,7 @@ namespace TogetherCultureCRM
                     EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
                     BookEventClick = (s, eventArg) =>
                     {
+                        //Redirects the user to events page so they can book the event if they say yes to the prompt below
                         DialogResult result = MessageBox.Show("You are about to be redirected to the Events page. Do you want to continue?",
                                               "Redirect",
                                                MessageBoxButtons.YesNo,
@@ -456,13 +530,16 @@ namespace TogetherCultureCRM
 
                 if (eventBooked)
                 {
+                    //If this event is already booked by the user then block the user from rebooking it and chnage color and text of the button
                     eventDisplayCard.BookEventButtonText = "Booked";
                     eventDisplayCard.BookEventButtonBackColor = Color.Silver;
                     eventDisplayCard.BookEventButtonEnabled = false;
                 }
 
+                //Add control to the eventSearchPanel
                 eventSearchPanel.Controls.Add(eventDisplayCard);
 
+                //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
                 // Modifies the width and height of the card
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
 
@@ -481,10 +558,12 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This fucntion assigns an IntrestTag to the current user
         public void InsertIntrestTagToUser(Guid tagId)
         {
             // Check if tagId already in UserTag table
             bool tagIdFound = false;
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -500,6 +579,7 @@ namespace TogetherCultureCRM
                     {
                         if (reader.Read())
                         {
+                            //If it is then set tagIdFound to true
                             tagIdFound = true;
                         }
                     }
@@ -507,7 +587,7 @@ namespace TogetherCultureCRM
 
                 if (!tagIdFound)
                 {
-                    //Add new record to UserTag
+                    //If its not found then add new record to UserTag for the current user
                     string insertSql = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
                     using (SqlCommand command = new SqlCommand(insertSql, con))
                     {
@@ -520,18 +600,25 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This fucntion loads data for the home page pannels
         public void LoadHomePanelData()
         {
+            //Clear the search bar and eventSearchPanel for new data 
             searchBarTxt.Text = "";
             eventSearchPanel.Controls.Clear();
+
+            //Create a list of a tuple that stores UserTag as item1 and string as item2 to load the usertag and the tagname already assigned to the current user
             List<Tuple<UserTag, string>> UserTagAndNameList = new List<Tuple<UserTag, string>>();
+
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                //First Query for userTag text box
+                //This query SELECTS ut.userId, ut.tagId, ut.userTagCreationDate, it.tagId, it.tagName from the UserTag and IntrestTag by LEFT joining the 2 tables
+                //WHERE ut.userId is the same as current userId and ORDER the data by ut.userTagCreationDate
                 string selectSql = @"SELECT ut.userId, ut.tagId, ut.userTagCreationDate, it.tagId, it.tagName 
                                      FROM UserTag ut
                                      LEFT JOIN IntrestTag it ON ut.tagId = it.tagId 
@@ -545,40 +632,51 @@ namespace TogetherCultureCRM
                     {
                         while (reader.Read())
                         {
+                            //Create a new instance of the UserTag class and load it with data from the DB
                             UserTag userTag = new UserTag()
                             {
                                 userId = Guid.Parse(reader.GetString(reader.GetOrdinal("userId"))),
                                 tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
                                 userTagCreationDate = reader.GetDateTime(reader.GetOrdinal("userTagCreationDate"))
                             };
-                            string tagName = reader.GetString(reader.GetOrdinal("tagName"));
+                            string tagName = reader.GetString(reader.GetOrdinal("tagName"));    //Tag name
 
+                            //Add it to the tuple list we created above
                             UserTagAndNameList.Add(new Tuple<UserTag, string>(userTag, tagName));
                         }
                     }
                 }
             }
 
+            //clearn the text inside of userTagTxt
             userTagTxt.Text = "";
             if (UserTagAndNameList.Count > 0)
             {
+                //Make a new isntance of the StringBuilder class in sb
                 StringBuilder sb = new StringBuilder();
+
+                //Loop over the tuple list we created above 'UserTagAndNameList'
                 foreach (var userTagAndName in UserTagAndNameList)
                 {
+                    //Extract Item1 to userTag and Item2 to tagName
                     var userTag = userTagAndName.Item1 as UserTag;
                     string tagName = userTagAndName.Item2 as string;
 
+                    //Add to the string builder instance the new formated string with the info from the DB
                     sb.AppendLine($"{UserSession.User.username} was interested in {tagName} on the {userTag.userTagCreationDate.ToString("dd/MM/yyyy")}, at {userTag.userTagCreationDate.ToString("t")}.");
                 }
+
+                //Get the finished version of the string we built using the foreach loop and set it as the text for userTagTxt
                 userTagTxt.Text = sb.ToString();
             }
-            else userTagTxt.Text = "You have no interests as of now. Interact more on the app to get interest tags.";
+            else userTagTxt.Text = "You have no interests as of now. Interact more on the app to get interest tags.";   //Or set this text if not UserTagAndNameList.count is 0
 
-            // Add Intrest Tag Buttons to the Right side
+            //Loop over all the IntrestTags that are loaded at login in UserSession.IntrestTagList
             int heightCount = 0;
             bool bAlreadyAssigned = false;
             foreach (var intrestTag in UserSession.IntrestTagList)
             {
+                //compare if the tagId of the current interest tag is the same as one of the alreay assigned intrest tags and if so then set bAlreadyAssigned to true
                 foreach (var userTagAndName in UserTagAndNameList)
                 {
                     if (intrestTag.tagId == userTagAndName.Item1.tagId)
@@ -587,6 +685,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Create a new instance of the CC_HomeInterestTagButton custom control and assign the appropriate details to the exposed properties
                 var homeIntrestTagButtonControl = new CC_HomeInterestTagButton()
                 {
                     TagId = intrestTag.tagId.ToString(),
@@ -595,6 +694,7 @@ namespace TogetherCultureCRM
 
                 if (bAlreadyAssigned)
                 {
+                    //If tag already assigned just load events related to the tag button clicked by the user into the eventSearchPanel
                     homeIntrestTagButtonControl.IntrestTagButtonClick = (s, e) =>
                     {
                         LoadClickedIntrestTagEvents_IntoEventSearchPanel(intrestTag.tagId);
@@ -602,6 +702,7 @@ namespace TogetherCultureCRM
                 }
                 else
                 {
+                    //If tag han't been assigned load events related to the tag button clicked by the user into the eventSearchPanel then assign the IntrestTag to the current user
                     homeIntrestTagButtonControl.IntrestTagButtonClick = (s, e) =>
                     {
                         LoadClickedIntrestTagEvents_IntoEventSearchPanel(intrestTag.tagId);
@@ -609,18 +710,19 @@ namespace TogetherCultureCRM
                     };
                 }
 
+                //Add the contol to homeInterestTagButtonPanel, modify the location of the contol after adding it to the panel
                 homeInterestTagButtonPanel.Controls.Add(homeIntrestTagButtonControl);
                 homeIntrestTagButtonControl.Location = new Point(homeIntrestTagButtonControl.Location.X, homeIntrestTagButtonControl.Location.Y + (heightCount * 30));
                 heightCount++;
                 bAlreadyAssigned = false;
             }
 
-            //Load already booked events to bookedEventIds
             List<Guid> bookedEventIds = new List<Guid>();
             List<Event> userIntrestedEvents = new List<Event>();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+                //Load already booked events to bookedEventIds
                 string selectSql1 = "SELECT * FROM UserEvents WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(selectSql1, con))
                 {
@@ -634,9 +736,10 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Loop over the users interest tags
                 foreach (var userTagAndName in UserTagAndNameList)
                 {
-                    //Load all events for all the tagIds
+                    //Load all the events the user may be interested into 
                     string selectSql = @"SELECT * FROM Event WHERE tagId=@tagId";
                     using (SqlCommand command = new SqlCommand(selectSql, con))
                     {
@@ -660,18 +763,22 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Clear recommendedEventsPanel for new controls
             recommendedEventsPanel.Controls.Clear();
+
             // Load control for all userIntrestedEvents into recommendedEventsPanel
             heightCount = 0;
             int widthCount = 0;
             foreach (var Event in userIntrestedEvents)
             {
+                //Comapre if eventId of userIntrestedEvents is one of the ids in bookedEventIds if it is then set eventBooked to true
                 bool eventBooked = false;
                 foreach (var eventId in bookedEventIds)
                 {
                     if (eventId == Event.eventId) eventBooked = true;
                 }
 
+                //Create CC_DisplayEventCard as a new control and asign the correct details to exposed properties 
                 var eventDisplayCard = new CC_DisplayEventCard()
                 {
                     EventId = Event.eventId.ToString(),
@@ -682,6 +789,7 @@ namespace TogetherCultureCRM
                     EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
                     BookEventClick = (s, eventArg) =>
                     {
+                        //Redirects the user to events page so they can book the event if they say yes to the prompt below
                         DialogResult result = MessageBox.Show("You are about to be redirected to the Events page. Do you want to continue?",
                                               "Redirect",
                                                MessageBoxButtons.YesNo,
@@ -695,13 +803,16 @@ namespace TogetherCultureCRM
 
                 if (eventBooked)
                 {
+                    //If this event is already booked by the user then block the user from rebooking it and chnage color and text of the button
                     eventDisplayCard.BookEventButtonText = "Booked";
                     eventDisplayCard.BookEventButtonBackColor = Color.Silver;
                     eventDisplayCard.BookEventButtonEnabled = false;
                 }
 
+                //Add control to recommendedEventsPanel
                 recommendedEventsPanel.Controls.Add(eventDisplayCard);
 
+                //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
                 // Modifies the width and height of the card
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
 
@@ -719,6 +830,7 @@ namespace TogetherCultureCRM
                 widthCount++;
             }
         }
+
 
         private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -816,6 +928,7 @@ namespace TogetherCultureCRM
 
                     eventSearchPanel.Controls.Add(eventDisplayCard);
 
+                    //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
                     // Modifies the width and height of the card
                     eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
 
@@ -1218,6 +1331,7 @@ namespace TogetherCultureCRM
 
                 digitalContentDataPanel.Controls.Add(moduleDisplayCard);
 
+                //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
                 // Modifies the width and height of the card
                 moduleDisplayCard.Location = new Point(widthCount * moduleDisplayCard.Size.Width, heightCount * moduleDisplayCard.Size.Height);
 

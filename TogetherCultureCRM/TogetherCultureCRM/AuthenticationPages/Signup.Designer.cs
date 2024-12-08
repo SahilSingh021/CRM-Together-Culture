@@ -62,7 +62,6 @@
             this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -74,7 +73,6 @@
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -106,7 +104,6 @@
             this.userNameTxt.Name = "userNameTxt";
             this.userNameTxt.Size = new System.Drawing.Size(151, 20);
             this.userNameTxt.TabIndex = 7;
-            this.userNameTxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // passwordTxt
             // 
@@ -182,7 +179,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Signup_FormClosing);
-            this.Load += new System.EventHandler(this.Signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

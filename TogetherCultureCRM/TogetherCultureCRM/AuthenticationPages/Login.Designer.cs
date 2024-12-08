@@ -70,7 +70,6 @@
             this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 11;
             this.label5.Text = "Password";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // loginBtn
             // 
@@ -134,7 +133,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
