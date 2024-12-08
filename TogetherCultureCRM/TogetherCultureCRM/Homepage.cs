@@ -1416,6 +1416,14 @@ namespace TogetherCultureCRM
                         command.ExecuteNonQuery();
                     }
 
+                    // Delete UserDigitalContentModule records
+                    string deleteSql3 = @"DELETE FROM UserDigitalContentModule WHERE userId=@userId";
+                    using (SqlCommand command1 = new SqlCommand(deleteSql3, con))
+                    {
+                        command1.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                        command1.ExecuteNonQuery();
+                    }
+
                     // Delete UsedMemberBenefits records as member table has a FK restraint based of this table
                     string deleteSql1 = @"DELETE FROM UsedMemberBenefits WHERE memberId=@memberId";
                     using (SqlCommand command1 = new SqlCommand(deleteSql1, con))
