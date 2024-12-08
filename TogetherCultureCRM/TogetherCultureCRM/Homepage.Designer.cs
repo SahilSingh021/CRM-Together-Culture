@@ -134,6 +134,12 @@
             this.digitalContentDataPanel = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
+            this.allUsersBtn = new System.Windows.Forms.Button();
+            this.totalNumberOfUsersLbl = new System.Windows.Forms.Label();
+            this.totalNumberOfMembersLbl = new System.Windows.Forms.Label();
+            this.totalNumberOfEventsLbl = new System.Windows.Forms.Label();
+            this.totalNumberOfAdminsLbl = new System.Windows.Forms.Label();
+            this.totalNumberOfDigitalContentMdulesLbl = new System.Windows.Forms.Label();
             this.dashboard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -373,6 +379,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.totalNumberOfDigitalContentMdulesLbl);
+            this.panel3.Controls.Add(this.totalNumberOfEventsLbl);
+            this.panel3.Controls.Add(this.totalNumberOfAdminsLbl);
+            this.panel3.Controls.Add(this.totalNumberOfMembersLbl);
+            this.panel3.Controls.Add(this.totalNumberOfUsersLbl);
+            this.panel3.Controls.Add(this.allUsersBtn);
             this.panel3.Controls.Add(this.eventSearchBtn);
             this.panel3.Controls.Add(this.userEventSearchBtn);
             this.panel3.Controls.Add(this.manageUserBtn);
@@ -391,9 +403,9 @@
             this.eventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.eventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventSearchBtn.Location = new System.Drawing.Point(44, 335);
+            this.eventSearchBtn.Location = new System.Drawing.Point(506, 303);
             this.eventSearchBtn.Name = "eventSearchBtn";
-            this.eventSearchBtn.Size = new System.Drawing.Size(260, 260);
+            this.eventSearchBtn.Size = new System.Drawing.Size(450, 50);
             this.eventSearchBtn.TabIndex = 3;
             this.eventSearchBtn.Text = "Event Search";
             this.eventSearchBtn.UseVisualStyleBackColor = false;
@@ -407,9 +419,9 @@
             this.userEventSearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.userEventSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userEventSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEventSearchBtn.Location = new System.Drawing.Point(682, 40);
+            this.userEventSearchBtn.Location = new System.Drawing.Point(506, 408);
             this.userEventSearchBtn.Name = "userEventSearchBtn";
-            this.userEventSearchBtn.Size = new System.Drawing.Size(260, 260);
+            this.userEventSearchBtn.Size = new System.Drawing.Size(450, 50);
             this.userEventSearchBtn.TabIndex = 2;
             this.userEventSearchBtn.Text = "User Event Search";
             this.userEventSearchBtn.UseVisualStyleBackColor = false;
@@ -423,9 +435,9 @@
             this.manageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUserBtn.Location = new System.Drawing.Point(364, 42);
+            this.manageUserBtn.Location = new System.Drawing.Point(29, 514);
             this.manageUserBtn.Name = "manageUserBtn";
-            this.manageUserBtn.Size = new System.Drawing.Size(260, 260);
+            this.manageUserBtn.Size = new System.Drawing.Size(450, 50);
             this.manageUserBtn.TabIndex = 1;
             this.manageUserBtn.Text = "Manage User";
             this.manageUserBtn.UseVisualStyleBackColor = false;
@@ -439,9 +451,9 @@
             this.manageRequestsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
             this.manageRequestsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageRequestsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageRequestsBtn.Location = new System.Drawing.Point(44, 42);
+            this.manageRequestsBtn.Location = new System.Drawing.Point(29, 408);
             this.manageRequestsBtn.Name = "manageRequestsBtn";
-            this.manageRequestsBtn.Size = new System.Drawing.Size(260, 260);
+            this.manageRequestsBtn.Size = new System.Drawing.Size(450, 50);
             this.manageRequestsBtn.TabIndex = 0;
             this.manageRequestsBtn.Text = "Manage Requests";
             this.manageRequestsBtn.UseVisualStyleBackColor = false;
@@ -453,7 +465,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(984, 133);
+            this.panel4.Size = new System.Drawing.Size(984, 121);
             this.panel4.TabIndex = 2;
             // 
             // label2
@@ -1422,22 +1434,93 @@
             this.label27.TabIndex = 2;
             this.label27.Text = "Digital Content";
             // 
+            // allUsersBtn
+            // 
+            this.allUsersBtn.BackColor = System.Drawing.Color.Khaki;
+            this.allUsersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.allUsersBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.allUsersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LemonChiffon;
+            this.allUsersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.allUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allUsersBtn.Location = new System.Drawing.Point(29, 303);
+            this.allUsersBtn.Name = "allUsersBtn";
+            this.allUsersBtn.Size = new System.Drawing.Size(450, 50);
+            this.allUsersBtn.TabIndex = 4;
+            this.allUsersBtn.Text = "All Users";
+            this.allUsersBtn.UseVisualStyleBackColor = false;
+            this.allUsersBtn.Click += new System.EventHandler(this.allUsersBtn_Click);
+            // 
+            // totalNumberOfUsersLbl
+            // 
+            this.totalNumberOfUsersLbl.AutoSize = true;
+            this.totalNumberOfUsersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumberOfUsersLbl.ForeColor = System.Drawing.Color.Black;
+            this.totalNumberOfUsersLbl.Location = new System.Drawing.Point(82, 60);
+            this.totalNumberOfUsersLbl.Name = "totalNumberOfUsersLbl";
+            this.totalNumberOfUsersLbl.Size = new System.Drawing.Size(262, 29);
+            this.totalNumberOfUsersLbl.TabIndex = 5;
+            this.totalNumberOfUsersLbl.Text = "Total Number of Users:";
+            // 
+            // totalNumberOfMembersLbl
+            // 
+            this.totalNumberOfMembersLbl.AutoSize = true;
+            this.totalNumberOfMembersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumberOfMembersLbl.ForeColor = System.Drawing.Color.Black;
+            this.totalNumberOfMembersLbl.Location = new System.Drawing.Point(43, 140);
+            this.totalNumberOfMembersLbl.Name = "totalNumberOfMembersLbl";
+            this.totalNumberOfMembersLbl.Size = new System.Drawing.Size(301, 29);
+            this.totalNumberOfMembersLbl.TabIndex = 6;
+            this.totalNumberOfMembersLbl.Text = "Total Number of Members:";
+            // 
+            // totalNumberOfEventsLbl
+            // 
+            this.totalNumberOfEventsLbl.AutoSize = true;
+            this.totalNumberOfEventsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumberOfEventsLbl.ForeColor = System.Drawing.Color.Black;
+            this.totalNumberOfEventsLbl.Location = new System.Drawing.Point(621, 98);
+            this.totalNumberOfEventsLbl.Name = "totalNumberOfEventsLbl";
+            this.totalNumberOfEventsLbl.Size = new System.Drawing.Size(271, 29);
+            this.totalNumberOfEventsLbl.TabIndex = 8;
+            this.totalNumberOfEventsLbl.Text = "Total Number of Events:";
+            // 
+            // totalNumberOfAdminsLbl
+            // 
+            this.totalNumberOfAdminsLbl.AutoSize = true;
+            this.totalNumberOfAdminsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumberOfAdminsLbl.ForeColor = System.Drawing.Color.Black;
+            this.totalNumberOfAdminsLbl.Location = new System.Drawing.Point(65, 101);
+            this.totalNumberOfAdminsLbl.Name = "totalNumberOfAdminsLbl";
+            this.totalNumberOfAdminsLbl.Size = new System.Drawing.Size(279, 29);
+            this.totalNumberOfAdminsLbl.TabIndex = 7;
+            this.totalNumberOfAdminsLbl.Text = "Total Number of Admins:";
+            // 
+            // totalNumberOfDigitalContentMdulesLbl
+            // 
+            this.totalNumberOfDigitalContentMdulesLbl.AutoSize = true;
+            this.totalNumberOfDigitalContentMdulesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumberOfDigitalContentMdulesLbl.ForeColor = System.Drawing.Color.Black;
+            this.totalNumberOfDigitalContentMdulesLbl.Location = new System.Drawing.Point(437, 61);
+            this.totalNumberOfDigitalContentMdulesLbl.Name = "totalNumberOfDigitalContentMdulesLbl";
+            this.totalNumberOfDigitalContentMdulesLbl.Size = new System.Drawing.Size(455, 29);
+            this.totalNumberOfDigitalContentMdulesLbl.TabIndex = 9;
+            this.totalNumberOfDigitalContentMdulesLbl.Text = "Total Number of Digital Content Modules:";
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.adminHomePagePanel);
             this.Controls.Add(this.homePagePanel);
             this.Controls.Add(this.eventsHomePageTabPanel);
             this.Controls.Add(this.digitalContentPanel);
             this.Controls.Add(this.onlineMembersAreaPanel);
             this.Controls.Add(this.profilePagePanel);
-            this.Controls.Add(this.adminHomePagePanel);
-            this.Controls.Add(this.digitalConnectionPanel);
             this.Controls.Add(this.dashboard);
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
+            this.Controls.Add(this.digitalConnectionPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
@@ -1448,6 +1531,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.adminHomePagePanel.ResumeLayout(false);
@@ -1608,5 +1692,11 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel recommendedEventsPanel;
         private System.Windows.Forms.Panel homeInterestTagButtonPanel;
+        private System.Windows.Forms.Label totalNumberOfUsersLbl;
+        private System.Windows.Forms.Button allUsersBtn;
+        private System.Windows.Forms.Label totalNumberOfEventsLbl;
+        private System.Windows.Forms.Label totalNumberOfAdminsLbl;
+        private System.Windows.Forms.Label totalNumberOfMembersLbl;
+        private System.Windows.Forms.Label totalNumberOfDigitalContentMdulesLbl;
     }
 }

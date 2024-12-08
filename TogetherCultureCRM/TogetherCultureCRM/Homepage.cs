@@ -115,12 +115,64 @@ namespace TogetherCultureCRM
             adminEventSearchPage.Show();
         }
 
+        private void allUsersBtn_Click(object sender, EventArgs e)
+        {
+            AdminAllUsersPage adminAllUsersPage = new AdminAllUsersPage();
+            adminAllUsersPage.Owner = this;
+            adminAllUsersPage.ShowInTaskbar = false;
+            adminAllUsersPage.Show();
+        }
+
+        public void LoadAdminHomePageData()
+        {
+            Dictionary<string, int> storage = new Dictionary<string, int>();
+            Data dataCls = new Data();
+            string connectionString = dataCls.ConnectionString;
+
+            string selectSql = @"SELECT 'Users' AS TableName, COUNT(*) AS RecordCount FROM Users
+                             UNION ALL
+                             SELECT 'Admin' AS TableName, COUNT(*) AS RecordCount FROM Admin
+                             UNION ALL
+                             SELECT 'Member' AS TableName, COUNT(*) AS RecordCount FROM Member
+                             UNION ALL
+                             SELECT 'DigitalContentModule' AS TableName, COUNT(*) AS RecordCount FROM DigitalContentModule
+                             UNION ALL
+                             SELECT 'Event' AS TableName, COUNT(*) AS RecordCount FROM Event;
+            ";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string tableName = reader.GetString(reader.GetOrdinal("TableName"));
+                            int recordCount = reader.GetInt32(reader.GetOrdinal("RecordCount"));
+
+                            storage[tableName] = recordCount;
+                        }
+                    }
+                }
+            }
+
+            totalNumberOfUsersLbl.Text = "Total Number of Users: " + storage["Users"].ToString();
+            totalNumberOfAdminsLbl.Text = "Total Number of Admins: " + storage["Admin"].ToString();
+            totalNumberOfMembersLbl.Text = "Total Number of Members: " + storage["Member"].ToString();
+            totalNumberOfDigitalContentMdulesLbl.Text = "Total Number of Digital Content Modules: " + storage["DigitalContentModule"].ToString();
+            totalNumberOfEventsLbl.Text = "Total Number of Events: " + storage["Event"].ToString();
+        }
+
         private void adminHomePageTabBtn_Click(object sender, EventArgs e)
         {
             DashboardBtn_BackColorReset();
             _adminHomePageTabBtn.BackColor = Color.FromArgb(128, 255, 128);
             adminHomePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Admin Home Page";
+
+            LoadAdminHomePageData();
         }
 
         public void BookEvent(Guid eventId, Guid tagId)
