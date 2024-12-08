@@ -134,6 +134,7 @@ namespace TogetherCultureCRM
 
             if (result == DialogResult.Yes)
             {
+                bool tagIdFound = false;
                 Data dataCls = new Data();
                 string connectionString = dataCls.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -149,14 +150,32 @@ namespace TogetherCultureCRM
                         command.ExecuteNonQuery();
                     }
 
-                    //insert record into UserTag
-                    string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
-                    using (SqlCommand command = new SqlCommand(insertSql1, con))
+                    //check if UserTag record already exists
+                    string selectSql = @"SELECT * FROM UserTag WHERE userId=@userId AND tagId=@tagId";
+                    using (SqlCommand command = new SqlCommand(selectSql, con))
                     {
                         command.Parameters.AddWithValue("@userId", UserSession.User.userId);
                         command.Parameters.AddWithValue("@tagId", tagId);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                tagIdFound = true;
+                            }
+                        }
+                    }
 
-                        command.ExecuteNonQuery();
+                    if (!tagIdFound)
+                    {
+                        //insert record into UserTag
+                        string insertSql1 = "INSERT INTO UserTag (userId, tagId) VALUES (@userId, @tagId)";
+                        using (SqlCommand command = new SqlCommand(insertSql1, con))
+                        {
+                            command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                            command.Parameters.AddWithValue("@tagId", tagId);
+
+                            command.ExecuteNonQuery();
+                        }
                     }
                 }
 
