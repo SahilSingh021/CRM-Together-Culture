@@ -552,6 +552,7 @@
             this.searchBarTxt.Name = "searchBarTxt";
             this.searchBarTxt.Size = new System.Drawing.Size(300, 20);
             this.searchBarTxt.TabIndex = 61;
+            this.searchBarTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchBarTxt_KeyPress);
             // 
             // label28
             // 
@@ -616,9 +617,10 @@
             // 
             // recommendedEventsPanel
             // 
-            this.recommendedEventsPanel.Location = new System.Drawing.Point(1, 311);
+            this.recommendedEventsPanel.AutoScroll = true;
+            this.recommendedEventsPanel.Location = new System.Drawing.Point(78, 311);
             this.recommendedEventsPanel.Name = "recommendedEventsPanel";
-            this.recommendedEventsPanel.Size = new System.Drawing.Size(385, 436);
+            this.recommendedEventsPanel.Size = new System.Drawing.Size(308, 436);
             this.recommendedEventsPanel.TabIndex = 41;
             // 
             // panel6

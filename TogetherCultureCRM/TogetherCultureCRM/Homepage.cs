@@ -325,6 +325,7 @@ namespace TogetherCultureCRM
 
         public void LoadClickedIntrestTagEvents_IntoEventSearchPanel(Guid tagId)
         {
+            searchBarTxt.Text = "";
             eventSearchPanel.Controls.Clear();
             List<Guid> eventIds = new List<Guid>();
             List<Event> events = new List<Event>();
@@ -355,7 +356,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
-                //Load all events related to tag Id
+                //Load all user Events
                 string selectSql1 = "SELECT * FROM UserEvents WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(selectSql1, con))
                 {
@@ -469,6 +470,8 @@ namespace TogetherCultureCRM
 
         public void LoadHomePanelData()
         {
+            searchBarTxt.Text = "";
+            eventSearchPanel.Controls.Clear();
             List<Tuple<UserTag, string>> UserTagAndNameList = new List<Tuple<UserTag, string>>();
             Data data = new Data();
             string connectionString = data.ConnectionString;
@@ -560,24 +563,224 @@ namespace TogetherCultureCRM
                 bAlreadyAssigned = false;
             }
 
-            //Load recommended events to recommendedEventsPannel
-            //List<Guid> eventIds = new List<Guid>();
-            //foreach (var userTagAndName in UserTagAndNameList)
-            //{
-            //    //Load all events for all the tagIds
-            //    string selectSql = @"SELECT * FROM Event WHERE tagId=@tagId";
-            //    using (SqlCommand command = new SqlCommand(selectSql, con))
-            //    {
-            //        command.Parameters.AddWithValue("@tagId", userTagAndName.Item1.tagId);
-            //        using (SqlDataReader reader = command.ExecuteReader())
-            //        {
-            //            while (reader.Read())
-            //            {
-            //                tagIdFound = true;
-            //            }
-            //        }
-            //    }
-            //}
+            //Load already booked events to bookedEventIds
+            List<Guid> bookedEventIds = new List<Guid>();
+            List<Event> userIntrestedEvents = new List<Event>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql1 = "SELECT * FROM UserEvents WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(selectSql1, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            bookedEventIds.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))));
+                        }
+                    }
+                }
+
+                foreach (var userTagAndName in UserTagAndNameList)
+                {
+                    //Load all events for all the tagIds
+                    string selectSql = @"SELECT * FROM Event WHERE tagId=@tagId";
+                    using (SqlCommand command = new SqlCommand(selectSql, con))
+                    {
+                        command.Parameters.AddWithValue("@tagId", userTagAndName.Item1.tagId);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Event @event = new Event()
+                                {
+                                    eventId = Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))),
+                                    tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
+                                    eventName = reader.GetString(reader.GetOrdinal("eventName")),
+                                    eventDate = reader.GetDateTime(reader.GetOrdinal("eventDate"))
+                                };
+
+                                userIntrestedEvents.Add(@event);
+                            }
+                        }
+                    }
+                }
+            }
+
+            recommendedEventsPanel.Controls.Clear();
+            // Load control for all userIntrestedEvents into recommendedEventsPanel
+            heightCount = 0;
+            int widthCount = 0;
+            foreach (var Event in userIntrestedEvents)
+            {
+                bool eventBooked = false;
+                foreach (var eventId in bookedEventIds)
+                {
+                    if (eventId == Event.eventId) eventBooked = true;
+                }
+
+                var eventDisplayCard = new CC_DisplayEventCard()
+                {
+                    EventId = Event.eventId.ToString(),
+                    TagId = Event.tagId.ToString(),
+                    EventName = Event.eventName,
+                    EventDate = Event.eventDate.ToString("dd/MM/yyyy"),
+                    EventDay = Event.eventDate.ToString("dddd"),
+                    EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
+                    BookEventClick = (s, eventArg) =>
+                    {
+                        DialogResult result = MessageBox.Show("You are about to be redirected to the Events page. Do you want to continue?",
+                                              "Redirect",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Information
+                        );
+
+                        if (result == DialogResult.Yes) eventsHomePageTabBtn.PerformClick();
+                        return;
+                    }
+                };
+
+                if (eventBooked)
+                {
+                    eventDisplayCard.BookEventButtonText = "Booked";
+                    eventDisplayCard.BookEventButtonBackColor = Color.Silver;
+                    eventDisplayCard.BookEventButtonEnabled = false;
+                }
+
+                recommendedEventsPanel.Controls.Add(eventDisplayCard);
+
+                // Modifies the width and height of the card
+                eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+
+                // Adds gap (width) between cards
+                eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
+
+                // Adds gap (height) between cards
+                if (heightCount > 0) eventDisplayCard.Location = new Point(eventDisplayCard.Location.X, eventDisplayCard.Location.Y + (heightCount * 20));
+
+                if (widthCount == 0)
+                {
+                    heightCount++;
+                    widthCount = -1;
+                }
+                widthCount++;
+            }
+        }
+
+        private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            eventSearchPanel.Controls.Clear();
+            string searchText = searchBarTxt.Text;
+
+            if (searchText.Length <= 0) return;
+
+            List<Guid> bookedEventIds = new List<Guid>();
+            List<Event> eventList = new List<Event>();
+
+            Data data = new Data();
+            string connectionString = data.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string selectSql = "SELECT * FROM UserEvents WHERE userId=@userId";
+                using (SqlCommand command = new SqlCommand(selectSql, con))
+                {
+                    command.Parameters.AddWithValue("@userId", UserSession.User.userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            bookedEventIds.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))));
+                        }
+                    }
+                }
+
+                string selectSql1 = @"SELECT * FROM Event WHERE LOWER(eventName) LIKE LOWER(@searchText) + '%' ORDER BY eventDate;";
+
+                using (SqlCommand command = new SqlCommand(selectSql1, con))
+                {
+                    command.Parameters.AddWithValue("@searchText", searchText);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Event @event = new Event()
+                            {
+                                eventId = Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))),
+                                tagId = Guid.Parse(reader.GetString(reader.GetOrdinal("tagId"))),
+                                eventName = reader.GetString(reader.GetOrdinal("eventName")),
+                                eventDate = reader.GetDateTime(reader.GetOrdinal("eventDate")),
+                            };
+
+                            eventList.Add(@event);
+                        }
+                    }
+                }
+
+                con.Close();
+            }
+
+            if (eventList.Count > 0)
+            {
+                int heightCount = 0;
+                int widthCount = 0;
+                foreach (var Event in eventList)
+                {
+                    bool eventBooked = false;
+                    foreach (var eventId in bookedEventIds)
+                    {
+                        if (eventId == Event.eventId) eventBooked = true;
+                    }
+
+                    var eventDisplayCard = new CC_DisplayEventCard()
+                    {
+                        EventId = Event.eventId.ToString(),
+                        TagId = Event.tagId.ToString(),
+                        EventName = Event.eventName,
+                        EventDate = Event.eventDate.ToString("dd/MM/yyyy"),
+                        EventDay = Event.eventDate.ToString("dddd"),
+                        EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
+                        BookEventClick = (s, eventArg) =>
+                        {
+                            DialogResult result = MessageBox.Show("You are about to be redirected to the Events page. Do you want to continue?",
+                                                  "Redirect",
+                                                   MessageBoxButtons.YesNo,
+                                                   MessageBoxIcon.Information
+                            );
+
+                            if (result == DialogResult.Yes) eventsHomePageTabBtn.PerformClick();
+                            return;
+                        }
+                    };
+
+                    if (eventBooked)
+                    {
+                        eventDisplayCard.BookEventButtonText = "Booked";
+                        eventDisplayCard.BookEventButtonBackColor = Color.Silver;
+                        eventDisplayCard.BookEventButtonEnabled = false;
+                    }
+
+                    eventSearchPanel.Controls.Add(eventDisplayCard);
+
+                    // Modifies the width and height of the card
+                    eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
+
+                    // Adds gap (width) between cards
+                    eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
+
+                    // Adds gap (height) between cards
+                    if (heightCount > 0) eventDisplayCard.Location = new Point(eventDisplayCard.Location.X, eventDisplayCard.Location.Y + (heightCount * 20));
+
+                    if (widthCount == 1)
+                    {
+                        heightCount++;
+                        widthCount = -1;
+                    }
+                    widthCount++;
+                }
+            }
         }
 
         private void homeDashboardBtn_Click(object sender, EventArgs e)
