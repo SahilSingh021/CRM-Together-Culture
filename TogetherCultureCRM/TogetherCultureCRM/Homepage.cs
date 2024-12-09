@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -831,17 +832,22 @@ namespace TogetherCultureCRM
             }
         }
 
-
+        //This function executes when the user presses a key while focused on the search bar
         private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Clear eventSearchPanel for new controls and load the text from the textbox into the string var
             eventSearchPanel.Controls.Clear();
             string searchText = searchBarTxt.Text;
 
+            //If length of the string is 0 then return
             if (searchText.Length <= 0) return;
 
+            //Make List<Guid> bookedEventIds to load the guids of all the events the user has booked
+            //Make List<Event> eventList to load all the events that match the letters the user has typed in the search bar
             List<Guid> bookedEventIds = new List<Guid>();
             List<Event> eventList = new List<Event>();
 
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -855,13 +861,13 @@ namespace TogetherCultureCRM
                     {
                         while (reader.Read())
                         {
+                            //Load the guids of all the events the user has booked
                             bookedEventIds.Add(Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))));
                         }
                     }
                 }
 
                 string selectSql1 = @"SELECT * FROM Event WHERE LOWER(eventName) LIKE LOWER(@searchText) + '%' ORDER BY eventDate;";
-
                 using (SqlCommand command = new SqlCommand(selectSql1, con))
                 {
                     command.Parameters.AddWithValue("@searchText", searchText);
@@ -870,6 +876,7 @@ namespace TogetherCultureCRM
                     {
                         while (reader.Read())
                         {
+                            //Load all the events that match the letters the user has typed in the search bar and order by the eventDate
                             Event @event = new Event()
                             {
                                 eventId = Guid.Parse(reader.GetString(reader.GetOrdinal("eventId"))),
@@ -888,16 +895,19 @@ namespace TogetherCultureCRM
 
             if (eventList.Count > 0)
             {
+                //Loop over all the matching events that we loaded in eventList
                 int heightCount = 0;
                 int widthCount = 0;
                 foreach (var Event in eventList)
                 {
+                    //Check if the id of the current event matches one of the ids of the events that have already been booked if it has then set eventBooked true 
                     bool eventBooked = false;
                     foreach (var eventId in bookedEventIds)
                     {
                         if (eventId == Event.eventId) eventBooked = true;
                     }
 
+                    //Create a new CC_DisplayEventCard instance and assign values
                     var eventDisplayCard = new CC_DisplayEventCard()
                     {
                         EventId = Event.eventId.ToString(),
@@ -908,6 +918,7 @@ namespace TogetherCultureCRM
                         EventTime = "Starting Time: " + Event.eventDate.ToString("t"),
                         BookEventClick = (s, eventArg) =>
                         {
+                            //Redirect the user to the evetns page if they want to book the event
                             DialogResult result = MessageBox.Show("You are about to be redirected to the Events page. Do you want to continue?",
                                                   "Redirect",
                                                    MessageBoxButtons.YesNo,
@@ -919,6 +930,7 @@ namespace TogetherCultureCRM
                         }
                     };
 
+                    //If this event is already booked by the user then block the user from rebooking it and chnage color and text of the button
                     if (eventBooked)
                     {
                         eventDisplayCard.BookEventButtonText = "Booked";
@@ -926,6 +938,7 @@ namespace TogetherCultureCRM
                         eventDisplayCard.BookEventButtonEnabled = false;
                     }
 
+                    //Add the control to eventSearchPanel
                     eventSearchPanel.Controls.Add(eventDisplayCard);
 
                     //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
@@ -948,18 +961,23 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function executes when the user clicks the Home button on the dashboard
         private void homeDashboardBtn_Click(object sender, EventArgs e)
         {
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             homeDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             homePagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Home Page";
 
+            //Call the function to load data for the gome page pannel
             LoadHomePanelData();
         }
 
+        //This function executes when the user clicks the Profile button on the dashboard
         private void profileDashboardBtn_Click(object sender, EventArgs e)
         {
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             profileDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             profilePagePanel.BringToFront();
@@ -967,6 +985,7 @@ namespace TogetherCultureCRM
 
             if (UserSession.VisitorLogs.Count > 0)
             {
+                //If the current user has visitor logs then make a StringBuilder and add the string to visitorLogTxt or add no logs message to visitorLogTxt
                 StringBuilder sb = new StringBuilder();
                 foreach (var visitorLog in UserSession.VisitorLogs)
                 {
@@ -976,6 +995,7 @@ namespace TogetherCultureCRM
             }
             else visitorLogTxt.Text = "You have not made any visits to Together Culture as of now.";
 
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
 
@@ -999,6 +1019,7 @@ namespace TogetherCultureCRM
                         {
                             if (reader.Read())
                             {
+                                //If they have made a reuest then set bRequestMade to true and load the datetime of the request 
                                 requestDateTime = reader.GetDateTime(reader.GetOrdinal("requestTime"));
                                 bRequestMade = true;
                             }
@@ -1009,12 +1030,14 @@ namespace TogetherCultureCRM
 
                 if (!bRequestMade)
                 {
+                    //If they havn't made a request then hide postRequestPanel and show preMemberPanel
                     postRequestPanel.Hide();
                     preMemberPanel.Show();
                     preMemberPanel.BringToFront();
                 }
                 else
                 {
+                    //If they have made a request then assing requestDateLbl the string, hide preMemberPanel and show postRequestPanel
                     requestDateLbl.Text = "Request Date: " + requestDateTime.ToString("dd/MMMM/yyyyy");
                     preMemberPanel.Hide();
                     postRequestPanel.Show();
@@ -1024,7 +1047,7 @@ namespace TogetherCultureCRM
                 return;
             }
 
-            // Load MemberKeyIntrest
+            // Load MemberKeyIntrest for the current user and assign it to the UserSession classes MemberKeyIntrest feild
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -1051,6 +1074,7 @@ namespace TogetherCultureCRM
                 con.Close();
             }
 
+            //Check the correct check box if MemberKeyIntrest is not null
             if (UserSession.MemberKeyIntrest != null) KeyInterest_CheckedChanged(UserSession.MemberKeyIntrest.keyIntrestName);
 
             postRequestPanel.Hide();
@@ -1059,6 +1083,7 @@ namespace TogetherCultureCRM
             updateUserProfilePanel.BringToFront();
         }
 
+        //This function executes when the user clicks the Benefits button on the dashboard
         private void benefitsDashboardBtn_Click(object sender, EventArgs e)
         {
             if (!UserSession.User.bIsMember)
@@ -1074,6 +1099,7 @@ namespace TogetherCultureCRM
                 return;
             }
 
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             benefitsDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             benefitsPagePanel.BringToFront();
@@ -1100,13 +1126,17 @@ namespace TogetherCultureCRM
             else usedBenefitsTxtBox.Text = "No benefits have been used so far.";
         }
 
+        //This function executes when the user clicks the DigitalConnection button on the dashboard
         private void digitalConnectionDashboardBtn_Click(object sender, EventArgs e)
         {
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             digitalConnectionDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             digitalConnectionPanel.BringToFront();
             Homepage.ActiveForm.Text = "Digital Connection Page";
         }
+
+        //This function loads chats to the panel in Online Members Area
         public void LoadChatsToChatPanel()
         {
             Data dataCls = new Data();
@@ -1176,6 +1206,7 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function executes when the user clicks the Online Members Area button on the dashboard
         private void onlineMembersAreadDashboardBtn_Click(object sender, EventArgs e)
         {
             chatMessagesPanel.Controls.Clear();
@@ -1192,6 +1223,7 @@ namespace TogetherCultureCRM
                 return;
             }
 
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             onlineMembersAreadDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             onlineMembersAreaPanel.BringToFront();
@@ -1200,6 +1232,7 @@ namespace TogetherCultureCRM
             LoadChatsToChatPanel();
         }
 
+        //This function adds a record of the sent message into the DB
         private void sendMsgBtn_Click(object sender, EventArgs e)
         {
             // Insert Chat Record into ChatLogs
@@ -1227,6 +1260,7 @@ namespace TogetherCultureCRM
             onlineMembersAreadDashboardBtn.PerformClick();
         }
 
+        //This function adds a record of the booked Digital Content Module into the DB
         public void BookDigitalContentModule(Guid digitalContentModuleId, string moduleName)
         {
             // Book the DigitalContentModule for the current user
@@ -1248,6 +1282,7 @@ namespace TogetherCultureCRM
             digitalContentDashboardBtn.PerformClick();
         }
 
+        //This function executes when the user clicks the Digital Content button on the dashboard
         private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
         {
             digitalContentDataPanel.Controls.Clear();
@@ -1264,6 +1299,7 @@ namespace TogetherCultureCRM
                 return;
             }
 
+            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
             DashboardBtn_BackColorReset();
             digitalContentDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
             digitalContentPanel.BringToFront();
@@ -1350,6 +1386,7 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function executes when the user clicks the Membership button on the dashboard
         private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedMembershipTypeName = membershipDropBox.Text;
@@ -1404,6 +1441,7 @@ namespace TogetherCultureCRM
             membershipBenefitsTxtBox.Text = sb.ToString();
         }
 
+        //This function executes when the user clicks the Become A Member button
         private void becomeAMemberBtn_Click(object sender, EventArgs e)
         {
             string selectedMembershipTypeName = membershipDropBox.Text;
@@ -1504,6 +1542,7 @@ namespace TogetherCultureCRM
             membershipPageTabBtn.PerformClick();
         }
 
+        //This function executes when the user clicks the Cancle button on the dashboard
         private void cancleMembershipBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
