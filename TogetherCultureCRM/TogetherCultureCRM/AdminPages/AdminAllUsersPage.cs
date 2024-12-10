@@ -22,9 +22,13 @@ namespace TogetherCultureCRM.AdminPages
             InitializeComponent();
         }
 
+        //This function loads data for the current form
         void LoadData()
         {
+            //Clear requestPanel for new controls
             requestPanel.Controls.Clear();
+
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             List<Tuple<User, string>> userList = new List<Tuple<User, string>>();
@@ -33,6 +37,7 @@ namespace TogetherCultureCRM.AdminPages
             {
                 con.Open();
 
+                //Retrieve all the users and their membershipNames to display later and store them into the List of tuples where item1 stores User and item2 stores string for the membership name of that user
                 string selectSql = @"SELECT
                                         u.userId, u.username, u.password, u.email, u.bIsAdmin, u.bIsBanned, u.bIsMember, m.membershipTypeId, mt.typeName
                                     FROM 
@@ -65,6 +70,7 @@ namespace TogetherCultureCRM.AdminPages
                                 ? ""
                                 : reader.GetString(reader.GetOrdinal("typeName"));
 
+                            //Add data to the userList
                             userList.Add(new Tuple<User, string>(user, membershipName));
                         }
                     }
@@ -73,12 +79,13 @@ namespace TogetherCultureCRM.AdminPages
                 con.Close();
             }
 
-
             if (userList.Count > 0)
             {
+                //Loop over the loaded list userList
                 int i = 0;
                 foreach (var item in userList)
                 {
+                    //Create a new CC_DisplayUserCard control for each user loaded and asing the values to exposed properties
                     var user = item.Item1;
                     var userDisplayCardControl = new CC_DisplayUserCard();
                     userDisplayCardControl.UserIdLbl = user.userId.ToString();
@@ -98,6 +105,7 @@ namespace TogetherCultureCRM.AdminPages
 
                     userDisplayCardControl.ManageButtonClick = (s, eventArg) =>
                     {
+                        //On click fo the Manage button take the Admin to the edit that users info
                         AdminEditUserPage adminEditUserPage = new AdminEditUserPage(user);
                         adminEditUserPage.Text = "Admin Edit " + user.username;
                         adminEditUserPage.Owner = this;
@@ -105,8 +113,10 @@ namespace TogetherCultureCRM.AdminPages
                         adminEditUserPage.Show();
                     };
 
+                    //Add the control to the requestPanel
                     requestPanel.Controls.Add(userDisplayCardControl);
 
+                    //Change the location property of the control to make sure they dont overlap
                     if (requestPanel.Controls.Count > 1)
                     {
                         userDisplayCardControl.Location = new Point(0, i * userDisplayCardControl.Size.Height);
@@ -120,13 +130,10 @@ namespace TogetherCultureCRM.AdminPages
             }
         }
 
-        private void searchBarTxt_KeyPress(object sender, KeyPressEventArgs e)
+        //When the Admin refocuses the page it refreshes the data
+        private void AdminAllUsersPage_Activated(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void AdminManageUsersPage_Activated(object sender, EventArgs e)
-        {
+            //Load the data for the page
             LoadData();
         }
     }

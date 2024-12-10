@@ -18,6 +18,7 @@ namespace TogetherCultureCRM.AdminPages
 {
     public partial class AdminViewEventDetailsPage : Form
     {
+        //A new constructor for when we want to create the page with an Event in mind
         public AdminViewEventDetailsPage(Event selectdEvent)
         {
             InitializeComponent();
@@ -29,18 +30,20 @@ namespace TogetherCultureCRM.AdminPages
             InitializeComponent();
         }
 
+        //This functio executes when the form loads
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             List<Tuple<User, string>> userList = new List<Tuple<User, string>>();
-
-            // Load all users that have booked the selected event
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
+                // Slecte all users and membershipNames of the users, that have booked the selected event
                 string selectSql = @"SELECT
                                         ue.userId, ue.eventId, u.userId, u.username, u.password, u.email, u.bIsAdmin, u.bIsBanned, u.bIsMember, m.membershipTypeId, mt.typeName
                                     FROM 
@@ -76,22 +79,27 @@ namespace TogetherCultureCRM.AdminPages
                                 ? ""
                                 : reader.GetString(reader.GetOrdinal("typeName"));
 
+                            //Load the data into userList
                             userList.Add(new Tuple<User, string>(user, membershipName));
                         }
                     }
                 }
             }
 
+            //Set the value for totalGuestsLbl
             totalGuestsLbl.Text = "Total Guests: " + userList.Count;
 
+            //Set visible property of noEventsLbl to true or false acording to the userList.Count
             if (userList.Count > 0) noEventsLbl.Visible = false;
             else noEventsLbl.Visible = true;
 
             if (userList.Count > 0)
             {
+                //Loop over the loaded list userList
                 int i = 0;
                 foreach (var item in userList)
                 {
+                    //Create a new CC_DisplayUserCard control for each user loaded and asing the values to exposed properties
                     var user = item.Item1;
                     var userDisplayCardControl = new CC_DisplayUserCard();
                     userDisplayCardControl.UserIdLbl = user.userId.ToString();
@@ -113,8 +121,10 @@ namespace TogetherCultureCRM.AdminPages
                     userDisplayCardControl.ManageButtonEnabled = false;
                     userDisplayCardControl.ManageButtonColor = Color.Silver;
 
+                    //Add the control to the mainPanel
                     mainPanel.Controls.Add(userDisplayCardControl);
 
+                    //Change the location property of the control to make sure they dont overlap
                     if (mainPanel.Controls.Count > 1)
                     {
                         userDisplayCardControl.Location = new Point(0, i * userDisplayCardControl.Size.Height);

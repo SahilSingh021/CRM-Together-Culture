@@ -76,7 +76,7 @@
             this.Name = "AdminAllUsersPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Requests";
-            this.Activated += new System.EventHandler(this.AdminManageUsersPage_Activated);
+            this.Activated += new System.EventHandler(this.AdminAllUsersPage_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -18,6 +18,7 @@ namespace TogetherCultureCRM.AdminPages
 {
     public partial class AdminViewUserEventsAndVisitsPage : Form
     {
+        //A new constructor for when we want to create the page with an user in mind
         public AdminViewUserEventsAndVisitsPage(User selectdUser)
         {
             InitializeComponent();
@@ -32,15 +33,16 @@ namespace TogetherCultureCRM.AdminPages
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             List<Event> userEvents = new List<Event>();
-
-            // Load all userEvents and then 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
+                //Select all userEvents and event details for the selected user 
                 string selectSql = @"SELECT
                                         ue.userId, ue.eventId, e.eventId, e.tagId, e.eventName, e.eventDate
                                     FROM 
@@ -67,6 +69,7 @@ namespace TogetherCultureCRM.AdminPages
                                 eventDate = reader.GetDateTime(reader.GetOrdinal("eventDate"))
                             };
 
+                            //Add data to the userEvents
                             userEvents.Add(@event);
                         }
                     }
@@ -94,19 +97,23 @@ namespace TogetherCultureCRM.AdminPages
                                 visitDate = reader.GetDateTime(reader.GetOrdinal("visitDate"))
                             };
 
+                            //Add data to the userVisitorLogs
                             userVisitorLogs.Add(visitorLog);
                         }
                     }
                 }
             }
 
+            //Chnage the visible property of noEventsLbl acording to userEvents.Count
             if (userEvents.Count > 0) noEventsLbl.Visible = false;
             else noEventsLbl.Visible = true;
 
+            //Loop over the loaded list userEvents
             int heightCount = 0;
             int widthCount = 0;
             foreach (var Event in userEvents)
             {
+                //Create a new CC_DisplayEventCard control for each user loaded and asing the values to exposed properties
                 var eventDisplayCard = new CC_DisplayEventCard()
                 {
                     EventId = Event.eventId.ToString(),
@@ -121,8 +128,10 @@ namespace TogetherCultureCRM.AdminPages
                 eventDisplayCard.BookEventButtonBackColor = Color.Silver;
                 eventDisplayCard.BookEventButtonEnabled = false;
 
+                //Add the control to the eventBookingPanel
                 eventBookingPanel.Controls.Add(eventDisplayCard);
 
+                //Change the location property of the control to make sure they dont overlap
                 eventDisplayCard.Location = new Point(widthCount * eventDisplayCard.Size.Width, heightCount * eventDisplayCard.Size.Height);
                 eventDisplayCard.Location = new Point(eventDisplayCard.Location.X + (widthCount * 20), eventDisplayCard.Location.Y);
 
@@ -138,14 +147,17 @@ namespace TogetherCultureCRM.AdminPages
 
             if (userVisitorLogs.Count > 0)
             {
+                //If there are visitor logs for this user then add them to a string builder with a formated string
                 StringBuilder sb = new StringBuilder();
                 foreach (var visitorLog in userVisitorLogs)
                 {
                     sb.AppendLine($"{_selectdUser.username} visited on the {visitorLog.visitDate.ToString("dd/MM/yyyy")}, at {visitorLog.visitDate.ToString("t")}.");
                 }
+
+                //Add the stringbuilder text to the visitorLogTxt
                 visitorLogTxt.Text = sb.ToString();
             }
-            else visitorLogTxt.Text = "You have not made any visits to Together Culture as of now.";
+            else visitorLogTxt.Text = "You have not made any visits to Together Culture as of now.";    //Or set message in visitorLogTxt
         }
 
         private User _selectdUser;

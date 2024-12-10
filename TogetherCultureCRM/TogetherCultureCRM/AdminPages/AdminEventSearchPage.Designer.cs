@@ -99,7 +99,7 @@
             this.Name = "AdminEventSearchPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Search";
-            this.Activated += new System.EventHandler(this.AdminUserEventSearchPage_Activated);
+            this.Activated += new System.EventHandler(this.AdminEventSearchPage_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -18,6 +18,7 @@ namespace TogetherCultureCRM.AdminPages
 {
     public partial class AdminEditUserPage : Form
     {
+        //A new constructor for when we want to create the page with an user in mind
         public AdminEditUserPage(User selectedUser)
         {
             InitializeComponent();
@@ -29,10 +30,12 @@ namespace TogetherCultureCRM.AdminPages
             InitializeComponent();
         }
 
+        //This functio executes when the form loads
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
+            //Load all the information inside of _selectdUser to the textboxes
             userIdTxt.Text = _selectdUser.userId.ToString();
             usernameTxt.Text = _selectdUser.username;
             emailTxt.Text = _selectdUser.email;
@@ -44,8 +47,10 @@ namespace TogetherCultureCRM.AdminPages
 
         private User _selectdUser;
 
+        //This function executes when the admin clicks the update button
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            //Load all the text inside the textbox fields
             string username = usernameTxt.Text;
             string email = emailTxt.Text;
             string password = passwordTxt.Text;
@@ -53,6 +58,7 @@ namespace TogetherCultureCRM.AdminPages
             bool isBanned = isBannedCheckBox.Checked;
             bool isMember = isMemberCheckBox.Checked;
 
+            //Validate if the text is god data to be inserted into the DB
             #region User Validations
             if (username == "" || password == "" || email == "")
             {
@@ -74,27 +80,28 @@ namespace TogetherCultureCRM.AdminPages
                 MessageBox.Show("Invalid email address. Please enter a valid email address.", "Invalid Email");
                 return;
             }
-            #endregion
-
             if (username == _selectdUser.username && email == _selectdUser.email && password == _selectdUser.password
                 && isAdmin == _selectdUser.bIsAdmin && isBanned == _selectdUser.bIsBanned && isMember == _selectdUser.bIsMember)
             {
                 MessageBox.Show("User is already up to date. Nothing to modify.");
                 return;
             }
-
             if (_selectdUser.userId == UserSession.User.userId)
             {
                 MessageBox.Show("You cannot update your own user.");
                 this.Close();
-                return; 
+                return;
             }
+            #endregion
 
+            //Access the connection string from the App.config and open a connection with the database
             Data data = new Data();
             string connectionString = data.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
+                //Update the selected user with new details
                 string updateSql = @"UPDATE Users SET username = @username, 
                                                       email = @email, 
                                                       password = @password, 
@@ -118,6 +125,7 @@ namespace TogetherCultureCRM.AdminPages
                     {
                         if (!_selectdUser.bIsAdmin && isAdmin)
                         {
+                            //If the selected user is now going to be a admin then add a new record into the admin table
                             Guid adminId = Guid.NewGuid();
                             string insertSql = @"INSERT INTO Admin (adminId, userId) VALUES (@adminId, @userId)";
                             using (SqlCommand command1 = new SqlCommand(insertSql, con))
@@ -131,6 +139,7 @@ namespace TogetherCultureCRM.AdminPages
                         }
                         else if (_selectdUser.bIsAdmin && !isAdmin)
                         {
+                            //If the selected user is going to be removed from being a admin then remove the existing record from the admin table
                             string deleteSql = @"DELETE FROM Admin WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
@@ -139,8 +148,10 @@ namespace TogetherCultureCRM.AdminPages
                             }
                         }
 
+                        //If the selected user is now going to be a Member
                         if (!_selectdUser.bIsMember && isMember)
                         {
+                            //Delete any record of a request in the AdminRequests table to become a member
                             string deleteSql = @"DELETE FROM AdminRequests WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
@@ -148,6 +159,7 @@ namespace TogetherCultureCRM.AdminPages
                                 command1.ExecuteNonQuery();
                             }
 
+                            //Get the ID of the Community membership
                             Guid communityMembershipId;
                             string selectSql = "SELECT membershipTypeId FROM MembershipType WHERE typeName='Community'";
                             using (SqlCommand command1 = new SqlCommand(selectSql, con))
@@ -156,6 +168,7 @@ namespace TogetherCultureCRM.AdminPages
                                 communityMembershipId = Guid.Parse(result.ToString());
                             }
 
+                            //Add a new record into the Member table with the Community membership
                             Guid memberId = Guid.NewGuid();
                             string insertMemberSql = "INSERT INTO Member (memberId, userId, membershipTypeId) VALUES (@memberId, @userId, @membershipTypeId)";
                             using (SqlCommand command1 = new SqlCommand(insertMemberSql, con))
@@ -168,6 +181,8 @@ namespace TogetherCultureCRM.AdminPages
                         }
                         else if (_selectdUser.bIsMember && !isMember)
                         {
+                            //If the user is no longer going to be a Member
+                            //Get the memberId of the selected user
                             Guid memberId = Guid.Empty;
                             string selectSql = "SELECT * FROM Member WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(selectSql, con))
@@ -182,6 +197,7 @@ namespace TogetherCultureCRM.AdminPages
                                 }
                             }
 
+                            //Delete the UsedMemberBenefits of the selected user
                             string deleteSql = @"DELETE FROM UsedMemberBenefits WHERE memberId=@memberId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                             {
@@ -189,6 +205,7 @@ namespace TogetherCultureCRM.AdminPages
                                 command1.ExecuteNonQuery();
                             }
 
+                            //Delete the Member record of the selected user
                             string deleteSql1 = @"DELETE FROM Member WHERE userId=@userId";
                             using (SqlCommand command1 = new SqlCommand(deleteSql1, con))
                             {
@@ -197,10 +214,12 @@ namespace TogetherCultureCRM.AdminPages
                             }
                         }
 
+                        //Show success message
                         MessageBox.Show("User updated successfully!");
                     }
                     else
                     {
+                        //Show failure message if something went wrong 
                         MessageBox.Show("Update failed. User not found.");
                     }
                 }
@@ -208,6 +227,7 @@ namespace TogetherCultureCRM.AdminPages
                 con.Close();
             }
 
+            //Update the _selected user with new details (Dont really need too...??)
             _selectdUser.username = username;
             _selectdUser.email = email;
             _selectdUser.password = password;
@@ -215,6 +235,7 @@ namespace TogetherCultureCRM.AdminPages
             _selectdUser.bIsBanned = isBanned;
             _selectdUser.bIsMember = isMember;
 
+            //Close form
             this.Close();
         }
     }

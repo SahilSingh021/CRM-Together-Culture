@@ -1086,6 +1086,7 @@ namespace TogetherCultureCRM
         //This function executes when the user clicks the Benefits button on the dashboard
         private void benefitsDashboardBtn_Click(object sender, EventArgs e)
         {
+            //If the current user is not a member then just return
             if (!UserSession.User.bIsMember)
             {
                 DialogResult result = MessageBox.Show(
@@ -1105,10 +1106,14 @@ namespace TogetherCultureCRM
             benefitsPagePanel.BringToFront();
             Homepage.ActiveForm.Text = "Active Benefits Page";
 
+            //2 instances of StringBuilder class for user and unsed benefits
             StringBuilder usedBenefitsSB = new StringBuilder();
             StringBuilder unusedBenefitsSB = new StringBuilder();
+
+            //Loop over each SubscribedMemberBenefits
             foreach (MemberBenefits memberBenefit in UserSession.SubscribedMemberBenefits)
             {
+                //Compare each SubscribedMemberBenefits with every UsedMemberBenefits to see if it has already been used if so then append string to usedBenefitsSB and set usedBenefit true
                 bool usedBenefit = false;
                 foreach (UsedMemberBenefits usedMemberBenefit in UserSession.UsedMemberBenefits)
                 {
@@ -1118,9 +1123,10 @@ namespace TogetherCultureCRM
                         usedBenefit = true;
                     }
                 }
-                if (!usedBenefit) unusedBenefitsSB.AppendLine(memberBenefit.benefitsDescription);
+                if (!usedBenefit) unusedBenefitsSB.AppendLine(memberBenefit.benefitsDescription);   //Otherwise append to unusedBenefitsSB
             }
 
+            //Set the used and unused strings to the correct textboxes
             unusedBenefitsTxtBox.Text = unusedBenefitsSB.ToString();
             if (UserSession.UsedMemberBenefits.Count > 0) usedBenefitsTxtBox.Text = usedBenefitsSB.ToString();
             else usedBenefitsTxtBox.Text = "No benefits have been used so far.";
@@ -1139,8 +1145,11 @@ namespace TogetherCultureCRM
         //This function loads chats to the panel in Online Members Area
         public void LoadChatsToChatPanel()
         {
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
+
+            //Create a list of tuples that stores ChatLog as item1 and string as item2
             List<Tuple<ChatLog, string>> chatLogs = new List<Tuple<ChatLog, string>>();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -1156,6 +1165,7 @@ namespace TogetherCultureCRM
                     {
                         while (reader.Read())
                         {
+                            //Load all the chat logs and usernames of the users the chats belong to into the chatLogs tuple list above
                             ChatLog chatLog = new ChatLog()
                             {
                                 chatId = Guid.Parse(reader.GetString(reader.GetOrdinal("chatId"))),
@@ -1173,6 +1183,8 @@ namespace TogetherCultureCRM
 
             if (chatLogs.Count > 0)
             {
+                //Create lastChatControl so we can scroll to the last one for the users to view the latest chats
+                //Loop over all the chats in chatLogs and add the values from it to a new CC_DisplayChatLogCard and display it in the chatMessagesPanel
                 int i = 0;
                 int totalLogs = chatLogs.Count;
                 CC_DisplayChatLogCard lastChatControl = null;
@@ -1189,6 +1201,7 @@ namespace TogetherCultureCRM
 
                     chatMessagesPanel.Controls.Add(chatDisplayCardControl);
 
+                    //Modify the height location of the control so they dont overlap one another
                     if (chatMessagesPanel.Controls.Count > 1)
                     {
                         chatDisplayCardControl.Location = new Point(0, i * chatDisplayCardControl.Size.Height);
@@ -1202,6 +1215,7 @@ namespace TogetherCultureCRM
                     i++;
                 }
 
+                //Scroll to the last control
                 chatMessagesPanel.ScrollControlIntoView(lastChatControl);
             }
         }
@@ -1209,7 +1223,10 @@ namespace TogetherCultureCRM
         //This function executes when the user clicks the Online Members Area button on the dashboard
         private void onlineMembersAreadDashboardBtn_Click(object sender, EventArgs e)
         {
+            //Clear chatMessagesPanel for new controls
             chatMessagesPanel.Controls.Clear();
+
+            //If the current user is not a member then just return
             if (!UserSession.User.bIsMember)
             {
                 DialogResult result = MessageBox.Show(
@@ -1229,13 +1246,14 @@ namespace TogetherCultureCRM
             onlineMembersAreaPanel.BringToFront();
             Homepage.ActiveForm.Text = "Online Members Area Page";
 
+            //Load the chats to the chatMessagesPanel
             LoadChatsToChatPanel();
         }
 
         //This function adds a record of the sent message into the DB
         private void sendMsgBtn_Click(object sender, EventArgs e)
         {
-            // Insert Chat Record into ChatLogs
+            // Insert Chat Record into ChatLogs if the user is a member
             if (UserSession.User.bIsMember)
             {
                 string chatText = chatTextBox.Text;
@@ -1256,6 +1274,7 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Clear chatTextBox and refrect Online Members Panle by onlineMembersAreadDashboardBtn.PerformClick();
             chatTextBox.Text = "";
             onlineMembersAreadDashboardBtn.PerformClick();
         }
@@ -1278,6 +1297,7 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Show success message to the user and refresh Digital Content page by digitalContentDashboardBtn.PerformClick();
             MessageBox.Show("You have successfully booked " + moduleName + "!", "Booked", MessageBoxButtons.OK, MessageBoxIcon.Information);
             digitalContentDashboardBtn.PerformClick();
         }
@@ -1285,7 +1305,10 @@ namespace TogetherCultureCRM
         //This function executes when the user clicks the Digital Content button on the dashboard
         private void digitalContentDashboardBtn_Click(object sender, EventArgs e)
         {
+            //Clear digitalContentDataPanel for new controls
             digitalContentDataPanel.Controls.Clear();
+
+            //If the current user is not a member then just return
             if (!UserSession.User.bIsMember)
             {
                 DialogResult result = MessageBox.Show(
@@ -1305,12 +1328,17 @@ namespace TogetherCultureCRM
             digitalContentPanel.BringToFront();
             Homepage.ActiveForm.Text = "Digital Content Page";
 
+            //Create a List of tuples where Guid is stored as item1 and DateTime as item2 
             List<Tuple<Guid, DateTime>> bookedDigitalContentModules = new List<Tuple<Guid, DateTime>>();
+
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
+                //Load UserDigitalContentModule for the current user into the list above
                 string selectSql = "SELECT * FROM UserDigitalContentModule WHERE userId=@userId";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
@@ -1329,10 +1357,12 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Loop over each DigitalContentModules loaded at login
             int heightCount = 0;
             int widthCount = 0;
             foreach (var digitalContentModule in UserSession.DigitalContentModules)
             {
+                //Then loop over every booked content module for the current user and get the moduleDateTime and set bookedModule true if they are a match
                 DateTime moduleDateTime = DateTime.Now;
                 bool bookedModule = false;
                 foreach (var bookedDigitalContentModule in bookedDigitalContentModules)
@@ -1346,6 +1376,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Create a new CC_DisplayDigtialContentModule and asing vlaues
                 var moduleDisplayCard = new CC_DisplayDigtialContentModule()
                 {
                     ModuleName = digitalContentModule.moduleName,
@@ -1357,14 +1388,16 @@ namespace TogetherCultureCRM
 
                 if (bookedModule)
                 {
+                    //If the module is booked then assign these values to the moduleDisplayCard
                     moduleDisplayCard.ModuleDateVisible = true;
                     moduleDisplayCard.ModuleDate = moduleDateTime.ToString("dd/MM/yy");
                     moduleDisplayCard.Enabled = false;
                     moduleDisplayCard.BookModuleButtonText = "Module Booked";
                     moduleDisplayCard.BookModuleButtonBackColor = Color.Silver;
                 }
-                else moduleDisplayCard.ModuleDateVisible = false;
+                else moduleDisplayCard.ModuleDateVisible = false;   //Otherwise make it invisible
 
+                //Add newley control to digitalContentDataPanel
                 digitalContentDataPanel.Controls.Add(moduleDisplayCard);
 
                 //Modify the location of the control that has been added to the eventBookingPanel so they do not overlap one another
@@ -1386,12 +1419,14 @@ namespace TogetherCultureCRM
             }
         }
 
-        //This function executes when the user clicks the Membership button on the dashboard
+        //This function executes when the user chnages the index on the membership dropbox
         private void membershipDropBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Retrieve text from membershipDropBox for the selected item and get the membership record that matches the name selected 
             string selectedMembershipTypeName = membershipDropBox.Text;
             var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
 
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
             List<string> memberBenefits = new List<string>();
@@ -1399,6 +1434,8 @@ namespace TogetherCultureCRM
             {
                 List<Guid> memberBenefitsIdList = new List<Guid>();
                 con.Open();
+
+                //Load all the memberBenefitsId's into memberBenefitsIdList for the current membershipTypeId
                 string selectSql = "SELECT memberBenefitsId FROM MembershipTypeBenefits WHERE membershipTypeId=@membershipTypeId";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
@@ -1412,6 +1449,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Load all the benefits that come with the selected membershipTypeId into memberBenefits
                 string selectSql1 = "SELECT benefitsDescription FROM MemberBenefits WHERE memberBenefitsId=@memberBenefitsId";
                 foreach (Guid memberBenefitsId in memberBenefitsIdList)
                 {
@@ -1429,6 +1467,7 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Display the selected membership and the benefits that come with it to the user in the membershipDescriptionTxtBox and membershipBenefitsTxtBox
             membershipDescriptionTxtBox.Text = "Membership Name: " + selectedMembership.typeName + "\nDescription: " + selectedMembership.description + "\nCost: £" +
             selectedMembership.cost.ToString() + "\nJoining Fee: £" + selectedMembership.joiningFee.ToString() + "\nDuration: " + selectedMembership.duration;
 
@@ -1444,6 +1483,7 @@ namespace TogetherCultureCRM
         //This function executes when the user clicks the Become A Member button
         private void becomeAMemberBtn_Click(object sender, EventArgs e)
         {
+            //Retrieve text from membershipDropBox for the selected item, check if its the default vale and get the membership record that matches the name selected if its not the default value
             string selectedMembershipTypeName = membershipDropBox.Text;
 
             if (selectedMembershipTypeName == "Select Membership...")
@@ -1456,13 +1496,14 @@ namespace TogetherCultureCRM
             Guid currentUserId = UserSession.User.userId;
             var selectedMembership = UserSession.MembershipTypes.FirstOrDefault(mt => mt.typeName == selectedMembershipTypeName);
 
+            //Access the connection string from the App.config and open a connection with the database
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                // Delete any requests in the AdminRequests table created at signup
+                // Delete any requests in the AdminRequests table created by the user clicking the ask to be a member button
                 string deleteSql = @"DELETE FROM AdminRequests WHERE userId=@userId";
                 using (SqlCommand command1 = new SqlCommand(deleteSql, con))
                 {
@@ -1488,7 +1529,7 @@ namespace TogetherCultureCRM
                     command.ExecuteNonQuery();
                 }
 
-                // Load Active Member Benefits
+                // Load Active Member Benefits store them inside the static UserSession classes member 'SubscribedMemberBenefits' list
                 List<Guid> memberBenefitsIdList = new List<Guid>();
                 string selectSql1 = "SELECT memberBenefitsId FROM MembershipTypeBenefits WHERE membershipTypeId=@membershipTypeId";
                 using (SqlCommand command1 = new SqlCommand(selectSql1, con))
@@ -1526,6 +1567,7 @@ namespace TogetherCultureCRM
                 }
                 con.Close();
 
+                //Assign values to update the current session for the user
                 UserSession.User.bIsMember = true;
 
                 UserSession.Member.memberId = memberId;
@@ -1536,15 +1578,18 @@ namespace TogetherCultureCRM
 
                 UserSession.MembershipTypes.Clear();
 
+                //Show success message
                 MessageBox.Show("You membership has been updated to " + selectedMembership.typeName + "!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+            //Refresh the Membership Page
             membershipPageTabBtn.PerformClick();
         }
 
-        //This function executes when the user clicks the Cancle button on the dashboard
+        //This function executes when the user clicks the Cancle Membership button
         private void cancleMembershipBtn_Click(object sender, EventArgs e)
         {
+            //Confirm if the user wants to cancel the membership
             DialogResult result = MessageBox.Show(
                     "Are you sure you want to cancel your memberships?",
                     "Confirmation",
@@ -1552,6 +1597,7 @@ namespace TogetherCultureCRM
                     MessageBoxIcon.Information
                 );
 
+            //If they say yes access the connection string from the App.config and open a connection with the database
             if (result == DialogResult.Yes)
             {
                 Guid currentUserId = UserSession.User.userId;
@@ -1602,6 +1648,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
+                //Assign values to update the current session for the user
                 UserSession.User.bIsMember = false;
                 UserSession.Member = new Member();
                 UserSession.ActiveMembership = new MembershipType();
@@ -1609,13 +1656,16 @@ namespace TogetherCultureCRM
                 UserSession.SubscribedMemberBenefits.Clear();
                 UserSession.UsedMemberBenefits.Clear();
 
+                //Refresh the Membership Page
                 membershipPageTabBtn.PerformClick();
             }
             return;
         }
 
+        //This function executes when the user clicks the Request Membership button
         private void requestMembershipBtn_Click(object sender, EventArgs e)
         {
+            //Confirm if they want to submit the request
             DialogResult result = MessageBox.Show(
                     "Are you sure you want to submit a membership request?",
                     "Confirmation",
@@ -1623,6 +1673,7 @@ namespace TogetherCultureCRM
                     MessageBoxIcon.Information
             );
 
+            //If yes then assign values to update the current session for the user
             if (result == DialogResult.Yes)
             {
                 Data dataCls = new Data();
@@ -1630,6 +1681,8 @@ namespace TogetherCultureCRM
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+
+                    //Insert a new record into AdminRequests with user details and message
                     Guid adminRequestId = Guid.NewGuid();
                     string insertRequestSql = "INSERT INTO AdminRequests (adminRequestId, userId, requestDescription, requestTime) VALUES (@adminRequestId, @userId, @requestDescription, @requestTime)";
                     using (SqlCommand command = new SqlCommand(insertRequestSql, con))
@@ -1644,13 +1697,16 @@ namespace TogetherCultureCRM
                     con.Close();
                 }
 
+                //Refrest profile page
                 profileDashboardBtn.PerformClick();
             }
             return;
         }
 
+        //This function executes when the user clicks the Update button on the Profile page
         private void updateUserProfileBtn_Click(object sender, EventArgs e)
         {
+            //Confirm if the user wants to update their information
             DialogResult result = MessageBox.Show(
                     "Are you sure you want to update your user infromation?",
                     "Confirmation",
@@ -1658,11 +1714,13 @@ namespace TogetherCultureCRM
                     MessageBoxIcon.Information
             );
 
+            //If yes then retrieve the username and email field 
             if (result == DialogResult.Yes)
             {
                 string username = usernameTxt.Text;
                 string email = emailTxt.Text;
 
+                //Validate the retrieved text to see if its good data to be inserted into the DB
                 #region User Validations
                 if (username == "" || email == "")
                 {
@@ -1679,19 +1737,21 @@ namespace TogetherCultureCRM
                     MessageBox.Show("Invalid email address. Please enter a valid email address.", "Invalid Email");
                     return;
                 }
-                #endregion
-
                 if (username == UserSession.User.username && email == UserSession.User.email)
                 {
                     MessageBox.Show("User is already up to date. Nothing to modify.", "Up to date", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
+                #endregion
 
+                //Assign values to update the current session for the user
                 Data data = new Data();
                 string connectionString = data.ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+
+                    //Update the current user with the new details
                     string updateSql = @"UPDATE Users SET username=@username, email=@email WHERE userId=@userId";
 
                     using (SqlCommand command = new SqlCommand(updateSql, con))
@@ -1704,7 +1764,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
-                // Update current session
+                // Update current session and show success message
                 UserSession.User.username = username;
                 UserSession.User.email = email;
 
@@ -1715,6 +1775,7 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function updated the checkboxes and makes sure only one is checked at a time
         public void KeyInterest_CheckedChanged(string interestName)
         {
             caringCheckBox.Checked = false;
@@ -1743,33 +1804,45 @@ namespace TogetherCultureCRM
             }
         }
 
+        //This function executes when the user clicks the Caring checkbox
         private void caringCheckBox_Click(object sender, EventArgs e)
         {
+            //Update the checkboxes
             KeyInterest_CheckedChanged("Caring");
         }
 
+        //This function executes when the user clicks the Sharing checkbox
         private void sharingCheckBox_Click(object sender, EventArgs e)
         {
+            //Update the checkboxes
             KeyInterest_CheckedChanged("Sharing");
         }
 
+        //This function executes when the user clicks the Working checkbox 
         private void workingCheckBox_Click(object sender, EventArgs e)
         {
+            //Update the checkboxes
             KeyInterest_CheckedChanged("Working");
         }
 
+        //This function executes when the user clicks the Learning checkbox
         private void learningCheckBox_Click(object sender, EventArgs e)
         {
+            //Update the checkboxes
             KeyInterest_CheckedChanged("Learning");
         }
 
+        //This function executes when the user clicks the Happening checkbox
         private void happeningCheckBox_Click(object sender, EventArgs e)
         {
+            //Update the checkboxes
             KeyInterest_CheckedChanged("Happening");
         }
 
+        //This function executes when the user clicks the Update button to update the keyinterests
         private void updateKeyIntrestBtn_Click(object sender, EventArgs e)
         {
+            //Create a list of (bool, string) where bool is if the checkbox is checked and string is the name of the checkbox
             var checkboxes = new List<(bool IsChecked, string Text)>
             {
                 (caringCheckBox.Checked, caringCheckBox.Text),
@@ -1779,32 +1852,36 @@ namespace TogetherCultureCRM
                 (happeningCheckBox.Checked, happeningCheckBox.Text)
             };
 
+            //If MemberKeyIntrest is not null then access the keyIntrestName
             string currentKeyInterestName = UserSession.MemberKeyIntrest?.keyIntrestName;
             string newKeyInterestName = null;
 
-            // Find a matching checkbox for the current key interest
+            // Check if the key interest user is trying to update too is not corresponding to the already assigned key interest
             var currentMatch = checkboxes.FirstOrDefault(cb => cb.IsChecked && cb.Text == currentKeyInterestName);
             if (currentMatch != default)
             {
+                //Show messgage if so
                 MessageBox.Show("Key Interest is already up to date. Nothing to modify.", "Info Up to Date", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Find the new key interest name from the checked checkbox
+            // Find the checked checkbox so we know which tag we will be assigning
             var newMatch = checkboxes.FirstOrDefault(cb => cb.IsChecked);
             if (newMatch == default)
             {
+                //Show message if user hasn't selected a interest
                 MessageBox.Show("Please select a Key Interest to update.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            //Assign values to update the current session for the user
             newKeyInterestName = newMatch.Text;
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
 
-            // Delete Current Record (if it exists)
             if (UserSession.MemberKeyIntrest != null)
             {
+                // Delete Current Record from MemberKeyIntrest (if it exists)
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
@@ -1822,7 +1899,7 @@ namespace TogetherCultureCRM
             {
                 con.Open();
 
-                // Retrieve the intrestId for the new key interest
+                // Retrieve the intrestId for the new key interest we want to assign the user
                 string selectSql = "SELECT intrestId FROM KeyIntrest WHERE keyIntrestName = @keyIntrestName";
                 using (SqlCommand command = new SqlCommand(selectSql, con))
                 {
@@ -1836,7 +1913,7 @@ namespace TogetherCultureCRM
                     }
                 }
 
-                // Insert the new key intrest record
+                // Insert the new key intrest record for the current user
                 string insertSql = "INSERT INTO MemberKeyIntrest (memberId, intrestId) VALUES (@memberId, @intrestId)";
                 using (SqlCommand command = new SqlCommand(insertSql, con))
                 {
@@ -1847,6 +1924,7 @@ namespace TogetherCultureCRM
                 }
             }
 
+            //Show success message and update Profile Page
             MessageBox.Show("Key Interest has been updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             profileDashboardBtn.PerformClick();
         }
