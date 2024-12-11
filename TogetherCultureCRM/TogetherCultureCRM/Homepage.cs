@@ -56,7 +56,7 @@ namespace TogetherCultureCRM
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0),
                     ForeColor = Color.Black,
-                    Location = new Point(0, 477),
+                    Location = new Point(0, 434),
                     Name = "adminHomePageTabBtn",
                     Size = new Size(200, 43),
                     TabIndex = 11,
@@ -87,7 +87,6 @@ namespace TogetherCultureCRM
             membershipPageTabBtn.BackColor = col;
             benefitsDashboardBtn.BackColor = col;
             eventsHomePageTabBtn.BackColor = col;
-            digitalConnectionDashboardBtn.BackColor = col;
             onlineMembersAreadDashboardBtn.BackColor = col;
             digitalContentDashboardBtn.BackColor = col;
 
@@ -1130,16 +1129,6 @@ namespace TogetherCultureCRM
             unusedBenefitsTxtBox.Text = unusedBenefitsSB.ToString();
             if (UserSession.UsedMemberBenefits.Count > 0) usedBenefitsTxtBox.Text = usedBenefitsSB.ToString();
             else usedBenefitsTxtBox.Text = "No benefits have been used so far.";
-        }
-
-        //This function executes when the user clicks the DigitalConnection button on the dashboard
-        private void digitalConnectionDashboardBtn_Click(object sender, EventArgs e)
-        {
-            //Reset dashboard buttons colors, set the back color of the dashboard button that is clicked to the 'selectd button' color and rename the window name
-            DashboardBtn_BackColorReset();
-            digitalConnectionDashboardBtn.BackColor = Color.FromArgb(128, 255, 128);
-            digitalConnectionPanel.BringToFront();
-            Homepage.ActiveForm.Text = "Digital Connection Page";
         }
 
         //This function loads chats to the panel in Online Members Area

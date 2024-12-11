@@ -31,7 +31,6 @@
             this.dashboard = new System.Windows.Forms.Panel();
             this.digitalContentDashboardBtn = new System.Windows.Forms.Button();
             this.onlineMembersAreadDashboardBtn = new System.Windows.Forms.Button();
-            this.digitalConnectionDashboardBtn = new System.Windows.Forms.Button();
             this.eventsHomePageTabBtn = new System.Windows.Forms.Button();
             this.benefitsDashboardBtn = new System.Windows.Forms.Button();
             this.membershipPageTabBtn = new System.Windows.Forms.Button();
@@ -118,9 +117,6 @@
             this.unusedBenefitsTxtBox = new System.Windows.Forms.RichTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.digitalConnectionPanel = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.onlineMembersAreaPanel = new System.Windows.Forms.Panel();
             this.sendMsgBtn = new System.Windows.Forms.Button();
             this.chatTextBox = new System.Windows.Forms.RichTextBox();
@@ -162,8 +158,6 @@
             this.panel8.SuspendLayout();
             this.benefitsPagePanel.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.digitalConnectionPanel.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.onlineMembersAreaPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.activeMembershipPanel.SuspendLayout();
@@ -177,7 +171,6 @@
             this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dashboard.Controls.Add(this.digitalContentDashboardBtn);
             this.dashboard.Controls.Add(this.onlineMembersAreadDashboardBtn);
-            this.dashboard.Controls.Add(this.digitalConnectionDashboardBtn);
             this.dashboard.Controls.Add(this.eventsHomePageTabBtn);
             this.dashboard.Controls.Add(this.benefitsDashboardBtn);
             this.dashboard.Controls.Add(this.membershipPageTabBtn);
@@ -200,7 +193,7 @@
             this.digitalContentDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.digitalContentDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.digitalContentDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.digitalContentDashboardBtn.Location = new System.Drawing.Point(0, 434);
+            this.digitalContentDashboardBtn.Location = new System.Drawing.Point(0, 391);
             this.digitalContentDashboardBtn.Name = "digitalContentDashboardBtn";
             this.digitalContentDashboardBtn.Size = new System.Drawing.Size(200, 43);
             this.digitalContentDashboardBtn.TabIndex = 11;
@@ -219,7 +212,7 @@
             this.onlineMembersAreadDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.onlineMembersAreadDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onlineMembersAreadDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.onlineMembersAreadDashboardBtn.Location = new System.Drawing.Point(0, 391);
+            this.onlineMembersAreadDashboardBtn.Location = new System.Drawing.Point(0, 348);
             this.onlineMembersAreadDashboardBtn.Name = "onlineMembersAreadDashboardBtn";
             this.onlineMembersAreadDashboardBtn.Size = new System.Drawing.Size(200, 43);
             this.onlineMembersAreadDashboardBtn.TabIndex = 10;
@@ -227,25 +220,6 @@
             this.onlineMembersAreadDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.onlineMembersAreadDashboardBtn.UseVisualStyleBackColor = false;
             this.onlineMembersAreadDashboardBtn.Click += new System.EventHandler(this.onlineMembersAreadDashboardBtn_Click);
-            // 
-            // digitalConnectionDashboardBtn
-            // 
-            this.digitalConnectionDashboardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
-            this.digitalConnectionDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.digitalConnectionDashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.digitalConnectionDashboardBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.digitalConnectionDashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.digitalConnectionDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.digitalConnectionDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.digitalConnectionDashboardBtn.ForeColor = System.Drawing.Color.Black;
-            this.digitalConnectionDashboardBtn.Location = new System.Drawing.Point(0, 348);
-            this.digitalConnectionDashboardBtn.Name = "digitalConnectionDashboardBtn";
-            this.digitalConnectionDashboardBtn.Size = new System.Drawing.Size(200, 43);
-            this.digitalConnectionDashboardBtn.TabIndex = 8;
-            this.digitalConnectionDashboardBtn.Text = "     Digital Connection";
-            this.digitalConnectionDashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.digitalConnectionDashboardBtn.UseVisualStyleBackColor = false;
-            this.digitalConnectionDashboardBtn.Click += new System.EventHandler(this.digitalConnectionDashboardBtn_Click);
             // 
             // eventsHomePageTabBtn
             // 
@@ -1273,34 +1247,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Benefits";
             // 
-            // digitalConnectionPanel
-            // 
-            this.digitalConnectionPanel.Controls.Add(this.panel11);
-            this.digitalConnectionPanel.Location = new System.Drawing.Point(200, 12);
-            this.digitalConnectionPanel.Name = "digitalConnectionPanel";
-            this.digitalConnectionPanel.Size = new System.Drawing.Size(984, 749);
-            this.digitalConnectionPanel.TabIndex = 12;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label9);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(984, 133);
-            this.panel11.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(318, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(252, 33);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Digital Connection";
-            // 
             // onlineMembersAreaPanel
             // 
             this.onlineMembersAreaPanel.Controls.Add(this.sendMsgBtn);
@@ -1520,7 +1466,6 @@
             this.Controls.Add(this.benefitsPagePanel);
             this.Controls.Add(this.activeMembershipPanel);
             this.Controls.Add(this.membershipPanel);
-            this.Controls.Add(this.digitalConnectionPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Homepage";
@@ -1567,9 +1512,6 @@
             this.benefitsPagePanel.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.digitalConnectionPanel.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.onlineMembersAreaPanel.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -1591,7 +1533,6 @@
         private System.Windows.Forms.Button homeDashboardBtn;
         private System.Windows.Forms.Button profileDashboardBtn;
         private System.Windows.Forms.Button onlineMembersAreadDashboardBtn;
-        private System.Windows.Forms.Button digitalConnectionDashboardBtn;
         private System.Windows.Forms.Button eventsHomePageTabBtn;
         private System.Windows.Forms.Button benefitsDashboardBtn;
         private System.Windows.Forms.Button membershipPageTabBtn;
@@ -1616,9 +1557,6 @@
         private System.Windows.Forms.Panel benefitsPagePanel;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel digitalConnectionPanel;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel onlineMembersAreaPanel;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label10;
