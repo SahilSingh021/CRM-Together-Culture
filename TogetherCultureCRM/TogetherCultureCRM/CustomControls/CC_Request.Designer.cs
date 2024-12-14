@@ -30,7 +30,7 @@
         {
             this.approveBtn = new System.Windows.Forms.Button();
             this.denyBtn = new System.Windows.Forms.Button();
-            this.requestDescription = new System.Windows.Forms.Label();
+            this.requestDescriptionLbl = new System.Windows.Forms.Label();
             this.usernameTxt = new System.Windows.Forms.Label();
             this.adminRequestIdLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -69,12 +69,12 @@
             // 
             // requestDescription
             // 
-            this.requestDescription.AutoSize = true;
-            this.requestDescription.Location = new System.Drawing.Point(22, 31);
-            this.requestDescription.Name = "requestDescription";
-            this.requestDescription.Size = new System.Drawing.Size(89, 13);
-            this.requestDescription.TabIndex = 8;
-            this.requestDescription.Text = "Description Label";
+            this.requestDescriptionLbl.AutoSize = true;
+            this.requestDescriptionLbl.Location = new System.Drawing.Point(22, 31);
+            this.requestDescriptionLbl.Name = "requestDescription";
+            this.requestDescriptionLbl.Size = new System.Drawing.Size(89, 13);
+            this.requestDescriptionLbl.TabIndex = 8;
+            this.requestDescriptionLbl.Text = "Description Label";
             // 
             // usernameTxt
             // 
@@ -101,12 +101,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.adminRequestIdLbl);
             this.Controls.Add(this.usernameTxt);
-            this.Controls.Add(this.requestDescription);
+            this.Controls.Add(this.requestDescriptionLbl);
             this.Controls.Add(this.denyBtn);
             this.Controls.Add(this.approveBtn);
             this.Name = "CC_Request";
             this.Size = new System.Drawing.Size(782, 60);
-            this.Load += new System.EventHandler(this.Request_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +115,7 @@
 
         private System.Windows.Forms.Button approveBtn;
         private System.Windows.Forms.Button denyBtn;
-        private System.Windows.Forms.Label requestDescription;
+        private System.Windows.Forms.Label requestDescriptionLbl;
         private System.Windows.Forms.Label usernameTxt;
         private System.Windows.Forms.Label adminRequestIdLbl;
     }
