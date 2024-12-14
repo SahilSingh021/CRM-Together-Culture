@@ -674,7 +674,7 @@ namespace TogetherCultureCRM
             //Loop over all the IntrestTags that are loaded at login in UserSession.IntrestTagList
             int heightCount = 0;
             bool bAlreadyAssigned = false;
-            foreach (var intrestTag in UserSession.IntrestTagList)
+            foreach (var intrestTag in UserSession.InterestTagList)
             {
                 //compare if the tagId of the current interest tag is the same as one of the alreay assigned intrest tags and if so then set bAlreadyAssigned to true
                 foreach (var userTagAndName in UserTagAndNameList)
@@ -1058,15 +1058,15 @@ namespace TogetherCultureCRM
                     {
                         if (reader.Read())
                         {
-                            MemberKeyIntrest memberKeyIntrest = new MemberKeyIntrest()
+                            MemberKeyInterest memberKeyIntrest = new MemberKeyInterest()
                             {
                                 memberId = Guid.Parse(reader.GetString(reader.GetOrdinal("memberId"))),
-                                intrestId = Guid.Parse(reader.GetString(reader.GetOrdinal("intrestId"))),
-                                keyIntrestName = reader.IsDBNull(reader.GetOrdinal("keyIntrestName")) ? null : reader.GetString(reader.GetOrdinal("keyIntrestName")),
-                                memberKeyIntrestDate = reader.GetDateTime(reader.GetOrdinal("memberKeyIntrestDate"))
+                                interestId = Guid.Parse(reader.GetString(reader.GetOrdinal("intrestId"))),
+                                keyInterestName = reader.IsDBNull(reader.GetOrdinal("keyIntrestName")) ? null : reader.GetString(reader.GetOrdinal("keyIntrestName")),
+                                memberKeyInterestDate = reader.GetDateTime(reader.GetOrdinal("memberKeyIntrestDate"))
                             };
 
-                            UserSession.MemberKeyIntrest = memberKeyIntrest;
+                            UserSession.MemberKeyInterest = memberKeyIntrest;
                         }
                     }
                 }
@@ -1074,7 +1074,7 @@ namespace TogetherCultureCRM
             }
 
             //Check the correct check box if MemberKeyIntrest is not null
-            if (UserSession.MemberKeyIntrest != null) KeyInterest_CheckedChanged(UserSession.MemberKeyIntrest.keyIntrestName);
+            if (UserSession.MemberKeyInterest != null) KeyInterest_CheckedChanged(UserSession.MemberKeyInterest.keyInterestName);
 
             postRequestPanel.Hide();
             preMemberPanel.Hide();
@@ -1641,7 +1641,7 @@ namespace TogetherCultureCRM
                 UserSession.User.bIsMember = false;
                 UserSession.Member = new Member();
                 UserSession.ActiveMembership = new MembershipType();
-                UserSession.MemberKeyIntrest = new MemberKeyIntrest();
+                UserSession.MemberKeyInterest = new MemberKeyInterest();
                 UserSession.SubscribedMemberBenefits.Clear();
                 UserSession.UsedMemberBenefits.Clear();
 
@@ -1842,7 +1842,7 @@ namespace TogetherCultureCRM
             };
 
             //If MemberKeyIntrest is not null then access the keyIntrestName
-            string currentKeyInterestName = UserSession.MemberKeyIntrest?.keyIntrestName;
+            string currentKeyInterestName = UserSession.MemberKeyInterest?.keyInterestName;
             string newKeyInterestName = null;
 
             // Check if the key interest user is trying to update too is not corresponding to the already assigned key interest
@@ -1868,7 +1868,7 @@ namespace TogetherCultureCRM
             Data dataCls = new Data();
             string connectionString = dataCls.ConnectionString;
 
-            if (UserSession.MemberKeyIntrest != null)
+            if (UserSession.MemberKeyInterest != null)
             {
                 // Delete Current Record from MemberKeyIntrest (if it exists)
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -1877,7 +1877,7 @@ namespace TogetherCultureCRM
                     string deleteSql = "DELETE FROM MemberKeyIntrest WHERE intrestId = @intrestId";
                     using (SqlCommand command = new SqlCommand(deleteSql, con))
                     {
-                        command.Parameters.AddWithValue("@intrestId", UserSession.MemberKeyIntrest.intrestId);
+                        command.Parameters.AddWithValue("@intrestId", UserSession.MemberKeyInterest.interestId);
                         command.ExecuteNonQuery();
                     }
                 }

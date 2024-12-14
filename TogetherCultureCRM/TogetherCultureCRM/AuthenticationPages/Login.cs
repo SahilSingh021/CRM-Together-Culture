@@ -282,13 +282,13 @@ namespace TogetherCultureCRM.AuthenticationPages
                                     {
                                         while (reader1.Read())
                                         {
-                                            IntrestTag intrestTag = new IntrestTag()
+                                            InterestTag intrestTag = new InterestTag()
                                             {
                                                 tagId = Guid.Parse(reader1.GetString(reader1.GetOrdinal("tagId"))),
                                                 tagName = reader1.GetString(reader1.GetOrdinal("tagName")),
                                             };
 
-                                            UserSession.IntrestTagList.Add(intrestTag);
+                                            UserSession.InterestTagList.Add(intrestTag);
                                         }
                                     }
                                 }

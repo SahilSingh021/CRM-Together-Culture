@@ -113,10 +113,10 @@
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\DigitalContentModule.cs" />
     <Compile Include="Classes\Event.cs" />
-    <Compile Include="Classes\IntrestTag.cs" />
+    <Compile Include="Classes\InterestTag.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\MemberBenefits.cs" />
-    <Compile Include="Classes\MemberKeyIntrest.cs" />
+    <Compile Include="Classes\MemberKeyInterest.cs" />
     <Compile Include="Classes\MembershipType.cs" />
     <Compile Include="Classes\UsedMemberBenefits.cs" />
     <Compile Include="Classes\User.cs" />
