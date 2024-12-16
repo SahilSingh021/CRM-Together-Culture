@@ -1,19 +1,31 @@
 # CRM
-In order to use this application you will need to install:
-    1) SQL Server
-    2) SQL Server Management Studio 20 (SSMS)
-    3) Visual Studio 2022
 
-After you have installed SSMS, please connect to your local SQL server which you have installed before installing SSMS.
-Once you are connected, drag and drop the 'SQLQueries.sql' provided within this folder to the SSMS.
-This will show you all of the code for SQL server (CREATE, INSERT) and so on.
-Now, select all the SQL code on that page (Ctrl+A) then execute the code in the master databse.
-You will now have all the tables created for you and dummy data will also be inserted into the database.
-Now get your connection string for your server and go to the App.config found in the Visual Studio project.
-Replace the current connection string with your own and run the program to test if the connection with the database works. 
+This project was developed as part of a University project during Year 2 of my Computer Science course in collaboration with other students.
 
-The dummy admin user we have created are:
-    Username        Password
-    Sahil           111111
-    Kai             111111
-    Sam             111111
+## Prerequisites
+To use this application, you will need to install:
+1. **SQL Server**
+2. **SQL Server Management Studio 20 (SSMS)**
+3. **Visual Studio 2022**
+
+## Setup Instructions
+1. After installing SSMS, connect to your local SQL Server (installed prior to SSMS).
+2. Drag and drop the `SQLQueries.sql` file (provided in this folder) into SSMS.
+3. This will display all the SQL code (e.g., `CREATE`, `INSERT`, etc.).
+4. Select all the SQL code in the editor (`Ctrl+A`) and execute it in the **master database**.
+   - This will create all necessary tables and insert dummy data into the database.
+
+5. Retrieve your connection string for the server:
+   - Open the `App.config` file in the Visual Studio project.
+   - Replace the current connection string with your own.
+
+6. Run the program to test the connection with the database.
+
+## Dummy Admin User Accounts
+The following dummy admin accounts are available for testing:
+
+| **Username** | **Password** |
+|--------------|--------------|
+| Sahil        | 111111       |
+| Kai          | 111111       |
+| Sam          | 111111       |
